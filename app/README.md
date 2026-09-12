@@ -1,32 +1,53 @@
-# React + TypeScript + Vite
+# EOA Exam Trainer — Webapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Offline-first study and exam-simulation webapp for **Economia e
+Organizzazione Aziendale (EOA 2026)**, Università di Pisa — Ingegneria
+Informatica (Prof.ssa Antonella Martini). Canonical specification:
+`../DESIGN_SPEC.md`.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+React 19 + TypeScript + Vite 8 + Tailwind CSS 4, KaTeX for formulas.
+No backend required: theory and the question bank are static JSON under
+`public/data/` (theory, questions, blocks). An optional local telemetry
+server lives in `../server/` and is only used via `npm run dev`.
 
-## React Compiler
+## Scripts (run from `app/` with `npm.cmd` on Windows)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Command                    | What it does                                              |
+| -------------------------- | --------------------------------------------------------- |
+| `npm run dev:app`          | Vite dev server (frontend only)                           |
+| `npm run dev`              | Dev server + local log server (`../server/server.js`)     |
+| `npm run generate:questions` | Regenerate the question bank (`../generator/`)          |
+| `npm test`                 | Unit + snapshot tests (`tsx --test`, zero extra deps)     |
+| `npm run test:generate`    | Regenerate bank, then run the full suite                  |
+| `npm run lint`             | `oxlint` (must report 0 warnings)                         |
+| `npm run build`            | `tsc -b && vite build` → static bundle in `dist/`        |
+| `npm run preview`          | Serve the production bundle locally                       |
 
-## Expanding the Oxlint configuration
+## Layout
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- `src/components/quiz/` — `QuizRunner` (all 6 exam question types,
+  sequential non-reversible exam mode, review), `FlashCardRunner`,
+  `ExplanationCard` (shared Golden Rule PERCHÉ/COSA/COME renderer)
+- `src/components/study/` — `StudyBlockViewer` (roadmap, keypoints,
+  traps, mini-quiz entry points)
+- `src/components/stats/` — `StatsHistoryView`, `charts.tsx`
+  (SVG radar + sparkline, no chart dependency)
+- `src/components/formula/` — interactive `FormulaCheatsheetView`
+- `src/components/simulator/` — DuPont playground, balance-sheet builder
+- `src/data/` — `formulas.ts`, `study-links.ts` (question/formula topic
+  → theory anchor map with honest block-level fallback)
+- `src/services/` — `storage.ts` (localStorage history + SM-2 spaced
+  repetition), `logger.ts` (buffered, degrades gracefully offline)
+- `src/types/` — `question.ts`, `quiz.ts`, `study.ts` (mirror
+  `../generator/src/types.ts` for the runtime schema)
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## Conventions
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- Code, identifiers, commits: English. Didactic content: Italian.
+- Didactic invariant: every explanation follows PERCHÉ → COSA → COME.
+- Question bank is generated, never hand-edited: change templates or
+  seeds in `../generator/src/`, then `npm run test:generate`.
+- Quality gates: `npm test` (engine, study-links, archive snapshot),
+  `npm run lint`, `npm run build` — all green before commit.

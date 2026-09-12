@@ -9,6 +9,8 @@
     "dev:server": "node --watch ../server/server.js",
     "build": "tsc -b && vite build",
     "generate:questions": "tsx ../generator/src/build-questions.ts",
+    "test": "tsx --test \"src/**/*.test.ts\" \"../generator/src/**/*.test.ts\"",
+    "test:generate": "npm run generate:questions && npm test",
     "lint": "oxlint",
     "preview": "vite preview"
   },

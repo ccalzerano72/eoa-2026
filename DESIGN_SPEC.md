@@ -627,3 +627,31 @@ Questa tabella documenta la derivazione dei principi applicati:
 | Palette semantica (§6.2)      | Color is structural, not decorative (§4.2) | Stessa filosofia, palette adattata                   |
 | Keypoint = formula (§6.4)     | Keypoints are SCHEMATIC (§4.2)             | Identico                                             |
 | Quality Bar (§10)             | Quality Bar (MANUAL_GUIDE.md §10)          | Checklist adattata al formato webapp                 |
+
+---
+
+## 11. Estensioni Approvate Post-M5 (settembre 2026)
+
+Funzionalità implementate oltre il perimetro §5–§8, con la stessa
+filosofia didattica. Fanno fede le regole §2–§6 e §9–§10.
+
+| Estensione | Dove | Note |
+|---|---|---|
+| Flash Cards | `FlashCardRunner`, mode `flash-cards` | Flip-card da archivio + formulario, no timer/punteggio |
+| Percorsi (track) | filtro globale Dashboard | ◆ Essenziale / ■ Standard / ○ Approfondito / Tutti |
+| Quiz Trappole | mode `traps-only` | 20q, reveal immediato, card trappola prominente |
+| Ripasso Intelligente | mode `spaced-review`, `storage.ts` SM-2 | ease factor, `eoa_spaced_repetition_v1` |
+| Formulario interattivo | `FormulaCheatsheetView`, `data/formulas.ts` | ricerca, PERCHÉ/COSA/COME, "Esercitati" e "Vedi teoria" |
+| Simulatori | `DuPontPlayground`, `BalanceSheetBuilder` | tab Simulatori + embedding futuro in Blocchi IV–V |
+| Dark Mode | toggle Light/System/Dark, `eoa_theme_preference` | varianti `dark:` su tutti i componenti |
+| Mini-quiz (5q) | `StudyBlockViewer` + `handleStartTopicQuiz(b, t, 5)` | autoverifica per argomento; quiz 15q invariato |
+| Study-links | `data/study-links.ts` | mappa slug→ancore teoria con fallback al blocco, mai ancore morte |
+| Telemetry locale (opzionale) | `server/server.js`, `services/logger.ts` | buffer localStorage, flush `/api/log`; degrades offline; la build statica non lo richiede |
+| Spiegazione unificata | `ExplanationCard` | unico renderer PERCHÉ/COSA/COME per review e reveal immediato |
+| Stats avanzate | radar SVG, sparkline trend, debolezze con CTA, copertura archivio, filtri per mode | nessuna dipendenza chart |
+
+### 11.1 Decisioni registrate
+
+- **Offline-first differito**: PWA/Electron (M6) rinviati a data futura su decisione del proprietario (settembre 2026). L'app resta web statica servibile da `dist/`.
+- **Telemetry opt-in di fatto**: il logger non blocca mai l'uso offline; la futura build PWA dovrà disabilitarlo via flag (`VITE_ENABLE_LOGGER=false`).
+- **`BOOK/` esterno al versionamento**: materiale di riferimento, intenzionalmente untracked.

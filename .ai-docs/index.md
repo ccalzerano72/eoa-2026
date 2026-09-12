@@ -24,7 +24,7 @@ source:
 
 ## Current Status
 
-- **Phase:** M0–M5 completed + Fase 1 question-bank rebalancing completed (6,055 questions aligned to §7.2). Next: M6 (Electron desktop packaging & PWA offline bundle). Build re-verification pending (owner runs it).
+- **Phase:** M0–M5 + Fase 1 (rebalancing) + Fase 2 (UX 2.1–2.6) + Fase D (tests/docs) completed. M6 (packaging/PWA) deferred by owner decision. Build re-verification pending (owner runs it).
 - Specification distilled from BOOK didactic & visual standards (`Golden Rule`, `LOUD/QUIET`, `donotassume`, `tiered tracks`).
 - Course materials cataloged in `materiale/1-md/` (46 documents) and `materiale/2-LLM wiki/`.
 

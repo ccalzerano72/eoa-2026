@@ -78,7 +78,7 @@ export const THEORY_TOPICS: Record<SyllabusBlock, string[]> = {
 };
 
 /** Generator slug → theory topic id, keyed as `${block}:${slug}`. */
-const OVERRIDES: Record<string, string> = {
+export const TOPIC_OVERRIDES: Record<string, string> = {
   // ---- Blocco 1 ----
   "1:efficienza-produttivita": "fondamenti-economia-e-paradigma",
   "1:paradigmi-fondanti": "fondamenti-economia-e-paradigma",
@@ -175,7 +175,7 @@ export function resolveStudyTopic(
 ): string | undefined {
   if (!topic) return undefined;
   if (THEORY_TOPICS[block]?.includes(topic)) return topic;
-  const mapped = OVERRIDES[`${block}:${topic}`];
+  const mapped = TOPIC_OVERRIDES[`${block}:${topic}`];
   if (mapped && THEORY_TOPICS[block]?.includes(mapped)) return mapped;
   return undefined;
 }

@@ -1,0 +1,35 @@
+# Audit Blocchi 5–6 vs ground truth — Report dedicato
+
+- Data: 2026-09-12 · Ground truth: `C:\Salvatore\sources\` via proxy `materiale/1-md/` (PDF mai aperti)
+- Teoria: `blocco-5.json`, `blocco-6.json` integrali · Formule block 5–6 · Template `block-5/6-templates.ts` + legacy (leverage-roe, bep-quantity/revenue, operating-leverage, safety-margin, liquidity-ratios, turnover-working-capital, working-capital) · Seed `block-5/6.ts` · Campioni 12+12 Q + mirati via bash+python
+- Esito: 15/15 ricalcoli OK; formule core corrette; problemi = identità MS2=CCN smentita da De Cecco, denominatore ROI ambiguo, leva senza extra-caratteristica, cifre Connecta annuali non in fonte, tolleranza R* troppo stretta, constraint che escludono i casi d'esame (spread negativo, QR 0,36, GLO→∞, MS basso), sourceRef generiche
+
+## Ricalcoli (estratti)
+
+R1 `B5-IND-LEVA-ROE-NUM-0001` 17/8,5/0,6 → 17+8,5·0,6 = 22,10 OK (tol 0,1). R2 SC 14/8,5/0,7 → 17,85→17,9 OK. R3 DuPont ROS 4·(50/20) = 10,0 OK. R4 7,5·(45/28) = 12,05→12,1 OK. R5 QR (120000+290000)/230000 = 1,783→1,8 OK. R7 CCC 75+85−45 = 115 gg OK. R8 BEP 120000/(500−200) = 400 OK. R9 R* 160000/((130−100)/130) = 693333,33 OK valore / KO tolleranza (v. B6-02). R10 GLO 4500·30/(4500·30−60000) = 1,8 OK. R11 MS (6000−1333,33)/6000 = 77,78 OK; 1/GLO ≈ 0,78 ✓. R12 ΔRO (95−75)·3500 = 70000 OK. R13 De Cecco 2023: ROE 11,707/278,473 = 4,204; ROI 23,149/643,015 = 3,600; ROS 3,682; TURN 0,978; i 14,6/207,6 = 7,033; spread −3,433 — OK. R14 CR 0,594 / QR 0,360 / Cash 0,021 / CCN −111,6 / MS1 −200,5 / MS2 −110,6 — OK. R15 SaaS 45/15/120k/5000: mdc 30, Q* 4000, R* 180000, MS 20%, GLO 5, 1/GLO 20% ✓.
+
+## Blocco 5
+
+- B5-01 INCONGRUENZA alta — "MS₂ coincide matematicamente con il CCN" (`riclassificazione-...`). GT `VIII-29-04-26-SLIDE.pdf` pp.3/5/9: CCN −111,6; MS1 −200,5; MS2 −110,6; ratei attivi 1,1. −110,6 ≠ −111,6 (delta ≈ ratei). Fix: "MS2 = CCN solo a meno di ratei/risconti; De Cecco: −110,6 vs −111,6".
+- B5-02 AMBIGUITÀ media — ROI = RO/CIN (teoria, template, `f-dupont-roi`) vs `VII-23-04-26-SLIDE.pdf` p.12 "ROI=EBIT/Totale Attivo 23.148.644/643.015.413 = 3,60%" e p.13 "Invested Capital = PN + Debiti fin." (~4,76%). Mai dichiarato quale vale all'esame. Fix: nota convenzione (esame = Totale Attivo 3,60%; gestionale CI ≈ 4,8%) o uniformare.
+- B5-03 OMISSIONE media — Leva `ROE=[ROI+(ROI−i)·D/E]·(1−t)`; `f-leva-finanziaria` senza `(1−t)`; template "trascurando imposte". GT `VII-23-04-26-SLIDE.pdf` p.25: `ROE=[ROI+(ROI−i)·(D/E)]·(UN/RAI)`; p.27: EBIT 23,1 − OF 14,6 = 8,5 atteso vs RAI 15,4 (+6,9 dividendi C.15). `(1−t)` ≈ UN/RAI solo senza extra-caratteristica; De Cecco: spread −3,43% ma ROE +4,20% grazie ai dividendi. Fix: formula completa + nota.
+- B5-04 AMBIGUITÀ media — `MT` = Margine di Tesoreria (teoria/formule) vs `MT` = Mezzi di Terzi (`VII-23-04-26-SLIDE.pdf` pp.23–24: "MT=MT_FIN+MT_OPERATIVI", "ROD=OF/MT"). Fix: `MTes` vs `MDeb`/`D` o glossario.
+- B5-05 OMISSIONE media — DIO/DSO/DPO collassati (teoria) vs `VII-23-04-26-SLIDE.pdf` pp.17–22: MP su consumi (ACQ+EI−RF, Ri=Rf−Δ), PF su Valore vs Costo produzione, crediti C.II.1/A.1, debiti D.6/(B.6+B.7), rotazioni inverse; segni A2/A3/B11 mai trattati. Fix: tabella voci OIC + consumi + doppia PF + segni.
+- B5-06 EXTRA/INCONGRUENZA media — Case Connecta (`caso-connecta-growth-eats-cash`: 2M→4M, utile 250k, scorte +400k, crediti +600k, debiti +200k, CCN +800k, cassa −550k, fido 200k; label "Connecta / De Cecco"). GT `VI-15-04-26-Paradosso-grows-eats-cash.pdf` pp.2–4: ricavi 500k (10.000×50), costi 300k, utile 200k, cassa −350k, gap 90 gg; `VI-15-04-26-SINTESI.pdf`: De Cecco utile 11,7, cassa 22,8→5,8 −17M per investimenti + rimborsi >30M (causa diversa). Fix: "scenario didattico illustrativo, non consuntivo Connecta Q1"; separare cause (circolante vs investimenti/rimborsi).
+- B5-07 MANCANZA media — Constraint escludono i casi d'esame: `leverage-roe.ts:24` `roi > i` (mai leva negativa numerica; solo seed TF); `liquidity-ratios.ts` QR ∈ [0,6·PC, 2,5·PC] (De Cecco 0,36 escluso); GLO/MS mai stress. GT: spread −3,43%/−0,61%, Quick 0,36/Current 0,59. Fix: template "distress" (spread negativo, QR 0,3–0,6, Q≈Q*).
+- B5-08 MANCANZA bassa — 1123/1125 Q con `sourceRef` generiche ("Slide Blocco V…", "EOA 2026 - Analisi per Indici", "Guida"); solo seed GEC/DuPont citano file reali. Fix: tabella concordanza sourceRef→PDF (TIE/margini citano Dispensa fuori perimetro).
+- B5-09 AMBIGUITÀ bassa — CCN totale (AC−PC) vs CCN commerciale (ΔScorte+ΔCrediti−ΔFornitori); `working-capital.ts` (blocco 4) vs uso B5. Fix: definire entrambi + riconciliazione.
+- B5-10 CONTRADDIZIONE apparente bassa — "spartiacque 12 mesi" vs `VII-22-04-26-Schemi-di-bilancio-SLIDE.pdf` p.4 ("OIC… non c'è distinzione 12 mesi", per natura; IAS corrente/non corrente). Fix: "nella riclassificazione gestionale (non nello schema 2424)".
+
+## Blocco 6
+
+- B6-01 INCONGRUENZA media — Case CloudTech (CF 120k, p 24, cv 4, mdc 20, BEP 6.000) vs howDetails (p 45, cv 15, mdc 30, BEP 4.000, R* 180k, MS 20%). GT `X-Lezioni-13-14-e-21-maggio-MATERIALE.pdf` p.5: set 45/15/4000/180000/20%. Fix: uniformare al canonico o "variante illustrativa".
+- B6-02 ERRORE media — `B6-BEP-FATTURATO-NUM-0035`: 693333,3 con tolerance 0,1 € (1,4e-7 relativo) boccia arrotondamenti legittimi; unit " €" con spazio. Formula corretta (MATERIALE p.4 R*=CF/mdc%). Fix: tolerance ≥1 € (o 0,5% relativa), unit "€".
+- B6-03 EXTRA/MANCANZA fonte media — GLO=MdC/RO, MS=(Q−Q*)/Q, MS=1/GLO, Q_target=(CF+RO_target)/mdc (`formulas.ts:654,626`): derivazioni corrette (R15: GLO 5, MS 20% = 1/5) ma 0 occorrenze "GLO/leva operativa/utile obiettivo" nei file X/XI; MATERIALE p.4 definisce MS in assoluto ("RT attuali − RT bep") + esempio 20%. Fix: citare fonte reale o "integrazione CVP standard".
+- B6-04 AMBIGUITÀ bassa — Solo MS%; GT anche MS assoluto (€). Fix: MS(€)=R−R*, MS%=MS(€)/R.
+- B6-05 EXTRA/MANCANZA fonte bassa — MdC I/II, regola "elimina solo se MdC_II<0", Make-or-Buy (cv12 vs P15), ordini speciali, chiusura linee: coerenti (MATERIALE pp.6–8 pricing; X-SLIDE diretti/indiretti, speciali/comuni, primo/industriale/pieno/eco-tecnico, quiz imposte=periodo ripreso bene) ma MdC II/soglia senza citazione. Seed `B6-MAK-BUY-001` (sunk 15, 35 vs 42, danno 70k/anno) ineccepibile. Fix: agganciare slide/pagina o "integrativo".
+- B6-06 OMISSIONE bassa — ABC solo TechMilano (numeri esatti: 600k/530 = 1.132; 566.038/33.962; ABC 70/30 → 420k/180k, 14.000/360); GT `XI-Lezione-21-maggio-SLIDE.pdf` p.5 secondo esempio 400k €, 21.500 h, 18,60, 37,21/55,81, ABC 666,67 non ripreso. Fix: aggiungere esempio 400k.
+- B6-07 MANCANZA bassa — `safety-margin.ts:27` q > Q*·1,25 (MS sempre >20%); `operating-leverage.ts:27` MdC−CF>10000 (mai perdite/GLO esplosivo). Mai casi rischiosi (MS 5%, GLO 10–∞). Fix: template "stress" Q∈[Q*, 1,25·Q*].
+- B6-08 AMBIGUITÀ bassa — Units: R* " €", GLO "", Quick "". Fix: "€", "×"/adimensionale, "%".
+
+Limiti: `whatBody` troncati a 2000 char compensati via bash+python; conteggi ROD/TIE inquinati da sottostringhe (giudizi su regex contestuali); assenza GLO/utile-obiettivo FACT entro perimetro (possibile fonte in XII-sintesi fuori lista).
