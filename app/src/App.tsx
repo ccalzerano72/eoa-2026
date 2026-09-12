@@ -49,6 +49,11 @@ const DuPontPlayground = lazy(() =>
     default: m.DuPontPlayground,
   })),
 );
+const BalanceSheetBuilder = lazy(() =>
+  import("./components/simulator/BalanceSheetBuilder").then((m) => ({
+    default: m.BalanceSheetBuilder,
+  })),
+);
 import {
   GraduationCap,
   BookOpen,
@@ -70,6 +75,7 @@ import {
   Sun,
   Moon,
   Monitor,
+  Scale,
 } from "lucide-react";
 import { CollapsibleSection } from "./components/ui/CollapsibleSection";
 
@@ -107,6 +113,9 @@ export function App() {
   const [studyBlock, setStudyBlock] = useState<StudyBlock | null>(null);
   const [targetTopicId, setTargetTopicId] = useState<string | undefined>();
   const [quizMode, setQuizMode] = useState<QuizMode>("exam-simulation");
+  const [activeSimulator, setActiveSimulator] = useState<"dupont" | "balance">(
+    "dupont",
+  );
   const [activeTrackFilter, setActiveTrackFilter] = useState<
     StudyTrack | "all"
   >("all");
@@ -1118,7 +1127,10 @@ export function App() {
               <div className="grid grid-cols-1 gap-4">
                 {/* DuPont Playground Card */}
                 <button
-                  onClick={() => navigateTo({ tab: "simulator" })}
+                  onClick={() => {
+                    setActiveSimulator("dupont");
+                    navigateTo({ tab: "simulator" });
+                  }}
                   className="group rounded-2xl border border-indigo-200 dark:border-indigo-800 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/50 dark:to-purple-900/50 p-5 text-left hover:shadow-lg hover:border-indigo-300 dark:hover:border-indigo-600 transition cursor-pointer"
                 >
                   <div className="flex items-start gap-4">
@@ -1153,6 +1165,49 @@ export function App() {
                       </div>
                     </div>
                     <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-indigo-600 transition shrink-0 mt-1" />
+                  </div>
+                </button>
+
+                {/* Balance Sheet Builder Card */}
+                <button
+                  onClick={() => {
+                    setActiveSimulator("balance");
+                    navigateTo({ tab: "simulator" });
+                  }}
+                  className="group rounded-2xl border border-sky-200 dark:border-sky-800 bg-gradient-to-br from-sky-50 to-blue-50 dark:from-sky-900/50 dark:to-blue-900/50 p-5 text-left hover:shadow-lg hover:border-sky-300 dark:hover:border-sky-600 transition cursor-pointer"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 text-white shadow-lg group-hover:scale-105 transition shrink-0">
+                      <Scale className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h5 className="font-bold text-slate-900 dark:text-slate-100">
+                          Schema di Bilancio
+                        </h5>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-100 dark:bg-sky-800 text-sky-700 dark:text-sky-200 border border-sky-200 dark:border-sky-700">
+                          Interattivo
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+                        Compila uno Stato Patrimoniale riclassificato e verifica
+                        in tempo reale la <strong>quadratura</strong> e i{" "}
+                        <strong>margini</strong> (CCN, Margine di Tesoreria,
+                        Current Ratio, Quick Ratio).
+                      </p>
+                      <div className="flex flex-wrap gap-2 text-xs">
+                        <span className="px-2 py-1 rounded-lg bg-emerald-100 text-emerald-700 font-semibold">
+                          Riclassificazione
+                        </span>
+                        <span className="px-2 py-1 rounded-lg bg-amber-100 text-amber-700 font-semibold">
+                          CCN & Margini
+                        </span>
+                        <span className="px-2 py-1 rounded-lg bg-rose-100 text-rose-700 font-semibold">
+                          Quadratura Attivo=Passivo
+                        </span>
+                      </div>
+                    </div>
+                    <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-sky-600 transition shrink-0 mt-1" />
                   </div>
                 </button>
               </div>
@@ -1330,13 +1385,51 @@ export function App() {
         {/* SIMULATOR TAB */}
         {activeTab === "simulator" && (
           <div className="mx-auto max-w-5xl py-8 px-4 sm:px-6">
-            <Suspense
-              fallback={
-                <LoadingFallback label="Caricamento Simulatore DuPont..." />
-              }
-            >
-              <DuPontPlayground />
-            </Suspense>
+            {/* Simulator Selector */}
+            <div className="mb-6 grid grid-cols-2 gap-3">
+              <button
+                onClick={() => setActiveSimulator("dupont")}
+                className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition ${
+                  activeSimulator === "dupont"
+                    ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg"
+                    : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-indigo-300 hover:bg-indigo-50 dark:hover:bg-slate-700"
+                }`}
+              >
+                <Zap className="h-4 w-4 shrink-0" />
+                <span>DuPont Playground</span>
+              </button>
+              <button
+                onClick={() => setActiveSimulator("balance")}
+                className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition ${
+                  activeSimulator === "balance"
+                    ? "bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-lg"
+                    : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-sky-300 hover:bg-sky-50 dark:hover:bg-slate-700"
+                }`}
+              >
+                <Scale className="h-4 w-4 shrink-0" />
+                <span>Schema di Bilancio</span>
+              </button>
+            </div>
+
+            {/* Active Simulator */}
+            {activeSimulator === "dupont" && (
+              <Suspense
+                fallback={
+                  <LoadingFallback label="Caricamento Simulatore DuPont..." />
+                }
+              >
+                <DuPontPlayground />
+              </Suspense>
+            )}
+            {activeSimulator === "balance" && (
+              <Suspense
+                fallback={
+                  <LoadingFallback label="Caricamento Schema di Bilancio..." />
+                }
+              >
+                <BalanceSheetBuilder />
+              </Suspense>
+            )}
           </div>
         )}
       </main>
