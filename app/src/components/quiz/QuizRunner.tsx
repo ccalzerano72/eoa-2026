@@ -11,6 +11,9 @@ import { saveQuizRecord } from "../../services/storage";
 import {
   Clock,
   ArrowRight,
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
   RotateCcw,
   CheckCircle,
   XCircle,
@@ -74,6 +77,10 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
   const [showImmediateExplanation, setShowImmediateExplanation] =
     useState(false);
   const explanationRef = useRef<HTMLDivElement | null>(null);
+
+  // Review navigation state (for finished quiz)
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const reviewCardRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (showImmediateExplanation && explanationRef.current) {
@@ -391,6 +398,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   isFinished: false,
                 }));
                 setCurrentAnswers({});
+                setReviewIndex(0);
               }}
               className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 sm:px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-700 transition cursor-pointer text-sm"
             >
@@ -422,17 +430,56 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           </div>
         </div>
 
-        {/* Detailed Question Review */}
-        <div className="mt-8 space-y-6">
+        {/* Detailed Question Review - Paginated */}
+        <div className="mt-8 space-y-4">
           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
             Revisione Domande e Spiegazioni
           </h3>
-          {session.questions.map((q, idx) => {
+
+          {/* Quick Jump Buttons */}
+          <div className="flex flex-wrap gap-1.5 p-3 rounded-xl bg-slate-100 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600">
+            {session.questions.map((q, idx) => {
+              const r = session.responses[q.id];
+              const ok = r?.isCorrect;
+              const isCurrent = idx === reviewIndex;
+              return (
+                <button
+                  key={q.id}
+                  onClick={() => {
+                    setReviewIndex(idx);
+                    setTimeout(() => {
+                      reviewCardRef.current?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }, 0);
+                  }}
+                  className={`h-8 w-8 rounded-lg font-mono text-xs font-bold transition cursor-pointer ${
+                    isCurrent
+                      ? "ring-2 ring-offset-1 ring-sky-500 dark:ring-offset-slate-800"
+                      : ""
+                  } ${
+                    ok
+                      ? "bg-emerald-500 text-white hover:bg-emerald-600"
+                      : "bg-rose-500 text-white hover:bg-rose-600"
+                  }`}
+                  title={`Domanda ${idx + 1} - ${ok ? "Corretta" : "Sbagliata"}`}
+                >
+                  {idx + 1}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Current Review Question */}
+          {(() => {
+            const q = session.questions[reviewIndex];
             const resp = session.responses[q.id];
             const isOk = resp?.isCorrect;
+            const idx = reviewIndex;
             return (
               <div
-                key={q.id}
+                ref={reviewCardRef}
                 className={`rounded-2xl border p-4 sm:p-6 bg-white dark:bg-slate-800 shadow-2xs overflow-x-hidden ${
                   isOk
                     ? "border-emerald-200 dark:border-emerald-800"
@@ -471,6 +518,302 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 {q.formula && (
                   <div className="max-w-full overflow-x-auto">
                     <FormulaBlock formula={q.formula} />
+                  </div>
+                )}
+
+                {/* Answer Options Review */}
+                {q.type === "single-choice" && q.options && (
+                  <div className="mt-4 space-y-2">
+                    {q.options.map((opt, optIdx) => {
+                      const letter = String.fromCharCode(65 + optIdx);
+                      const isCorrectOption = opt.correct;
+                      const wasSelected = resp?.selectedOptionId === opt.id;
+                      let optionClasses =
+                        "w-full text-left p-3 rounded-xl border text-sm flex items-start gap-3 ";
+                      let letterClasses =
+                        "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-bold ";
+                      if (isCorrectOption) {
+                        optionClasses +=
+                          "border-emerald-400 dark:border-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 ";
+                        letterClasses += "bg-emerald-600 text-white ";
+                      } else if (wasSelected && !isCorrectOption) {
+                        optionClasses +=
+                          "border-rose-400 dark:border-rose-600 bg-rose-50 dark:bg-rose-900/30 ";
+                        letterClasses += "bg-rose-600 text-white ";
+                      } else {
+                        optionClasses +=
+                          "border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-700/50 ";
+                        letterClasses +=
+                          "bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-500 text-slate-600 dark:text-slate-300 ";
+                      }
+                      return (
+                        <div key={opt.id} className={optionClasses}>
+                          <span className={letterClasses}>{letter}</span>
+                          <span className="pt-0.5 text-slate-800 dark:text-slate-200 flex-1">
+                            {opt.text}
+                          </span>
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            {isCorrectOption && (
+                              <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1">
+                                <CheckCircle className="h-4 w-4" />
+                                Corretta
+                              </span>
+                            )}
+                            {wasSelected && !isCorrectOption && (
+                              <span className="text-xs font-bold text-rose-700 dark:text-rose-400 flex items-center gap-1">
+                                <XCircle className="h-4 w-4" />
+                                Scelta
+                              </span>
+                            )}
+                            {wasSelected && isCorrectOption && (
+                              <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 ml-1">
+                                ✓ Scelta
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Multi-choice Answer Options Review */}
+                {q.type === "multi-choice" && q.options && (
+                  <div className="mt-4 space-y-2">
+                    {q.options.map((opt) => {
+                      const isCorrectOption = opt.correct;
+                      const wasSelected =
+                        resp?.selectedOptionIds?.includes(opt.id) ?? false;
+                      let optionClasses =
+                        "w-full text-left p-3 rounded-xl border text-sm flex items-start gap-3 ";
+                      let checkClasses =
+                        "flex h-5 w-5 shrink-0 items-center justify-center rounded-md border mt-0.5 ";
+                      if (isCorrectOption && wasSelected) {
+                        optionClasses +=
+                          "border-emerald-400 dark:border-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 ";
+                        checkClasses +=
+                          "bg-emerald-600 border-emerald-600 text-white ";
+                      } else if (isCorrectOption && !wasSelected) {
+                        optionClasses +=
+                          "border-amber-400 dark:border-amber-600 bg-amber-50 dark:bg-amber-900/30 ";
+                        checkClasses +=
+                          "bg-amber-600 border-amber-600 text-white ";
+                      } else if (!isCorrectOption && wasSelected) {
+                        optionClasses +=
+                          "border-rose-400 dark:border-rose-600 bg-rose-50 dark:bg-rose-900/30 ";
+                        checkClasses +=
+                          "bg-rose-600 border-rose-600 text-white ";
+                      } else {
+                        optionClasses +=
+                          "border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-700/50 ";
+                        checkClasses +=
+                          "border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-700 ";
+                      }
+                      return (
+                        <div key={opt.id} className={optionClasses}>
+                          <div className={checkClasses}>
+                            {(wasSelected || isCorrectOption) && (
+                              <CheckCircle className="h-3.5 w-3.5" />
+                            )}
+                          </div>
+                          <span className="pt-0.5 text-slate-800 dark:text-slate-200 flex-1">
+                            {opt.text}
+                          </span>
+                          <div className="flex items-center gap-1.5 shrink-0 text-xs font-bold">
+                            {isCorrectOption && wasSelected && (
+                              <span className="text-emerald-700 dark:text-emerald-400">
+                                ✓ Corretta
+                              </span>
+                            )}
+                            {isCorrectOption && !wasSelected && (
+                              <span className="text-amber-700 dark:text-amber-400">
+                                Mancata
+                              </span>
+                            )}
+                            {!isCorrectOption && wasSelected && (
+                              <span className="text-rose-700 dark:text-rose-400">
+                                Errata
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* True/False Answer Review */}
+                {q.type === "true-false" && (
+                  <div className="mt-4 grid grid-cols-2 gap-3">
+                    {[true, false].map((val) => {
+                      const correctOpt = q.options?.find((o) => o.correct);
+                      const correctAnswer = correctOpt?.id === "true";
+                      const isCorrectOption = val === correctAnswer;
+                      const wasSelected = resp?.booleanAnswer === val;
+                      let btnClasses =
+                        "p-3 rounded-xl border text-center font-bold text-sm ";
+                      if (isCorrectOption) {
+                        btnClasses +=
+                          "border-emerald-400 dark:border-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200 ";
+                      } else if (wasSelected && !isCorrectOption) {
+                        btnClasses +=
+                          "border-rose-400 dark:border-rose-600 bg-rose-50 dark:bg-rose-900/30 text-rose-800 dark:text-rose-200 ";
+                      } else {
+                        btnClasses +=
+                          "border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-400 ";
+                      }
+                      return (
+                        <div key={String(val)} className={btnClasses}>
+                          <div>{val ? "VERO" : "FALSO"}</div>
+                          <div className="text-xs font-normal mt-1">
+                            {isCorrectOption && wasSelected && (
+                              <span className="text-emerald-700 dark:text-emerald-400">
+                                ✓ Corretta
+                              </span>
+                            )}
+                            {isCorrectOption && !wasSelected && (
+                              <span className="text-emerald-700 dark:text-emerald-400">
+                                Corretta
+                              </span>
+                            )}
+                            {!isCorrectOption && wasSelected && (
+                              <span className="text-rose-700 dark:text-rose-400">
+                                Scelta errata
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Multi True/False Answer Review */}
+                {q.type === "multi-true-false" && q.multiTrueFalseItems && (
+                  <div className="mt-4 space-y-2">
+                    {q.multiTrueFalseItems.map((item, itemIdx) => {
+                      const userAnswer = resp?.multiTrueFalseAnswers?.[item.id];
+                      const isCorrect = userAnswer === item.isTrue;
+                      let rowClasses =
+                        "p-3 rounded-xl border text-sm flex items-center justify-between gap-3 ";
+                      if (userAnswer !== undefined) {
+                        rowClasses += isCorrect
+                          ? "border-emerald-400 dark:border-emerald-600 bg-emerald-50 dark:bg-emerald-900/30 "
+                          : "border-rose-400 dark:border-rose-600 bg-rose-50 dark:bg-rose-900/30 ";
+                      } else {
+                        rowClasses +=
+                          "border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-700/50 ";
+                      }
+                      return (
+                        <div key={item.id} className={rowClasses}>
+                          <span className="text-slate-800 dark:text-slate-200 flex-1">
+                            {String.fromCharCode(97 + itemIdx)}){" "}
+                            {item.statement}
+                          </span>
+                          <div className="flex items-center gap-2 shrink-0 text-xs font-bold">
+                            <span className="text-slate-500 dark:text-slate-400">
+                              Tua:{" "}
+                              {userAnswer === undefined
+                                ? "—"
+                                : userAnswer
+                                  ? "V"
+                                  : "F"}
+                            </span>
+                            <span className="text-slate-500 dark:text-slate-400">
+                              |
+                            </span>
+                            <span
+                              className={
+                                isCorrect
+                                  ? "text-emerald-700 dark:text-emerald-400"
+                                  : "text-rose-700 dark:text-rose-400"
+                              }
+                            >
+                              Corretta: {item.isTrue ? "V" : "F"}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Numeric Input Answer Review */}
+                {q.type === "numeric-input" && (
+                  <div className="mt-4 p-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-sm">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <div>
+                        <span className="text-slate-500 dark:text-slate-400">
+                          Tua risposta:{" "}
+                        </span>
+                        <span
+                          className={`font-mono font-bold ${
+                            isOk
+                              ? "text-emerald-700 dark:text-emerald-400"
+                              : "text-rose-700 dark:text-rose-400"
+                          }`}
+                        >
+                          {resp?.numericValue ?? "—"}
+                        </span>
+                      </div>
+                      <span className="text-slate-300 dark:text-slate-600">
+                        |
+                      </span>
+                      <div>
+                        <span className="text-slate-500 dark:text-slate-400">
+                          Corretta:{" "}
+                        </span>
+                        <span className="font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                          {q.numericAnswer?.value}
+                          {q.numericAnswer?.tolerance
+                            ? ` (±${q.numericAnswer.tolerance})`
+                            : ""}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Free Text Answer Review */}
+                {q.type === "free-text" && (
+                  <div className="mt-4 p-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 text-sm space-y-2">
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400">
+                        Tua risposta:{" "}
+                      </span>
+                      <span
+                        className={`font-medium ${
+                          isOk
+                            ? "text-emerald-700 dark:text-emerald-400"
+                            : "text-rose-700 dark:text-rose-400"
+                        }`}
+                      >
+                        {resp?.textResponse || "—"}
+                      </span>
+                    </div>
+                    {q.numericAnswer && (
+                      <div>
+                        <span className="text-slate-500 dark:text-slate-400">
+                          Valore atteso:{" "}
+                        </span>
+                        <span className="font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                          {q.numericAnswer.value}
+                          {q.numericAnswer.tolerance
+                            ? ` (±${q.numericAnswer.tolerance})`
+                            : ""}
+                        </span>
+                      </div>
+                    )}
+                    {q.freeTextKeywords && q.freeTextKeywords.length > 0 && (
+                      <div>
+                        <span className="text-slate-500 dark:text-slate-400">
+                          Parole chiave attese:{" "}
+                        </span>
+                        <span className="font-medium text-slate-700 dark:text-slate-300">
+                          {q.freeTextKeywords.join(", ")}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -541,9 +884,60 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                     </button>
                   )}
                 </div>
+
+                {/* Navigation Arrows */}
+                <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                  <button
+                    onClick={() => {
+                      setReviewIndex((prev) => Math.max(0, prev - 1));
+                      setTimeout(() => {
+                        reviewCardRef.current?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }, 0);
+                    }}
+                    disabled={reviewIndex === 0}
+                    className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 font-semibold text-sm transition cursor-pointer ${
+                      reviewIndex === 0
+                        ? "bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed"
+                        : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-500"
+                    }`}
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                    <span className="hidden sm:inline">Precedente</span>
+                  </button>
+
+                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                    {reviewIndex + 1} / {session.questions.length}
+                  </span>
+
+                  <button
+                    onClick={() => {
+                      setReviewIndex((prev) =>
+                        Math.min(session.questions.length - 1, prev + 1),
+                      );
+                      setTimeout(() => {
+                        reviewCardRef.current?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }, 0);
+                    }}
+                    disabled={reviewIndex === session.questions.length - 1}
+                    className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 font-semibold text-sm transition cursor-pointer ${
+                      reviewIndex === session.questions.length - 1
+                        ? "bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed"
+                        : "bg-sky-600 text-white hover:bg-sky-700"
+                    }`}
+                  >
+                    <span className="hidden sm:inline">Successiva</span>
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
               </div>
             );
-          })}
+          })()}
         </div>
       </div>
     );
@@ -646,8 +1040,9 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
         <div className="mt-6 space-y-3">
           {/* SINGLE CHOICE */}
           {currentQuestion.type === "single-choice" &&
-            currentQuestion.options?.map((opt) => {
+            currentQuestion.options?.map((opt, idx) => {
               const isSelected = currentAnswers.selectedOptionId === opt.id;
+              const displayLetter = String.fromCharCode(65 + idx); // A, B, C, D...
               return (
                 <button
                   key={opt.id}
@@ -667,7 +1062,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                         : "bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-500 text-slate-600 dark:text-slate-300"
                     }`}
                   >
-                    {opt.id.toUpperCase()}
+                    {displayLetter}
                   </span>
                   <span className="pt-0.5">{opt.text}</span>
                 </button>
