@@ -1,0 +1,181 @@
+[
+  {
+    "id": "B5-IND-LEVA-001",
+    "version": 1,
+    "block": 5,
+    "topic": "indici-redditivita",
+    "tags": ["ROE", "ROI", "leva-finanziaria", "calcolo"],
+    "track": "standard",
+    "difficulty": 2,
+    "type": "single-choice",
+    "stem": "Un'impresa presenta ROI = 14,0%, costo medio del debito finanziario i = 6,0% e rapporto di indebitamento D/E = 1,5. Ipotizzando imposte nulle, a quanto ammonta il ROE?",
+    "options": [
+      { "id": "a", "text": "21,0%", "correct": false },
+      { "id": "b", "text": "26,0%", "correct": true },
+      { "id": "c", "text": "14,0%", "correct": false },
+      { "id": "d", "text": "18,5%", "correct": false }
+    ],
+    "explanation": {
+      "why": "La leva finanziaria spiega perché e quando conviene indebitarsi per aumentare il rendimento dei soci.",
+      "what": "Il ROE è pari alla somma del rendimento operativo ROI e del premio per il rischio finanziario proporzionale allo spread (ROI - i) moltiplicato per D/E.",
+      "how": "ROE = ROI + (ROI - i) * (D/E) = 14% + (14% - 6%) * 1,5 = 14% + (8% * 1,5) = 14% + 12% = 26,0%.",
+      "trap": "Confondere ROE con ROI o dimenticare di moltiplicare lo spread per l'intensità del debito D/E."
+    },
+    "formula": "ROE = ROI + (ROI - i) \\cdot \\frac{D}{E}",
+    "sourceRef": "Sintesi EOA26 [a] p. 18 / Dispensa Bilancio"
+  },
+  {
+    "id": "B1-SIS-COMP-002",
+    "version": 1,
+    "block": 1,
+    "topic": "impresa-sistema-complesso",
+    "tags": ["complicato-vs-complesso", "sistema-aperto", "adattamento"],
+    "track": "essential",
+    "difficulty": 2,
+    "type": "multi-choice",
+    "stem": "Quali tra le seguenti affermazioni caratterizzano un sistema 'complesso' a differenza di un sistema 'complicato'?",
+    "options": [
+      {
+        "id": "a",
+        "text": "È formato da parti interconnesse ma il suo comportamento complessivo non è interamente prevedibile sommando le singole parti",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Può essere compreso e controllato completamente mediante un algoritmo deterministico dettagliato",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "Presenta proprietà emergenti e capacità di auto-organizzazione e adattamento all'ambiente",
+        "correct": true
+      },
+      {
+        "id": "d",
+        "text": "È tipico dei meccanismi chiusi come un orologio meccanico o un motore a combustione",
+        "correct": false
+      }
+    ],
+    "explanation": {
+      "why": "Un ingegnere informatico è abituato a sistemi complicati (software/hardware deterministico), ma l'impresa è un sistema complesso in cui intervengono persone, mercati e incertezza.",
+      "what": "Nel complicato la causalità è lineare e predicibile a priori con adeguate competenze; nel complesso emergono comportamenti non deducibili analiticamente dalle singole parti.",
+      "how": "Le opzioni corrette sono (a) e (c). L'orologio (d) e l'algoritmo deterministico (b) sono invece archetipi di sistemi complicati.",
+      "trap": "Usare 'complicato' e 'complesso' come sinonimi nel linguaggio comune: in economia d'impresa hanno significati tecnici opposti riguardo alla prevedibilità."
+    },
+    "sourceRef": "I-05-03-26-Complicato-vs--complesso.md"
+  },
+  {
+    "id": "B4-BIL-COMP-003",
+    "version": 1,
+    "block": 4,
+    "topic": "principio-competenza",
+    "tags": ["competenza-economica", "cassa", "ricavi-costi"],
+    "track": "essential",
+    "difficulty": 1,
+    "type": "true-false",
+    "stem": "Nel bilancio d'esercizio redatto secondo le norme civilistiche OIC, un ricavo di vendita deve essere iscritto a Conto Economico esclusivamente nel momento in cui avviene l'effettivo incasso monetario in banca.",
+    "options": [
+      { "id": "true", "text": "Vero", "correct": false },
+      { "id": "false", "text": "Falso", "correct": true }
+    ],
+    "explanation": {
+      "why": "Comprendere il principio di competenza è fondamentale per capire perché l'utile economico differisce sempre dal flusso di cassa generato.",
+      "what": "Il bilancio civilistico si basa sul Principio di Competenza Economica, non sul principio di cassa: il ricavo si iscrive quando il processo produttivo è completato e la proprietà/rischio è trasferita (consegna o fatturazione).",
+      "how": "L'affermazione è Falsa: l'incasso differito genera un credito verso clienti nello Stato Patrimoniale, ma il ricavo matura a Conto Economico per competenza al momento della vendita.",
+      "trap": "Identificare il momento economico (ricavo) con il momento finanziario/monetario (incasso di denaro)."
+    },
+    "sourceRef": "V-09-04-26-Dispensa-BILANCIO.md"
+  },
+  {
+    "id": "B2-FOR-GIUR-004",
+    "version": 1,
+    "block": 2,
+    "topic": "forme-giuridiche",
+    "tags": ["SNC", "SRL", "SPA", "responsabilita-patrimoniale"],
+    "track": "standard",
+    "difficulty": 3,
+    "type": "multi-true-false",
+    "stem": "In merito alle forme giuridiche d'impresa previste dall'ordinamento italiano, valuta ciascuna delle seguenti affermazioni indicando se è Vera (V) o Falsa (F):",
+    "multiTrueFalseItems": [
+      {
+        "id": "mtf-1",
+        "statement": "Nelle società in nome collettivo (S.N.C.), i soci rispondono solidalmente e illimitatamente per le obbligazioni sociali con il proprio patrimonio personale.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-2",
+        "statement": "In una Società a Responsabilità Limitata (S.R.L.), in caso di insolvenza i creditori possono rivalersi sui beni personali degli amministratori anche in assenza di colpa grave o frode.",
+        "isTrue": false
+      },
+      {
+        "id": "mtf-3",
+        "statement": "Le quote di partecipazione in una S.R.L. non possono essere rappresentate da azioni né costituire oggetto di offerta al pubblico di prodotti finanziari.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-4",
+        "statement": "Per costituire una S.p.A. ordinaria è richiesto un capitale sociale minimo legale di 10.000 euro.",
+        "isTrue": false
+      }
+    ],
+    "explanation": {
+      "why": "La scelta della forma giuridica definisce la separazione tra rischio d'impresa e patrimonio personale del fondatore/ingegnere.",
+      "what": "Le società di persone (SNC) hanno autonomia patrimoniale imperfetta (responsabilità illimitata); le società di capitali (SRL, SPA) hanno personalità giuridica e autonomia patrimoniale perfetta.",
+      "how": "1: Vera (SNC responsabilità illimitata e solidale). 2: Falsa (nella SRL la responsabilità è limitata al conferimento). 3: Vera (art. 2468 c.c., salvo deroga PMI innovative). 4: Falsa (il capitale minimo legale per la S.p.A. è 50.000 euro, mentre 10.000 euro è il minimo ordinario per la S.r.l.).",
+      "trap": "Sbagliare anche una sola risposta nel V/F multiplo comporta l'annullamento dell'intero punto nel test d'esame!"
+    },
+    "sourceRef": "II-12-03-Laboratorio-forme-giuridiche.md"
+  },
+  {
+    "id": "B6-COS-BEP-005",
+    "version": 1,
+    "block": 6,
+    "topic": "break-even-analysis",
+    "tags": ["costi-fissi", "costi-variabili", "BEP", "quantita-pareggio"],
+    "track": "standard",
+    "difficulty": 2,
+    "type": "numeric-input",
+    "stem": "Una startup ICT sostiene costi fissi annui pari a 120.000 €. Commercializza una licenza software SaaS al prezzo unitario di 500 €, sostenendo costi variabili unitari (server cloud, supporto tecnico, commissioni di pagamento) pari a 200 € per licenza. Quante licenze software deve vendere in un anno per raggiungere il punto di pareggio (Break-Even Point in quantità)?",
+    "numericAnswer": {
+      "value": 400,
+      "tolerance": 0.5,
+      "unit": "licenze"
+    },
+    "explanation": {
+      "why": "Il Break-Even Point è la soglia di sopravvivenza minima: indica quante unità vendere prima che ogni vendita successiva generi vero utile aziendale.",
+      "what": "La quantità di pareggio Q* si calcola dividendo i Costi Fissi Totali per il Margine di Contribuzione Unitario (MdC = Prezzo - Costo Variabile Unitario).",
+      "how": "MdC unitario = p - cv = 500 € - 200 € = 300 €/licenza. Q* = CF / MdC = 120.000 € / 300 € = 400 licenze.",
+      "trap": "Dividere i costi fissi per il prezzo di vendita anziché per il margine di contribuzione unitario (dimenticando i costi variabili)."
+    },
+    "formula": "Q^* = \\frac{CF}{p - cv} = \\frac{CF}{MdC_u}",
+    "sourceRef": "Slide Blocco VI Costi e Break-Even"
+  },
+  {
+    "id": "B1-CAS-OLI-006",
+    "version": 1,
+    "block": 1,
+    "topic": "caso-olivetti",
+    "tags": ["Olivetti", "Programma-101", "tecnologia-vs-mercato", "decisioni"],
+    "track": "advanced",
+    "difficulty": 3,
+    "type": "free-text",
+    "stem": "Nel 1964-1965 Olivetti sviluppò la Programma 101, considerata il primo personal computer al mondo. Tuttavia, la divisione elettronica Olivetti fu ceduta agli americani di General Electric dal 'gruppo di intervento' guidato da Valletta (Fiat) e Mediobanca. Quale fu la motivazione economico-finanziaria ufficiale adottata dagli azionisti dell'epoca per giustificare tale cessione?",
+    "freeTextKeywords": [
+      "debito",
+      "finanziario",
+      "elettronica",
+      "crisi",
+      "meccanica",
+      "investimenti",
+      "settore"
+    ],
+    "explanation": {
+      "why": "Il caso Olivetti dimostra come la superiorità tecnologica non basti se l'impresa non dispone di una struttura finanziaria adeguata a sostenere il fabbisogno di capitale nel lungo periodo.",
+      "what": "Olivetti si era fortemente indebitata per l'acquisizione dell'americana Underwood; il gruppo di intervento considerava l'elettronica un 'neo da estirpare' che assorbiva ingenti capitali senza garantire ritorni a breve termine per gli azionisti tradizionali.",
+      "how": "La motivazione ufficiale fu la necessità di risanare la grave crisi finanziaria e di liquidità dell'azienda, concentrando le risorse sulla produzione meccanica tradizionale considerata più redditizia e sicura nel breve termine.",
+      "trap": "Credere che Olivetti abbia fallito per incapacità tecnologica: fu invece una decisione dettata da miopia manageriale ('short-termism') e da vincoli di indebitamento finanziario."
+    },
+    "caseStudyRef": "Olivetti (Programma 101)",
+    "sourceRef": "I-05-03-26-Sintesi-del-documentario-Olivetti.md"
+  }
+]

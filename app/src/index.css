@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@layer base {
+  :root {
+    --color-eoa-blue: #0284c7;
+    --color-eoa-blue-light: #f0f7ff;
+    --color-eoa-blue-dark: #0369a1;
+    --color-eoa-green: #10b981;
+    --color-eoa-green-light: #f0fdf4;
+    --color-eoa-red: #ef4444;
+    --color-eoa-red-light: #fef2f2;
+    --color-eoa-amber: #f59e0b;
+    --color-eoa-amber-light: #fffbeb;
+    --color-eoa-purple: #8b5cf6;
+    --color-eoa-purple-light: #faf5ff;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased min-h-screen font-sans;
+  }
+}

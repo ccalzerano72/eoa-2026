@@ -1,0 +1,77 @@
+{
+  "block": 1,
+  "title": "Impresa e Decisioni",
+  "subtitle": "L'impresa come sistema aperto e complesso",
+  "guidingQuestion": "Cos'è un'impresa? È diversa da un'azienda? Perché la miglior tecnologia da sola non garantisce il successo?",
+  "caseStudy": {
+    "id": "caso-olivetti",
+    "name": "Olivetti e la Programma 101 (1964-1965)",
+    "company": "Olivetti",
+    "year": "1964",
+    "dilemma": "Se avevamo la tecnologia migliore (il primo personal computer della storia), perché abbiamo perso la leadership cedendo la divisione a General Electric?",
+    "summary": "Olivetti creò con la P101 il primo calcolatore da tavolo programmabile. Tuttavia, l'indebitamento per l'acquisizione della Underwood e l'ingresso di finanzieri miopi portarono alla svendita del settore elettronico, definito 'un neo da estirpare'.",
+    "coreLessons": [
+      "La superiorità tecnica è condizione necessaria ma non sufficiente per la sopravvivenza d'impresa.",
+      "L'equilibrio finanziario e la struttura del capitale determinano la libertà strategica dell'azienda.",
+      "Miopia manageriale (short-termism): privilegiare i dividendi immediati della meccanica rispetto agli investimenti a lungo termine nell'elettronica."
+    ],
+    "keytakeaway": "L'impresa non è un problema ingegneristico isolato: è un sistema complesso vincolato dalla sostenibilità economica e finanziaria."
+  },
+  "topics": [
+    {
+      "id": "complicato-vs-complesso",
+      "title": "Complicato vs. Complesso",
+      "track": "essential",
+      "whyIntro": "Gli ingegneri informatici padroneggiano sistemi complicati (microprocessori, compilatori). Trattare un'impresa come un sistema complicato conduce a fallimenti decisionali sistematici.",
+      "whatBody": "Un sistema complicato è composto da molte parti predicibili e controllabili mediante regole fisse. Un sistema complesso è composto da agenti autonomi (persone, mercati, concorrenti) che interagiscono in modo non lineare, generando proprietà emergenti e mutamenti imprevedibili.",
+      "keypoints": [
+        {
+          "id": "kp-comp-1",
+          "title": "Formula della Complessità",
+          "schematicFormula": "Complicato = scomponibile · prevedibile | Complesso = adattivo · emergente · incerto",
+          "explanation": "Nel complicato la causa determina univocamente l'effetto; nel complesso l'azione retroagisce sull'ambiente in modo non deterministico."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-comp-1",
+          "title": "La trappola dell'illusione di controllo algoritmico",
+          "misconception": "Credere di poter pianificare le dinamiche aziendali come un diagramma di Gantt immutabile o un algoritmo a stati finiti.",
+          "truth": "L'impresa opera in condizioni di incertezza strategica e razionalità limitata (Herbert Simon): occorrono capacità di adattamento e apprendimento continuo."
+        }
+      ],
+      "conceptShifts": [
+        {
+          "id": "shift-comp-1",
+          "title": "Progettazione di sistemi",
+          "technicalPerspective": "Ottimizzare un algoritmo per massimizzare l'efficienza computazionale in condizioni stabili.",
+          "managerialPerspective": "Costruire un'organizzazione resiliente capace di sopravvivere ai cambiamenti esogeni di mercato.",
+          "mindsetShift": "Dall'ottimizzazione statica dell'efficienza alla robustezza sistemica e adattabilità."
+        }
+      ]
+    },
+    {
+      "id": "tradeoff-e-costo-opportunita",
+      "title": "Trade-off e Costo Opportunità",
+      "track": "essential",
+      "whyIntro": "Ogni scelta aziendale impiega risorse scarse (tempo, capitale, competenze) escludendo alternative potenzialmente redditizie.",
+      "whatBody": "Il costo opportunità non è una spesa monetaria registrata a bilancio, ma il mancato beneficio della migliore alternativa a cui si è rinunciato compiendo una scelta.",
+      "keypoints": [
+        {
+          "id": "kp-opp-1",
+          "title": "Costo Opportunità",
+          "schematicFormula": "Costo Opportunità = Rendimento della migliore alternativa sacrificata",
+          "explanation": "Se investo 100k€ in un progetto che rende il 4%, rinunciando a un investimento privo di rischio che rende il 5%, sto distruggendo valore economico pur registrando un utile contabile."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-opp-1",
+          "title": "Confondere costo monetario e costo economico",
+          "misconception": "Ritenere che un'attività o risorsa 'già pagata' sia gratuita nel presente (Sunk Cost Fallacy).",
+          "truth": "I costi affondati (sunk costs) non devono influenzare le decisioni future: conta solo il valore incrementale e il costo opportunità delle risorse ancora impiegabili."
+        }
+      ]
+    }
+  ]
+}
