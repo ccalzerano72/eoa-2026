@@ -761,7 +761,7 @@ export function App() {
               className="mt-6"
             >
               {/* Track Selector Chips */}
-              <div className="flex items-center gap-1.5 flex-wrap mb-5 pb-4 border-b border-slate-100">
+              <div className="flex items-center justify-center gap-1.5 flex-wrap mb-5 pb-4 border-b border-slate-100">
                 <Filter className="h-3.5 w-3.5 text-slate-400 mr-0.5" />
                 {(
                   [

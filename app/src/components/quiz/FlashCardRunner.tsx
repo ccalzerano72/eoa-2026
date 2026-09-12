@@ -216,81 +216,83 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
       </div>
 
       {/* Filters */}
-      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-6 overflow-x-auto pb-2">
-        {/* Block chips */}
-        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1 shrink-0">
-          Blocco:
-        </span>
-        {(
-          [
-            { val: "all" as const, label: "Tutti" },
-            { val: 1 as const, label: "I" },
-            { val: 2 as const, label: "II" },
-            { val: 3 as const, label: "III" },
-            { val: 4 as const, label: "IV" },
-            { val: 5 as const, label: "V" },
-            { val: 6 as const, label: "VI" },
-            { val: 7 as const, label: "VII" },
-          ] as const
-        ).map((b) => (
+      <div className="mb-6 space-y-2">
+        {/* Block filter row */}
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-1">
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1 shrink-0">
+            Blocco:
+          </span>
+          {(
+            [
+              { val: "all" as const, label: "Tutti" },
+              { val: 1 as const, label: "I" },
+              { val: 2 as const, label: "II" },
+              { val: 3 as const, label: "III" },
+              { val: 4 as const, label: "IV" },
+              { val: 5 as const, label: "V" },
+              { val: 6 as const, label: "VI" },
+              { val: 7 as const, label: "VII" },
+            ] as const
+          ).map((b) => (
+            <button
+              key={b.val}
+              onClick={() => setBlockFilter(b.val)}
+              className={`px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
+                blockFilter === b.val
+                  ? "bg-violet-600 text-white shadow-xs"
+                  : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+              }`}
+            >
+              {b.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Source filter row */}
+        <div className="flex items-center justify-center gap-1.5 sm:gap-2">
           <button
-            key={b.val}
-            onClick={() => setBlockFilter(b.val)}
-            className={`px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
-              blockFilter === b.val
-                ? "bg-violet-600 text-white shadow-xs"
+            onClick={() => setSourceFilter("all")}
+            className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
+              sourceFilter === "all"
+                ? "bg-violet-600 text-white"
                 : "bg-slate-100 text-slate-700 hover:bg-slate-200"
             }`}
           >
-            {b.label}
+            Tutto
           </button>
-        ))}
+          <button
+            onClick={() => setSourceFilter("questions")}
+            className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
+              sourceFilter === "questions"
+                ? "bg-sky-600 text-white"
+                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+            }`}
+          >
+            <BookOpen className="h-3 w-3" />{" "}
+            <span className="hidden sm:inline">Domande</span>
+          </button>
+          <button
+            onClick={() => setSourceFilter("formulas")}
+            className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
+              sourceFilter === "formulas"
+                ? "bg-emerald-600 text-white"
+                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+            }`}
+          >
+            <Calculator className="h-3 w-3" />{" "}
+            <span className="hidden sm:inline">Formule</span>
+          </button>
 
-        <div className="w-px h-5 bg-slate-200 mx-1 shrink-0 hidden sm:block" />
+          <div className="w-px h-5 bg-slate-200 mx-1 shrink-0 hidden sm:block" />
 
-        {/* Source chips */}
-        <button
-          onClick={() => setSourceFilter("all")}
-          className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
-            sourceFilter === "all"
-              ? "bg-violet-600 text-white"
-              : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-          }`}
-        >
-          Tutto
-        </button>
-        <button
-          onClick={() => setSourceFilter("questions")}
-          className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
-            sourceFilter === "questions"
-              ? "bg-sky-600 text-white"
-              : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-          }`}
-        >
-          <BookOpen className="h-3 w-3" />{" "}
-          <span className="hidden sm:inline">Domande</span>
-        </button>
-        <button
-          onClick={() => setSourceFilter("formulas")}
-          className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
-            sourceFilter === "formulas"
-              ? "bg-emerald-600 text-white"
-              : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-          }`}
-        >
-          <Calculator className="h-3 w-3" />{" "}
-          <span className="hidden sm:inline">Formule</span>
-        </button>
-
-        <div className="w-px h-5 bg-slate-200 mx-1 shrink-0 hidden sm:block" />
-
-        <button
-          onClick={handleReshuffle}
-          className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition cursor-pointer shrink-0"
-        >
-          <Shuffle className="h-3 w-3" />{" "}
-          <span className="hidden sm:inline">Mescola</span>
-        </button>
+          <button
+            onClick={handleReshuffle}
+            className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition cursor-pointer shrink-0"
+          >
+            <Shuffle className="h-3 w-3" />{" "}
+            <span className="hidden sm:inline">Mescola</span>
+          </button>
+        </div>
       </div>
 
       {/* Card */}
