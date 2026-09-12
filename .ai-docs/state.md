@@ -43,15 +43,27 @@ triggers:
   - Implemented quiz review session preservation and contextual return banner when exploring study blocks from a quiz review.
   - Added dashboard progress widget for quick performance summary.
 
+- **Milestone 1 (M1) & Milestone 3 (M3) — Question Bank Expansion & Parametric Engines**: COMPLETED.
+  - Implemented 8 parametric templates across Blocchi IV, V e VI:
+    - `leverage-roe.ts`: ROE = ROI + (ROI - i) \* (D / E)
+    - `bep-quantity.ts`: Q\* = CF / (p - cv)
+    - `bep-revenue.ts`: R\* = CF / ((p - cv) / p)
+    - `operating-leverage.ts`: GLO = MdC_tot / RO
+    - `safety-margin.ts`: MS = (Q - Q*) / Q * 100
+    - `working-capital.ts`: CCN = AC - PC
+    - `liquidity-ratios.ts`: Quick Ratio = (Liq.Imm + Liq.Diff) / PC
+    - `turnover-working-capital.ts`: CCC = DIO + DSO - DPO (Cash Conversion Cycle)
+  - Curated seed question bank covering all 7 syllabus blocks in `generator/src/seed-data/` across all 6 exam question types.
+  - Implemented batch question generator `generator/src/build-questions.ts` (`npm run generate:questions`).
+  - Generated and validated initial batch of 173 questions exported directly to `app/public/data/questions/sample.json` and `questions.json`.
+
 ## In Progress
 
-- **Milestone 1 (M1) & Milestone 3 (M3) — Question Bank Expansion & Parametric Engines**:
-  - Developing parametric templates for Break-Even Analysis (Blocco VI) and Financial Statements / Working Capital (Blocchi IV & V).
-  - Extracting curated seed questions across all 7 blocks from course transcripts.
+- **Milestone 2 (M2) — Interactive Study Content**:
+  - Populating full didactic study blocks for Blocchi II–VII in `app/public/data/theory/` following the Golden Rule sequence (WHY/WHAT/HOW/TRAP).
 
 ## Planned
 
-- **M2**: Populate complete interactive study content for Blocchi I–VII.
 - **M4**: Batch generation of 4,000–6,000 questions to disk.
 - **M6**: Electron desktop packaging & PWA offline bundle.
 

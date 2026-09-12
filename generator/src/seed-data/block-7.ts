@@ -1,0 +1,166 @@
+import { Question } from "../types";
+
+export const block7Questions: Question[] = [
+  {
+    id: "B7-BMC-NOVE-001",
+    version: 1,
+    block: 7,
+    topic: "business-model-canvas",
+    tags: ["business-model-canvas", "osterwalder", "value-proposition", "customer-segments", "architettura-valore"],
+    track: "essential",
+    difficulty: 1,
+    type: "single-choice",
+    stem: "Nel framework del Business Model Canvas (Osterwalder & Pigneur), qual è il blocco centrale che funge da cerniera tra la parte 'esterna' (mercato, clienti, canali) e la parte 'interna' (risorse, attività chiave, partner)?",
+    options: [
+      {
+        id: "a",
+        text: "La Proposta di Valore (Value Proposition)",
+        correct: true,
+      },
+      {
+        id: "b",
+        text: "La Struttura dei Costi (Cost Structure)",
+        correct: false,
+      },
+      {
+        id: "c",
+        text: "I Flussi di Ricavi (Revenue Streams)",
+        correct: false,
+      },
+      {
+        id: "d",
+        text: "I Partner Chiave (Key Partnerships)",
+        correct: false,
+      },
+    ],
+    explanation: {
+      why: "Il Business Model Canvas è il linguaggio visuale standard per descrivere la logica con cui un'organizzazione crea, distribuisce e cattura valore.",
+      what: "La Proposta di Valore (Value Proposition) è il cuore del Canvas: sintetizza il pacchetto di prodotti/servizi che risolve un problema o soddisfa un bisogno specifico per uno o più segmenti di clientela.",
+      how: "La risposta corretta è (a). La parte destra del Canvas rappresenta il 'front stage' (il valore per il cliente); la parte sinistra è il 'back stage' (l'efficienza operativa); la Value Proposition è il perno centrale.",
+      trap: "Pensare che il punto di partenza del business model sia la tecnologia o il prodotto in sé: il fulcro è il valore percepito dal cliente rispetto ai problemi che intende risolvere (Jobs-to-be-done).",
+    },
+    sourceRef: "X-Lezioni-13-14-e-21-maggio-MATERIALE.md",
+  },
+  {
+    id: "B7-CAS-NOKIA-002",
+    version: 1,
+    block: 7,
+    topic: "caso-nokia-piattaforma",
+    tags: ["Nokia", "business-model-piattaforma", "ecosistema", "sviluppatori", "network-effects"],
+    track: "advanced",
+    difficulty: 3,
+    type: "multi-choice",
+    stem: "Nell'analisi del declino di Nokia nel mercato smartphone (2007-2011) e dell'affermazione di Apple iOS e Google Android, quali fattori critici legati al 'Business Model di Piattaforma' furono determinanti?",
+    options: [
+      {
+        id: "a",
+        text: "La concorrenza si era spostata dal singolo dispositivo hardware (in cui Nokia eccelleva per robustezza e ricezione) alla competizione tra interi ecosistemi software a due versanti (two-sided platforms)",
+        correct: true,
+      },
+      {
+        id: "b",
+        text: "Apple e Google crearono potenti esternalità di rete (network effects) dirette e indirette attirando centinaia di migliaia di sviluppatori terzi tramite SDK unificati e store digitali (App Store e Play Store)",
+        correct: true,
+      },
+      {
+        id: "c",
+        text: "Nokia produceva schermi touch-screen di qualità superiore a quelli di Apple ma costavano troppo poco",
+        correct: false,
+      },
+      {
+        id: "d",
+        text: "Il sistema operativo Symbian di Nokia era frammentato, complesso e ostile per gli sviluppatori terzi, rendendo impossibile competere con la velocità di rilascio delle app concorrenti",
+        correct: true,
+      },
+    ],
+    explanation: {
+      why: "Illustra come la superiorità manifatturiera e hardware sia impotente contro la dinamica delle piattaforme digitali basate su effetti di rete e comunità di sviluppatori.",
+      what: "Una piattaforma a due versanti crea valore facilitando l'interazione tra gruppi distinti di utenti (utilizzatori finali e sviluppatori di app). Più app ci sono, più utenti comprano il telefono; più utenti ci sono, più sviluppatori scrivono app.",
+      how: "Le opzioni corrette sono (a), (b) e (d). L'opzione (c) è palesemente falsa.",
+      trap: "Considerare la caduta di Nokia come un mero ritardo di design: fu una sconfitta sistemica di modello di business (Hardware-centrico vs Ecosistema di piattaforma).",
+    },
+    caseStudyRef: "Nokia vs Apple/Google",
+    sourceRef: "II-11-03-Caso-di-studio-per-la-discussione-NOKIA.md",
+  },
+  {
+    id: "B7-MOD-DIGIT-003",
+    version: 1,
+    block: 7,
+    topic: "archetipi-business-model",
+    tags: ["freemium", "saas", "coda-lunga", "revenue-model"],
+    track: "standard",
+    difficulty: 2,
+    type: "multi-true-false",
+    stem: "In merito agli archetipi di modelli di business digitali diffusi nel settore software e internet, valuta ciascuna affermazione:",
+    multiTrueFalseItems: [
+      {
+        id: "mtf-dig-1",
+        statement: "Nel modello 'Freemium', una vasta base di utenti usufruisce gratuitamente di una versione base del servizio a costo marginale quasi nullo, mentre una minoranza di utenti 'premium' (tipicamente 2-5%) finanzia il servizio acquistando funzionalità avanzate.",
+        isTrue: true,
+      },
+      {
+        id: "mtf-dig-2",
+        statement: "Nel modello 'Coda Lunga' (Long Tail, teorizzato da Chris Anderson), i ricavi complessivi derivano dalla vendita di enormi volumi di pochissimi prodotti blockbuster altamente standardizzati.",
+        isTrue: false,
+      },
+      {
+        id: "mtf-dig-3",
+        statement: "Il modello SaaS (Software as a Service) trasforma un acquisto una tantum di licenze 'on premise' (Capex) in un flusso ricorrente di abbonamenti periodici (Opex per il cliente, MRR/ARR per il fornitore).",
+        isTrue: true,
+      },
+      {
+        id: "mtf-dig-4",
+        statement: "In una piattaforma bilaterale, non è mai ammissibile sussidiare o offrire gratuitamente il servizio a uno dei due versanti per attirare l'altro versante pagante.",
+        isTrue: false,
+      },
+    ],
+    explanation: {
+      why: "Comprendere le dinamiche economiche del software digitale: costo marginale zero, ricavi ricorrenti, sussidi incrociati e aggregazione della domanda.",
+      what: "Freemium fa leva sul costo marginale nullo del digitale; Long Tail monetizza la moltitudine di prodotti di nicchia grazie all'azzeramento dei costi di magazzino fisico; SaaS assicura prevedibilità di cassa; le piattaforme sussidiano regolarmente uno dei versanti (es. motori di ricerca gratuiti per gli utenti, a pagamento per gli inserzionisti).",
+      how: "1: Vera. 2: Falsa (la Coda Lunga vende piccole quantità di una sterminata varietà di prodotti di nicchia). 3: Vera (caratteristica centrale del modello SaaS). 4: Falsa (il sussidio asimmetrico è proprio il meccanismo standard per avviare il volano degli effetti di rete).",
+      trap: "Confondere la Coda Lunga (vendere poco di tanto) con la logica tradizionale dei blockbuster di massa (vendere tanto di pochissimi articoli).",
+    },
+    sourceRef: "X-Lezioni-13-14-e-21-maggio-MATERIALE.md",
+  },
+  {
+    id: "B7-CAS-VINAIO-004",
+    version: 1,
+    block: 7,
+    topic: "caso-antico-vinaio",
+    tags: ["All-Antico-Vinaio", "brand-equity", "scalabilita", "esperienza-cliente", "social-media"],
+    track: "standard",
+    difficulty: 2,
+    type: "single-choice",
+    stem: "Quale leva strategica fondamentale ha consentito a 'All'Antico Vinaio' di trasformare una tradizionale paninoteca locale fiorentina in un brand internazionale scalabile (aperture a Milano, Roma, New York, Los Angeles)?",
+    options: [
+      {
+        id: "a",
+        text: "La trasformazione dell'offerta alimentare in un'esperienza visiva iconica ad altissimo engagement social ('Bada come la fuma'), amplificata dalla standardizzazione maniacale dei processi operativi e della qualità degli ingredienti",
+        correct: true,
+      },
+      {
+        id: "b",
+        text: "La vendita a prezzi sottocosto e il ricorso massiccio a crediti agevolati a fondo perduto",
+        correct: false,
+      },
+      {
+        id: "c",
+        text: "La sostituzione totale del personale umano con robot antropomorfi di cucina",
+        correct: false,
+      },
+      {
+        id: "d",
+        text: "La stipula di contratti di fornitura esclusiva monopolistica con tutte le catene di supermercati della Toscana",
+        correct: false,
+      },
+    ],
+    explanation: {
+      why: "Mostra come la combinazione di proposta di valore esperienziale, social marketing organico e scalabilità operativa dei processi possa creare un brand globale anche nel settore tradizionale del food retail.",
+      what: "Il business model combina: Value Proposition iconica (abbondanza, tipicità toscana, calore umano), canali moderni (storytelling social su Instagram/TikTok con community fedele) e replicabilità dei layout di punto vendita.",
+      how: "La risposta corretta è (a): connubio tra engagement virale ed efficienza della formula produttiva.",
+      trap: "Ritenere che il successo sia solo un 'colpo di fortuna' virale: senza standardizzazione di tempi di servizio, formazione e approvvigionamenti la scalabilità oltreoceano sarebbe fallita.",
+    },
+    caseStudyRef: "All'Antico Vinaio",
+    sourceRef: "X-Lezioni-13-e-14-maggio-SLIDE.md",
+  },
+];

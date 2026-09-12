@@ -1,0 +1,147 @@
+import { Question } from "../types";
+
+export const block4Questions: Question[] = [
+  {
+    id: "B4-BIL-COMP-001",
+    version: 1,
+    block: 4,
+    topic: "principio-competenza",
+    tags: ["competenza-economica", "principio-cassa", "ricavi", "costi", "fallimento-per-cassa"],
+    track: "essential",
+    difficulty: 1,
+    type: "true-false",
+    stem: "Nel bilancio d'esercizio civilistico redatto secondo i principi contabili nazionali (OIC), un costo di acquisto per materie prime deve essere registrato a Conto Economico per intero nell'esercizio in cui la fattura viene pagata con bonifico bancario, a prescindere dal loro effettivo utilizzo nella produzione.",
+    options: [
+      { id: "true", text: "Vero", correct: false },
+      { id: "false", text: "Falso", correct: true },
+    ],
+    explanation: {
+      why: "Comprendere la differenza tra competenza economica e cassa monetaria è la chiave per capire perché un'azienda in utile contabile può trovarsi a corto di liquidità e fallire.",
+      what: "Il principio di competenza economica (art. 2423-bis c.c.) impone di imputare a Conto Economico solo i costi dei fattori produttivi effettivamente consumati per generare i ricavi dell'esercizio. Le materie acquistate ma non ancora consumate finiscono nello Stato Patrimoniale come 'Rimanenze finali' di magazzino.",
+      how: "L'affermazione è Falsa: il momento del pagamento monetario (cassa) è irrilevante ai fini della competenza economica a Conto Economico.",
+      trap: "Confondere la dinamica economica (costi/ricavi per competenza) con la dinamica finanziaria (uscite/entrate di denaro in banca).",
+    },
+    sourceRef: "V-09-04-26-Dispensa-BILANCIO.md",
+  },
+  {
+    id: "B4-SP-RICLASS-002",
+    version: 1,
+    block: 4,
+    topic: "riclassificazione-stato-patrimoniale",
+    tags: ["stato-patrimoniale", "criterio-finanziario", "liquidita", "esigibilita", "immobilizzazioni"],
+    track: "standard",
+    difficulty: 2,
+    type: "single-choice",
+    stem: "Nella riclassificazione finanziaria dello Stato Patrimoniale, secondo quale criterio logico vengono riordinate e aggregate le voci dell'Attivo e del Passivo?",
+    options: [
+      {
+        id: "a",
+        text: "L'Attivo in base al grado di liquidità (attitudine a trasformarsi in denaro entro o oltre 12 mesi); il Passivo in base al grado di esigibilità (scadenza temporale dei debiti entro o oltre 12 mesi)",
+        correct: true,
+      },
+      {
+        id: "b",
+        text: "In base all'ordine alfabetico dei fornitori e dei cespiti aziendali",
+        correct: false,
+      },
+      {
+        id: "c",
+        text: "Esclusivamente in base al valore fiscale deducibile dichiarato all'Agenzia delle Entrate",
+        correct: false,
+      },
+      {
+        id: "d",
+        text: "L'Attivo in base al costo storico di acquisto e il Passivo in base al tasso di interesse nominale",
+        correct: false,
+      },
+    ],
+    explanation: {
+      why: "Lo schema civilistico ex art. 2424 c.c. privilegia la destinazione economica, mentre l'analista finanziario deve comprendere la solvibilità e la capacità di rimborso dell'impresa.",
+      what: "La riclassificazione finanziaria separa l'Attivo in: Attivo Fisso (Immobilizzazioni nette con tempo di realizzo > 12 mesi) e Attivo Circolante (liquidità immediate, differite e scorte, con realizzo < 12 mesi); e il Passivo in: Patrimonio Netto (Mezzi Propri), Passivo Consolidato (debiti a medio/lungo termine) e Passivo Corrente (debiti a breve termine < 12 mesi).",
+      how: "La risposta corretta è (a): liquidità per l'attivo ed esigibilità per il passivo con spartiacque a 12 mesi.",
+      trap: "Considerare un credito verso clienti a 24 mesi come attivo circolante: se scade oltre i 12 mesi va riclassificato nelle immobilizzazioni finanziarie.",
+    },
+    sourceRef: "VII-22-04-26-Schemi-di-bilancio-SLIDE.md",
+  },
+  {
+    id: "B4-CE-EBITDA-003",
+    version: 1,
+    block: 4,
+    topic: "ebitda-ebit-riclassificazione",
+    tags: ["EBITDA", "MOL", "EBIT", "ammortamenti", "conto-economico-valore-aggiunto"],
+    track: "standard",
+    difficulty: 2,
+    type: "multi-true-false",
+    stem: "In merito alla riclassificazione del Conto Economico a Valore Aggiunto e agli aggregati intermedi EBITDA ed EBIT, valuta ciascuna affermazione:",
+    multiTrueFalseItems: [
+      {
+        id: "mtf-ce-1",
+        statement: "L'EBITDA (o MOL - Margine Operativo Lordo) misura la redditività operativa caratteristica dell'impresa prima di considerare ammortamenti, svalutazioni, oneri finanziari e imposte.",
+        isTrue: true,
+      },
+      {
+        id: "mtf-ce-2",
+        statement: "La differenza tra EBITDA ed EBIT (Reddito Operativo) è costituita dalla somma delle imposte sul reddito d'esercizio (IRES e IRAP).",
+        isTrue: false,
+      },
+      {
+        id: "mtf-ce-3",
+        statement: "L'ammortamento rappresenta la ripartizione contabile del costo pluriennale di un bene strumentale lungo la sua vita economica utile, non una contemporanea uscita fisica di cassa.",
+        isTrue: true,
+      },
+      {
+        id: "mtf-ce-4",
+        statement: "Un'impresa con EBIT positivo non può mai avere un Utile Netto negativo in fondo al Conto Economico.",
+        isTrue: false,
+      },
+    ],
+    explanation: {
+      why: "L'EBITDA è il parametro regina utilizzato dagli investitori internazionali per stimare il potenziale di generazione di cassa operativa dell'azienda.",
+      what: "EBITDA = Valore Aggiunto − Costo del Personale. EBIT = EBITDA − Ammortamenti e Accantonamenti. Utile Netto = EBIT ± Gestione Finanziaria ± Gestione Straordinaria − Imposte.",
+      how: "1: Vera (definizione di EBITDA). 2: Falsa (la differenza tra EBITDA ed EBIT sono gli Ammortamenti e gli Accantonamenti, non le imposte). 3: Vera (l'ammortamento è un costo non monetario). 4: Falsa (oneri finanziari molto elevati o imposte possono azzerare l'EBIT e portare a perdita netta).",
+      trap: "Credere che l'ammortamento sia un assegno o un bonifico pagato alla fine dell'anno: l'uscita monetaria è avvenuta quando l'impianto è stato acquistato.",
+    },
+    formula: "\\text{EBITDA} = \\text{Valore Aggiunto} - \\text{Costo del Personale}",
+    sourceRef: "VII-22-04-26-Schemi-di-bilancio-SLIDE.md",
+  },
+  {
+    id: "B4-RATEI-RISCONTI-004",
+    version: 1,
+    block: 4,
+    topic: "ratei-e-risconti",
+    tags: ["risconti", "ratei", "scritture-assestamento", "competenza"],
+    track: "advanced",
+    difficulty: 3,
+    type: "single-choice",
+    stem: "Il 1° novembre un'azienda paga anticipatamente con bonifico bancario un canone annuo di affitto per i server cloud pari a 12.000 € (copertura dal 01/11 al 31/10 dell'anno successivo). Al 31 dicembre, quale scrittura di assestamento deve essere rilevata a bilancio per rispettare il principio di competenza?",
+    options: [
+      {
+        id: "a",
+        text: "Un Risconto Attivo di 10.000 € nello Stato Patrimoniale, rinviando al futuro la quota di costo non ancora maturata (10 mesi su 12)",
+        correct: true,
+      },
+      {
+        id: "b",
+        text: "Un Rateo Passivo di 2.000 € nello Stato Patrimoniale per registrare un debito verso il fornitore cloud",
+        correct: false,
+      },
+      {
+        id: "c",
+        text: "L'intero importo di 12.000 € deve rimanere imputato come costo a Conto Economico perché il bonifico è già stato eseguito",
+        correct: false,
+      },
+      {
+        id: "d",
+        text: "Un Risconto Passivo di 2.000 € nel Patrimonio Netto",
+        correct: false,
+      },
+    ],
+    explanation: {
+      why: "Permette di rettificare i costi e i ricavi a cavallo d'anno evitando di distorcere la redditività dell'esercizio corrente.",
+      what: "I risconti attivi sono quote di costi la cui manifestazione finanziaria (pagamento) è già avvenuta anticipatamente, ma la cui competenza economica è in parte posticipata all'esercizio successivo.",
+      how: "Costo totale annuo: 12.000 € / 12 mesi = 1.000 €/mese. Competenza esercizio in corso (novembre e dicembre): 2 mesi = 2.000 €. Quota da rinviare all'anno successivo (gennaio-ottobre): 10 mesi = 10.000 €, iscritti come Risconto Attivo nell'Attivo dello Stato Patrimoniale.",
+      trap: "Confondere Ratei (manifestazione finanziaria posticipata per costi/ricavi già maturati) con Risconti (manifestazione finanziaria anticipata per costi/ricavi da rinviare). Ricorda la regola mnemonica: Risconto = Rinvio!",
+    },
+    sourceRef: "V-09-04-26-Dispensa-BILANCIO.md",
+  },
+];

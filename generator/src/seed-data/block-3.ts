@@ -1,0 +1,146 @@
+import { Question } from "../types";
+
+export const block3Questions: Question[] = [
+  {
+    id: "B3-GOV-MOD-001",
+    version: 1,
+    block: 3,
+    topic: "modelli-governance",
+    tags: ["governance", "sistema-tradizionale", "dualistico", "monistico", "collegio-sindacale"],
+    track: "standard",
+    difficulty: 2,
+    type: "single-choice",
+    stem: "Nel 'sistema tradizionale' di amministrazione e controllo di una S.p.A. previsto dal Codice Civile italiano, a quale organo è affidato il controllo di legalità e di vigilanza sull'osservanza della legge e dello statuto?",
+    options: [
+      {
+        id: "a",
+        text: "Al Collegio Sindacale",
+        correct: true,
+      },
+      {
+        id: "b",
+        text: "Al Consiglio di Sorveglianza",
+        correct: false,
+      },
+      {
+        id: "c",
+        text: "Al Comitato per il Controllo sulla Gestione",
+        correct: false,
+      },
+      {
+        id: "d",
+        text: "All'Assemblea Straordinaria degli Azionisti",
+        correct: false,
+      },
+    ],
+    explanation: {
+      why: "La governance definisce l'architettura dei pesi e contrappesi (checks and balances) per impedire abusi del management a danno di azionisti e stakeholder.",
+      what: "Il modello tradizionale si articola in: Assemblea dei soci (indirizzo e nomina), Consiglio di Amministrazione (gestione operativa) e Collegio Sindacale (organo indipendente di controllo sull'amministrazione e sul rispetto di legge e statuto).",
+      how: "La risposta corretta è (a). Il Consiglio di Sorveglianza (b) appartiene al sistema dualistico (di matrice tedesca), mentre il Comitato per il controllo sulla gestione (c) è tipico del sistema monistico (anglosassone).",
+      trap: "Confondere gli organi di controllo dei tre sistemi: Collegio Sindacale = Tradizionale; Consiglio di Sorveglianza = Dualistico; Comitato interno al CdA = Monistico.",
+    },
+    sourceRef: "IV-25-03-26-SINTESI.md",
+  },
+  {
+    id: "B3-AGE-TEO-002",
+    version: 1,
+    block: 3,
+    topic: "teoria-agenzia",
+    tags: ["teoria-agenzia", "principale-agente", "conflitto-interessi", "asimmetria-informativa"],
+    track: "standard",
+    difficulty: 2,
+    type: "true-false",
+    stem: "Nella teoria dell'agenzia (Jensen & Meckling), il conflitto di agenzia tra azionisti ('principale') e manager ('agente') nasce dal fatto che i manager possono perseguire obiettivi personali (come prestigio, crescita dimensionale o remunerazioni a breve termine) a scapito della massimizzazione del valore a lungo termine per gli azionisti.",
+    options: [
+      { id: "true", text: "Vero", correct: true },
+      { id: "false", text: "Falso", correct: false },
+    ],
+    explanation: {
+      why: "Spiega perché nelle grandi public companies o nelle scaleup finanziate da Venture Capital servono meccanismi di allineamento degli incentivi (stock options, clausole di vesting).",
+      what: "Il problema del Principale-Agente si verifica quando una parte (il principale) delega l'amministrazione del proprio capitale a un'altra (l'agente) in condizioni di asimmetria informativa e divergenza di funzioni di utilità.",
+      how: "L'affermazione è Vera: la separazione tra proprietà e controllo genera costi di agenzia (spese di monitoraggio, incentivi e perdite residue).",
+      trap: "Assumere che il management agisca sempre spontaneamente nel miglior interesse degli azionisti in assenza di idonei contratti di monitoraggio e incentivo.",
+    },
+    sourceRef: "IV-25-03-26-SINTESI.md",
+  },
+  {
+    id: "B3-FIN-FASI-003",
+    version: 1,
+    block: 3,
+    topic: "finanziamento-startup",
+    tags: ["venture-capital", "business-angel", "bootstrapping", "seed", "scaleup"],
+    track: "essential",
+    difficulty: 2,
+    type: "multi-true-false",
+    stem: "Riguardo ai canali e alle fasi di finanziamento di una nuova impresa tecnologica (startup/scaleup), valuta le seguenti affermazioni:",
+    multiTrueFalseItems: [
+      {
+        id: "mtf-fin-1",
+        statement: "Il 'Bootstrapping' consiste nell'avviare e finanziare l'impresa esclusivamente con le risorse personali dei fondatori e con i primi flussi di cassa autofinanziati dai clienti.",
+        isTrue: true,
+      },
+      {
+        id: "mtf-fin-2",
+        statement: "I 'Business Angels' sono fondi istituzionali di private equity che investono esclusivamente capitali pubblici superiori a 20 milioni di euro in aziende già quotate.",
+        isTrue: false,
+      },
+      {
+        id: "mtf-fin-3",
+        statement: "Il Venture Capital fornisce 'smart money', ovvero non solo capitale finanziario di rischio ma anche competenze manageriali, network e supporto strategico.",
+        isTrue: true,
+      },
+      {
+        id: "mtf-fin-4",
+        statement: "Uno strumento di tipo SAFE (Simple Agreement for Future Equity) stabilisce immediatamente al momento del versamento il numero esatto di quote sociali senza attendere il round futuro.",
+        isTrue: false,
+      },
+    ],
+    explanation: {
+      why: "Comprendere le fasi di capitalizzazione permette a un ingegnere fondatore di scegliere la fonte giusta al momento giusto senza cedere anzitempo il controllo.",
+      what: "La sequenza tipica va da FFF (Friends, Family, Fools) e Bootstrapping $\\rightarrow$ Pre-Seed/Seed con Business Angels $\\rightarrow$ Round Series A/B/C con fondi di Venture Capital.",
+      how: "1: Vera (autofinanziamento puro). 2: Falsa (i Business Angel sono persone fisiche facoltose che investono capitali propri in fase early-stage). 3: Vera (caratteristica essenziale del VC). 4: Falsa (il SAFE rimanda la determinazione del prezzo e delle quote al verificarsi del round di equity successivo 'priced round').",
+      trap: "Confondere i Business Angels (singoli individui informali) con i Fondi di Venture Capital (gestori professionali di fondi chiusi con comitato investimenti formale).",
+    },
+    sourceRef: "V-01-04-26-Finanziamento-start-up.md",
+  },
+  {
+    id: "B3-EQ-DEB-004",
+    version: 1,
+    block: 3,
+    topic: "equity-vs-debito",
+    tags: ["equity", "debito", "costo-del-capitale", "remunerazione-residuale", "rischio-finanziario"],
+    track: "standard",
+    difficulty: 2,
+    type: "multi-choice",
+    stem: "Quali differenze sostanziali intercorrono tra il finanziamento mediante Capitale Proprio (Equity) e mediante Capitale di Terzi / Debito Bancario?",
+    options: [
+      {
+        id: "a",
+        text: "Il debito comporta un'obbligazione contrattuale di rimborso del capitale e pagamento degli interessi a scadenze prefissate, indipendentemente dai risultati economici dell'azienda",
+        correct: true,
+      },
+      {
+        id: "b",
+        text: "L'equity attribuisce agli investitori una remunerazione residuale (dividendi subordinati all'esistenza di utile) e diritti amministrativi di voto nelle decisioni strategiche",
+        correct: true,
+      },
+      {
+        id: "c",
+        text: "Il debito diluisce le quote percentuali di proprietà e il controllo dei fondatori sulla governance societaria",
+        correct: false,
+      },
+      {
+        id: "d",
+        text: "Gli oneri finanziari sul debito sono fiscalmente deducibili dal reddito imponibile (tax shield), mentre i dividendi distribuiti agli azionisti non costituiscono costo deducibile",
+        correct: true,
+      },
+    ],
+    explanation: {
+      why: "La combinazione tra debito ed equity (struttura finanziaria) determina il costo medio ponderato del capitale (WACC) e il profilo di rischio fallimentare.",
+      what: "Il debito offre deducibilità fiscale (scudo fiscale) e non diluisce la governance, ma crea rigidità monetaria e rischio di insolvenza; l'equity è flessibile (non richiede rimborsi forzati a scadenza fissa) ma diluisce il controllo e ha un costo atteso più alto per gli investitori.",
+      how: "Le opzioni corrette sono (a), (b) e (d). L'opzione (c) è errata: il debito non altera la percentuale di quote proprietarie.",
+      trap: "Credere che il capitale proprio sia 'gratis' perché non ha una rata fissa come la banca: l'equity è in realtà la fonte più onerosa per l'impresa a causa dell'elevato premio per il rischio richiesto dai soci.",
+    },
+    sourceRef: "V-01-04-26-Finanziamento-start-up.md",
+  },
+];

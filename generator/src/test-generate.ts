@@ -1,19 +1,21 @@
 import { instantiateTemplate } from "./engine";
-import { leverageRoeTemplate } from "./templates/leverage-roe";
+import { allParametricTemplates } from "./templates";
 
-console.log("=== Test Generatore Parametrico EOA 2026 ===\n");
+console.log("=== Test Generatore Parametrico EOA 2026 (Tutti i Template) ===\n");
 
-for (let i = 1; i <= 3; i++) {
-  const q = instantiateTemplate(leverageRoeTemplate, i);
-  console.log(`[Domanda #${i}] ID: ${q.id}`);
-  console.log(`Testo: ${q.stem}`);
-  console.log("Opzioni:");
-  q.options?.forEach((opt) => {
-    console.log(
-      `  (${opt.id}) ${opt.text} ${opt.correct ? "  <-- CORRETTA" : ""}`,
-    );
-  });
-  console.log(`Spiegazione (HOW): ${q.explanation.how}`);
-  console.log(`Trappola: ${q.explanation.trap}`);
-  console.log("--------------------------------------------------\n");
+for (const template of allParametricTemplates) {
+  console.log(`--- Test Template: [${template.id}] (Blocco ${template.block}) ---`);
+  for (let i = 1; i <= 2; i++) {
+    const q = instantiateTemplate(template, i);
+    console.log(`[#${i}] ID: ${q.id} | Tipo: ${q.type}`);
+    console.log(`Testo: ${q.stem}`);
+    if (q.options) {
+      console.log("Opzioni:");
+      q.options.forEach((opt) => {
+        console.log(`  (${opt.id}) ${opt.text} ${opt.correct ? "  <-- CORRETTA" : ""}`);
+      });
+    }
+    console.log(`HOW: ${q.explanation.how}`);
+    console.log(`Trappola: ${q.explanation.trap}\n`);
+  }
 }

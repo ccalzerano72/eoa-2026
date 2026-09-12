@@ -65,19 +65,28 @@ export function sampleVariable(v: ParametricVariable): number {
 }
 
 /**
- * Interpolate placeholders like "{roi}" inside a template string.
+ * Interpolate placeholders like "{roi}" or expressions like "{q * (p - cv)}" inside a template string.
  */
 export function interpolate(
   template: string,
-  context: Record<string, number | string>,
+  displayContext: Record<string, number | string>,
+  numericContext: Record<string, number> = {},
 ): string {
+  // Aggregate all available numeric values
+  const numCtx: Record<string, number> = { ...numericContext };
+  for (const [k, v] of Object.entries(displayContext)) {
+    if (typeof v === "number" && numCtx[k] === undefined) {
+      numCtx[k] = v;
+    }
+  }
+
   return template.replace(/\{([a-zA-Z0-9_+\-*/().\s]+)\}/g, (match, expr) => {
     const trimmed = expr.trim();
-    if (context[trimmed] !== undefined) {
-      return String(context[trimmed]);
+    if (displayContext[trimmed] !== undefined) {
+      return String(displayContext[trimmed]);
     }
     try {
-      const val = evaluateMath(trimmed, context as Record<string, number>);
+      const val = evaluateMath(trimmed, numCtx);
       if (!isNaN(val)) {
         return formatNumberIT(val, 1);
       }
@@ -128,7 +137,7 @@ export function instantiateTemplate(
   const correctValRaw = evaluateMath(template.correctFormula, context);
   const correctVal = Number(correctValRaw.toFixed(1));
 
-  // Build display context (both raw numbers and formatted with commas)
+  // Build display context (both formatted with units/commas and raw numeric values)
   const displayContext: Record<string, string | number> = { ...context };
   for (const [k, v] of Object.entries(context)) {
     const varDef = template.variables[k];
@@ -145,10 +154,11 @@ export function instantiateTemplate(
     template.unit ?? "",
   );
 
-  const stem = interpolate(template.stemTemplate, displayContext);
+  const stem = interpolate(template.stemTemplate, displayContext, context);
   const how = interpolate(
     template.explanationTemplate.howTemplate,
     displayContext,
+    context,
   );
 
   const questionId = `${template.id}-INST-${String(seq).padStart(4, "0")}`;
