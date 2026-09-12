@@ -486,7 +486,7 @@ export function App() {
             <div className="rounded-3xl bg-linear-to-br from-slate-900 via-sky-950 to-indigo-950 p-8 sm:p-10 text-white shadow-xl">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-sky-200 border border-white/15 backdrop-blur-xs mb-4">
                 <Sparkles className="h-3.5 w-3.5 text-amber-300" />
-                <span>Strumento Didattico Offline-First</span>
+                <span>Strumento Didattico Interattivo</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight leading-tight">
                 Preparazione e Simulazione Esame EOA 2026
@@ -1112,9 +1112,7 @@ export function App() {
             EOA Exam Trainer 2026 • C.d.S. Ingegneria Informatica, Università di
             Pisa
           </span>
-          <span className="font-mono text-slate-400">
-            Offline-first • Architettura pre-generata su disco
-          </span>
+          <span className="font-mono text-slate-400">© C. Calzerano 2026</span>
         </div>
       </footer>
     </div>

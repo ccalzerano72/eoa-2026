@@ -106,7 +106,7 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
         <div>
           <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold mb-2">
             <TrendingUp className="h-3.5 w-3.5" />
-            <span>Tracciamento Permanente Locale (Offline-first)</span>
+            <span>Tracciamento Permanente Locale</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
             Storico Prove & Statistiche di Preparazione
