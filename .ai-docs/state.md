@@ -103,6 +103,14 @@ triggers:
     - Updated live question count display on dashboard.
   - Production build and oxlint validated with 0 errors.
 
+- **New Quiz Modes — Flash Cards, Track Selector, Traps Quiz**: COMPLETED.
+  - Implemented `FlashCardRunner.tsx`: standalone flip-card component with keyboard navigation (←/→/Space/Enter), block and source filters (Domande/Formule), shuffle, dual data sources (5,621 questions + all formulasData formulas), no timer/scoring.
+  - Implemented **Tiered Track Selector** (◆ Essenziale / ■ Standard / ○ Approfondito / Tutti): global filter on Dashboard that restricts all quiz modes and flash cards to the selected track (essential: 1,269 Qs, standard: 3,915 Qs, advanced: 437 Qs).
+  - Implemented **Quiz Trappole Dedicate**: `traps-only` mode in `QuizRunner` with immediate explanation reveal, full PERCHÉ/COSA/COME breakdown, and prominent red ⚠ "Trappola Concettuale — Non Dare per Scontato" card. 20 random questions per session. Rose-colored status bar and mode banner.
+  - Added `"flash-cards"` to `QuizMode` type union in `quiz.ts`.
+  - Dashboard "Modalità di Studio Avanzate" panel with two action cards (Flash Cards, Quiz Trappole) and inline track filter chips.
+  - Production build (`tsc` + `vite build`) and oxlint validated with 0 errors.
+
 ## In Progress
 
 - None.

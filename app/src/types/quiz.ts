@@ -6,7 +6,8 @@ export type QuizMode =
   | "by-block" // focus on a single block
   | "traps-only" // focus on misconception-targeted questions
   | "calculations" // focus on numeric input & financial formulas
-  | "case-studies"; // focus on real company scenarios (Olivetti, Nokia, Ferrari...)
+  | "case-studies" // focus on real company scenarios (Olivetti, Nokia, Ferrari...)
+  | "flash-cards"; // rapid front/back card review — no scoring, no timer
 
 export interface UserResponse {
   questionId: string;

@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import type { Question, SyllabusBlock } from "./types/question";
+import type { Question, SyllabusBlock, StudyTrack } from "./types/question";
 import type { StudyBlock } from "./types/study";
 import type {
   QuizSessionState,
@@ -8,10 +8,12 @@ import type {
   QuizMode,
 } from "./types/quiz";
 import { QuizRunner } from "./components/quiz/QuizRunner";
+import { FlashCardRunner } from "./components/quiz/FlashCardRunner";
 import { StudyBlockViewer } from "./components/study/StudyBlockViewer";
 import { StatsHistoryView } from "./components/stats/StatsHistoryView";
 import { FormulaCheatsheetView } from "./components/formula/FormulaCheatsheetView";
 import type { FormulaItem } from "./data/formulas";
+import { formulasData } from "./data/formulas";
 import { getQuizHistory, computeOverallStats } from "./services/storage";
 import {
   GraduationCap,
@@ -25,6 +27,9 @@ import {
   TrendingUp,
   ChevronRight,
   Calculator,
+  AlertTriangle,
+  Layers,
+  Filter,
 } from "lucide-react";
 
 type NavTab = "dashboard" | "study" | "quiz" | "formula" | "stats";
@@ -43,6 +48,9 @@ export function App() {
   const [studyBlock, setStudyBlock] = useState<StudyBlock | null>(null);
   const [targetTopicId, setTargetTopicId] = useState<string | undefined>();
   const [quizMode, setQuizMode] = useState<QuizMode>("exam-simulation");
+  const [activeTrackFilter, setActiveTrackFilter] = useState<
+    StudyTrack | "all"
+  >("all");
 
   // Active quiz session and key (to preserve review or re-render when needed)
   const [activeReviewSession, setActiveReviewSession] =
@@ -216,16 +224,26 @@ export function App() {
     navigateTo({ tab: "quiz" });
   };
 
-  const handleStartFullExam = () => {
+  // Helper: filter questions by active track
+  const filterByTrack = useCallback(
+    (pool: Question[]): Question[] => {
+      if (activeTrackFilter === "all") return pool;
+      return pool.filter((q) => q.track === activeTrackFilter);
+    },
+    [activeTrackFilter],
+  );
+
+  const handleStartFullExam = useCallback(() => {
     setActiveReviewSession(null);
-    const examQuestions = sampleExamQuestions(allQuestions, 4);
+    const pool = filterByTrack(allQuestions);
+    const examQuestions = sampleExamQuestions(pool, 4);
     setActiveQuestions(
-      examQuestions.length > 0 ? examQuestions : allQuestions.slice(0, 28),
+      examQuestions.length > 0 ? examQuestions : pool.slice(0, 28),
     );
     setQuizMode("exam-simulation");
     setQuizRunnerKey(`exam-${Date.now()}`);
     navigateTo({ tab: "quiz" });
-  };
+  }, [allQuestions, filterByTrack, sampleExamQuestions, navigateTo]);
 
   const handlePracticeFormula = useCallback(
     (formula: FormulaItem) => {
@@ -279,6 +297,26 @@ export function App() {
     setActiveReviewSession(session);
     setQuizHistory(getQuizHistory());
   };
+
+  const handleStartFlashCards = useCallback(() => {
+    setActiveReviewSession(null);
+    setQuizMode("flash-cards");
+    setQuizRunnerKey(`flash-${Date.now()}`);
+    navigateTo({ tab: "quiz" });
+  }, [navigateTo]);
+
+  const handleStartTrapsQuiz = useCallback(() => {
+    // All questions have traps — prioritize variety across blocks
+    const pool = filterByTrack(allQuestions);
+    const shuffled = [...pool].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 20);
+
+    setActiveReviewSession(null);
+    setActiveQuestions(selected);
+    setQuizMode("traps-only");
+    setQuizRunnerKey(`traps-${Date.now()}`);
+    navigateTo({ tab: "quiz" });
+  }, [allQuestions, filterByTrack, navigateTo]);
 
   const overallStats = useMemo(
     () => computeOverallStats(quizHistory),
@@ -680,6 +718,151 @@ export function App() {
                 </li>
               </ul>
             </div>
+
+            {/* Study Modes Panel — Flash Cards, Trappole, Track Selector */}
+            <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
+                    <Sparkles className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm sm:text-base">
+                      Modalità di Studio Avanzate
+                    </h4>
+                    <p className="text-xs text-slate-500">
+                      Ripasso rapido, allenamento sulle trappole e filtro per
+                      percorso
+                    </p>
+                  </div>
+                </div>
+
+                {/* Track Selector Chips */}
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <Filter className="h-3.5 w-3.5 text-slate-400 mr-0.5" />
+                  {(
+                    [
+                      {
+                        val: "all" as const,
+                        label: "Tutti",
+                        badge: "",
+                        color: "slate",
+                      },
+                      {
+                        val: "essential" as const,
+                        label: "Essenziale",
+                        badge: "◆",
+                        color: "emerald",
+                      },
+                      {
+                        val: "standard" as const,
+                        label: "Standard",
+                        badge: "■",
+                        color: "sky",
+                      },
+                      {
+                        val: "advanced" as const,
+                        label: "Approfondito",
+                        badge: "○",
+                        color: "purple",
+                      },
+                    ] as const
+                  ).map((t) => {
+                    const isActive = activeTrackFilter === t.val;
+                    return (
+                      <button
+                        key={t.val}
+                        onClick={() => setActiveTrackFilter(t.val)}
+                        className={`px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
+                          isActive
+                            ? t.val === "all"
+                              ? "bg-slate-800 text-white"
+                              : t.val === "essential"
+                                ? "bg-emerald-600 text-white"
+                                : t.val === "standard"
+                                  ? "bg-sky-600 text-white"
+                                  : "bg-purple-600 text-white"
+                            : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        }`}
+                      >
+                        {t.badge ? `${t.badge} ` : ""}
+                        {t.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Flash Cards */}
+                <button
+                  onClick={handleStartFlashCards}
+                  className="group rounded-2xl border border-violet-200 bg-violet-50/50 p-5 text-left hover:bg-violet-50 hover:shadow-md transition cursor-pointer"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-100 text-violet-700 group-hover:bg-violet-200 transition">
+                      <Layers className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-slate-900 text-sm">
+                        🃏 Flash Cards
+                      </h5>
+                      <p className="text-xs text-slate-500">
+                        Ripasso rapido fronte/retro
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Gira le card per rivedere concetti, formule e spiegazioni.
+                    Nessun punteggio, nessun timer — puro ripasso veloce.
+                  </p>
+                </button>
+
+                {/* Traps Quiz */}
+                <button
+                  onClick={handleStartTrapsQuiz}
+                  className="group rounded-2xl border border-rose-200 bg-rose-50/50 p-5 text-left hover:bg-rose-50 hover:shadow-md transition cursor-pointer"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-700 group-hover:bg-rose-200 transition">
+                      <AlertTriangle className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-slate-900 text-sm">
+                        ⚠ Quiz Trappole
+                      </h5>
+                      <p className="text-xs text-slate-500">
+                        20 quesiti sulle confusioni tipiche
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Allenati sui «Non Dare per Scontato»: le trappole
+                    concettuali che fanno sbagliare all'esame.
+                  </p>
+                </button>
+              </div>
+
+              {activeTrackFilter !== "all" && (
+                <div className="mt-4 flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
+                  <Filter className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                  <span>
+                    Filtro attivo:{" "}
+                    <strong className="text-slate-800">
+                      {activeTrackFilter === "essential"
+                        ? "◆ Essenziale"
+                        : activeTrackFilter === "standard"
+                          ? "■ Standard"
+                          : "○ Approfondito"}
+                    </strong>{" "}
+                    — le sessioni quiz e flash cards useranno solo domande di
+                    questo percorso (
+                    {filterByTrack(allQuestions).length.toLocaleString()}{" "}
+                    quesiti).
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
         )}
 
@@ -798,7 +981,14 @@ export function App() {
         {/* QUIZ TAB */}
         {activeTab === "quiz" && (
           <div>
-            {activeQuestions.length > 0 ? (
+            {quizMode === "flash-cards" ? (
+              <FlashCardRunner
+                key={quizRunnerKey}
+                questions={filterByTrack(allQuestions)}
+                formulas={formulasData}
+                onExit={() => navigateTo({ tab: "dashboard" })}
+              />
+            ) : activeQuestions.length > 0 ? (
               <QuizRunner
                 key={quizRunnerKey}
                 questions={activeQuestions}

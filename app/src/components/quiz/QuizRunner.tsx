@@ -204,7 +204,10 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
   const handleNext = () => {
     if (!hasAnsweredCurrent) return;
 
-    if (mode === "free-practice" && !showImmediateExplanation) {
+    if (
+      (mode === "free-practice" || mode === "traps-only") &&
+      !showImmediateExplanation
+    ) {
       setShowImmediateExplanation(true);
       return;
     }
@@ -489,9 +492,29 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
   return (
     <div className="mx-auto max-w-2xl py-6 px-4">
       {/* Top Status Bar */}
+      {mode === "traps-only" && (
+        <div className="flex items-center gap-2.5 rounded-2xl bg-rose-50 border border-rose-200 p-3 mb-4 text-sm">
+          <AlertCircle className="h-5 w-5 text-rose-600 shrink-0" />
+          <div>
+            <span className="font-bold text-rose-900">
+              Modalità Trappole Concettuali
+            </span>
+            <span className="text-rose-700 text-xs block">
+              Ogni quesito testa una confusione tipica. Dopo la risposta vedrai
+              la trappola evidenziata.
+            </span>
+          </div>
+        </div>
+      )}
       <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-xs border border-slate-200 mb-6">
         <div className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-600 text-white font-mono text-xs font-bold">
+          <span
+            className={`flex h-7 w-7 items-center justify-center rounded-lg font-mono text-xs font-bold ${
+              mode === "traps-only"
+                ? "bg-rose-600 text-white"
+                : "bg-sky-600 text-white"
+            }`}
+          >
             {session.currentIndex + 1}
           </span>
           <span className="text-slate-500 text-sm">
@@ -504,11 +527,18 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           Blocco {currentQuestion.block} • {currentQuestion.track.toUpperCase()}
         </div>
 
-        {/* Timer */}
-        <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-700">
-          <Clock className="h-4 w-4 text-sky-600" />
-          <span>{formatTimer(remainingSeconds)}</span>
-        </div>
+        {/* Timer — only show for timed modes */}
+        {session.timeLimitSeconds ? (
+          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-700">
+            <Clock className="h-4 w-4 text-sky-600" />
+            <span>{formatTimer(remainingSeconds)}</span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-400">
+            <Clock className="h-4 w-4 text-slate-300" />
+            <span>{formatTimer(session.elapsedSeconds)}</span>
+          </div>
+        )}
       </div>
 
       {/* Main Question Card */}
@@ -720,20 +750,73 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           )}
         </div>
 
-        {/* Immediate explanation in free-practice mode */}
+        {/* Immediate explanation in free-practice / traps-only mode */}
         {showImmediateExplanation && (
-          <div className="mt-6 rounded-2xl bg-amber-50/80 border border-amber-200 p-4 text-sm text-slate-900 space-y-2">
-            <div className="flex items-center gap-2 font-bold text-amber-900">
-              <AlertCircle className="h-4 w-4 text-amber-600" />
-              <span>Spiegazione del Quesito:</span>
+          <div className="mt-6 space-y-3">
+            {/* Full explanation block */}
+            <div className="rounded-2xl bg-amber-50/80 border border-amber-200 p-4 text-sm text-slate-900 space-y-2">
+              <div className="flex items-center gap-2 font-bold text-amber-900">
+                <AlertCircle className="h-4 w-4 text-amber-600" />
+                <span>Spiegazione del Quesito:</span>
+              </div>
+              {mode === "traps-only" && (
+                <>
+                  <div>
+                    <span className="font-semibold text-slate-700">
+                      Perché:{" "}
+                    </span>
+                    <span className="text-slate-600 text-xs">
+                      {currentQuestion.explanation.why}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-slate-700">
+                      Cosa:{" "}
+                    </span>
+                    <span className="text-slate-600 text-xs">
+                      {currentQuestion.explanation.what}
+                    </span>
+                  </div>
+                </>
+              )}
+              <div>
+                {mode === "traps-only" && (
+                  <span className="font-semibold text-slate-700">Come: </span>
+                )}
+                <span className="text-slate-800 text-xs font-mono">
+                  {currentQuestion.explanation.how}
+                </span>
+              </div>
             </div>
-            <p className="text-slate-800 text-xs">
-              {currentQuestion.explanation.how}
-            </p>
+
+            {/* Prominent trap card for traps-only mode */}
             {currentQuestion.explanation.trap && (
-              <p className="text-rose-900 text-xs font-medium border-t border-amber-200 pt-2">
-                <strong>Trappola:</strong> {currentQuestion.explanation.trap}
-              </p>
+              <div
+                className={`rounded-2xl p-4 text-sm ${
+                  mode === "traps-only"
+                    ? "bg-rose-50 border-2 border-rose-300 shadow-sm"
+                    : "bg-amber-50/80 border border-amber-200 pt-0"
+                }`}
+              >
+                {mode === "traps-only" ? (
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 font-bold text-rose-900">
+                      <AlertCircle className="h-5 w-5 text-rose-600" />
+                      <span className="uppercase tracking-wider text-xs">
+                        ⚠ Trappola Concettuale — Non Dare per Scontato
+                      </span>
+                    </div>
+                    <p className="text-rose-900 text-sm leading-relaxed font-medium">
+                      {currentQuestion.explanation.trap}
+                    </p>
+                  </div>
+                ) : (
+                  <p className="text-rose-900 text-xs font-medium border-t border-amber-200 pt-2">
+                    <strong>Trappola:</strong>{" "}
+                    {currentQuestion.explanation.trap}
+                  </p>
+                )}
+              </div>
             )}
           </div>
         )}
