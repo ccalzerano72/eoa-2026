@@ -55,3 +55,33 @@ export interface QuizScoreSummary {
     { total: number; correct: number; percentage: number }
   >;
 }
+
+export interface QuizHistoryRecord {
+  id: string;
+  timestamp: number; // epoch ms
+  formattedDate: string; // e.g. "12/09/2026, 15:30"
+  mode: QuizMode;
+  summary: QuizScoreSummary;
+  session: QuizSessionState;
+}
+
+export interface OverallStats {
+  totalSessions: number;
+  examSimulationsCount: number;
+  freePracticeCount: number;
+  passedSimulationsCount: number;
+  passRatePercentage: number;
+  averageScaledGrade30: number;
+  bestScaledGrade30: number;
+  totalQuestionsAnswered: number;
+  totalCorrectAnswers: number;
+  totalTimeSeconds: number;
+  blockStats: Record<
+    SyllabusBlock,
+    {
+      totalQuestions: number;
+      correctQuestions: number;
+      accuracyPercentage: number;
+    }
+  >;
+}

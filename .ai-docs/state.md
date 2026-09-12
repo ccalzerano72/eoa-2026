@@ -36,6 +36,13 @@ triggers:
   - Implemented `generator/`: engine with formula evaluation, constraint checking, distractor synthesis, and tested with `B5-IND-LEVA-ROE`.
   - Validated production build with `tsc` and `vite build`.
 
+- **Milestone 5 (M5) — Progress Dashboard & Persistence**: COMPLETED (Local storage persistence + History & Stats View + Navigation History).
+  - Implemented `storage.ts` service with automatic local storage saving (`eoa_quiz_history_v1`) of completed tests and simulations.
+  - Implemented `StatsHistoryView.tsx`: KPI cards (total simulations, pass rate, average grade /30, best grade, study time), 7-block mastery radar, and past session review table.
+  - Implemented in-app navigation stack with Back/Forward arrow buttons (`←` / `→`) and keyboard shortcuts (`Alt+Left`, `Alt+Right`).
+  - Implemented quiz review session preservation and contextual return banner when exploring study blocks from a quiz review.
+  - Added dashboard progress widget for quick performance summary.
+
 ## In Progress
 
 - **Milestone 1 (M1) & Milestone 3 (M3) — Question Bank Expansion & Parametric Engines**:
@@ -46,7 +53,6 @@ triggers:
 
 - **M2**: Populate complete interactive study content for Blocchi I–VII.
 - **M4**: Batch generation of 4,000–6,000 questions to disk.
-- **M5**: Progress Dashboard & Persistence (LocalStorage / IndexedDB).
 - **M6**: Electron desktop packaging & PWA offline bundle.
 
 ## Blocked

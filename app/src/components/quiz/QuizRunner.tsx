@@ -1,11 +1,13 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import type {
   UserResponse,
   QuizSessionState,
   QuizScoreSummary,
+  QuizMode,
 } from "../../types/quiz";
 import type { Question, SyllabusBlock } from "../../types/question";
 import { FormulaBlock } from "../ui/FormulaBlock";
+import { saveQuizRecord } from "../../services/storage";
 import {
   Clock,
   ArrowRight,
@@ -18,36 +20,47 @@ import {
   Award,
   BookOpen,
   ExternalLink,
+  BarChart3,
 } from "lucide-react";
 
 interface QuizRunnerProps {
   questions: Question[];
-  mode?: "exam-simulation" | "free-practice";
+  mode?: QuizMode;
   timeLimitSeconds?: number;
-  onFinish?: (summary: QuizScoreSummary) => void;
+  initialSession?: QuizSessionState;
+  onFinish?: (summary: QuizScoreSummary, session: QuizSessionState) => void;
   onExit?: () => void;
   onNavigateToStudy?: (block: SyllabusBlock, topicId: string) => void;
+  onViewStats?: () => void;
 }
 
 export const QuizRunner: React.FC<QuizRunnerProps> = ({
   questions,
   mode = "exam-simulation",
   timeLimitSeconds = 30 * 60, // default 30 mins
+  initialSession,
   onFinish,
   onExit,
   onNavigateToStudy,
+  onViewStats,
 }) => {
-  const [session, setSession] = useState<QuizSessionState>(() => ({
-    id: `quiz-${Date.now()}`,
-    mode,
-    questions,
-    currentIndex: 0,
-    responses: {},
-    startTime: Date.now(),
-    elapsedSeconds: 0,
-    timeLimitSeconds: mode === "exam-simulation" ? timeLimitSeconds : undefined,
-    isFinished: false,
-  }));
+  const [session, setSession] = useState<QuizSessionState>(
+    () =>
+      initialSession || {
+        id: `quiz-${Date.now()}`,
+        mode,
+        questions,
+        currentIndex: 0,
+        responses: {},
+        startTime: Date.now(),
+        elapsedSeconds: 0,
+        timeLimitSeconds:
+          mode === "exam-simulation" ? timeLimitSeconds : undefined,
+        isFinished: false,
+      },
+  );
+
+  const hasSavedRef = useRef(Boolean(initialSession?.isFinished));
 
   const [currentAnswers, setCurrentAnswers] = useState<{
     selectedOptionId?: string;
@@ -272,10 +285,14 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
   }, [session]);
 
   useEffect(() => {
-    if (session.isFinished && onFinish) {
-      onFinish(summary);
+    if (session.isFinished && !hasSavedRef.current) {
+      hasSavedRef.current = true;
+      saveQuizRecord(session, summary);
+      if (onFinish) {
+        onFinish(summary, session);
+      }
     }
-  }, [session.isFinished, summary, onFinish]);
+  }, [session.isFinished, summary, session, onFinish]);
 
   const formatTimer = (secs: number) => {
     const m = Math.floor(secs / 60);
@@ -316,12 +333,19 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             %) • Tempo impiegato: {formatTimer(summary.timeTakenSeconds)}
           </p>
 
+          <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold">
+            <CheckCircle className="h-3.5 w-3.5" />
+            <span>Risultato salvato nello Storico</span>
+          </div>
+
           {/* Action buttons */}
-          <div className="mt-6 flex justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             <button
               onClick={() => {
+                hasSavedRef.current = false;
                 setSession((prev) => ({
                   ...prev,
+                  id: `quiz-${Date.now()}`,
                   currentIndex: 0,
                   responses: {},
                   startTime: Date.now(),
@@ -330,15 +354,24 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 }));
                 setCurrentAnswers({});
               }}
-              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-700 transition"
+              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-700 transition cursor-pointer"
             >
               <RotateCcw className="h-4 w-4" />
               Ripeti Test
             </button>
+            {onViewStats && (
+              <button
+                onClick={onViewStats}
+                className="inline-flex items-center gap-2 rounded-xl bg-indigo-50 border border-indigo-200 px-5 py-2.5 font-semibold text-indigo-700 hover:bg-indigo-100 transition cursor-pointer"
+              >
+                <BarChart3 className="h-4 w-4" />
+                Vedi Storico & Statistiche
+              </button>
+            )}
             {onExit && (
               <button
                 onClick={onExit}
-                className="rounded-xl border border-slate-300 px-5 py-2.5 font-semibold text-slate-700 hover:bg-slate-100 transition"
+                className="rounded-xl border border-slate-300 px-5 py-2.5 font-semibold text-slate-700 hover:bg-slate-100 transition cursor-pointer"
               >
                 Torna al Menu
               </button>
