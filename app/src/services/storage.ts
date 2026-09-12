@@ -307,9 +307,9 @@ export function getThemePreference(): ThemePreference {
     if (stored === "light" || stored === "dark" || stored === "system") {
       return stored;
     }
-    return "system";
+    return "dark";
   } catch {
-    return "system";
+    return "dark";
   }
 }
 
