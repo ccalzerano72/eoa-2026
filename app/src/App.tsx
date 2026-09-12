@@ -12,6 +12,7 @@ import { FlashCardRunner } from "./components/quiz/FlashCardRunner";
 import { StudyBlockViewer } from "./components/study/StudyBlockViewer";
 import { StatsHistoryView } from "./components/stats/StatsHistoryView";
 import { FormulaCheatsheetView } from "./components/formula/FormulaCheatsheetView";
+import { DuPontPlayground } from "./components/simulator/DuPontPlayground";
 import type { FormulaItem } from "./data/formulas";
 import { formulasData } from "./data/formulas";
 import { getQuizHistory, computeOverallStats } from "./services/storage";
@@ -31,10 +32,17 @@ import {
   Layers,
   Filter,
   LayoutGrid,
+  Zap,
 } from "lucide-react";
 import { CollapsibleSection } from "./components/ui/CollapsibleSection";
 
-type NavTab = "dashboard" | "study" | "quiz" | "formula" | "stats";
+type NavTab =
+  | "dashboard"
+  | "study"
+  | "quiz"
+  | "formula"
+  | "stats"
+  | "simulator";
 
 interface NavEntry {
   tab: NavTab;
@@ -423,6 +431,18 @@ export function App() {
             >
               <Calculator className="h-4 w-4" />
               <span className="hidden sm:inline">Formulario</span>
+            </button>
+            <button
+              onClick={() => navigateTo({ tab: "simulator" })}
+              className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
+                activeTab === "simulator"
+                  ? "bg-purple-50 text-purple-700 font-bold"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+              }`}
+              title="Simulatori Interattivi"
+            >
+              <Zap className="h-4 w-4" />
+              <span className="hidden md:inline">Simulatori</span>
             </button>
             <button
               onClick={() => navigateTo({ tab: "stats" })}
@@ -865,6 +885,62 @@ export function App() {
                 </div>
               )}
             </CollapsibleSection>
+
+            {/* Interactive Simulators Section */}
+            <CollapsibleSection
+              title="Strumenti Interattivi"
+              subtitle="Simulatori dinamici per comprendere le relazioni tra variabili di bilancio"
+              icon={<Zap className="h-5 w-5 text-purple-600" />}
+              badge={
+                <span className="hidden sm:inline text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 border border-purple-200">
+                  NUOVO
+                </span>
+              }
+              defaultExpanded={false}
+              className="mt-6"
+            >
+              <div className="grid grid-cols-1 gap-4">
+                {/* DuPont Playground Card */}
+                <button
+                  onClick={() => navigateTo({ tab: "simulator" })}
+                  className="group rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-purple-50 p-5 text-left hover:shadow-lg hover:border-indigo-300 transition cursor-pointer"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg group-hover:scale-105 transition shrink-0">
+                      <Zap className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h5 className="font-bold text-slate-900">
+                          DuPont Playground
+                        </h5>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-700 border border-purple-200">
+                          Interattivo
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                        Modifica slider di bilancio (Fatturato, Costi, Debito,
+                        Equity, Tasso d'interesse) e osserva in tempo reale
+                        l'impatto su <strong>ROI</strong>, <strong>ROE</strong>{" "}
+                        e lo <strong>spread (ROI − i)</strong>.
+                      </p>
+                      <div className="flex flex-wrap gap-2 text-xs">
+                        <span className="px-2 py-1 rounded-lg bg-emerald-100 text-emerald-700 font-semibold">
+                          Leva Finanziaria
+                        </span>
+                        <span className="px-2 py-1 rounded-lg bg-sky-100 text-sky-700 font-semibold">
+                          Modigliani-Miller
+                        </span>
+                        <span className="px-2 py-1 rounded-lg bg-amber-100 text-amber-700 font-semibold">
+                          Scenari Precaricati
+                        </span>
+                      </div>
+                    </div>
+                    <ChevronRight className="h-5 w-5 text-slate-400 group-hover:text-indigo-600 transition shrink-0 mt-1" />
+                  </div>
+                </button>
+              </div>
+            </CollapsibleSection>
           </div>
         )}
 
@@ -1019,6 +1095,13 @@ export function App() {
             onStartExam={handleStartFullExam}
             onNavigateToStudy={(b) => handleNavigateToStudy(b)}
           />
+        )}
+
+        {/* SIMULATOR TAB */}
+        {activeTab === "simulator" && (
+          <div className="mx-auto max-w-5xl py-8 px-4 sm:px-6">
+            <DuPontPlayground />
+          </div>
         )}
       </main>
 
