@@ -46,6 +46,74 @@
       ]
     },
     {
+      "id": "costi-prodotto-vs-periodo-e-inventariabilita",
+      "title": "Costi di Prodotto vs Costi di Periodo e Inventariabilità",
+      "track": "standard",
+      "whyIntro": "Perché le imposte sul reddito d'esercizio non possono mai diventare parte del costo del magazzino, mentre l'ammortamento dei macchinari sì? La distinzione prodotto/periodo è una scelta contabile fondamentale che determina quando un costo colpisce il Conto Economico.",
+      "whatBody": "La distinzione tra costi di prodotto e costi di periodo risponde alla domanda: 'Quando questo costo va a ridurre il reddito?'.\n\n1. Costi di Prodotto (Inventariabili — criterio Absorption Cost):\nValore delle risorse associabili, in modo diretto o indiretto, alla realizzazione del prodotto. Composizione: Materiali Diretti (MD) + Manodopera Diretta (MOD) + Overhead di Produzione (OH) = Costo Pieno Industriale.\nEffetto contabile: valorizzano le rimanenze nello Stato Patrimoniale (Attivo Circolante). Diventano 'Costo del Venduto' (COGS) e colpiscono il Conto Economico SOLO nel momento in cui il prodotto viene venduto — anche se la spesa è avvenuta mesi prima.\nSono 'inventariabili' perché 'viaggiano' col prodotto finché questo è in magazzino.\n\n2. Costi di Periodo (Non Inventariabili):\nVoci non direttamente associabili alla realizzazione del prodotto. Composizione: Costi Commerciali e di Vendita (commissioni, pubblicità, ammortamento automezzi di vendita), Costi Amministrativi (stipendi dirigenti, consulenze, trasferte, ammortamento uffici), Costi Generali (interessi passivi, R&S, imposte).\nEffetto contabile: vanno a Conto Economico nel periodo in cui sono sostenuti, indipendentemente dalle vendite. Non passano mai per il magazzino.\n\nLe 3 Famiglie dei Costi di Produzione (che alimentano l'inventariabilità):\n• Materiali Diretti (MD): materie prime e materiali tracciabili oggettivamente all'oggetto di costo. Esempi: lamiera per la Fiat 500, grano per la pasta, microchip per un PC.\n• Manodopera Diretta (MOD): tempo del personale che trasforma fisicamente l'input in output. Esempi: operai di linea, saldatori, addetti all'assemblaggio. Misura: ore lavorate × costo orario.\n• Overhead di Produzione (OH / Factory Overhead): tutti gli altri costi connessi al funzionamento della fabbrica. Esempi: riscaldamento stabilimento, ammortamento impianti, manutenzione, supervisione di reparto, materiali ausiliari, manodopera indiretta.\n\nTrend storico critico: con l'automazione, la quota di MOD diretta diminuisce drasticamente, mentre gli overhead di produzione crescono. Allocare correttamente gli OH è diventato il problema chiave della contabilità direzionale moderna.",
+      "howDetails": "Verifica Rapida — Quiz Tipico d'Esame:\nQuale dei seguenti costi è un costo di PERIODO (non inventariabile) in un'azienda manifatturiera?\nA. Ammortamento dei macchinari di produzione → Costo di PRODOTTO (OH di produzione, inventariabile)\nB. Imposte patrimoniali sugli immobili societari → Costo di PERIODO (vanno al CE nell'anno in cui si sostengono)\nC. Costi dei materiali diretti → Costo di PRODOTTO (inventariabile)\nD. Elettricità per illuminare l'impianto di produzione → Costo di PRODOTTO (OH, inventariabile)\nRisposta corretta: B. Le imposte sono costi di periodo perché non sono associabili alla trasformazione del prodotto.\nTrappola: le imposte 'sembrano' un costo dell'impresa genericamente connesso all'attività, ma non entrano nel costo industriale del prodotto né valorizzano il magazzino.",
+      "keypoints": [
+        {
+          "id": "kp-prodperiodo-1",
+          "title": "Regola Prodotto vs Periodo",
+          "schematicFormula": "Costo di Prodotto (MD + MOD + OH) → Rimanenze SP → Costo del Venduto CE (alla vendita) | Costo di Periodo (Commerciali + Amm.vi + Generali) → CE nell'anno in cui si sostengono",
+          "explanation": "La distinzione determina il timing dell'impatto sul reddito: i costi di prodotto seguono il prodotto fino alla vendita; i costi di periodo colpiscono il CE subito."
+        },
+        {
+          "id": "kp-prodperiodo-2",
+          "title": "Le 3 Famiglie dei Costi di Produzione",
+          "schematicFormula": "Costo Industriale = MD (materie dirette) + MOD (manodopera diretta) + OH (overhead di produzione)",
+          "explanation": "Solo questi tre componenti sono inventariabili; tutto il resto (commerciale, amm.vo, R&S, oneri finanziari, imposte) è costo di periodo."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-prodperiodo-1",
+          "title": "Classificare le imposte come costo di prodotto",
+          "misconception": "Credere che le imposte patrimoniali sugli immobili dello stabilimento siano un costo di produzione inventariabile, analogamente all'ammortamento degli impianti.",
+          "truth": "Le imposte non sono associate alla trasformazione fisica del prodotto: sono costi di periodo che colpiscono il CE nell'anno in cui si sostengono, indipendentemente dalle vendite e dal livello di magazzino.",
+          "example": "Domanda d'esame classica (fonte: X-Lezioni-13-e-14-maggio-SLIDE): l'ammortamento dei macchinari è costo di prodotto (OH); le imposte patrimoniali sugli immobili sono costo di periodo."
+        }
+      ]
+    },
+    {
+      "id": "matrice-speciali-comuni-diretti-indiretti",
+      "title": "Matrice Speciali/Comuni × Diretti/Indiretti e il Concetto Relazionale di Costo",
+      "track": "standard",
+      "whyIntro": "Molti studenti confondono 'costo fisso' con 'costo indiretto' e 'costo variabile' con 'costo diretto'. Sono due assi ortogonali e indipendenti: la stessa voce di energia elettrica può essere diretta o indiretta, speciale o comune, fissa o variabile — tutto dipende dall'oggetto di costo e dallo scopo della rilevazione.",
+      "whatBody": "La contabilità direzionale utilizza quattro aggettivi per classificare i costi, raggruppabili in due coppie con logiche diverse:\n\nCoppia 1 — Oggettività della Misurazione (tradizione italiana):\n• Costi Speciali: la misurazione è oggettivamente possibile tramite la formula qtà × prezzo. Esempi: 10 ore MOD × 25€/h = 250€. Sono riconducibili in modo univoco all'oggetto di costo.\n• Costi Comuni: la misurazione oggettiva è impossibile; richiedono un coefficiente di ripartizione. Esempi: affitto dello stabilimento ripartito su m² tra più reparti produttivi.\n\nCoppia 2 — Modalità di Attribuzione (scelta gestionale):\n• Costi Diretti: tracciabili all'oggetto di costo in modo oggettivo ED economicamente conveniente. Attribuzione diretta senza basi di riparto.\n• Costi Indiretti: riconducibili a più oggetti contemporaneamente, oppure economicamente sconveniente attribuirli a uno solo. Richiedono allocazione tramite base di riparto.\n\nLa Regola Fondamentale (Mappa di Intersezione):\n- Speciale + Diretto: sempre possibile (es. materia prima per il prodotto A).\n- Speciale + Indiretto: possibile quando la misurazione è oggettiva ma economicamente costosa (es. energia elettrica con contatore di reparto, ma ripartita tra più prodotti).\n- Comune + Indiretto: sempre (es. affitto stabilimento su più reparti).\n- Comune + Diretto: NON ESISTE. Un costo che richiede una base di riparto per essere misurato non può essere attribuito direttamente.\n\nIl Concetto Relazionale (punto critico della fonte):\nLa classificazione diretto/indiretto non è una proprietà intrinseca del costo — è relazionale rispetto all'oggetto di costo scelto.\nEsempio: lo stipendio del caporeparto della Manutenzione:\n- Se ODC = reparto Manutenzione → DIRETTO (il suo lavoro è interamente dedicato a quel reparto)\n- Se ODC = reparto produttivo Tornitura → INDIRETTO (il caporeparto serve più reparti tramite servizi di manutenzione)\n- Se ODC = singolo prodotto Fiat 500 → INDIRETTO (doppia allocazione: centro→centro→prodotto)\n\nRegola Operativa: ampliando l'oggetto di costo (da prodotto a reparto a divisione), aumenta il numero di voci che diventano dirette. Stringendo l'oggetto, aumentano le indirette.\n\nLe 4 Combinazioni nella Matrice Diretti/Variabili (esempio Fiat Punto come ODC):\n- Variabile + Diretto: costo dei pneumatici (varia col volume, tracciabile al prodotto).\n- Variabile + Indiretto: energia elettrica rilevata per tutto lo stabilimento con più linee attive (varia col volume, ma non tracciabile al singolo prodotto).\n- Fisso + Diretto: stipendio del supervisore della linea di assemblaggio Punto (fisso nel periodo, tracciabile alla linea).\n- Fisso + Indiretto: costo della locazione dello stabilimento (fisso e comune a tutti i prodotti).",
+      "howDetails": "Le Basi di Riparto e i 4 Principi-Guida:\nQuando un costo è indiretto, occorre scegliere una base di riparto. Le principali basi sono:\n- A valore: costo manodopera, costo materie prime, costo primo.\n- Quantitative: ore di manodopera (MOD), ore macchina, quantità materie prime, volume di produzione.\n\nI 4 principi per scegliere la base migliore:\n1. Causale: rapporto causa-effetto tra costo e oggetto (es. costo mensa ripartito in base al numero di dipendenti).\n2. Proporzionale: proporzionalità rispetto a una base (es. ammortamento ripartito in base al volume di produzione).\n3. Benefici ricevuti: ripartizione in base al beneficio (es. pubblicità in base all'aumento di vendite generato).\n4. Capacità di supportare: i costi della direzione gravano sulle divisioni più profittevoli.\n\nLa sintesi 'Una voce, sei classificazioni' (es. energia elettrica del reparto produttivo):\n1. Per funzione: di produzione\n2. Per tempo: costo di prodotto\n3. Per bilancio: inventariabile\n4. Per inventariabilità: in absorption, non in variable costing\n5. Per tracciabilità: indiretta sul singolo prodotto\n6. Per oggettività: speciale se c'è un contatore di reparto dedicato",
+      "keypoints": [
+        {
+          "id": "kp-matrice-1",
+          "title": "La Regola Chiave: Comune + Diretto Non Esiste",
+          "schematicFormula": "Speciale×Diretto=Sì | Speciale×Indiretto=Sì | Comune×Indiretto=Sì | Comune×Diretto=NON ESISTE",
+          "explanation": "Se un costo è comune (richiede coefficiente di riparto per essere misurato), non può per definizione essere attribuito direttamente: il concetto è autocontradittorio."
+        },
+        {
+          "id": "kp-matrice-2",
+          "title": "Diretto/Indiretto è Relazionale",
+          "schematicFormula": "Stesso costo → Diretto rispetto all'oggetto ampio (reparto) → Indiretto rispetto all'oggetto stretto (prodotto singolo)",
+          "explanation": "Ampliando l'oggetto di costo cresce il numero di voci dirette; stringendolo, crescono le indirette. La classificazione non è assoluta."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-matrice-1",
+          "title": "Confondere 'fisso' con 'indiretto' e 'variabile' con 'diretto'",
+          "misconception": "Credere che i costi fissi siano sempre indiretti e i costi variabili sempre diretti.",
+          "truth": "Le due dimensioni sono ortogonali e indipendenti. Un costo fisso può essere diretto (es. stipendio del supervisore di una singola linea di produzione: fisso nel periodo, tracciabile alla linea). Un costo variabile può essere indiretto (es. energia elettrica totale dello stabilimento: varia con i volumi, ma non tracciabile al singolo prodotto).",
+          "example": "Matrice Fiat Punto: stipendio supervisore linea = Fisso+Diretto; energia totale stabilimento = Variabile+Indiretto."
+        },
+        {
+          "id": "trap-matrice-2",
+          "title": "Affermare che un costo comune può essere diretto",
+          "misconception": "Rispondere che i costi comuni della direzione generale sono diretti rispetto alle divisioni aziendali.",
+          "truth": "I costi comuni richiedono per definizione una base di riparto: 'comune' implica che non esiste una misura oggettiva univoca del consumo da parte di un singolo oggetto. Un costo comune può essere trattato come diretto solo allargando l'oggetto di costo finché il costo non cade interamente all'interno di quell'oggetto."
+        }
+      ]
+    },
+    {
       "id": "direct-costing-vs-full-costing-e-mdc",
       "title": "Direct Costing vs. Full Costing e il Margine di Contribuzione (MdC)",
       "track": "essential",
@@ -75,7 +143,7 @@
       "track": "essential",
       "whyIntro": "Prima di lanciare qualsiasi nuovo servizio o prodotto, investitori e banche chiedono: 'Qual è il volume minimo di vendita necessario per non perdere denaro?'. Il modello di Break-Even risponde con precisione algebrica.",
       "whatBody": "Il Break-Even Point (Punto di Pareggio, $BEP$) è il volume di attività in cui i Ricavi Totali eguagliano esattamente i Costi Totali, azzerando il Reddito Operativo ($RO = RT - CT = 0$):\n\n1. Formula della Quantità di Pareggio ($Q^*$):\nPonendo $RT = CT$:\n$$p \\cdot Q^* = CF + cv \\cdot Q^* \\implies Q^* \\cdot (p - cv) = CF$$\n$$Q^* = \\frac{CF}{p - cv} = \\frac{CF}{mdc}$$\nLa quantità di pareggio è data dal rapporto tra i Costi Fissi Totali e il Margine di Contribuzione unitario.\n\n2. Formula del Fatturato di Pareggio ($R^*$):\nIndispensabile per imprese multiprodotto o di servizi dove non esiste un'unità fisica omogenea:\n$$R^* = p \\cdot Q^* = \\frac{CF}{(p - cv) / p} = \\frac{CF}{mdc\\%}$$\nIl fatturato minimo per coprire i costi fissi è dato dal rapporto tra Costi Fissi e Margine di Contribuzione percentuale.\n\n3. Calcolo del Volume per un Utile Obiettivo ($Q_{target}$):\nSe il management o gli azionisti impongono un Reddito Operativo target ($RO_{target}$):\n$$p \\cdot Q - (CF + cv \\cdot Q) = RO_{target}$$\n$$Q_{target} = \\frac{CF + RO_{target}}{p - cv} = \\frac{CF + RO_{target}}{mdc}$$\nL'utile desiderato si comporta algebricamente come un costo fisso aggiuntivo da coprire.",
-      "howDetails": "I 4 Presupposti di Linearità del Modello BEP:\n1. Prezzo di vendita unitario ($p$) costante (nessuno sconto di quantità).\n2. Costo variabile unitario ($cv$) costante (nessun rincaro o economia di scala nell'acquisto materiali).\n3. Costi fissi ($CF$) rigorosamente costanti entro il relevant range.\n4. Assenza di variazione delle scorte (tutto ciò che si produce viene interamente venduto nell'esercizio, $Q_{prodotta} = Q_{venduta}$).",
+      "howDetails": "I 4 Presupposti di Linearità del Modello BEP:\n1. Prezzo di vendita unitario ($p$) costante (nessuno sconto di quantità).\n2. Costo variabile unitario ($cv$) costante (nessun rincaro o economia di scala nell'acquisto materiali).\n3. Costi fissi ($CF$) rigorosamente costanti entro il relevant range.\n4. Assenza di variazione delle scorte (tutto ciò che si produce viene interamente venduto nell'esercizio, $Q_{prodotta} = Q_{venduta}$).\n\nEsempio Numerico Canonico del Corso — Startup SaaS (fonte: X-Lezioni-13-14-e-21-maggio-MATERIALE):\nCF = 120.000€/anno (server, stipendi, affitto, licenze). Prezzo abbonamento p = 45€/utente/mese. Costo variabile cv = 15€/utente/mese (supporto, banda, commissioni). Utenti attuali: 5.000.\n- MdC unitario = 45€ − 15€ = 30€/utente/mese.\n- BEP (quantità) = 120.000€ / 30€ = 4.000 utenti.\n- BEP (fatturato) = 120.000€ / (30/45) = 120.000€ / 66,7% = 180.000€.\n- Margine di Sicurezza = (5.000 − 4.000) / 5.000 = 20% (le vendite possono calare del 20% prima di registrare una perdita).\n\nNota sui numeri del caseStudy del blocco: lo scenario introduttivo CloudTech usa CF=120.000€, p=24€, cv=4€, mdc=20€, BEP=6.000. Le sintesi del corso usano il set 45/15/30/4.000. I due esempi hanno gli stessi CF ma prezzi diversi e sono entrambi coerenti internamente; per l'esame usare preferibilmente il set 45/15/30/4.000 come riferimento numerico.",
       "keypoints": [
         {
           "id": "kp-bep-form-1",

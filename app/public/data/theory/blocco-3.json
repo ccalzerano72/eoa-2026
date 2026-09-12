@@ -170,6 +170,74 @@
           "example": "Se un fondo investe 5M€ con preference 2x e la startup viene venduta a 11M€, il fondo preleva 10M€ prioritari, lasciando solo 1M€ da spartire tra tutti gli altri soci fondatori."
         }
       ]
+    },
+    {
+      "id": "operazioni-straordinarie",
+      "title": "Operazioni di Gestione Straordinaria: Fusione, Scissione, Scorporo e Trasformazione",
+      "track": "standard",
+      "whyIntro": "Le startup crescono attraverso fasi successive che richiedono non solo nuovi capitali ma anche cambiamenti radicali della struttura giuridica e organizzativa. Un ingegnere che entra come socio fondatore o come dipendente con stock option deve capire cosa succede alla propria quota quando l'azienda si fonde, si scinde o viene ceduta.",
+      "whatBody": "Le operazioni di gestione straordinaria modificano in modo discontinuo la struttura dell'impresa. La matrice fondamentale distingue due assi:\n\nEje 1 — Volontarietà:\n• Cessazione Volontaria: l'impresa sceglie deliberatamente di trasformarsi, unirsi o dividersi.\n• Cessazione Coatta: imposta dall'autorità giudiziaria in caso di crisi insanabile (procedure concorsuali).\n\nEje 2 — Portata:\n• Cessazione Assoluta: il soggetto giuridico cessa di esistere (es. liquidazione, scissione integrale).\n• Cessazione Relativa: l'attività continua ma sotto una nuova veste o struttura (es. fusione per incorporazione, scissione parziale, scorporo, trasformazione).\n\nLa Matrice delle Cessazioni:\n• Volontaria + Assoluta: Liquidazione volontaria.\n• Volontaria + Relativa: Fusione, Cessione, Scissione parziale, Scorporo, Trasformazione.\n• Coatta + Assoluta: Liquidazione coatta (procedure concorsuali: fallimento, concordato preventivo).\n• Coatta + Relativa: Non prevista (la cessazione coatta è sempre assoluta).\n\nLe 4 Operazioni Principali:\n\n1. Fusione:\nRiduzione ad unità dei patrimoni di due o più società, con confluenza dei soci in un'unica struttura organizzativa.\n• Fusione Propria (o per Unione): le società partecipanti (es. Alfa e Beta) si sciolgono entrambe e il loro patrimonio viene conferito in una società di nuova costituzione (es. Delta). Alfa e Beta cessano di esistere.\n• Fusione per Incorporazione: una società esistente (es. Alfa) incorpora una o più società (es. Beta, Gamma) che perdono la propria individualità giuridica. Alfa sopravvive con patrimonio ampliato; Beta e Gamma si estinguono.\nEffetti per i soci: i soci delle società incorporate o fuse ricevono azioni/quote della società risultante in ragione del rapporto di cambio stabilito.\n\n2. Scissione:\nOpera inversa alla fusione: trasferimento del patrimonio (totale o parziale) di una società a più società beneficiarie (preesistenti o di nuova costituzione).\n• Scissione Integrale (Split-up): la società Zeta trasferisce l'intero suo patrimonio a Alfa e Beta (nuove o preesistenti) e si estingue. I soci di Zeta ricevono azioni di Alfa e Beta.\n• Scissione Parziale (Split-off): la società Zeta trasferisce solo parte del patrimonio a Alfa (nuova o preesistente) e sopravvive con patrimonio ridotto. I soci di Zeta possono optare tra tenere le azioni di Zeta o scambiarle con azioni di Alfa.\n\n3. Scorporo:\nUna società preesistente (Zeta), che continua ad esistere, conferisce la propria azienda (o un ramo di essa) in una nuova società appositamente costituita (Alfa, Beta), ricevendo in contropartita azioni o quote. Dopo lo scorporo Zeta diventa una società capogruppo che detiene partecipazioni in Alfa e Beta. Differenza chiave rispetto alla scissione: lo scorporo lascia Zeta intatta come holding; nella scissione parziale Zeta sopravvive con patrimonio ridotto senza detenere quote nelle beneficiarie.\n\n4. Trasformazione:\nUna società commerciale, mediante modifica del proprio atto costitutivo, cambia forma sociale (es. da S.n.c. a S.r.l., da S.r.l. a S.p.A.). Si tratta di un mutamento di veste legale: preesiste il medesimo soggetto giuridico, che continua la propria attività senza interruzione. Non si creano né si estinguono soggetti; cambiano le regole di funzionamento, responsabilità e governance.",
+      "howDetails": "Conseguenze Operative per Soci e Dipendenti con Stock Option:\n- In caso di fusione per incorporazione, le stock option concesse dalla società incorporata vanno rinegoziare: il contratto originale non vincola automaticamente la nuova capogruppo.\n- In caso di scissione, le quote di partecipazione si 'spezzano' proporzionalmente tra le beneficiarie secondo il rapporto di scissione stabilito nel progetto notarile.\n- In caso di scorporo, il fondatore che deteneva il 30% di Zeta si ritrova con il 30% di una holding (Zeta) che a sua volta detiene il 100% di Alfa e Beta: il valore economico è invariato ma la catena di controllo si allunga.\n- La trasformazione non modifica le quote di partecipazione né il valore del patrimonio, ma cambia radicalmente le regole di governance e responsabilità (es. da illimitata S.n.c. a limitata S.r.l.).",
+      "keypoints": [
+        {
+          "id": "kp-straord-1",
+          "title": "La Matrice Cessazione: 4 Combinazioni",
+          "schematicFormula": "Volontaria+Assoluta=Liquidazione | Volontaria+Relativa=Fusione/Scissione/Scorporo/Trasformazione | Coatta+Assoluta=Liquidazione Coatta | Coatta+Relativa=Non esiste",
+          "explanation": "La cessazione coatta è sempre assoluta: l'autorità giudiziaria non impone trasformazioni o fusioni, solo la liquidazione forzata."
+        },
+        {
+          "id": "kp-straord-2",
+          "title": "Fusione Propria vs per Incorporazione",
+          "schematicFormula": "Fusione Propria: A + B → C (nuova, A e B estinte) | Incorporazione: A + B → A (sopravvive, B estinta)",
+          "explanation": "Nella fusione propria nasce un soggetto nuovo; nell'incorporazione uno dei soggetti originari sopravvive e assorbe gli altri."
+        },
+        {
+          "id": "kp-straord-3",
+          "title": "Scissione Integrale vs Parziale vs Scorporo",
+          "schematicFormula": "Split-up: Z → A + B (Z estinta) | Split-off: Z → Z ridotta + A (Z sopravvive) | Scorporo: Z → Z holding + A + B (Z detiene quote in A e B)",
+          "explanation": "Lo scorporo è l'unica operazione in cui la società originaria diventa capogruppo e mantiene il controllo sulle nuove entità tramite partecipazioni."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-straord-1",
+          "title": "Confondere scissione parziale e scorporo",
+          "misconception": "Credere che nella scissione parziale la società originaria detenga partecipazioni nelle società beneficiarie, come avviene nello scorporo.",
+          "truth": "Nella scissione parziale, la società Zeta cede parte del patrimonio ad Alfa e sopravvive con patrimonio ridotto, ma i soci ricevono direttamente azioni di Alfa. Nello scorporo invece è Zeta stessa a ricevere le quote di Alfa, diventando holding: i soci continuano a detenere solo azioni di Zeta.",
+          "example": "Spin-off tecnologico: se Ferrari scorpora la divisione software in una nuova Srl, Ferrari-holding detiene il 100% della nuova Srl; i soci di Ferrari continuano ad avere azioni Ferrari. Se invece Ferrari si scinde parzialmente trasferendo la divisione a una nuova Srl, i soci Ferrari ricevono direttamente quote della nuova Srl."
+        }
+      ]
+    },
+    {
+      "id": "caso-cyberpeak-startup-scaleup",
+      "title": "Caso CyberPeak: Governance Evolutiva da S.n.c. a S.p.A. e la Distinzione Startup vs Scale-up",
+      "track": "standard",
+      "whyIntro": "Una startup cybersecurity fondata in un garage non ha bisogno di un CdA con consiglieri indipendenti il primo giorno. Ma quando entra un fondo da 2 milioni di euro, le regole del gioco cambiano radicalmente. Il caso CyberPeak mostra il 'salto culturale' obbligatorio dalla governance informale alla governance istituzionale.",
+      "whatBody": "Il Caso CyberPeak — Evoluzione della Governance in Tre Fasi:\n\nFase 1 — La Nascita (2018-2020): la S.n.c.\nGiulia (ingegnere cybersecurity) e Marco (venditore) fondano CyberPeak come S.n.c. La governance è informale: le decisioni si prendono a voce davanti a un caffè. La fiducia personale e la velocità decisionale sono i vantaggi chiave. Il rischio: responsabilità illimitata e solidale per entrambi i soci.\n\nFase 2 — La Crescita (2020-2022): la S.r.l.\nUn fondo di Venture Capital investe 2.000.000€ come condizione impone la trasformazione in S.r.l. (responsabilità limitata per proteggere il capitale dell'investitore). Viene istituito un CdA a 3 membri: Giulia, Marco e 1 rappresentante del fondo. Le decisioni strategiche devono essere discusse e verbalizzate.\n\nFase 3 — La Maturità (2022-oggi): la S.p.A.\nCyberPeak diventa leader di mercato. Per finanziarsi l'espansione internazionale e prepararsi alla quotazione, raccoglie 20.000.000€ da investitori istituzionali e si trasforma in S.p.A. Il CdA si allarga a 5 membri. La legge impone il Collegio Sindacale. Gli investitori pretendono un amministratore indipendente (non amico dei fondatori): nasce il conflitto sul 'salto culturale'.\n\nIl Conflitto sull'Indipendenza:\n• Proposta dei fondatori: nominare il loro ex professore universitario di fiducia.\n• Posizione degli investitori: serve un manager con esperienza internazionale, senza legami pregressi con i fondatori, capace di mettere in discussione le loro decisioni e rappresentare tutti gli azionisti.\nEsito: Giulia e Marco accettano. La governance trasparente e la credibilità verso il mercato internazionale valgono più della comodità della fiducia personale.\n\nDistinzione Startup vs Scale-up:\n• Startup: organizzazione temporanea alla ricerca di un business model scalabile e replicabile. Nasce su iniziativa imprenditoriale, opera su tecnologie innovative, con alto grado di incertezza e scalabilità potenziale.\n• Scale-up: una ex-startup che ha già sviluppato il suo prodotto/servizio, definito un business model scalabile e ripetibile, opera sul mercato con caratteristiche di successo che le permettono una crescita internazionale strutturata.\nEsempio italiano: Zerynth (piattaforma IoT industriale, Pisa) — ha attraversato entrambe le fasi.",
+      "howDetails": "Lezione di Governance: la Fiducia Personale non Scala\nLa fiducia personale funziona perfettamente con 2 soci in un garage (S.n.c.). Diventa insufficiente quando ci sono investitori istituzionali che hanno investito 20 milioni e non si fidano sulla parola. La governance è il meccanismo che trasforma la fiducia informale in regole verificabili e credibili per tutti gli stakeholder.\n\nIl 'Salto Culturale' in 3 tappe:\n1. Da decisioni verbali a delibere verbalizzate (S.n.c. → S.r.l.)\n2. Da CdA informale a CdA con rappresentante VC (S.r.l. con VC)\n3. Da amicizia e fiducia a indipendenza certificata (S.p.A. con consiglieri indipendenti)\n\nIl Criterio di Indipendenza:\nUn amministratore è indipendente se non ha legami economici, familiari o professionali con il socio di controllo o il management che possano comprometterne la capacità di giudizio autonomo.",
+      "keypoints": [
+        {
+          "id": "kp-cyberpeak-1",
+          "title": "La Traiettoria Giuridica di CyberPeak",
+          "schematicFormula": "S.n.c. (fiducia, velocità) → S.r.l. (VC entra, CdA 3 membri) → S.p.A. (IPO-ready, CdA 5 + Collegio Sindacale + Indipendenti)",
+          "explanation": "Ogni trasformazione è guidata da una nuova esigenza: proteggere il capitale dell'investitore, poi credibilità istituzionale verso il mercato internazionale."
+        },
+        {
+          "id": "kp-cyberpeak-2",
+          "title": "Startup vs Scale-up",
+          "schematicFormula": "Startup = cerca business model scalabile (incertezza alta) | Scale-up = ha trovato il modello e cresce internazionalmente (esecuzione disciplinata)",
+          "explanation": "Il passaggio da startup a scale-up non è solo di dimensione: è un cambio di paradigma operativo, da esplorazione a scalabilità esecutiva."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-cyberpeak-1",
+          "title": "L'amministratore 'di fiducia' come equivalente di 'indipendente'",
+          "misconception": "Credere che nominare nel CdA una persona di cui ci si fida (es. un ex professore amico dei fondatori) soddisfi il requisito legale e sostanziale di indipendenza.",
+          "truth": "L'indipendenza richiede assenza di legami economici, familiari o professionali con i soci di controllo e il management. Un amico fidato non è mai indipendente per definizione: il suo giudizio sarà condizionato dalla relazione personale, non dall'interesse di tutti gli azionisti.",
+          "example": "Nel caso CyberPeak, gli investitori istituzionali si oppongono alla nomina dell'ex professore e ottengono un manager esterno con esperienza internazionale e zero legami pregressi con i fondatori."
+        }
+      ]
     }
   ]
 }
