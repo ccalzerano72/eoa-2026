@@ -7,6 +7,8 @@ import type {
 } from "../../types/quiz";
 import type { Question, SyllabusBlock } from "../../types/question";
 import { FormulaBlock } from "../ui/FormulaBlock";
+import { ExplanationCard } from "./ExplanationCard";
+import { resolveStudyTopic } from "../../data/study-links";
 import { saveQuizRecord } from "../../services/storage";
 import {
   Clock,
@@ -18,7 +20,6 @@ import {
   XCircle,
   AlertCircle,
   HelpCircle,
-  Lightbulb,
   Award,
   BookOpen,
   ExternalLink,
@@ -32,7 +33,7 @@ interface QuizRunnerProps {
   initialSession?: QuizSessionState;
   onFinish?: (summary: QuizScoreSummary, session: QuizSessionState) => void;
   onExit?: () => void;
-  onNavigateToStudy?: (block: SyllabusBlock, topicId: string) => void;
+  onNavigateToStudy?: (block: SyllabusBlock, topicId?: string) => void;
   onViewStats?: () => void;
 }
 
@@ -816,42 +817,13 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   </div>
                 )}
 
-                {/* Explanation Block */}
-                <div className="mt-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 p-3 sm:p-4 border border-slate-200 dark:border-slate-600 text-sm space-y-2">
-                  <div className="flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-wider">
-                    <Lightbulb className="h-4 w-4 text-amber-500 dark:text-amber-400 shrink-0" />
-                    <span>Spiegazione (Regola d'Oro):</span>
-                  </div>
-                  <div className="break-words">
-                    <span className="font-semibold text-slate-700 dark:text-slate-300">
-                      Perché:
-                    </span>{" "}
-                    <span className="text-slate-600 dark:text-slate-400">
-                      {q.explanation.why}
-                    </span>
-                  </div>
-                  <div className="break-words">
-                    <span className="font-semibold text-slate-700 dark:text-slate-300">
-                      Cosa:
-                    </span>{" "}
-                    <span className="text-slate-600 dark:text-slate-400">
-                      {q.explanation.what}
-                    </span>
-                  </div>
-                  <div className="break-words overflow-x-auto">
-                    <span className="font-semibold text-slate-700 dark:text-slate-300">
-                      Come:
-                    </span>{" "}
-                    <span className="text-slate-900 dark:text-slate-100 font-mono text-xs">
-                      {q.explanation.how}
-                    </span>
-                  </div>
-                  {q.explanation.trap && (
-                    <div className="pt-2 text-rose-900 dark:text-rose-300 text-xs border-t border-slate-200 dark:border-slate-600 break-words">
-                      <span className="font-bold">Trappola d'esame:</span>{" "}
-                      {q.explanation.trap}
-                    </div>
-                  )}
+                {/* Explanation Block (Golden Rule, shared renderer) */}
+                <div className="mt-4">
+                  <ExplanationCard
+                    explanation={q.explanation}
+                    tone="slate"
+                    trapEmphasis="quiet"
+                  />
                 </div>
 
                 {/* Lesson reference & Deep Link to Study */}
@@ -871,7 +843,12 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   )}
                   {onNavigateToStudy && (
                     <button
-                      onClick={() => onNavigateToStudy(q.block, q.topic)}
+                      onClick={() =>
+                        onNavigateToStudy(
+                          q.block,
+                          resolveStudyTopic(q.block, q.topic),
+                        )
+                      }
                       className="inline-flex items-center gap-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/50 px-2 sm:px-3 py-1.5 text-xs font-bold text-sky-700 dark:text-sky-300 hover:bg-sky-100 dark:hover:bg-sky-900/70 hover:text-sky-900 dark:hover:text-sky-200 border border-sky-200/80 dark:border-sky-700 transition cursor-pointer shadow-2xs shrink-0"
                     >
                       <BookOpen className="h-3.5 w-3.5" />
@@ -1230,76 +1207,16 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           )}
         </div>
 
-        {/* Immediate explanation in free-practice / traps-only mode */}
+        {/* Immediate explanation in free-practice / traps-only / spaced-review.
+            Full Golden Rule breakdown in every mode (§2.1); traps-only
+            keeps the prominent conceptual-trap card. */}
         {showImmediateExplanation && (
-          <div ref={explanationRef} className="mt-6 space-y-3 scroll-mt-24">
-            {/* Full explanation block */}
-            <div className="rounded-2xl bg-amber-50/80 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 p-4 text-sm text-slate-900 dark:text-slate-100 space-y-2">
-              <div className="flex items-center gap-2 font-bold text-amber-900 dark:text-amber-300">
-                <AlertCircle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-                <span>Spiegazione del Quesito:</span>
-              </div>
-              {mode === "traps-only" && (
-                <>
-                  <div>
-                    <span className="font-semibold text-slate-700 dark:text-slate-300">
-                      Perché:{" "}
-                    </span>
-                    <span className="text-slate-600 dark:text-slate-400 text-xs">
-                      {currentQuestion.explanation.why}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-slate-700 dark:text-slate-300">
-                      Cosa:{" "}
-                    </span>
-                    <span className="text-slate-600 dark:text-slate-400 text-xs">
-                      {currentQuestion.explanation.what}
-                    </span>
-                  </div>
-                </>
-              )}
-              <div>
-                {mode === "traps-only" && (
-                  <span className="font-semibold text-slate-700 dark:text-slate-300">
-                    Come:{" "}
-                  </span>
-                )}
-                <span className="text-slate-800 dark:text-slate-200 text-xs font-mono">
-                  {currentQuestion.explanation.how}
-                </span>
-              </div>
-            </div>
-
-            {/* Prominent trap card for traps-only mode */}
-            {currentQuestion.explanation.trap && (
-              <div
-                className={`rounded-2xl p-4 text-sm ${
-                  mode === "traps-only"
-                    ? "bg-rose-50 dark:bg-rose-900/30 border-2 border-rose-300 dark:border-rose-700 shadow-sm"
-                    : "bg-amber-50/80 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 pt-0"
-                }`}
-              >
-                {mode === "traps-only" ? (
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 font-bold text-rose-900 dark:text-rose-300">
-                      <AlertCircle className="h-5 w-5 text-rose-600 dark:text-rose-400" />
-                      <span className="uppercase tracking-wider text-xs">
-                        ⚠ Trappola Concettuale — Non Dare per Scontato
-                      </span>
-                    </div>
-                    <p className="text-rose-900 dark:text-rose-200 text-sm leading-relaxed font-medium">
-                      {currentQuestion.explanation.trap}
-                    </p>
-                  </div>
-                ) : (
-                  <p className="text-rose-900 dark:text-rose-300 text-xs font-medium border-t border-amber-200 dark:border-amber-800 pt-2">
-                    <strong>Trappola:</strong>{" "}
-                    {currentQuestion.explanation.trap}
-                  </p>
-                )}
-              </div>
-            )}
+          <div ref={explanationRef} className="mt-6 scroll-mt-24">
+            <ExplanationCard
+              explanation={currentQuestion.explanation}
+              tone="amber"
+              trapEmphasis={mode === "traps-only" ? "loud" : "quiet"}
+            />
           </div>
         )}
 

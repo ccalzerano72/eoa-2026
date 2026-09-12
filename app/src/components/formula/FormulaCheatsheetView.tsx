@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import { formulasData, type FormulaItem } from "../../data/formulas";
+import { resolveStudyTopic } from "../../data/study-links";
 import { FormulaBlock } from "../ui/FormulaBlock";
 import {
   Search,
@@ -391,7 +392,12 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
 
                     <div className="flex items-center gap-2">
                       <button
-                        onClick={() => onOpenStudy(item.block, item.topic)}
+                        onClick={() =>
+                          onOpenStudy(
+                            item.block,
+                            resolveStudyTopic(item.block, item.topic),
+                          )
+                        }
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-600 hover:border-slate-300 dark:hover:border-slate-500 transition-all shadow-2xs cursor-pointer"
                       >
                         <BookOpen className="h-3.5 w-3.5 text-slate-500 dark:text-slate-400" />

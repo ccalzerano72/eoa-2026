@@ -11,6 +11,7 @@ import {
   HelpCircle,
   Compass,
   Sparkles,
+  Zap,
 } from "lucide-react";
 
 interface StudyBlockViewerProps {
@@ -18,6 +19,7 @@ interface StudyBlockViewerProps {
   targetTopicId?: string;
   onStartBlockQuiz?: () => void;
   onStartTopicQuiz?: (block: SyllabusBlock, topicId: string) => void;
+  onStartMiniQuiz?: (block: SyllabusBlock, topicId: string) => void;
 }
 
 export const StudyBlockViewer: React.FC<StudyBlockViewerProps> = ({
@@ -25,6 +27,7 @@ export const StudyBlockViewer: React.FC<StudyBlockViewerProps> = ({
   targetTopicId,
   onStartBlockQuiz,
   onStartTopicQuiz,
+  onStartMiniQuiz,
 }) => {
   useEffect(() => {
     if (targetTopicId) {
@@ -110,10 +113,20 @@ export const StudyBlockViewer: React.FC<StudyBlockViewerProps> = ({
                     <button
                       onClick={() => onStartTopicQuiz(block.block, topic.id)}
                       className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-900/50 hover:bg-emerald-100 dark:hover:bg-emerald-900/70 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 px-3 py-1.5 text-xs font-bold transition shadow-2xs cursor-pointer"
-                      title={`Avvia un quiz mirato su: ${topic.title}`}
+                      title={`Avvia un quiz da 15 domande su: ${topic.title}`}
                     >
                       <Sparkles className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" />
                       <span>Quiz su questo argomento</span>
+                    </button>
+                  )}
+                  {onStartMiniQuiz && (
+                    <button
+                      onClick={() => onStartMiniQuiz(block.block, topic.id)}
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/50 hover:bg-sky-100 dark:hover:bg-sky-900/70 text-sky-800 dark:text-sky-300 border border-sky-300 dark:border-sky-700 px-3 py-1.5 text-xs font-bold transition shadow-2xs cursor-pointer"
+                      title={`Mini-quiz rapido da 5 domande su: ${topic.title}`}
+                    >
+                      <Zap className="h-3.5 w-3.5 text-sky-600 dark:text-sky-400" />
+                      <span>Mini-quiz (5)</span>
                     </button>
                   )}
                 </div>

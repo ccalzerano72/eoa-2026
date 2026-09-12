@@ -19,6 +19,7 @@ import { QuizRunner } from "./components/quiz/QuizRunner";
 import { StudyBlockViewer } from "./components/study/StudyBlockViewer";
 import type { FormulaItem } from "./data/formulas";
 import { formulasData } from "./data/formulas";
+import { resolveStudyTopic } from "./data/study-links";
 import {
   getQuizHistory,
   computeOverallStats,
@@ -308,7 +309,7 @@ export function App() {
 
   const handleNavigateToStudyFromReview = (
     blockNumber: SyllabusBlock,
-    topicId: string,
+    topicId?: string,
   ) => {
     loadStudyBlock(blockNumber, topicId);
     navigateTo({
@@ -319,7 +320,7 @@ export function App() {
     });
     logger.log("study_open", {
       block: blockNumber,
-      topicId,
+      ...(topicId && { topicId }),
       fromQuizReview: true,
     });
   };
@@ -338,30 +339,56 @@ export function App() {
     [],
   );
 
-  const handleStartTopicQuiz = (blockNumber: number, topicId: string) => {
-    const filtered = allQuestions.filter(
-      (q) =>
-        q.block === blockNumber &&
-        (q.topic === topicId || q.topic.includes(topicId)),
-    );
-    const pool =
-      filtered.length > 0
-        ? filtered
-        : allQuestions.filter((q) => q.block === blockNumber);
+  const launchQuiz = (
+    pool: Question[],
+    count: number,
+    mode: QuizMode,
+    keyPrefix: string,
+    logExtra: Record<string, unknown>,
+  ) => {
     const questionsToUse = [...pool]
       .sort(() => Math.random() - 0.5)
-      .slice(0, 15);
-
+      .slice(0, count);
     setActiveReviewSession(null);
     setActiveQuestions(questionsToUse);
-    setQuizMode("free-practice");
-    setQuizRunnerKey(`topic-${blockNumber}-${topicId}-${Date.now()}`);
+    setQuizMode(mode);
+    setQuizRunnerKey(`${keyPrefix}-${Date.now()}`);
     navigateTo({ tab: "quiz" });
     logger.log("quiz_start", {
-      mode: "free-practice",
+      mode,
+      questionCount: questionsToUse.length,
+      ...logExtra,
+    });
+  };
+
+  const handleStartTopicQuiz = (
+    blockNumber: number,
+    topicId: string,
+    questionCount = 15,
+  ) => {
+    // Match questions whose resolved study topic is the requested one, so
+    // "Quiz su questo argomento" is truly topic-scoped (§5.2). Falls back
+    // to the whole block when the topic pool is too small.
+    const byTopic = allQuestions.filter(
+      (q) =>
+        q.block === blockNumber &&
+        (q.topic === topicId ||
+          resolveStudyTopic(q.block, q.topic) === topicId),
+    );
+    const blockPool = allQuestions.filter((q) => q.block === blockNumber);
+    const pool =
+      byTopic.length >= Math.min(questionCount, 5) ? byTopic : blockPool;
+    launchQuiz(pool, questionCount, "free-practice", `topic-${blockNumber}`, {
       block: blockNumber,
       topicId,
-      questionCount: questionsToUse.length,
+      topicScoped: pool === byTopic,
+    });
+  };
+
+  const handleStartBlockQuiz = (blockNumber: number, questionCount = 15) => {
+    const pool = allQuestions.filter((q) => q.block === blockNumber);
+    launchQuiz(pool, questionCount, "free-practice", `block-${blockNumber}`, {
+      block: blockNumber,
     });
   };
 
@@ -1415,9 +1442,10 @@ export function App() {
                 block={studyBlock}
                 targetTopicId={targetTopicId}
                 onStartBlockQuiz={() =>
-                  handleStartTopicQuiz(studyBlock.block, "")
+                  handleStartBlockQuiz(studyBlock.block)
                 }
                 onStartTopicQuiz={handleStartTopicQuiz}
+                onStartMiniQuiz={(b, t) => handleStartTopicQuiz(b, t, 5)}
               />
             ) : (
               <div className="text-center py-20 text-slate-500">

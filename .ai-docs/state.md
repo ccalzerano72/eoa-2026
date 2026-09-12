@@ -116,6 +116,12 @@ triggers:
   - Known residuals: seed count 43 vs 300–500 target; templates 28 vs 80–120; `prerequisites`/`caseStudyRef` unpopulated; B5/B6 above 800/block ceiling.
   - NOTE: production build (`tsc` + `vite build`) and oxlint re-verification after these changes is PENDING (owner runs it).
 
+- **Fase 2 (parziale) — UX & Didattica 2.1–2.3**: COMPLETED.
+  - **2.1 Golden Rule ovunque**: nuovo `ExplanationCard.tsx` (PERCHÉ/COSA/COME + trappola `quiet`/`loud`, toni `slate`/`amber`) usato sia nella review finale sia nel reveal immediato di `free-practice`/`spaced-review`/`traps-only` (prima mostravano solo `how`). `traps-only` mantiene la card rossa prominente.
+  - **2.2 Deep-link teoria riparato**: nuovo `src/data/study-links.ts` con `resolveStudyTopic()` (exact-match + override table evidence-based + fallback onesto al blocco). Usato da "Vai alla Lezione" in review e da "Vedi teoria" nel Formulario. Copertura validata: 4,010/6,055 domande e 18/24 formule risolvono a un topic; il resto (slug strategia/organizzazione/finanza senza home teorica + `diagnosi-*`) apre il blocco. Firma `onNavigateToStudy` uniformata a `topicId?`.
+  - **2.3 Quiz per argomento reali + mini-quiz**: `handleStartTopicQuiz` filtra per topic di studio risolto (prima il match `includes()` falliva quasi sempre → quiz di blocco camuffato); nuovo `handleStartBlockQuiz` esplicito (sostituisce il trucco `topicId=""`); nuovo `handleStartMiniQuiz` da 5 domande con bottone "Mini-quiz (5)" in `StudyBlockViewer`.
+  - Verificato: `tsc -b` pulito; `oxlint` con 1 warning pre-esistente in `FormulaCheatsheetView.tsx:64` (set-state-in-effect, non toccato).
+
 - **New Quiz Modes — Flash Cards, Track Selector, Traps Quiz**: COMPLETED.
   - Implemented `FlashCardRunner.tsx`: standalone flip-card component with keyboard navigation (←/→/Space/Enter), block and source filters (Domande/Formule), shuffle, dual data sources (6,055 questions + all formulasData formulas), no timer/scoring.
   - Implemented **Tiered Track Selector** (◆ Essenziale / ■ Standard / ○ Approfondito / Tutti): global filter on Dashboard that restricts all quiz modes and flash cards to the selected track (essential: 1,322 Qs, standard: 4,296 Qs, advanced: 437 Qs — post-Fase-1 counts).
