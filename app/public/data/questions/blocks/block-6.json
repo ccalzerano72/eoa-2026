@@ -207,11 +207,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -287,11 +283,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -367,11 +359,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -447,11 +435,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -527,11 +511,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -607,11 +587,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -651,11 +627,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -731,11 +703,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -775,11 +743,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -855,11 +819,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -899,11 +859,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -979,11 +935,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1023,11 +975,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1103,11 +1051,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1147,11 +1091,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1227,11 +1167,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1307,11 +1243,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1387,11 +1319,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1467,11 +1395,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1547,11 +1471,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1627,11 +1547,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1671,11 +1587,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1751,11 +1663,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1795,11 +1703,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1875,11 +1779,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1919,11 +1819,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1999,11 +1895,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2043,11 +1935,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2123,11 +2011,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2167,11 +2051,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2247,11 +2127,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2327,11 +2203,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2407,11 +2279,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2487,11 +2355,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2567,11 +2431,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2647,11 +2507,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2691,11 +2547,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2771,11 +2623,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2815,11 +2663,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2895,11 +2739,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2939,11 +2779,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3019,11 +2855,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3063,11 +2895,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3143,11 +2971,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3187,11 +3011,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3267,11 +3087,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3347,11 +3163,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3427,11 +3239,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3507,11 +3315,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3587,11 +3391,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3667,11 +3467,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3711,11 +3507,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3791,11 +3583,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3835,11 +3623,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3915,11 +3699,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3959,11 +3739,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4039,11 +3815,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4083,11 +3855,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4163,11 +3931,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4207,11 +3971,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4287,11 +4047,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4367,11 +4123,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4447,11 +4199,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4527,11 +4275,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4607,11 +4351,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4687,11 +4427,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4731,11 +4467,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4811,11 +4543,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4855,11 +4583,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4935,11 +4659,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4979,11 +4699,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5059,11 +4775,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5103,11 +4815,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5183,11 +4891,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5227,11 +4931,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5307,11 +5007,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5387,11 +5083,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5467,11 +5159,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5547,11 +5235,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5627,11 +5311,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5707,11 +5387,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5751,11 +5427,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5831,11 +5503,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5875,11 +5543,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5955,11 +5619,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5999,11 +5659,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6079,11 +5735,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6123,11 +5775,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6203,11 +5851,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6247,11 +5891,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6327,11 +5967,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6407,11 +6043,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6487,11 +6119,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6567,11 +6195,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6647,11 +6271,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6727,11 +6347,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6771,11 +6387,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6851,11 +6463,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6895,11 +6503,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6975,11 +6579,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7019,11 +6619,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7099,11 +6695,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7143,11 +6735,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7223,11 +6811,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7267,11 +6851,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7347,11 +6927,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7427,11 +7003,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7507,11 +7079,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7587,11 +7155,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7667,11 +7231,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7747,11 +7307,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7791,11 +7347,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7871,11 +7423,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7915,11 +7463,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7995,11 +7539,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8039,11 +7579,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8119,11 +7655,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8163,11 +7695,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8243,11 +7771,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8287,11 +7811,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8367,11 +7887,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8447,11 +7963,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8527,11 +8039,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8607,11 +8115,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8687,11 +8191,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8767,11 +8267,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8811,11 +8307,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8891,11 +8383,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8935,11 +8423,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9015,11 +8499,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9059,11 +8539,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9139,11 +8615,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9183,11 +8655,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9263,11 +8731,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9307,11 +8771,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9387,11 +8847,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9467,11 +8923,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9547,11 +8999,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9627,11 +9075,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9707,11 +9151,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9787,11 +9227,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9831,11 +9267,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9911,11 +9343,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9955,11 +9383,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10035,11 +9459,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10079,11 +9499,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10159,11 +9575,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10203,11 +9615,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10283,11 +9691,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10327,11 +9731,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10407,11 +9807,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10487,11 +9883,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10567,11 +9959,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10647,11 +10035,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10727,11 +10111,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10807,11 +10187,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10851,11 +10227,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10931,11 +10303,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10975,11 +10343,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11055,11 +10419,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11099,11 +10459,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11179,11 +10535,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11223,11 +10575,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11303,11 +10651,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11347,11 +10691,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11427,11 +10767,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11507,11 +10843,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11587,11 +10919,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11667,11 +10995,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11747,11 +11071,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11827,11 +11147,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11871,11 +11187,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11951,11 +11263,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11995,11 +11303,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12075,11 +11379,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12119,11 +11419,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12199,11 +11495,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12243,11 +11535,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12323,11 +11611,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12367,11 +11651,7 @@
     "version": 1,
     "block": 6,
     "topic": "valutazione-costi-decisioni-avanzate",
-    "tags": [
-      "multi-tf",
-      "bep",
-      "decisioni-differenziali"
-    ],
+    "tags": ["multi-tf", "bep", "decisioni-differenziali"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12447,11 +11727,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12527,11 +11803,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12607,11 +11879,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12687,11 +11955,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12767,11 +12031,7 @@
     "version": 1,
     "block": 6,
     "topic": "decisioni-costi-margini",
-    "tags": [
-      "decisioni-operative",
-      "bep",
-      "analisi-costi"
-    ],
+    "tags": ["decisioni-operative", "bep", "analisi-costi"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -47765,5 +47025,240 @@
     },
     "formula": "\\text{MdC}_{\\text{risorsa scarsa}} = \\frac{p - cv}{\\text{Ore macchina o lavoro richieste}}",
     "sourceRef": "Slide Blocco VI - Ottimizzazione del Mix di Produzione con Vincoli"
+  },
+  {
+    "id": "B6-CONF-COSTO-001",
+    "version": 1,
+    "block": 6,
+    "topic": "configurazioni-di-costo",
+    "tags": [
+      "configurazioni-costo",
+      "costo-primo",
+      "costo-industriale",
+      "costo-pieno",
+      "costo-economico-tecnico",
+      "contabilita-direzionale"
+    ],
+    "track": "standard",
+    "difficulty": 2,
+    "type": "single-choice",
+    "stem": "Un'azienda manifatturiera deve fissare il prezzo di listino di un nuovo prodotto software per il medio periodo. Quale configurazione di costo rappresenta la base di riferimento corretta per il calcolo del mark-up?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Costo Primo (sole materie prime e manodopera diretta)",
+        "correct": false
+      },
+      { "id": "b", "text": "Costo Variabile unitario", "correct": false },
+      {
+        "id": "c",
+        "text": "Costo Pieno Aziendale (industriale + commerciale + amministrativo), preferibilmente calcolato con ABC",
+        "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Costo Economico-Tecnico comprensivo di oneri figurativi",
+        "correct": false
+      }
+    ],
+    "explanation": {
+      "why": "La scelta della configurazione di costo per il pricing dipende dall'orizzonte temporale della decisione: nel medio-lungo periodo il prezzo deve coprire tutti i costi operativi aziendali.",
+      "what": "Il Costo Pieno Aziendale include tutti i costi operativi (produzione, commerciale, amministrazione). Il mark-up aggiunto copre il rendimento atteso sul capitale. Il Costo Economico-Tecnico (con oneri figurativi) è invece uno strumento di controllo strategico ex post, non di pricing.",
+      "how": "(a) Il Costo Primo è usato per valutare l'efficienza produttiva, non per il listino. (b) Il costo variabile è base per ordini speciali a breve. (c) CORRETTO. (d) Il Costo Economico-Tecnico include già la remunerazione del capitale come onere figurativo: aggiungervi un mark-up conterebbe due volte la stessa posta.",
+      "trap": "Usare il Costo Economico-Tecnico come base del prezzo e aggiungere poi un mark-up: si duplicherebbe la remunerazione del capitale proprio."
+    },
+    "sourceRef": "X-Lezioni-13-14-e-21-maggio-MATERIALE.md; XI-Lezione-21-maggio-SLIDE.md"
+  },
+  {
+    "id": "B6-CONF-COSTO-002",
+    "version": 1,
+    "block": 6,
+    "topic": "configurazioni-di-costo",
+    "tags": [
+      "configurazioni-costo",
+      "contabilita-generale",
+      "contabilita-direzionale",
+      "oggetto-di-costo"
+    ],
+    "track": "essential",
+    "difficulty": 1,
+    "type": "multi-true-false",
+    "stem": "In merito alla distinzione tra Contabilità Generale e Contabilità Direzionale, e al principio 'costi diversi per scopi diversi', valuta ciascuna affermazione:",
+    "multiTrueFalseItems": [
+      {
+        "id": "mtf-cd-1",
+        "statement": "La Contabilità Generale è obbligatoria per legge, rivolta a destinatari esterni (fisco, banche, soci) e produce il bilancio d'esercizio secondo principi contabili standardizzati.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-cd-2",
+        "statement": "La Contabilità Direzionale è soggetta agli stessi principi contabili OIC o IFRS della Contabilità Generale, essendo uno strumento di informazione verso i terzi.",
+        "isTrue": false
+      },
+      {
+        "id": "mtf-cd-3",
+        "statement": "Lo stipendio di un capo-reparto è un costo diretto se l'oggetto di costo è il reparto stesso, ma diventa indiretto se l'oggetto di costo è il singolo prodotto lavorato in quel reparto.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-cd-4",
+        "statement": "La classificazione di un costo come fisso o variabile, diretto o indiretto è una proprietà intrinseca del costo, indipendente dall'oggetto di costo e dall'orizzonte temporale considerato.",
+        "isTrue": false
+      }
+    ],
+    "explanation": {
+      "why": "Il principio 'costi diversi per scopi diversi' è il fondamento della contabilità direzionale: la stessa voce di costo può dover essere trattata in modo radicalmente diverso a seconda della decisione da supportare.",
+      "what": "La contabilità direzionale è volontaria, interna, orientata al futuro e priva di vincoli formali. La classificazione di un costo dipende sempre dall'oggetto di costo scelto e dall'orizzonte temporale.",
+      "how": "1: Vera. 2: Falsa — la contabilità direzionale non ha vincoli formali, è libera da principi contabili standardizzati. 3: Vera — la categoria diretto/indiretto è relativa all'oggetto di costo. 4: Falsa — nel lunghissimo periodo tutti i costi diventano variabili; la classificazione non è assoluta.",
+      "trap": "Credere che i criteri di classificazione dei costi siano fissi e universali: dipendono sempre dal contesto decisionale."
+    },
+    "sourceRef": "X-Lezioni-13-14-e-21-maggio-MATERIALE.md"
+  },
+  {
+    "id": "B6-CONF-COSTO-003",
+    "version": 1,
+    "block": 6,
+    "topic": "configurazioni-di-costo",
+    "tags": [
+      "costo-pieno",
+      "make-or-buy",
+      "costo-industriale",
+      "configurazioni-costo",
+      "numeric-input"
+    ],
+    "track": "standard",
+    "difficulty": 2,
+    "type": "numeric-input",
+    "stem": "Un'azienda produce internamente un componente elettronico con i seguenti costi unitari annui (su 5.000 pezzi): Materie prime = 18€, Manodopera Diretta = 12€, Costi Indiretti Industriali (ammortamento macchinari dedicati, non riutilizzabili) = 8€, Costi Commerciali e Amministrativi ripartiti = 6€. Un fornitore offre lo stesso componente a 32€/pezzo. Applicando correttamente la logica dei costi rilevanti per una decisione Make or Buy di breve periodo, qual è il costo differenziale unitario cessante che deve essere confrontato con il prezzo del fornitore? (risposta in euro, solo la cifra numerica)",
+    "numericAnswer": {
+      "value": 30,
+      "tolerance": 0.5,
+      "unit": "€/pezzo"
+    },
+    "explanation": {
+      "why": "Nella decisione Make or Buy di breve periodo, occorre identificare esclusivamente i costi 'cessanti' (quelli che effettivamente si eviterebbero scegliendo Buy), escludendo i costi sommersi o non eliminabili.",
+      "what": "Il Costo Pieno è 18+12+8+6 = 44€. Ma i costi rilevanti sono solo quelli che cesserebbero con il Buy: Materie prime (18€) + MOD (12€) = costi variabili diretti cessanti. I costi fissi dei macchinari dedicati non riutilizzabili (8€) sono sunk costs nel breve periodo. I costi C&A ripartiti (6€) sono costi comuni che non cesserebbero.",
+      "how": "Costi cessanti = 18€ + 12€ = 30€. Confronto: 30€ (Make) vs 32€ (Buy). Conviene produrre internamente perché il prezzo esterno supera i soli costi eliminabili. Il Costo Pieno di 44€ non va mai usato in questo confronto.",
+      "trap": "Includere i costi fissi sommersi (8€) o i costi comuni ripartiti (6€) nel confronto, portando erroneamente a concludere che il Buy a 32€ sia vantaggioso rispetto al costo pieno di 44€."
+    },
+    "formula": "\\text{Costo Cessante} = cv_{\\text{diretti eliminabili}} = 18 + 12 = 30\\,€",
+    "sourceRef": "X-Lezioni-13-14-e-21-maggio-MATERIALE.md; Slide Blocco VI"
+  },
+  {
+    "id": "B6-ABC-001",
+    "version": 1,
+    "block": 6,
+    "topic": "activity-based-costing",
+    "tags": [
+      "ABC",
+      "activity-based-costing",
+      "cooper-kaplan",
+      "cross-subsidization",
+      "costi-indiretti"
+    ],
+    "track": "standard",
+    "difficulty": 2,
+    "type": "single-choice",
+    "stem": "Un'azienda software ha 600.000€ di costi indiretti annui e due linee di servizio: CloudBase (500 clienti standard) e CloudPro (30 clienti custom con servizi altamente personalizzati). Con il metodo tradizionale (base: numero clienti), i costi indiretti di CloudPro risultano 33.962€. Con l'ABC, analizzando le attività reali, emerge che CloudPro assorbe il 70% delle risorse di supporto (420.000€). Quale conclusione strategica si può trarre?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Il metodo tradizionale è più accurato perché distribuisce i costi proporzionalmente ai clienti serviti",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "CloudPro sta sussidiando CloudBase: i clienti standard pagano troppo per coprire i costi del servizio custom",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "CloudBase sta sussidiando CloudPro: il metodo tradizionale nasconde che CloudPro è in realtà non redditizio o in perdita, e il suo prezzo dovrebbe essere rivisto",
+        "correct": true
+      },
+      {
+        "id": "d",
+        "text": "La differenza tra i due metodi è trascurabile ai fini delle decisioni di pricing",
+        "correct": false
+      }
+    ],
+    "explanation": {
+      "why": "Il fenomeno del cross-subsidization è il principale rischio del metodo tradizionale nelle aziende con mix di prodotti/servizi eterogenei: porta a prezzare in perdita i servizi complessi e a sopravvalutare quelli standard.",
+      "what": "Con il metodo tradizionale, CloudPro assorbe solo 33.962€ (6%) dei costi indiretti. Con l'ABC, assorbe 420.000€ (70%). Il costo indiretto unitario per cliente CloudPro è 14.000€ (ABC) contro 1.132€ (tradizionale). CloudBase stava dunque finanziando le perdite di CloudPro.",
+      "how": "(a) Falso. (b) Invertito: è CloudBase che sussidiava CloudPro, non viceversa. (c) CORRETTO. (d) La differenza è enorme: 1.132€ vs 14.000€ per cliente CloudPro.",
+      "trap": "Confondere la direzione del sussidio: il prodotto che appare redditizio col metodo tradizionale (CloudPro) è quello che, in realtà, è sussidiato dal prodotto standard."
+    },
+    "sourceRef": "X-Lezioni-13-14-e-21-maggio-MATERIALE.md; XI-Lezione-21-maggio-SLIDE.md"
+  },
+  {
+    "id": "B6-ABC-002",
+    "version": 1,
+    "block": 6,
+    "topic": "activity-based-costing",
+    "tags": [
+      "ABC",
+      "gerarchia-attivita",
+      "unit-level",
+      "batch-level",
+      "product-level",
+      "cooper-kaplan"
+    ],
+    "track": "approfondito",
+    "difficulty": 3,
+    "type": "multi-true-false",
+    "stem": "In merito alla gerarchia delle attività nell'Activity-Based Costing (Cooper, 1990) e ai limiti del metodo tradizionale, valuta ciascuna affermazione:",
+    "multiTrueFalseItems": [
+      {
+        "id": "mtf-abc-1",
+        "statement": "Le attività 'unit-level' vengono eseguite per ogni singola unità prodotta (es. ore macchina per lavorazione) e i loro costi variano proporzionalmente al volume di produzione.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-abc-2",
+        "statement": "Le attività 'batch-level' (es. setup macchine, ispezione lotto) vengono eseguite una volta per ogni unità prodotta, quindi i loro costi sono proporzionali al volume come le attività unit-level.",
+        "isTrue": false
+      },
+      {
+        "id": "mtf-abc-3",
+        "statement": "Il metodo tradizionale a base volumetrica (ore MOD o ore macchina) distorce l'allocazione perché trata tutti i costi indiretti come se fossero unit-level, spalmandoli indistintamente sui volumi.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-abc-4",
+        "statement": "I costi 'facility-level' (manutenzione dello stabilimento, direzione generale) sono i più facilmente attribuibili ai singoli prodotti tramite driver causali precisi.",
+        "isTrue": false
+      }
+    ],
+    "explanation": {
+      "why": "La gerarchia delle attività spiega perché il metodo tradizionale è sistematicamente distorto: penalizza i prodotti ad alto volume e favorisce quelli a basso volume ma alta complessità.",
+      "what": "Unit-level: variano col volume. Batch-level: variano col numero di lotti (indipendentemente dal volume per lotto). Product-level: variano col numero di prodotti in gamma. Facility-level: costi di struttura non attribuibili causalmente.",
+      "how": "1: Vera. 2: Falsa — le attività batch-level variano col numero di lotti, non con le unità: produrre 1.000 pezzi in un solo lotto genera 1 setup; produrne 100 in 10 lotti genera 10 setup, pur essendo lo stesso volume totale. 3: Vera. 4: Falsa — i costi facility-level sono i più difficili da attribuire; vengono tipicamente allocati in modo uniforme come ultima risorsa.",
+      "trap": "Confondere batch-level con unit-level: il costo di un setup macchina non aumenta perché si produce un pezzo in più nello stesso lotto."
+    },
+    "sourceRef": "X-Lezioni-13-14-e-21-maggio-MATERIALE.md; XI-Lezione-21-maggio-SLIDE.md"
+  },
+  {
+    "id": "B6-ABC-003",
+    "version": 1,
+    "block": 6,
+    "topic": "activity-based-costing",
+    "tags": ["ABC", "calcolo-ABC", "costo-indiretto-unitario", "numeric-input"],
+    "track": "approfondito",
+    "difficulty": 3,
+    "type": "numeric-input",
+    "stem": "Un'azienda ha 400.000€ di costi indiretti annui da allocare tra due prodotti. Analisi ABC: l'attività 'Setup macchine' costa 200.000€ e il driver è il numero di setup (prodotto Standard: 10 setup; prodotto Custom: 50 setup). L'attività 'Gestione ordini' costa 200.000€ e il driver è il numero di ordini (Standard: 20 ordini; Custom: 100 ordini). Il prodotto Custom ha un volume annuo di 500 unità. Calcola il costo indiretto unitario ABC del prodotto Custom (in €, arrotondato all'euro intero).",
+    "numericAnswer": {
+      "value": 667,
+      "tolerance": 1,
+      "unit": "€/unità"
+    },
+    "explanation": {
+      "why": "Applicare i quattro passi dell'ABC permette di quantificare con precisione il reale assorbimento di risorse per ogni prodotto, rivelando costi nascosti che il metodo tradizionale ignora.",
+      "what": "Passo 1 — Costo unitario driver Setup: 200.000€ / (10+50) setup = 3.333,33€/setup. Passo 2 — Costo unitario driver Ordini: 200.000€ / (20+100) ordini = 1.666,67€/ordine. Passo 3 — Costi totali Custom: (50 × 3.333,33) + (100 × 1.666,67) = 166.667 + 166.667 = 333.334€. Passo 4 — Costo indiretto unitario Custom: 333.334€ / 500 unità = 666,67€ ≈ 667€/unità.",
+      "how": "Setup Custom: 50 × 3.333,33 = 166.667€. Ordini Custom: 100 × 1.666,67 = 166.667€. Totale Custom: 333.334€. Unitario: 333.334 / 500 = 666,67€ ≈ 667€. Con il metodo tradizionale (base: ore macchina uniformi) il Custom sembrerebbe costare molto meno.",
+      "trap": "Dimenticare di dividere i costi totali allocati al Custom per il numero di unità prodotte (500), confondendo il costo totale con il costo unitario."
+    },
+    "formula": "\\text{Costo unitario driver} = \\frac{\\text{Costo attività}}{\\text{Totale driver}}; \\quad \\text{Costo unitario prodotto} = \\frac{\\sum (\\text{driver}_i \\times \\text{costo unitario}_i)}{Q}",
+    "sourceRef": "X-Lezioni-13-14-e-21-maggio-MATERIALE.md; XI-Lezione-21-maggio-SLIDE.md"
   }
 ]

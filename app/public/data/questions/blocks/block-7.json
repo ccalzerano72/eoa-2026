@@ -97,12 +97,7 @@
     "version": 1,
     "block": 7,
     "topic": "archetipi-business-model",
-    "tags": [
-      "freemium",
-      "saas",
-      "coda-lunga",
-      "revenue-model"
-    ],
+    "tags": ["freemium", "saas", "coda-lunga", "revenue-model"],
     "track": "standard",
     "difficulty": 2,
     "type": "multi-true-false",
@@ -225,11 +220,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -305,11 +296,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -385,11 +372,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -465,11 +448,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -545,11 +524,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -625,11 +600,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -669,11 +640,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -749,11 +716,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -793,11 +756,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -873,11 +832,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -917,11 +872,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -997,11 +948,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1041,11 +988,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1121,11 +1064,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1165,11 +1104,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1245,11 +1180,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1325,11 +1256,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1405,11 +1332,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1485,11 +1408,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1565,11 +1484,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1645,11 +1560,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1689,11 +1600,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1769,11 +1676,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1813,11 +1716,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -1893,11 +1792,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -1937,11 +1832,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2017,11 +1908,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2061,11 +1948,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2141,11 +2024,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2185,11 +2064,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2265,11 +2140,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2345,11 +2216,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2425,11 +2292,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2505,11 +2368,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2585,11 +2444,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2665,11 +2520,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2709,11 +2560,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2789,11 +2636,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2833,11 +2676,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -2913,11 +2752,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -2957,11 +2792,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3037,11 +2868,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3081,11 +2908,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3161,11 +2984,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3205,11 +3024,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3285,11 +3100,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3365,11 +3176,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3445,11 +3252,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3525,11 +3328,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3605,11 +3404,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3685,11 +3480,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3729,11 +3520,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3809,11 +3596,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3853,11 +3636,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -3933,11 +3712,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -3977,11 +3752,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4057,11 +3828,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4101,11 +3868,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4181,11 +3944,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4225,11 +3984,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4305,11 +4060,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4385,11 +4136,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4465,11 +4212,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4545,11 +4288,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4625,11 +4364,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4705,11 +4440,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4749,11 +4480,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4829,11 +4556,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4873,11 +4596,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -4953,11 +4672,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -4997,11 +4712,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5077,11 +4788,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5121,11 +4828,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5201,11 +4904,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5245,11 +4944,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5325,11 +5020,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5405,11 +5096,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5485,11 +5172,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5565,11 +5248,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5645,11 +5324,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5725,11 +5400,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5769,11 +5440,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5849,11 +5516,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -5893,11 +5556,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -5973,11 +5632,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6017,11 +5672,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6097,11 +5748,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6141,11 +5788,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6221,11 +5864,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6265,11 +5904,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6345,11 +5980,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6425,11 +6056,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6505,11 +6132,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6585,11 +6208,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6665,11 +6284,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6745,11 +6360,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6789,11 +6400,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6869,11 +6476,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -6913,11 +6516,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -6993,11 +6592,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7037,11 +6632,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7117,11 +6708,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7161,11 +6748,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7241,11 +6824,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7285,11 +6864,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7365,11 +6940,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7445,11 +7016,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7525,11 +7092,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7605,11 +7168,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7685,11 +7244,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7765,11 +7320,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7809,11 +7360,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -7889,11 +7436,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -7933,11 +7476,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8013,11 +7552,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8057,11 +7592,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8137,11 +7668,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8181,11 +7708,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8261,11 +7784,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8305,11 +7824,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8385,11 +7900,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8465,11 +7976,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8545,11 +8052,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8625,11 +8128,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8705,11 +8204,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8785,11 +8280,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8829,11 +8320,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -8909,11 +8396,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -8953,11 +8436,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9033,11 +8512,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9077,11 +8552,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9157,11 +8628,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9201,11 +8668,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9281,11 +8744,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9325,11 +8784,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9405,11 +8860,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9485,11 +8936,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9565,11 +9012,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9645,11 +9088,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9725,11 +9164,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9805,11 +9240,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9849,11 +9280,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -9929,11 +9356,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -9973,11 +9396,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10053,11 +9472,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10097,11 +9512,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10177,11 +9588,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10221,11 +9628,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10301,11 +9704,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10345,11 +9744,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10425,11 +9820,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10505,11 +9896,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10585,11 +9972,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10665,11 +10048,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10745,11 +10124,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10825,11 +10200,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10869,11 +10240,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -10949,11 +10316,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -10993,11 +10356,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11073,11 +10432,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11117,11 +10472,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11197,11 +10548,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11241,11 +10588,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11321,11 +10664,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11365,11 +10704,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11445,11 +10780,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11525,11 +10856,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11605,11 +10932,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11685,11 +11008,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11765,11 +11084,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11845,11 +11160,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -11889,11 +11200,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -11969,11 +11276,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12013,11 +11316,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12093,11 +11392,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12137,11 +11432,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12217,11 +11508,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12261,11 +11548,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12341,11 +11624,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12385,11 +11664,7 @@
     "version": 1,
     "block": 7,
     "topic": "valutazione-strategico-finanziaria",
-    "tags": [
-      "multi-tf",
-      "finanza",
-      "canvas-investimenti"
-    ],
+    "tags": ["multi-tf", "finanza", "canvas-investimenti"],
     "track": "advanced",
     "difficulty": 3,
     "type": "multi-true-false",
@@ -12465,11 +11740,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12545,11 +11816,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12625,11 +11892,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12705,11 +11968,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -12785,11 +12044,7 @@
     "version": 1,
     "block": 7,
     "topic": "decisioni-finanziarie-innovazione",
-    "tags": [
-      "finanza",
-      "investimenti",
-      "innovazione"
-    ],
+    "tags": ["finanza", "investimenti", "innovazione"],
     "track": "standard",
     "difficulty": 2,
     "type": "single-choice",
@@ -27823,5 +27078,99 @@
     },
     "formula": "WACC = K_e \\cdot \\frac{E}{D+E} + K_d \\cdot (1 - t) \\cdot \\frac{D}{D+E}",
     "sourceRef": "Slide Blocco VII - Finanza d'Impresa e Costo del Capitale"
+  },
+  {
+    "id": "B7-OPEN-BM-001",
+    "version": 1,
+    "block": 7,
+    "topic": "modelli-di-business-aperti",
+    "tags": [
+      "open-business-model",
+      "inside-out",
+      "outside-in",
+      "brevetti",
+      "licenze",
+      "innovazione-aperta"
+    ],
+    "track": "approfondito",
+    "difficulty": 2,
+    "type": "single-choice",
+    "stem": "Philips possiede un vasto portafoglio di brevetti in ambito medicale e illuminazione, molti dei quali non vengono sfruttati internamente. L'azienda decide di licenziarli ad aziende di altri settori, generando flussi di royalty. LEGO, invece, lancia la piattaforma 'LEGO Ideas' dove fan e lead user propongono nuovi set: quelli che raggiungono 10.000 consensi vengono valutati per la produzione, con royalty al designer. A quale coppia di pattern di modello di business aperto corrispondono rispettivamente Philips e LEGO?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Philips = Outside-In; LEGO = Inside-Out",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Philips = Inside-Out; LEGO = Outside-In",
+        "correct": true
+      },
+      {
+        "id": "c",
+        "text": "Entrambe adottano un modello Outside-In perché entrambe collaborano con partner esterni",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Philips = Piattaforma Multi-Sided; LEGO = Freemium",
+        "correct": false
+      }
+    ],
+    "explanation": {
+      "why": "I modelli di business aperti si distinguono per la direzione del flusso di valore: verso l'esterno (Inside-Out) o dall'esterno verso l'interno (Outside-In).",
+      "what": "Inside-Out: l'impresa cede o licenzia all'esterno proprietà intellettuale o tecnologie sviluppate internamente ma non pienamente sfruttate. Outside-In: l'impresa integra nei propri processi idee, brevetti o innovazioni provenienti da soggetti esterni.",
+      "how": "Philips licenzia brevetti interni a terzi → monetizza asset sviluppati dentro l'impresa → Inside-Out. LEGO incorpora idee create da utenti esterni (fan, lead user) nel proprio processo di sviluppo prodotto → Outside-In. (c) Errata: la collaborazione con esterni caratterizza l'Outside-In, non entrambe. (d) Errata: Philips non gestisce una piattaforma multi-sided né LEGO usa un modello freemium.",
+      "trap": "Confondere 'aprirsi verso l'esterno' con Outside-In: Philips si apre ma per cedere risorse interne (Inside-Out), non per acquisire innovazione esterna."
+    },
+    "sourceRef": "IX-06-05-2026.md — Modelli di Business Aperti (slide 19-22)"
+  },
+  {
+    "id": "B7-OPEN-BM-002",
+    "version": 1,
+    "block": 7,
+    "topic": "modelli-di-business-aperti",
+    "tags": [
+      "open-business-model",
+      "inside-out",
+      "outside-in",
+      "canvas",
+      "risorse-chiave",
+      "flussi-ricavi"
+    ],
+    "track": "approfondito",
+    "difficulty": 3,
+    "type": "multi-true-false",
+    "stem": "In merito ai modelli di business aperti e alle loro implicazioni sul Business Model Canvas, valuta ciascuna affermazione:",
+    "multiTrueFalseItems": [
+      {
+        "id": "mtf-obm-1",
+        "statement": "In un modello Inside-Out, la Risorsa Chiave più rilevante è tipicamente la proprietà intellettuale (brevetti, software, know-how) non sfruttata internamente, e il Flusso di Ricavi aggiuntivo deriva da royalties o tariffe di licenza a costo marginale quasi nullo.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-obm-2",
+        "statement": "Un modello Outside-In richiede, tra le Attività Chiave, la gestione di connessioni con reti esterne (università, startup, comunità di utenti) e, tra i Costi, gli investimenti per costruire e mantenere tali punti di accesso all'innovazione esterna.",
+        "isTrue": true
+      },
+      {
+        "id": "mtf-obm-3",
+        "statement": "I modelli aperti sono sostanzialmente identici alle piattaforme multi-sided: in entrambi i casi l'impresa orchestra l'interazione tra due gruppi distinti di utenti che si creano valore a vicenda.",
+        "isTrue": false
+      },
+      {
+        "id": "mtf-obm-4",
+        "statement": "Il principale vantaggio strategico dell'Inside-Out per un'azienda come Philips è che, avendo già sostenuto i costi di R&S internamente, licenziare i brevetti genera ricavi aggiuntivi su asset già ammortizzati, con impatto quasi nullo sui costi incrementali.",
+        "isTrue": true
+      }
+    ],
+    "explanation": {
+      "why": "I modelli aperti modificano strutturalmente il Business Model Canvas: cambiano le Risorse Chiave rilevanti, le Attività Chiave, i Partner e i Flussi di Ricavo rispetto ai modelli chiusi tradizionali.",
+      "what": "Inside-Out: sfruttamento esterno di asset IP interni. Outside-In: integrazione di innovazione esterna nei processi interni. Le piattaforme multi-sided invece orchestrano l'interazione tra utenti di versanti diversi — logica completamente diversa.",
+      "how": "1: Vera — la IP non utilizzata diventa una fonte di rendita a costi marginali quasi nulli. 2: Vera — serve infrastruttura relazionale (portali, accordi, antenne tecnologiche) per accedere all'ecosistema esterno. 3: Falsa — le piattaforme multi-sided connettono utenti tra loro; i modelli aperti riguardano il rapporto dell'impresa con i propri processi di R&S e la propria IP, non l'orchestrazione di network. 4: Vera — il costo del brevetto è già stato sostenuto (sunk); la licenza è quasi puro ricavo.",
+      "trap": "Confondere modelli aperti con piattaforme multi-sided: il fatto che entrambi coinvolgano soggetti esterni non li rende equivalenti — la logica economica e il blocco Canvas interessato sono radicalmente diversi."
+    },
+    "sourceRef": "IX-06-05-2026.md — Modelli di Business Aperti (slide 19-22)"
   }
 ]
