@@ -12,7 +12,7 @@ export function evaluateMath(
   expr: string,
   context: Record<string, number>,
 ): number {
-  const sanitized = expr.replace(/[^a-zA-Z0-9_+\-*/().\s]/g, "");
+  const sanitized = expr.replace(/[^a-zA-Z0-9_+\-*/(),.\s]/g, "");
   const keys = Object.keys(context);
   const values = Object.values(context);
   try {
@@ -112,6 +112,7 @@ export function instantiateTemplate(
   template: ParametricTemplate,
   seq: number,
   maxAttempts = 100,
+  targetType?: "single-choice" | "numeric-input",
 ): Question {
   let attempts = 0;
   let context: Record<string, number> = {};
@@ -161,9 +162,15 @@ export function instantiateTemplate(
     context,
   );
 
-  const questionId = `${template.id}-INST-${String(seq).padStart(4, "0")}`;
+  const effectiveType = targetType ?? template.type;
+  const typeSuffix = targetType
+    ? targetType === "numeric-input"
+      ? "NUM"
+      : "SC"
+    : "INST";
+  const questionId = `${template.id}-${typeSuffix}-${String(seq).padStart(4, "0")}`;
 
-  if (template.type === "numeric-input") {
+  if (effectiveType === "numeric-input") {
     return {
       id: questionId,
       version: 1,

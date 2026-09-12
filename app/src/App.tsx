@@ -10,6 +10,8 @@ import type {
 import { QuizRunner } from "./components/quiz/QuizRunner";
 import { StudyBlockViewer } from "./components/study/StudyBlockViewer";
 import { StatsHistoryView } from "./components/stats/StatsHistoryView";
+import { FormulaCheatsheetView } from "./components/formula/FormulaCheatsheetView";
+import type { FormulaItem } from "./data/formulas";
 import { getQuizHistory, computeOverallStats } from "./services/storage";
 import {
   GraduationCap,
@@ -22,9 +24,10 @@ import {
   BarChart3,
   TrendingUp,
   ChevronRight,
+  Calculator,
 } from "lucide-react";
 
-type NavTab = "dashboard" | "study" | "quiz" | "stats";
+type NavTab = "dashboard" | "study" | "quiz" | "formula" | "stats";
 
 interface NavEntry {
   tab: NavTab;
@@ -60,15 +63,27 @@ export function App() {
   const canGoBack = historyIndex > 0;
   const canGoForward = historyIndex < navHistory.length - 1;
 
-  // Load sample questions and initial study unit from public data
+  // Load full questions dataset and initial study unit from public data
   useEffect(() => {
-    fetch("/data/questions/sample.json")
-      .then((res) => res.json())
+    fetch("/data/questions/questions.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Could not load questions.json");
+        return res.json();
+      })
       .then((data: Question[]) => {
         setAllQuestions(data);
         setActiveQuestions(data);
       })
-      .catch((err) => console.error("Failed to load sample questions:", err));
+      .catch((err) => {
+        console.warn("Falling back to sample questions:", err);
+        fetch("/data/questions/sample.json")
+          .then((res) => res.json())
+          .then((data: Question[]) => {
+            setAllQuestions(data);
+            setActiveQuestions(data);
+          })
+          .catch((e) => console.error("Failed to load sample questions:", e));
+      });
 
     fetch("/data/theory/blocco-1.json")
       .then((res) => res.json())
@@ -166,16 +181,33 @@ export function App() {
     });
   };
 
+  const sampleExamQuestions = useCallback(
+    (pool: Question[], countPerBlock = 4): Question[] => {
+      const selected: Question[] = [];
+      for (let b = 1; b <= 7; b++) {
+        const blockPool = pool.filter((q) => q.block === b);
+        if (blockPool.length === 0) continue;
+        const shuffled = [...blockPool].sort(() => Math.random() - 0.5);
+        selected.push(...shuffled.slice(0, countPerBlock));
+      }
+      return selected.sort(() => Math.random() - 0.5);
+    },
+    [],
+  );
+
   const handleStartTopicQuiz = (blockNumber: number, topicId: string) => {
     const filtered = allQuestions.filter(
       (q) =>
         q.block === blockNumber &&
         (q.topic === topicId || q.topic.includes(topicId)),
     );
-    const questionsToUse =
+    const pool =
       filtered.length > 0
         ? filtered
         : allQuestions.filter((q) => q.block === blockNumber);
+    const questionsToUse = [...pool]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 15);
 
     setActiveReviewSession(null);
     setActiveQuestions(questionsToUse);
@@ -186,11 +218,51 @@ export function App() {
 
   const handleStartFullExam = () => {
     setActiveReviewSession(null);
-    setActiveQuestions(allQuestions);
+    const examQuestions = sampleExamQuestions(allQuestions, 4);
+    setActiveQuestions(
+      examQuestions.length > 0 ? examQuestions : allQuestions.slice(0, 28),
+    );
     setQuizMode("exam-simulation");
     setQuizRunnerKey(`exam-${Date.now()}`);
     navigateTo({ tab: "quiz" });
   };
+
+  const handlePracticeFormula = useCallback(
+    (formula: FormulaItem) => {
+      const matching = allQuestions.filter(
+        (q) =>
+          q.block === formula.block &&
+          (q.topic === formula.topic ||
+            q.tags.some((t) => formula.tags.includes(t)) ||
+            q.id
+              .toLowerCase()
+              .includes(formula.id.replace("f-", "").toLowerCase())),
+      );
+      const pool =
+        matching.length >= 4
+          ? matching
+          : allQuestions.filter((q) => q.block === formula.block);
+      const selected = [...pool].sort(() => Math.random() - 0.5).slice(0, 10);
+
+      setActiveQuestions(selected);
+      setQuizMode("calculations");
+      setActiveReviewSession(null);
+      setQuizRunnerKey(`formula-quiz-${formula.id}-${Date.now()}`);
+      navigateTo({ tab: "quiz" });
+    },
+    [allQuestions, navigateTo],
+  );
+
+  const handleOpenStudyFromFormula = useCallback(
+    (blockNumber: number, topicId?: string) => {
+      navigateTo({
+        tab: "study",
+        studyBlockNumber: blockNumber,
+        studyTopicId: topicId,
+      });
+    },
+    [navigateTo],
+  );
 
   const handleReviewPastSession = (record: QuizHistoryRecord) => {
     setActiveReviewSession(record.session);
@@ -298,6 +370,17 @@ export function App() {
             >
               <BookOpen className="h-4 w-4" />
               <span>Studio</span>
+            </button>
+            <button
+              onClick={() => navigateTo({ tab: "formula" })}
+              className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
+                activeTab === "formula"
+                  ? "bg-sky-50 text-sky-700 font-bold"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+              }`}
+            >
+              <Calculator className="h-4 w-4" />
+              <span>Formulario</span>
             </button>
             <button
               onClick={() => navigateTo({ tab: "stats" })}
@@ -476,7 +559,10 @@ export function App() {
                   </p>
                 </div>
                 <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
-                  7 Blocchi • 46 Documenti
+                  7 Blocchi •{" "}
+                  {allQuestions.length > 0
+                    ? `${allQuestions.length.toLocaleString()} Quesiti`
+                    : "5.600+ Quesiti"}
                 </span>
               </div>
 
@@ -699,6 +785,14 @@ export function App() {
               </div>
             )}
           </div>
+        )}
+
+        {/* FORMULARIO TAB */}
+        {activeTab === "formula" && (
+          <FormulaCheatsheetView
+            onPracticeFormula={handlePracticeFormula}
+            onOpenStudy={handleOpenStudyFromFormula}
+          />
         )}
 
         {/* QUIZ TAB */}

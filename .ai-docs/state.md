@@ -69,14 +69,46 @@ triggers:
   - Blocco 7: Definizione business model (prodotto vs modello vs strategia), i 9 blocchi del Canvas (fasi canali, tipologie ricavi e prezzi fissi/dinamici), strategie competitive di Michael Porter con rischio stuck in the middle, modelli digitali (Freemium, SaaS, Razor & Blades) ed economie di rete in piattaforme two-sided.
   - Frontend: aggiornato `StudyBlockViewer.tsx` con supporto a formattazione a paragrafi (`whitespace-pre-line`) e rendering degli approfondimenti operativi e procedurali (`howDetails`).
 
+- **Milestone 4 (M4) — Large Scale Batch Generation & Interactive Formulario**: COMPLETED.
+  - Scaled question bank to **5,621 total validated questions** on disk (`app/public/data/questions/questions.json`, `sample.json`, and partitioned `blocks/block-{1..7}.json`).
+  - Distribution across syllabus blocks:
+    - Blocco 1: 737 domande
+    - Blocco 2: 675 domande
+    - Blocco 3: 554 domande
+    - Blocco 4: 794 domande
+    - Blocco 5: 1,033 domande
+    - Blocco 6: 1,154 domande
+    - Blocco 7: 674 domande
+  - Distribution across question types:
+    - Single-choice: 3,151 domande (56.1%)
+    - Numeric-input: 1,121 domande (19.9%)
+    - True-False: 905 domande (16.1%)
+    - Multi-True-False: 437 domande (7.8%)
+    - Multi-choice & Free-text: seed bank items
+  - Distribution across tiered tracks:
+    - Essential: 1,269 domande (22.6%)
+    - Standard: 3,915 domande (69.6%)
+    - Advanced: 437 domande (7.8%)
+  - Expanded parametric template library from 8 to **28 templates** covering all 7 blocks, generating both single-choice and numeric-input variants with validated formulaic distractors and strict Golden Rule explanations.
+  - Implemented **7 combinatorial generators** creating scenario-based True/False, Single-Choice, and Multi-True-False questions for all syllabus blocks.
+  - Implemented **Interactive Formulario** (`app/src/components/formula/FormulaCheatsheetView.tsx` & `app/src/data/formulas.ts`):
+    - Full didactic repository of all quantitative formulas of EOA 2026.
+    - KaTeX display, variable definitions, and unit badges.
+    - Structured PERCHÉ / COSA / COME and TRAPPOLA conceptual explanations.
+    - Instant search and block filter chips.
+    - Interactive actions: "Esercitati su questa formula" (initiates focused practice quiz) and "Vedi teoria" (opens the corresponding study block).
+  - Webapp UI integration in `App.tsx`:
+    - Added "Formulario" tab to navigation bar and history stack.
+    - Added balanced exam simulation sampling (`sampleExamQuestions`: 28 questions drawn randomly across all 7 blocks).
+    - Updated live question count display on dashboard.
+  - Production build and oxlint validated with 0 errors.
+
 ## In Progress
 
-- **Milestone 4 (M4) — Large Scale Batch Generation**:
-  - Expanding parametric templates and combinatorics to reach 4,000–6,000 questions on disk.
+- None.
 
 ## Planned
 
-- **M4**: Batch generation of 4,000–6,000 questions to disk.
 - **M6**: Electron desktop packaging & PWA offline bundle.
 
 ## Blocked
