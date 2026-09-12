@@ -154,12 +154,22 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
         break;
       }
       case "free-text": {
-        const text = (currentAnswers.textResponse || "").toLowerCase();
-        const keywords = currentQuestion.freeTextKeywords || [];
-        const matched = keywords.filter((kw) =>
-          text.includes(kw.toLowerCase()),
-        );
-        isCorrect = matched.length >= Math.ceil(keywords.length * 0.5);
+        const raw = (currentAnswers.textResponse || "").trim();
+        const target = currentQuestion.numericAnswer;
+        const parsed = parseFloat(raw.replace(",", "."));
+        if (target !== undefined && !isNaN(parsed)) {
+          // Numeric free-text (parametric): tolerance-aware grading.
+          const tolerance = target.tolerance ?? 0.1;
+          isCorrect = Math.abs(parsed - target.value) <= tolerance;
+        } else {
+          // Conceptual free-text (seeds): keyword-overlap grading.
+          const text = raw.toLowerCase();
+          const keywords = currentQuestion.freeTextKeywords || [];
+          const matched = keywords.filter((kw) =>
+            text.includes(kw.toLowerCase()),
+          );
+          isCorrect = matched.length >= Math.ceil(keywords.length * 0.5);
+        }
         scoreEarned = isCorrect ? 1 : 0;
         break;
       }

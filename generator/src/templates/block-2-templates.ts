@@ -1,4 +1,5 @@
 import { ParametricTemplate, Question } from "../types";
+import { shuffleArray } from "../engine";
 
 /**
  * Template 1: Relative Market Share and BCG Matrix (Quota di Mercato Relativa)
@@ -14,11 +15,11 @@ export const relativeMarketShareTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "",
   stemTemplate:
-    "In un settore a elevata crescita ({tassoCrescita}% annuo), un'azienda tech realizza un fatturato di {fatturatoImpresa} milioni di euro, mentre il principale concorrente e leader di mercato fattura {fatturatoLeader} milioni di euro. Qual è la quota di mercato relativa (QMR) dell'azienda e in quale quadrante della matrice BCG si posiziona?",
+    "In un settore a elevata crescita ({tassoCrescita} annuo), un'azienda tech realizza un fatturato di {fatturatoImpresa}, mentre il principale concorrente e leader di mercato fattura {fatturatoLeader}. Qual è la quota di mercato relativa (QMR) dell'azienda e in quale quadrante della matrice BCG si posiziona?",
   variables: {
     tassoCrescita: { min: 12, max: 25, step: 1, unit: "%", decimals: 0 },
-    fatturatoImpresa: { min: 20, max: 80, step: 5, unit: "M€", decimals: 0 },
-    fatturatoLeader: { min: 100, max: 200, step: 10, unit: "M€", decimals: 0 },
+    fatturatoImpresa: { min: 20, max: 80, step: 5, unit: " M€", decimals: 0 },
+    fatturatoLeader: { min: 100, max: 200, step: 10, unit: " M€", decimals: 0 },
   },
   correctFormula: "fatturatoImpresa / fatturatoLeader",
   distractorFormulas: [
@@ -32,7 +33,7 @@ export const relativeMarketShareTemplate: ParametricTemplate = {
     why: "La matrice BCG correla la generazione di cassa con la posizione competitiva dell'azienda (quota relativa) e l'attrattività del mercato (tasso di crescita).",
     what: "Se QMR < 1 e il tasso di crescita del mercato è elevato (>10%), il business è un 'Question Mark' (dilemma): richiede ingenti investimenti per guadagnare quota ma genera flussi limitati.",
     howTemplate:
-      "QMR = {fatturatoImpresa} M€ / {fatturatoLeader} M€ = {correct}. Con tasso di crescita {tassoCrescita}% (> 10%) e QMR < 1, si posiziona nel quadrante Question Mark.",
+      "QMR = {fatturatoImpresa} / {fatturatoLeader} = {correct}. Con tasso di crescita {tassoCrescita} (> 10%) e QMR < 1, si posiziona nel quadrante Question Mark.",
     trap: "Attenzione a non calcolare la quota di mercato assoluta rispetto al totale dell'intero settore: la BCG richiede specificamente il rapporto con il leader.",
   },
   sourceRef: "Slide Blocco II - Modelli di Portfolio e Matrice BCG",
@@ -57,7 +58,7 @@ export const learningCurveTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€",
   stemTemplate:
-    "Un produttore di hardware IoT produce la prima serie cumulata di 10.000 unità a un costo unitario di {costoIniziale} €. Il processo gode di un tasso di apprendimento del {tassoApprendimento}% (il che significa che a ogni raddoppio della produzione cumulata il costo unitario scende al {100 - tassoApprendimento_raw}% del valore precedente). Qual è il costo unitario previsto quando la produzione cumulata raggiungerà 40.000 unità (pari a due raddoppi)?",
+    "Un produttore di hardware IoT produce la prima serie cumulata di 10.000 unità a un costo unitario di {costoIniziale}. Il processo gode di un tasso di apprendimento del {tassoApprendimento} (il che significa che a ogni raddoppio della produzione cumulata il costo unitario scende al {100 - tassoApprendimento_raw}% del valore precedente). Qual è il costo unitario previsto quando la produzione cumulata raggiungerà 40.000 unità (pari a due raddoppi)?",
   variables: {
     costoIniziale: { min: 80, max: 200, step: 10, unit: "€", decimals: 0 },
     tassoApprendimento: { min: 10, max: 25, step: 5, unit: "%", decimals: 0 },
@@ -75,7 +76,7 @@ export const learningCurveTemplate: ParametricTemplate = {
     why: "La curva di esperienza spiega come la produzione cumulata nel tempo consenta di abbattere progressivamente i costi unitari grazie all'apprendimento, alla standardizzazione e al redesign di processo.",
     what: "A ogni raddoppio dei volumi cumulati (da 10k a 20k, poi da 20k a 40k = 2 raddoppi), il costo unitario si contrae secondo la percentuale di progresso.",
     howTemplate:
-      "Fattore di costo = (100 - {tassoApprendimento})% = {(100 - tassoApprendimento_raw)/100}. Dopo 2 raddoppi: C = {costoIniziale} € × ({(100 - tassoApprendimento_raw)/100})^2 = {correct} €.",
+      "Fattore di costo = (100 − {tassoApprendimento}) = {(100 - tassoApprendimento_raw)/100}. Dopo 2 raddoppi: C = {costoIniziale} × ({(100 - tassoApprendimento_raw)/100})^2 = {correct}.",
     trap: "Non confondere le economie di scala (dimensione istantanea dell'impianto nel breve/medio periodo) con la curva di esperienza (accumulo storico di produzione nel tempo).",
   },
   sourceRef:
@@ -96,7 +97,7 @@ export const priceElasticityTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "",
   stemTemplate:
-    "Un'azienda SaaS decide di aumentare il canone mensile del {deltaP}% (da 50 € a {50 + (50 * deltaP_raw / 100)} €). In conseguenza di ciò, il numero di abbonati attivi cala del {deltaQ}%. Qual è il coefficiente di elasticità della domanda al prezzo (in valore assoluto)?",
+    "Un'azienda SaaS decide di aumentare il canone mensile del {deltaP} (da 50 € a {50 + (50 * deltaP_raw / 100)} €). In conseguenza di ciò, il numero di abbonati attivi cala del {deltaQ}. Qual è il coefficiente di elasticità della domanda al prezzo (in valore assoluto)?",
   variables: {
     deltaP: { min: 10, max: 30, step: 5, unit: "%", decimals: 0 },
     deltaQ: { min: 5, max: 25, step: 5, unit: "%", decimals: 0 },
@@ -113,7 +114,7 @@ export const priceElasticityTemplate: ParametricTemplate = {
     why: "L'elasticità della domanda al prezzo guida la politica di pricing: indica se un aumento di prezzo farà salire o scendere i ricavi complessivi dell'impresa.",
     what: "Rapporto tra la variazione percentuale della quantità domandata e la variazione percentuale del prezzo.",
     howTemplate:
-      "Elasticità ε = |-{deltaQ}% / +{deltaP}%| = {correct}. Se ε < 1 la domanda è anelastica (i ricavi aumentano all'aumentare del prezzo); se ε > 1 la domanda è elastica.",
+      "Elasticità ε = |-{deltaQ} / +{deltaP}| = {correct}. Se ε < 1 la domanda è anelastica (i ricavi aumentano all'aumentare del prezzo); se ε > 1 la domanda è elastica.",
     trap: "L'elasticità è un numero puro (adimensionale), non una grandezza in euro o percento.",
   },
   sourceRef: "Slide Blocco II - Pricing e Comportamento della Domanda",
@@ -236,7 +237,7 @@ export function generateBlock2CombinatorialQuestions(): Question[] {
         difficulty: 2,
         type: "single-choice",
         stem: `Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente "${s.concept}"? (Test case #${round})`,
-        options: [
+        options: shuffleArray([
           { id: "a", text: s.trueStatement, correct: true },
           { id: "b", text: s.falseStatement, correct: false },
           {
@@ -249,7 +250,7 @@ export function generateBlock2CombinatorialQuestions(): Question[] {
             text: "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
             correct: false,
           },
-        ].sort(() => Math.random() - 0.5),
+        ]),
         explanation: {
           why: s.why,
           what: s.what,

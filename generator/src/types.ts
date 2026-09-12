@@ -64,8 +64,18 @@ export interface Question {
 }
 
 /**
- * Parametric template definition for infinite question generation.
+ * Output types supported by the parametric instantiation engine.
+ * NOTE: "true-false" is intentionally excluded — TF coverage already exceeds
+ * the §7.2 target via combinatorial generators, so parametric budget is
+ * directed to the deficit types (multi-choice, multi-true-false, free-text).
  */
+export type ParametricOutputType =
+  | "single-choice"
+  | "numeric-input"
+  | "multi-choice"
+  | "multi-true-false"
+  | "free-text";
+
 export interface ParametricVariable {
   min: number;
   max: number;
@@ -81,7 +91,7 @@ export interface ParametricTemplate {
   tags: string[];
   track: StudyTrack;
   difficulty: 1 | 2 | 3;
-  type: "single-choice" | "numeric-input";
+  type: ParametricOutputType;
   stemTemplate: string; // e.g. "Un'impresa presenta un ROI pari al {roi}% e un costo del debito i pari al {i}%..."
   variables: Record<string, ParametricVariable>;
   constraints?: string[]; // e.g. ["roi > i", "de >= 1"]
@@ -97,4 +107,6 @@ export interface ParametricTemplate {
   };
   formulaKaTeX: string;
   sourceRef?: string;
+  prerequisites?: string[]; // IDs of predecessor concepts (DESIGN_SPEC §2.7)
+  caseStudyRef?: string; // e.g. "Olivetti", "De Cecco"
 }

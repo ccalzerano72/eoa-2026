@@ -69,7 +69,7 @@ triggers:
   - Blocco 7: Definizione business model (prodotto vs modello vs strategia), i 9 blocchi del Canvas (fasi canali, tipologie ricavi e prezzi fissi/dinamici), strategie competitive di Michael Porter con rischio stuck in the middle, modelli digitali (Freemium, SaaS, Razor & Blades) ed economie di rete in piattaforme two-sided.
   - Frontend: aggiornato `StudyBlockViewer.tsx` con supporto a formattazione a paragrafi (`whitespace-pre-line`) e rendering degli approfondimenti operativi e procedurali (`howDetails`).
 
-- **Milestone 4 (M4) — Large Scale Batch Generation & Interactive Formulario**: COMPLETED.
+- **Milestone 4 (M4) — Large Scale Batch Generation & Interactive Formulario**: COMPLETED (distribution later superseded by Fase 1 rebalancing → 6,055 questions).
   - Scaled question bank to **5,621 total validated questions** on disk (`app/public/data/questions/questions.json`, `sample.json`, and partitioned `blocks/block-{1..7}.json`).
   - Distribution across syllabus blocks:
     - Blocco 1: 737 domande
@@ -103,9 +103,22 @@ triggers:
     - Updated live question count display on dashboard.
   - Production build and oxlint validated with 0 errors.
 
+- **Fase 1 — Question Bank Rebalancing (§7.2)**: COMPLETED.
+  - Extended parametric engine (`generator/src/engine.ts`) from SC/NUM-only to 5 output types: `single-choice`, `numeric-input`, `multi-choice`, `multi-true-false`, `free-text` (`ParametricOutputType` in `types.ts`). New branches derive 2-correct MC options and 2V/2F MTF items from formula-anchored distractors; numeric FT carries dual grading fields (`numericAnswer` + `freeTextKeywords`).
+  - Added `computeDistractors()` (validated: finite, distinct, non-trivial >2%/>0.05) with expanded fallback pool, `numericAnswerKeywords()`, and unbiased Fisher-Yates `shuffleArray()` replacing all 8 `.sort(() => Math.random() - 0.5)` occurrences (engine + 7 combinatorial generators).
+  - Rebalanced per-template quotas in `build-questions.ts`: 40 SC + 40 NUM + 30 MC + 15 MTF + 10 FT (135/template, 3,780 parametric instances). TF intentionally excluded from parametric budget (already over target via combinatorics).
+  - Added 14 curated seeds (`seed-data/block-seeds-2.ts`, `B*-SEED-*` namespace): 1 MC + 1 FT per block with Golden Rule explanations.
+  - Fixed systematic double-unit rendering bug (`18,4%%`, `40M€ M€`, `625,0dipendenti dipendenti`) in ~20 templates (convention: interpolated values carry the unit, template text must not repeat it) and added a permanent double-unit regression gate in `build-questions.ts`.
+  - Extended integrity checks: MC ≥2 correct, MTF mixed V/F, numeric finite value + positive tolerance, FT keywords (+ numericAnswer validation when present), `sourceRef` required.
+  - Stratified `sample.json` (17 SC + 7 MC + 5 TF + 8 MTF + 10 NUM + 3 FT per block = 350).
+  - Final dataset: **6,055 questions** — SC 33.5% (≈35), MC 14.1% (≈15), MTF 14.2% (≈15), NUM 18.5% (≈20), FT 4.8% (≈5), TF 14.9% (over 10% target, combinatorial excess, accepted).
+  - QuizRunner free-text grading: numeric path (tolerance-aware) when `numericAnswer` present, keyword-overlap fallback otherwise (`QuizRunner.tsx`).
+  - Known residuals: seed count 43 vs 300–500 target; templates 28 vs 80–120; `prerequisites`/`caseStudyRef` unpopulated; B5/B6 above 800/block ceiling.
+  - NOTE: production build (`tsc` + `vite build`) and oxlint re-verification after these changes is PENDING (owner runs it).
+
 - **New Quiz Modes — Flash Cards, Track Selector, Traps Quiz**: COMPLETED.
-  - Implemented `FlashCardRunner.tsx`: standalone flip-card component with keyboard navigation (←/→/Space/Enter), block and source filters (Domande/Formule), shuffle, dual data sources (5,621 questions + all formulasData formulas), no timer/scoring.
-  - Implemented **Tiered Track Selector** (◆ Essenziale / ■ Standard / ○ Approfondito / Tutti): global filter on Dashboard that restricts all quiz modes and flash cards to the selected track (essential: 1,269 Qs, standard: 3,915 Qs, advanced: 437 Qs).
+  - Implemented `FlashCardRunner.tsx`: standalone flip-card component with keyboard navigation (←/→/Space/Enter), block and source filters (Domande/Formule), shuffle, dual data sources (6,055 questions + all formulasData formulas), no timer/scoring.
+  - Implemented **Tiered Track Selector** (◆ Essenziale / ■ Standard / ○ Approfondito / Tutti): global filter on Dashboard that restricts all quiz modes and flash cards to the selected track (essential: 1,322 Qs, standard: 4,296 Qs, advanced: 437 Qs — post-Fase-1 counts).
   - Implemented **Quiz Trappole Dedicate**: `traps-only` mode in `QuizRunner` with immediate explanation reveal, full PERCHÉ/COSA/COME breakdown, and prominent red ⚠ "Trappola Concettuale — Non Dare per Scontato" card. 20 random questions per session. Rose-colored status bar and mode banner.
   - Added `"flash-cards"` to `QuizMode` type union in `quiz.ts`.
   - Dashboard "Modalità di Studio Avanzate" panel with two action cards (Flash Cards, Quiz Trappole) and inline track filter chips.

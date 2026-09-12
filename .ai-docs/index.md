@@ -24,7 +24,7 @@ source:
 
 ## Current Status
 
-- **Phase:** Design approved (`DESIGN_SPEC.md`), moving into M0 (Project Infrastructure).
+- **Phase:** M0–M5 completed + Fase 1 question-bank rebalancing completed (6,055 questions aligned to §7.2). Next: M6 (Electron desktop packaging & PWA offline bundle). Build re-verification pending (owner runs it).
 - Specification distilled from BOOK didactic & visual standards (`Golden Rule`, `LOUD/QUIET`, `donotassume`, `tiered tracks`).
 - Course materials cataloged in `materiale/1-md/` (46 documents) and `materiale/2-LLM wiki/`.
 

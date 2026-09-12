@@ -1,4 +1,5 @@
 import { ParametricTemplate, Question } from "../types";
+import { shuffleArray } from "../engine";
 
 /**
  * Template 1: Customer Acquisition Cost and Lifetime Value (CAC and CLV)
@@ -16,12 +17,12 @@ export const clvCacTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "",
   stemTemplate:
-    "Una startup SaaS spende {speseMarketing} k€ in campagne di digital marketing e acquisisce {nuoviClienti} nuovi clienti abbonati paganti. Ciascun cliente genera un margine operativo annuo di {margineAnnuo} € e rimane abbonato in media per {anniPermanenza} anni. Qual è il rapporto tra Customer Lifetime Value (CLV lordo = Margine annuo × Anni) e Customer Acquisition Cost (CAC)?",
+    "Una startup SaaS spende {speseMarketing} in campagne di digital marketing e acquisisce {nuoviClienti} nuovi clienti abbonati paganti. Ciascun cliente genera un margine operativo annuo di {margineAnnuo} e rimane abbonato in media per {anniPermanenza}. Qual è il rapporto tra Customer Lifetime Value (CLV lordo = Margine annuo × Anni) e Customer Acquisition Cost (CAC)?",
   variables: {
-    speseMarketing: { min: 40, max: 120, step: 10, unit: "k€", decimals: 0 },
+    speseMarketing: { min: 40, max: 120, step: 10, unit: " k€", decimals: 0 },
     nuoviClienti: { min: 200, max: 600, step: 50, decimals: 0 },
     margineAnnuo: { min: 200, max: 600, step: 50, unit: "€", decimals: 0 },
-    anniPermanenza: { min: 2, max: 4, step: 1, unit: "anni", decimals: 0 },
+    anniPermanenza: { min: 2, max: 4, step: 1, unit: " anni", decimals: 0 },
   },
   correctFormula:
     "(margineAnnuo * anniPermanenza) / ((speseMarketing * 1000) / nuoviClienti)",
@@ -36,7 +37,7 @@ export const clvCacTemplate: ParametricTemplate = {
     why: "Nelle aziende digitali e nei modelli di abbonamento (SaaS), il rapporto CLV/CAC è il termometro della scalabilità economica. Un rapporto CLV/CAC ≥ 3 indica un business sano e profittevole.",
     what: "CAC = costo medio sostenuto per convertire un prospect in cliente; CLV = valore complessivo cumulato di contribuzione monetaria generato dal cliente lungo la sua relazione con l'impresa.",
     howTemplate:
-      "CAC = ({speseMarketing} × 1.000 €) / {nuoviClienti} clienti = {((speseMarketing_raw * 1000) / nuoviClienti_raw).toFixed(1)} €/cliente. CLV = {margineAnnuo} € × {anniPermanenza} anni = {margineAnnuo_raw * anniPermanenza_raw} €. Rapporto CLV/CAC = {margineAnnuo_raw * anniPermanenza_raw} / {((speseMarketing_raw * 1000) / nuoviClienti_raw).toFixed(1)} = {correct}.",
+      "CAC = ({speseMarketing_raw} × 1.000 €) / {nuoviClienti} clienti = {((speseMarketing_raw * 1000) / nuoviClienti_raw).toFixed(1)} €/cliente. CLV = {margineAnnuo} × {anniPermanenza} = {margineAnnuo_raw * anniPermanenza_raw} €. Rapporto CLV/CAC = {margineAnnuo_raw * anniPermanenza_raw} / {((speseMarketing_raw * 1000) / nuoviClienti_raw).toFixed(1)} = {correct}.",
     trap: "Se CLV/CAC < 1 l'azienda distrugge cassa a ogni nuovo cliente acquisito; se è tra 1 e 2 i costi di struttura renderanno il business insostenibile.",
   },
   sourceRef: "Slide Blocco VII - Metriche per Modelli di Business Digitali",
@@ -54,12 +55,12 @@ export const paybackPeriodTemplate: ParametricTemplate = {
   track: "essential",
   difficulty: 1,
   type: "single-choice",
-  unit: "anni",
+  unit: " anni",
   stemTemplate:
-    "Un dipartimento IT intende automatizzare l'infrastruttura di test sostenendo un investimento iniziale immediato pari a {investimento} k€. L'automazione consente un risparmio annuo netto costante di costi pari a {flussoCassa} k€/anno. Qual è il tempo di recupero semplice (Payback Period) del progetto?",
+    "Un dipartimento IT intende automatizzare l'infrastruttura di test sostenendo un investimento iniziale immediato pari a {investimento}. L'automazione consente un risparmio annuo netto costante di costi pari a {flussoCassa}/anno. Qual è il tempo di recupero semplice (Payback Period) del progetto?",
   variables: {
-    investimento: { min: 60, max: 300, step: 20, unit: "k€", decimals: 0 },
-    flussoCassa: { min: 20, max: 100, step: 10, unit: "k€", decimals: 0 },
+    investimento: { min: 60, max: 300, step: 20, unit: " k€", decimals: 0 },
+    flussoCassa: { min: 20, max: 100, step: 10, unit: " k€", decimals: 0 },
   },
   correctFormula: "investimento / flussoCassa",
   distractorFormulas: [
@@ -73,7 +74,7 @@ export const paybackPeriodTemplate: ParametricTemplate = {
     why: "Il tempo di recupero semplice misura il periodo necessario affinché i flussi di cassa operativi generati dal progetto reintegrino l'esborso finanziario iniziale, fornendo una stima del rischio di liquidità.",
     what: "Rapporto tra l'esborso al tempo zero e il flusso monetario annuo costante.",
     howTemplate:
-      "Payback Period = {investimento} k€ / {flussoCassa} k€/anno = {correct} anni.",
+      "Payback Period = {investimento} / {flussoCassa}/anno = {correct}.",
     trap: "LIMITI GRAVI DEL PAYBACK: Ignora il valore temporale del denaro (non attualizza i flussi) e trascura completamente tutti i flussi di cassa positivi che maturano DOPO il raggiungimento del pareggio!",
   },
   sourceRef:
@@ -94,10 +95,10 @@ export const waccTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "%",
   stemTemplate:
-    "Un'azienda quotata presenta un capitale proprio (Equity) pari a {equity} M€ con un costo dell'equity Ke pari al {ke}%, e un indebitamento finanziario netto (Debt) pari a {debt} M€ con un costo del debito Kd del {kd}%. L'aliquota d'imposta societaria sui redditi è del {aliquota}%. Qual è il Costo Medio Ponderato del Capitale (WACC) dell'impresa?",
+    "Un'azienda quotata presenta un capitale proprio (Equity) pari a {equity} con un costo dell'equity Ke pari al {ke}, e un indebitamento finanziario netto (Debt) pari a {debt} con un costo del debito Kd del {kd}. L'aliquota d'imposta societaria sui redditi è del {aliquota}. Qual è il Costo Medio Ponderato del Capitale (WACC) dell'impresa?",
   variables: {
-    equity: { min: 40, max: 80, step: 10, unit: "M€", decimals: 0 },
-    debt: { min: 20, max: 60, step: 10, unit: "M€", decimals: 0 },
+    equity: { min: 40, max: 80, step: 10, unit: " M€", decimals: 0 },
+    debt: { min: 20, max: 60, step: 10, unit: " M€", decimals: 0 },
     ke: { min: 8, max: 14, step: 1, unit: "%", decimals: 0 },
     kd: { min: 4, max: 6, step: 0.5, unit: "%", decimals: 1 },
     aliquota: { min: 20, max: 30, step: 5, unit: "%", decimals: 0 },
@@ -115,7 +116,7 @@ export const waccTemplate: ParametricTemplate = {
     why: "Il WACC rappresenta il rendimento minimo atteso che qualsiasi nuovo progetto di investimento aziendale deve generare per remunerare sia gli azionisti sia i creditori finanziari, costituendo il tasso di attualizzazione fondamentale per il calcolo del VAN.",
     what: "Media ponderata del costo dell'equity e del costo del debito, quest'ultimo rettificato con lo scudo fiscale (1 - t) dovuto alla deducibilità degli interessi passivi.",
     howTemplate:
-      "Capitale Totale = {equity} + {debt} = {equity_raw + debt_raw} M€. Peso Equity = {equity}/{equity_raw + debt_raw} = {(equity_raw / (equity_raw + debt_raw)).toFixed(2)}. Peso Debito = {debt}/{equity_raw + debt_raw} = {(debt_raw / (equity_raw + debt_raw)).toFixed(2)}. Costo netto debito = {kd}% × (1 − {aliquota}%) = {(kd_raw * (1 - aliquota_raw/100)).toFixed(2)}%. WACC = {correct}%.",
+      "Capitale Totale = {equity} + {debt} = {equity_raw + debt_raw} M€. Peso Equity = {equity}/{equity_raw + debt_raw} = {(equity_raw / (equity_raw + debt_raw)).toFixed(2)}. Peso Debito = {debt}/{equity_raw + debt_raw} = {(debt_raw / (equity_raw + debt_raw)).toFixed(2)}. Costo netto debito = {kd} × (1 − {aliquota}) = {(kd_raw * (1 - aliquota_raw/100)).toFixed(2)}%. WACC = {correct}.",
     trap: "Dimenticare di moltiplicare il costo del debito per lo scudo fiscale (1 - t), sovrastimando il costo effettivo del capitale.",
   },
   sourceRef: "Slide Blocco VII - Finanza d'Impresa e Costo del Capitale",
@@ -241,7 +242,7 @@ export function generateBlock7CombinatorialQuestions(): Question[] {
         difficulty: 2,
         type: "single-choice",
         stem: `Quale delle seguenti affermazioni descrive in modo rigoroso e corretto "${b.concept}"? (Variante #${round})`,
-        options: [
+        options: shuffleArray([
           { id: "a", text: b.trueStatement, correct: true },
           { id: "b", text: b.falseStatement, correct: false },
           {
@@ -254,7 +255,7 @@ export function generateBlock7CombinatorialQuestions(): Question[] {
             text: "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
             correct: false,
           },
-        ].sort(() => Math.random() - 0.5),
+        ]),
         explanation: {
           why: b.why,
           what: b.what,

@@ -1,4 +1,5 @@
 import { ParametricTemplate, Question } from "../types";
+import { shuffleArray } from "../engine";
 
 /**
  * Template 1: Labor Productivity (Produttività del Lavoro)
@@ -14,7 +15,7 @@ export const laborProductivityTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€/dipendente",
   stemTemplate:
-    "Una software house registra un fatturato annuo di {fatturato} € con un organico medio di {dipendenti} ingegneri software a tempo pieno. Qual è la produttività media annua per dipendente?",
+    "Una software house registra un fatturato annuo di {fatturato} con un organico medio di {dipendenti} ingegneri software a tempo pieno. Qual è la produttività media annua per dipendente?",
   variables: {
     fatturato: {
       min: 600000,
@@ -37,7 +38,7 @@ export const laborProductivityTemplate: ParametricTemplate = {
     why: "La produttività del lavoro misura l'intensità di valore generata per unità di fattore produttivo umano, metrica cardine per confrontare l'efficienza rispetto ai concorrenti o ai benchmark di settore.",
     what: "Rapporto tra l'output monetario (fatturato) o fisico e la quantità di input lavorativo impiegato nel periodo considerato.",
     howTemplate:
-      "Produttività = {fatturato} € / {dipendenti} dipendenti = {correct} €/dipendente.",
+      "Produttività = {fatturato} / {dipendenti} dipendenti = {correct}.",
     trap: "Non confondere la produttività con la redditività: un'elevata produttività per addetto non implica automaticamente un utile netto elevato se i costi generali o fissi sono sproporzionati.",
   },
   sourceRef:
@@ -58,7 +59,7 @@ export const capitalProductivityTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "%",
   stemTemplate:
-    "Un'azienda di telecomunicazioni ha generato un Valore Aggiunto annuo pari a {va} € a fronte di un Capitale Investito netto pari a {ci} €. Qual è la produttività del capitale investito (espressa in percentuale)?",
+    "Un'azienda di telecomunicazioni ha generato un Valore Aggiunto annuo pari a {va} a fronte di un Capitale Investito netto pari a {ci}. Qual è la produttività del capitale investito (espressa in percentuale)?",
   variables: {
     va: { min: 400000, max: 2000000, step: 50000, unit: "€", decimals: 0 },
     ci: { min: 1000000, max: 5000000, step: 200000, unit: "€", decimals: 0 },
@@ -75,7 +76,7 @@ export const capitalProductivityTemplate: ParametricTemplate = {
     why: "Consente al management di valutare quanto valore la combinazione tecnologica e impiantistica riesce a sprigionare per ogni euro immobilizzato nel capitale d'impresa.",
     what: "Indice di produttività parziale che esprime la capacità del capitale investito di trasformare gli input intermedi in valore economico incrementale.",
     howTemplate:
-      "Produttività del capitale = ({va} € / {ci} €) × 100 = {correct}%.",
+      "Produttività del capitale = ({va} / {ci}) × 100 = {correct}.",
     trap: "Il capitale investito comprende sia le immobilizzazioni sia il capitale circolante operativo, non solo i macchinari fisici.",
   },
   sourceRef: "Slide Blocco I - Efficienza e Produttività d'Impresa",
@@ -94,7 +95,7 @@ export const opportunityCostTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€",
   stemTemplate:
-    "Un imprenditore informatico intende lanciare una startup investendo {capitale} € di tasca propria e lavorando a tempo pieno senza stipendio per un anno. Se impiegasse il capitale in titoli sicuri otterrebbe un rendimento del {tasso}% annuo; se lavorasse come dipendente senior percepirebbe una RAL di {stipendio} €. Qual è il costo opportunità complessivo della scelta imprenditoriale per il primo anno?",
+    "Un imprenditore informatico intende lanciare una startup investendo {capitale} di tasca propria e lavorando a tempo pieno senza stipendio per un anno. Se impiegasse il capitale in titoli sicuri otterrebbe un rendimento del {tasso} annuo; se lavorasse come dipendente senior percepirebbe una RAL di {stipendio}. Qual è il costo opportunità complessivo della scelta imprenditoriale per il primo anno?",
   variables: {
     capitale: { min: 50000, max: 200000, step: 10000, unit: "€", decimals: 0 },
     tasso: { min: 3, max: 7, step: 0.5, unit: "%", decimals: 1 },
@@ -112,7 +113,7 @@ export const opportunityCostTemplate: ParametricTemplate = {
     why: "Nella teoria economica e manageriale, un'attività economica è conveniente solo se remunera tutti i fattori produttivi impiegati, inclusi i costi impliciti e le alternative a cui si rinuncia.",
     what: "Il costo opportunità è il valore della migliore alternativa a cui si rinuncia impiegando le risorse scarse (denaro, tempo, competenze) in una specifica iniziativa.",
     howTemplate:
-      "Rendimento alternativo del capitale = {capitale} € × {tasso}% = {capitale_raw * tasso_raw / 100} €. Stipendio a cui si rinuncia = {stipendio} €. Costo opportunità totale = {correct} €.",
+      "Rendimento alternativo del capitale = {capitale} × {tasso} = {capitale_raw * tasso_raw / 100} €. Stipendio a cui si rinuncia = {stipendio}. Costo opportunità totale = {correct}.",
     trap: "Un ingegnere o contabile tradizionale tende a considerare solo i costi monetari vivi registrati in fattura (out-of-pocket), ignorando il costo implicito del tempo e del capitale proprio.",
   },
   sourceRef: "Slide Blocco I - Teoria dell'Impresa e Costo Opportunità",
@@ -248,7 +249,7 @@ export function generateBlock1CombinatorialQuestions(): Question[] {
         difficulty: 2,
         type: "single-choice",
         stem: `In relazione al tema "${p.concept}", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #${round})`,
-        options: [
+        options: shuffleArray([
           { id: "a", text: p.trueStatement, correct: true },
           { id: "b", text: p.falseStatement, correct: false },
           {
@@ -261,7 +262,7 @@ export function generateBlock1CombinatorialQuestions(): Question[] {
             text: "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
             correct: false,
           },
-        ].sort(() => Math.random() - 0.5),
+        ]),
         explanation: {
           why: p.why,
           what: p.what,

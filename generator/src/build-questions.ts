@@ -54,47 +54,56 @@ console.log(
   `✓ Generated ${totalCombinatorial} combinatorial questions across Blocks 1–7.\n`,
 );
 
-// 3. Generate parametric instances for each template
-// We generate both single-choice (SC) and numeric-input (NUM) variations
-const SC_INSTANCES_PER_TEMPLATE = 80;
+// 3. Generate parametric instances for each template.
+// Quotas rebalance the archive toward DESIGN_SPEC §7.2 targets
+// (SC 35% / MC 15% / TF 10% / MTF 15% / NUM 20% / FT 5%):
+// TF already exceeds target via combinatorics, so parametric budget
+// goes to the deficit types (MC, MTF, FT). SC is trimmed from 80 to 40
+// to reabsorb its +21pp excess without deleting combinatorial coverage.
+const SC_INSTANCES_PER_TEMPLATE = 40;
 const NUM_INSTANCES_PER_TEMPLATE = 40;
+const MC_INSTANCES_PER_TEMPLATE = 30;
+const MTF_INSTANCES_PER_TEMPLATE = 15;
+const FT_INSTANCES_PER_TEMPLATE = 10;
 let totalParametricGenerated = 0;
+
+const quotas: Array<{
+  label: string;
+  count: number;
+  type: "single-choice" | "numeric-input" | "multi-choice" | "multi-true-false" | "free-text";
+}> = [
+  { label: "SC", count: SC_INSTANCES_PER_TEMPLATE, type: "single-choice" },
+  { label: "NUM", count: NUM_INSTANCES_PER_TEMPLATE, type: "numeric-input" },
+  { label: "MC", count: MC_INSTANCES_PER_TEMPLATE, type: "multi-choice" },
+  { label: "MTF", count: MTF_INSTANCES_PER_TEMPLATE, type: "multi-true-false" },
+  { label: "FT", count: FT_INSTANCES_PER_TEMPLATE, type: "free-text" },
+];
 
 for (const template of allParametricTemplates) {
   let templateSuccess = 0;
+  const perType: Record<string, number> = {};
 
-  // Single choice instances
-  for (let i = 1; i <= SC_INSTANCES_PER_TEMPLATE; i++) {
-    try {
-      const q = instantiateTemplate(template, i, 100, "single-choice");
-      dataset.push(q);
-      templateSuccess++;
-      totalParametricGenerated++;
-    } catch (err) {
-      console.warn(
-        `[Warning] Could not instantiate SC template ${template.id} #${i}:`,
-        err,
-      );
+  for (const q of quotas) {
+    let ok = 0;
+    for (let i = 1; i <= q.count; i++) {
+      try {
+        const question = instantiateTemplate(template, i, 100, q.type);
+        dataset.push(question);
+        templateSuccess++;
+        totalParametricGenerated++;
+        ok++;
+      } catch (err) {
+        console.warn(
+          `[Warning] Could not instantiate ${q.label} template ${template.id} #${i}:`,
+          err,
+        );
+      }
     }
-  }
-
-  // Numeric input instances
-  for (let i = 1; i <= NUM_INSTANCES_PER_TEMPLATE; i++) {
-    try {
-      const q = instantiateTemplate(template, i, 100, "numeric-input");
-      dataset.push(q);
-      templateSuccess++;
-      totalParametricGenerated++;
-    } catch (err) {
-      console.warn(
-        `[Warning] Could not instantiate NUM template ${template.id} #${i}:`,
-        err,
-      );
-    }
+    perType[q.label] = ok;
   }
 
   console.log(
-    `✓ Template [${template.id}] (Blocco ${template.block}): generated ${templateSuccess} instances (SC + NUM).`,
+    `✓ Template [${template.id}] (Blocco ${template.block}): generated ${templateSuccess} instances (SC ${perType["SC"] ?? 0} + NUM ${perType["NUM"] ?? 0} + MC ${perType["MC"] ?? 0} + MTF ${perType["MTF"] ?? 0} + FT ${perType["FT"] ?? 0}).`,
   );
 }
 
@@ -133,13 +142,23 @@ for (const q of dataset) {
         `Integrity Error: Single-choice question ${q.id} must have exactly 1 correct option (found ${correctCount})`,
       );
     }
+    if (!q.options || q.options.length < 3) {
+      throw new Error(
+        `Integrity Error: Single-choice question ${q.id} must have at least 3 options`,
+      );
+    }
   }
 
   if (q.type === "multi-choice") {
     const correctCount = q.options?.filter((o) => o.correct).length || 0;
-    if (correctCount < 1) {
+    if (correctCount < 2) {
       throw new Error(
-        `Integrity Error: Multi-choice question ${q.id} must have at least 1 correct option`,
+        `Integrity Error: Multi-choice question ${q.id} must have at least 2 correct options (found ${correctCount})`,
+      );
+    }
+    if (!q.options || q.options.length < 3) {
+      throw new Error(
+        `Integrity Error: Multi-choice question ${q.id} must have at least 3 options`,
       );
     }
   }
@@ -150,8 +169,101 @@ for (const q of dataset) {
         `Integrity Error: Multi-true-false question ${q.id} must have at least 2 statements`,
       );
     }
+    const hasTrue = q.multiTrueFalseItems.some((it) => it.isTrue);
+    const hasFalse = q.multiTrueFalseItems.some((it) => !it.isTrue);
+    if (!hasTrue || !hasFalse) {
+      throw new Error(
+        `Integrity Error: Multi-true-false question ${q.id} must mix true and false statements`,
+      );
+    }
+  }
+
+  if (q.type === "numeric-input") {
+    if (
+      q.numericAnswer === undefined ||
+      !isFinite(q.numericAnswer.value) ||
+      (q.numericAnswer.tolerance !== undefined &&
+        !(q.numericAnswer.tolerance > 0))
+    ) {
+      throw new Error(
+        `Integrity Error: Numeric question ${q.id} must have a finite value and positive tolerance`,
+      );
+    }
+  }
+
+  if (q.type === "free-text") {
+    if (!q.freeTextKeywords || q.freeTextKeywords.length < 1) {
+      throw new Error(
+        `Integrity Error: Free-text question ${q.id} must define at least 1 keyword`,
+      );
+    }
+    for (const kw of q.freeTextKeywords) {
+      if (!kw || kw.trim().length < 1) {
+        throw new Error(
+          `Integrity Error: Free-text question ${q.id} has an empty keyword`,
+        );
+      }
+    }
+    // Numeric free-text carries a tolerance-graded numericAnswer; single-digit
+    // keywords alone would false-positive on substring match, so the numeric
+    // path (see QuizRunner) is the primary grader there.
+    if (q.numericAnswer !== undefined) {
+      if (
+        !isFinite(q.numericAnswer.value) ||
+        (q.numericAnswer.tolerance !== undefined &&
+          !(q.numericAnswer.tolerance > 0))
+      ) {
+        throw new Error(
+          `Integrity Error: Free-text numeric question ${q.id} must have a finite value and positive tolerance`,
+        );
+      }
+    }
+  }
+
+  if (!q.sourceRef || q.sourceRef.trim().length < 8) {
+    throw new Error(
+      `Integrity Error: Question ${q.id} must carry a specific sourceRef`,
+    );
   }
 }
+
+// 4b. Double-unit regression gate: interpolated values already carry their
+// unit (e.g. "18,4%", "40 M€"), so template literals must not repeat it.
+const DOUBLE_UNIT_PATTERNS = [
+  "€ €",
+  "%%",
+  "M€ M€",
+  "k€ k€",
+  "anni anni",
+  "unità unità",
+  "volte volte",
+  "dipendenti dipendenti",
+  "giorni giorni",
+  "ore ore",
+  "pezzi pezzi",
+  "mesi mesi",
+  "clienti clienti",
+  "€/dipendente €/dipendente",
+  "€/ora €/ora",
+];
+for (const q of dataset) {
+  const texts = [
+    q.stem,
+    q.explanation.how,
+    ...(q.options ?? []).map((o) => o.text),
+    ...(q.multiTrueFalseItems ?? []).map((it) => it.statement),
+  ];
+  for (const text of texts) {
+    for (const pat of DOUBLE_UNIT_PATTERNS) {
+      if (text.includes(pat)) {
+        throw new Error(
+          `Integrity Error: Double-unit "${pat}" in question ${q.id}: ...${text.substring(Math.max(0, text.indexOf(pat) - 30), text.indexOf(pat) + pat.length + 20)}...`,
+        );
+      }
+    }
+  }
+}
+console.log("✓ Double-unit regression gate passed.\n");
 console.log(
   "✓ All integrity checks passed successfully (unique IDs, valid options, complete explanations).\n",
 );
@@ -172,10 +284,21 @@ for (let b = 1; b <= 7; b++) {
   console.log(`  - Blocco ${b}: ${byBlock[b] || 0} domande`);
 }
 
-console.log("\n📊 Distribution by Question Type:");
+console.log("\n📊 Distribution by Question Type (vs DESIGN_SPEC §7.2 target):");
+const typeTargets: Record<string, number> = {
+  "single-choice": 35,
+  "multi-choice": 15,
+  "true-false": 10,
+  "multi-true-false": 15,
+  "numeric-input": 20,
+  "free-text": 5,
+};
 for (const [t, cnt] of Object.entries(byType)) {
+  const pct = (cnt / dataset.length) * 100;
+  const target = typeTargets[t] ?? 0;
+  const delta = pct - target;
   console.log(
-    `  - ${t}: ${cnt} domande (${((cnt / dataset.length) * 100).toFixed(1)}%)`,
+    `  - ${t}: ${cnt} domande (${pct.toFixed(1)}% vs ${target}% target, ${delta >= 0 ? "+" : ""}${delta.toFixed(1)}pp)`,
   );
 }
 
@@ -207,11 +330,24 @@ for (let b = 1; b <= 7; b++) {
   );
 }
 
-// Sample dataset (50 questions per block = 350 questions for fast preview / dev)
+// Sample dataset: stratified by type per block (50/block = 350 for fast preview/dev)
+// Stratification mirrors §7.2 so the preview is representative, not head-biased.
+const SAMPLE_STRATA: Array<{ type: Question["type"]; count: number }> = [
+  { type: "single-choice", count: 17 },
+  { type: "multi-choice", count: 7 },
+  { type: "true-false", count: 5 },
+  { type: "multi-true-false", count: 8 },
+  { type: "numeric-input", count: 10 },
+  { type: "free-text", count: 3 },
+];
 const sampleQuestions: Question[] = [];
 for (let b = 1; b <= 7; b++) {
   const blockQuestions = dataset.filter((q) => q.block === b);
-  sampleQuestions.push(...blockQuestions.slice(0, 50));
+  for (const s of SAMPLE_STRATA) {
+    sampleQuestions.push(
+      ...blockQuestions.filter((q) => q.type === s.type).slice(0, s.count),
+    );
+  }
 }
 fs.writeFileSync(
   sampleJsonPath,

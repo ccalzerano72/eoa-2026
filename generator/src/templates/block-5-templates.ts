@@ -1,4 +1,5 @@
 import { ParametricTemplate, Question } from "../types";
+import { shuffleArray } from "../engine";
 
 /**
  * Template 1: Du Pont Analysis (Scomposizione del ROI in ROS x Turnover)
@@ -15,11 +16,11 @@ export const dupontAnalysisTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "%",
   stemTemplate:
-    "Un'impresa commerciale consegue un Return on Sales (ROS) pari al {ros}% su un volume di vendite annue pari a {ricavi} M€. Il Capitale Investito operativo netto (CI) necessario per generare tale fatturato è pari a {ci} M€. Qual è il Return on Investment (ROI) dell'impresa?",
+    "Un'impresa commerciale consegue un Return on Sales (ROS) pari al {ros} su un volume di vendite annue pari a {ricavi}. Il Capitale Investito operativo netto (CI) necessario per generare tale fatturato è pari a {ci}. Qual è il Return on Investment (ROI) dell'impresa?",
   variables: {
     ros: { min: 4, max: 12, step: 0.5, unit: "%", decimals: 1 },
-    ricavi: { min: 20, max: 80, step: 5, unit: "M€", decimals: 0 },
-    ci: { min: 10, max: 50, step: 2, unit: "M€", decimals: 0 },
+    ricavi: { min: 20, max: 80, step: 5, unit: " M€", decimals: 0 },
+    ci: { min: 10, max: 50, step: 2, unit: " M€", decimals: 0 },
   },
   correctFormula: "ros * (ricavi / ci)",
   distractorFormulas: [
@@ -33,7 +34,7 @@ export const dupontAnalysisTemplate: ParametricTemplate = {
     why: "La formula di Du Pont dimostra che il rendimento della gestione operativa dipende sia dalla marginalità commerciale sulle vendite (ROS) sia dalla velocità di rotazione del capitale investito (Turnover).",
     what: "Un'impresa può ottenere un elevato ROI con margini alti e rotazione lenta (alta gamma/lusso) oppure con margini ridotti e rotazione rapidissima (grande distribuzione/GDO).",
     howTemplate:
-      "Tasso di rotazione del CI (Turnover) = {ricavi} M€ / {ci} M€ = {(ricavi_raw / ci_raw).toFixed(2)}. ROI = {ros}% × {(ricavi_raw / ci_raw).toFixed(2)} = {correct}%.",
+      "Tasso di rotazione del CI (Turnover) = {ricavi} / {ci} = {(ricavi_raw / ci_raw).toFixed(2)}. ROI = {ros} × {(ricavi_raw / ci_raw).toFixed(2)} = {correct}.",
     trap: "Attenzione a non sommare ROS e Turnover: la relazione Du Pont è strettamente moltiplicativa.",
   },
   sourceRef: "Slide Blocco V - Analisi della Redditività: Modello Du Pont",
@@ -51,13 +52,13 @@ export const debtCoverageTemplate: ParametricTemplate = {
   track: "standard",
   difficulty: 2,
   type: "single-choice",
-  unit: "volte",
+  unit: " volte",
   stemTemplate:
-    "Un'azienda presenta un Conto Economico con Ricavi di vendita pari a {ricavi} M€, un Reddito Operativo (EBIT) pari a {ro} M€ e sostiene Oneri Finanziari annui sul debito bancario pari a {of} M€. Qual è il grado di copertura degli oneri finanziari (Times Interest Earned - TIE)?",
+    "Un'azienda presenta un Conto Economico con Ricavi di vendita pari a {ricavi}, un Reddito Operativo (EBIT) pari a {ro} e sostiene Oneri Finanziari annui sul debito bancario pari a {of}. Qual è il grado di copertura degli oneri finanziari (Times Interest Earned - TIE)?",
   variables: {
-    ricavi: { min: 15, max: 60, step: 5, unit: "M€", decimals: 0 },
-    ro: { min: 2, max: 10, step: 0.5, unit: "M€", decimals: 1 },
-    of: { min: 0.4, max: 2.0, step: 0.2, unit: "M€", decimals: 1 },
+    ricavi: { min: 15, max: 60, step: 5, unit: " M€", decimals: 0 },
+    ro: { min: 2, max: 10, step: 0.5, unit: " M€", decimals: 1 },
+    of: { min: 0.4, max: 2.0, step: 0.2, unit: " M€", decimals: 1 },
   },
   constraints: ["ro > of"],
   correctFormula: "ro / of",
@@ -67,7 +68,7 @@ export const debtCoverageTemplate: ParametricTemplate = {
   explanationTemplate: {
     why: "Il TIE misura la sostenibilità del debito: indica quante volte il reddito operativo dell'azienda è in grado di coprire gli interessi passivi dovuti agli istituti di credito.",
     what: "Un indice TIE > 3-4 volte è generalmente considerato di sicurezza dalle banche. Se TIE < 1, la gestione caratteristica non genera nemmeno le risorse per pagare gli interessi.",
-    howTemplate: "TIE = {ro} M€ / {of} M€ = {correct} volte.",
+    howTemplate: "TIE = {ro} / {of} = {correct}.",
     trap: "Utilizzare il Reddito Operativo (RO / EBIT) e non i Ricavi totali o l'Utile Netto (che è già al netto degli interessi e delle tasse).",
   },
   sourceRef: "Slide Blocco V - Indici di Solidità e Rischio Finanziario",
@@ -91,13 +92,13 @@ export const structureMarginTemplate: ParametricTemplate = {
   track: "standard",
   difficulty: 2,
   type: "single-choice",
-  unit: "k€",
+  unit: " k€",
   stemTemplate:
-    "Dallo Stato Patrimoniale riclassificato di una software company si rilevano: Patrimonio Netto pari a {pn} k€, Debiti a medio-lungo termine pari a {pml} k€ e Immobilizzazioni Nette (Attivo Fisso Netto) pari a {afn} k€. Qual è il Margine di Struttura Primario dell'impresa?",
+    "Dallo Stato Patrimoniale riclassificato di una software company si rilevano: Patrimonio Netto pari a {pn}, Debiti a medio-lungo termine pari a {pml} e Immobilizzazioni Nette (Attivo Fisso Netto) pari a {afn}. Qual è il Margine di Struttura Primario dell'impresa?",
   variables: {
-    pn: { min: 400, max: 1200, step: 50, unit: "k€", decimals: 0 },
-    pml: { min: 200, max: 600, step: 50, unit: "k€", decimals: 0 },
-    afn: { min: 300, max: 900, step: 50, unit: "k€", decimals: 0 },
+    pn: { min: 400, max: 1200, step: 50, unit: " k€", decimals: 0 },
+    pml: { min: 200, max: 600, step: 50, unit: " k€", decimals: 0 },
+    afn: { min: 300, max: 900, step: 50, unit: " k€", decimals: 0 },
   },
   correctFormula: "pn - afn",
   distractorFormulas: [
@@ -110,7 +111,7 @@ export const structureMarginTemplate: ParametricTemplate = {
   explanationTemplate: {
     why: "Verificare l'equilibrio strutturale tra fonti a lungo termine e impieghi durevoli: le immobilizzazioni devono essere coperte da risorse finanziarie che non scadono nel breve periodo.",
     what: "Il Margine di Struttura Primario confronta il PN con l'AFN. Se positivo, il capitale proprio copre interamente le immobilizzazioni e finanzia anche parte del circolante.",
-    howTemplate: "Margine di Struttura = {pn} k€ − {afn} k€ = {correct} k€.",
+    howTemplate: "Margine di Struttura = {pn} − {afn} = {correct}.",
     trap: "Non confondere il Margine Primario (solo PN - AFN) con il Margine Secondario o Globale ((PN + Passività Consolidate) - AFN).",
   },
   sourceRef: "Slide Blocco V - Equilibrio Strutturale e Margini Patrimoniali",
@@ -235,7 +236,7 @@ export function generateBlock5CombinatorialQuestions(): Question[] {
         difficulty: 2,
         type: "single-choice",
         stem: `In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente "${r.concept}"? (Variante #${round})`,
-        options: [
+        options: shuffleArray([
           { id: "a", text: r.trueStatement, correct: true },
           { id: "b", text: r.falseStatement, correct: false },
           {
@@ -248,7 +249,7 @@ export function generateBlock5CombinatorialQuestions(): Question[] {
             text: "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
             correct: false,
           },
-        ].sort(() => Math.random() - 0.5),
+        ]),
         explanation: {
           why: r.why,
           what: r.what,

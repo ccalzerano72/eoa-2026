@@ -1,4 +1,5 @@
 import { ParametricTemplate, Question } from "../types";
+import { shuffleArray } from "../engine";
 
 /**
  * Template 1: Make or Buy - Break-even Indifference Point
@@ -18,9 +19,9 @@ export const makeOrBuyTemplate: ParametricTemplate = {
   track: "standard",
   difficulty: 2,
   type: "single-choice",
-  unit: "unità",
+  unit: " unità",
   stemTemplate:
-    "Un'azienda manifatturiera deve decidere se continuare a produrre internamente un componente elettronico (Make) o esternalizzarlo acquistandolo da un fornitore (Buy). Produrre internamente comporta costi fissi specifici dedicati pari a {cfSpecifici} €/anno e un costo variabile unitario pari a {cvInt} €/pezzo. Il fornitore esterno offre il componente a un prezzo di fornitura di {pForn} €/pezzo. Al di sopra di quale volume annuo di produzione (quantità di indifferenza) la produzione interna (Make) risulta economicamente più conveniente?",
+    "Un'azienda manifatturiera deve decidere se continuare a produrre internamente un componente elettronico (Make) o esternalizzarlo acquistandolo da un fornitore (Buy). Produrre internamente comporta costi fissi specifici dedicati pari a {cfSpecifici}/anno e un costo variabile unitario pari a {cvInt}/pezzo. Il fornitore esterno offre il componente a un prezzo di fornitura di {pForn}/pezzo. Al di sopra di quale volume annuo di produzione (quantità di indifferenza) la produzione interna (Make) risulta economicamente più conveniente?",
   variables: {
     cfSpecifici: {
       min: 30000,
@@ -45,7 +46,7 @@ export const makeOrBuyTemplate: ParametricTemplate = {
     why: "La decisione Make or Buy richiede di confrontare i costi rilevanti differenziali: esternalizzare elimina i costi fissi specifici ed evita investimenti dedicati, ma comporta un costo variabile unitario di acquisto più elevato.",
     what: "Il punto di indifferenza è il volume in cui il Costo Totale del Make eguaglia il Costo Totale del Buy. Oltre tale soglia, il risparmio sui costi variabili interni ammortizza i costi fissi dedicati rendendo conveniente il Make.",
     howTemplate:
-      "Risparmio unitario interno = {pForn} € − {cvInt} € = {pForn_raw - cvInt_raw} €/unità. Q* = {cfSpecifici} € / {pForn_raw - cvInt_raw} € = {correct} unità.",
+      "Risparmio unitario interno = {pForn} − {cvInt} = {pForn_raw - cvInt_raw} €/unità. Q* = {cfSpecifici} / {pForn_raw - cvInt_raw} € = {correct}.",
     trap: "Nelle decisioni di make or buy vanno considerati solo i costi fissi ELIMINABILI (specifici) e non le quote di costi fissi generali comuni che l'azienda continuerebbe a sostenere in ogni caso.",
   },
   sourceRef: "Slide Blocco VI - Decisioni di Breve Periodo: Make or Buy",
@@ -70,9 +71,9 @@ export const specialOrderTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€",
   stemTemplate:
-    "Un'azienda informatica che produce schede elettroniche ha una capacità produttiva residua inutilizzata di 5.000 unità. Riceve una proposta di ordine speciale da un nuovo cliente per {qSpeciale} unità a un prezzo di offerta eccezionale di {pOfferto} €/unità (inferiore al prezzo di listino normale di 150 €). I costi dell'azienda per unità sono: costi variabili di produzione {cv} €/unità, costi fissi aziendali allocati 40 €/unità. Qual è l'impatto economico complessivo sul Reddito Operativo derivante dall'accettazione dell'ordine speciale?",
+    "Un'azienda informatica che produce schede elettroniche ha una capacità produttiva residua inutilizzata di 5.000 unità. Riceve una proposta di ordine speciale da un nuovo cliente per {qSpeciale} a un prezzo di offerta eccezionale di {pOfferto}/unità (inferiore al prezzo di listino normale di 150 €). I costi dell'azienda per unità sono: costi variabili di produzione {cv}/unità, costi fissi aziendali allocati 40 €/unità. Qual è l'impatto economico complessivo sul Reddito Operativo derivante dall'accettazione dell'ordine speciale?",
   variables: {
-    qSpeciale: { min: 1000, max: 4000, step: 500, unit: "unità", decimals: 0 },
+    qSpeciale: { min: 1000, max: 4000, step: 500, unit: " unità", decimals: 0 },
     pOfferto: { min: 85, max: 120, step: 5, unit: "€", decimals: 0 },
     cv: { min: 50, max: 75, step: 5, unit: "€", decimals: 0 },
   },
@@ -89,7 +90,7 @@ export const specialOrderTemplate: ParametricTemplate = {
     why: "In presenza di capacità produttiva inutilizzata e senza effetti di cannibalizzazione sul mercato ordinario, accettare un ordine a prezzo ridotto conviene purché il prezzo copra i costi variabili incrementali (MdC unitario > 0).",
     what: "I costi fissi allocati non variano e sono irrilevanti per la decisione incrementale di breve termine.",
     howTemplate:
-      "Margine di contribuzione unitario = {pOfferto} € − {cv} € = {pOfferto_raw - cv_raw} €/pezzo. Incremento Reddito Operativo = {pOfferto_raw - cv_raw} €/pezzo × {qSpeciale} pezzi = +{correct} €.",
+      "Margine di contribuzione unitario = {pOfferto} − {cv} = {pOfferto_raw - cv_raw} €/pezzo. Incremento Reddito Operativo = {pOfferto_raw - cv_raw} €/pezzo × {qSpeciale} = +{correct}.",
     trap: "TRAPPOLA DEGLI INGEGNERI: Dedurre i 40 € di costi fissi unitari allocati e rifiutare l'ordine credendo di vendere 'sottocosto'. I costi fissi esistono già e rimangono invariati!",
   },
   sourceRef: "Slide Blocco VI - Decisioni di Breve Termine: Ordini Speciali",
@@ -109,14 +110,14 @@ export const scarceResourceMixTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€/ora",
   stemTemplate:
-    "Un'azienda produce due modelli di server: Modello A con prezzo {pA} € e costo variabile {cvA} € che richiede {hA} ore di collaudo specialistico; Modello B con prezzo {pB} € e costo variabile {cvB} € che richiede {hB} ore di collaudo. Se la disponibilità di ore del banco collaudo è il fattore scarso vincolante, qual è il Margine di Contribuzione orario per unità di risorsa scarsa del Modello A?",
+    "Un'azienda produce due modelli di server: Modello A con prezzo {pA} e costo variabile {cvA} che richiede {hA} di collaudo specialistico; Modello B con prezzo {pB} e costo variabile {cvB} che richiede {hB} di collaudo. Se la disponibilità di ore del banco collaudo è il fattore scarso vincolante, qual è il Margine di Contribuzione orario per unità di risorsa scarsa del Modello A?",
   variables: {
     pA: { min: 400, max: 800, step: 50, unit: "€", decimals: 0 },
     cvA: { min: 200, max: 500, step: 50, unit: "€", decimals: 0 },
-    hA: { min: 2, max: 5, step: 1, unit: "ore", decimals: 0 },
+    hA: { min: 2, max: 5, step: 1, unit: " ore", decimals: 0 },
     pB: { min: 600, max: 1200, step: 50, unit: "€", decimals: 0 },
     cvB: { min: 300, max: 800, step: 50, unit: "€", decimals: 0 },
-    hB: { min: 3, max: 6, step: 1, unit: "ore", decimals: 0 },
+    hB: { min: 3, max: 6, step: 1, unit: " ore", decimals: 0 },
   },
   constraints: ["pA > cvA", "pB > cvB"],
   correctFormula: "(pA - cvA) / hA",
@@ -131,7 +132,7 @@ export const scarceResourceMixTemplate: ParametricTemplate = {
     why: "Quando la capacità produttiva è limitata da un collo di bottiglia, non si deve privilegiare il prodotto con il margine unitario assoluto più alto, bensì quello che massimizza il margine generato per ogni ora di risorsa scarsa consumata.",
     what: "Il criterio di ottimo economico massimizza il Rendimento Orario del fattore scarso: MdC_unitario / fabbisogno_fattore.",
     howTemplate:
-      "MdC unitario A = {pA} € − {cvA} € = {pA_raw - cvA_raw} €. MdC per ora di collaudo = {pA_raw - cvA_raw} € / {hA} ore = {correct} €/ora.",
+      "MdC unitario A = {pA} − {cvA} = {pA_raw - cvA_raw} €. MdC per ora di collaudo = {pA_raw - cvA_raw} € / {hA} = {correct}.",
     trap: "Privilegiare il prodotto con prezzo o MdC assoluto più alto porta a saturare il collo di bottiglia con prodotti lenti, distruggendo il profitto orario complessivo.",
   },
   sourceRef:
@@ -257,7 +258,7 @@ export function generateBlock6CombinatorialQuestions(): Question[] {
         difficulty: 2,
         type: "single-choice",
         stem: `Quale delle seguenti affermazioni descrive in modo rigoroso "${c.concept}" per il controllo di gestione? (Variante #${round})`,
-        options: [
+        options: shuffleArray([
           { id: "a", text: c.trueStatement, correct: true },
           { id: "b", text: c.falseStatement, correct: false },
           {
@@ -270,7 +271,7 @@ export function generateBlock6CombinatorialQuestions(): Question[] {
             text: "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
             correct: false,
           },
-        ].sort(() => Math.random() - 0.5),
+        ]),
         explanation: {
           why: c.why,
           what: c.what,

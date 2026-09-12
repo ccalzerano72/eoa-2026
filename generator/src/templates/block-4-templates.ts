@@ -1,4 +1,5 @@
 import { ParametricTemplate, Question } from "../types";
+import { shuffleArray } from "../engine";
 
 /**
  * Template 1: Reclassified Income Statement - Value Added and EBITDA (MOL)
@@ -22,7 +23,7 @@ export const valueAddedEbitdaTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€",
   stemTemplate:
-    "Dai dati del bilancio riclassificato di una software enterprise emergono: Valore della Produzione pari a {vp} €, Costi per acquisto di materie prime e servizi esterni pari a {cae} €, Costo del personale dipendente pari a {cl} €, Ammortamenti pari a {amm} €. Qual è il Margine Operativo Lordo (MOL / EBITDA)?",
+    "Dai dati del bilancio riclassificato di una software enterprise emergono: Valore della Produzione pari a {vp}, Costi per acquisto di materie prime e servizi esterni pari a {cae}, Costo del personale dipendente pari a {cl}, Ammortamenti pari a {amm}. Qual è il Margine Operativo Lordo (MOL / EBITDA)?",
   variables: {
     vp: { min: 800000, max: 2500000, step: 50000, unit: "€", decimals: 0 },
     cae: { min: 200000, max: 700000, step: 20000, unit: "€", decimals: 0 },
@@ -41,7 +42,7 @@ export const valueAddedEbitdaTemplate: ParametricTemplate = {
     why: "Il Margine Operativo Lordo (MOL / EBITDA) è l'indicatore fondamentale della capacità della gestione caratteristica di generare cassa potenziale prima delle politiche contabili di ammortamento e degli oneri finanziari.",
     what: "Il Valore Aggiunto misura la ricchezza creata sottraendo al valore prodotto i consumi di beni e servizi esterni. Detraendo le retribuzioni del lavoro dipendente si ottiene il MOL.",
     howTemplate:
-      "Valore Aggiunto = {vp} € − {cae} € = {vp_raw - cae_raw} €. MOL = {vp_raw - cae_raw} € − {cl} € = {correct} €.",
+      "Valore Aggiunto = {vp} − {cae} = {vp_raw - cae_raw} €. MOL = {vp_raw - cae_raw} € − {cl} = {correct}.",
     trap: "NON dedurre gli ammortamenti per calcolare il MOL (EBITDA = Earnings BEFORE Interest, Taxes, Depreciation, and Amortization). Dedurre gli ammortamenti dà il Reddito Operativo (EBIT).",
   },
   sourceRef:
@@ -68,7 +69,7 @@ export const straightLineDepreciationTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€",
   stemTemplate:
-    "Un'azienda acquista un server cluster per il cloud computing a un costo storico di {costoStorico} €, con una vita utile stimata di {vitaUtile} anni e un valore residuo finale stimato pari a {valoreResiduo} €. Adottando il piano di ammortamento civilistico a quote costanti, qual è il Valore Netto Contabile (VNC) del server iscritto nello Stato Patrimoniale al termine del {annoValutazione}° anno di utilizzo?",
+    "Un'azienda acquista un server cluster per il cloud computing a un costo storico di {costoStorico}, con una vita utile stimata di {vitaUtile} anni e un valore residuo finale stimato pari a {valoreResiduo}. Adottando il piano di ammortamento civilistico a quote costanti, qual è il Valore Netto Contabile (VNC) del server iscritto nello Stato Patrimoniale al termine del {annoValutazione}° anno di utilizzo?",
   variables: {
     costoStorico: {
       min: 40000,
@@ -95,7 +96,7 @@ export const straightLineDepreciationTemplate: ParametricTemplate = {
     why: "L'ammortamento ripartisce il costo pluriennale di un bene durevole lungo gli esercizi in cui cede la propria utilità economica, in conformità al principio di competenza economica.",
     what: "Il Valore Netto Contabile (VNC) è la frazione di costo storico non ancora ammortizzata, che residua come valore patrimoniale iscritto nell'Attivo dello Stato Patrimoniale.",
     howTemplate:
-      "Quota annua = ({costoStorico} € − {valoreResiduo} €) / {vitaUtile} anni = {((costoStorico_raw - valoreResiduo_raw) / vitaUtile_raw)} €/anno. Fondo ammortamento al {annoValutazione}° anno = {(((costoStorico_raw - valoreResiduo_raw) / vitaUtile_raw) * annoValutazione_raw)} €. VNC = {costoStorico} € − {(((costoStorico_raw - valoreResiduo_raw) / vitaUtile_raw) * annoValutazione_raw)} € = {correct} €.",
+      "Quota annua = ({costoStorico} − {valoreResiduo}) / {vitaUtile} anni = {((costoStorico_raw - valoreResiduo_raw) / vitaUtile_raw)} €/anno. Fondo ammortamento al {annoValutazione}° anno = {(((costoStorico_raw - valoreResiduo_raw) / vitaUtile_raw) * annoValutazione_raw)} €. VNC = {costoStorico} − {(((costoStorico_raw - valoreResiduo_raw) / vitaUtile_raw) * annoValutazione_raw)} € = {correct}.",
     trap: "Non confondere la quota di ammortamento (costo di competenza nel Conto Economico) con il VNC o con il Fondo Ammortamento (valori cumulati dello Stato Patrimoniale).",
   },
   sourceRef: "Slide Blocco IV - Le Immobilizzazioni e l'Ammortamento",
@@ -120,7 +121,7 @@ export const accrualsDeferralsTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "€",
   stemTemplate:
-    "Il 1° novembre dell'anno T un'impresa paga anticipatamente a mezzo bonifico bancario un canone di locazione semestrale pari a {canoneSemestrale} € relativo al periodo 01/11/T – 30/04/T+1. In applicazione del principio di competenza economica, quale valore deve essere iscritto a Risconto Attivo al 31/12/T?",
+    "Il 1° novembre dell'anno T un'impresa paga anticipatamente a mezzo bonifico bancario un canone di locazione semestrale pari a {canoneSemestrale} relativo al periodo 01/11/T – 30/04/T+1. In applicazione del principio di competenza economica, quale valore deve essere iscritto a Risconto Attivo al 31/12/T?",
   variables: {
     canoneSemestrale: {
       min: 6000,
@@ -142,7 +143,7 @@ export const accrualsDeferralsTemplate: ParametricTemplate = {
     why: "I risconti attivi consentono di sospendere costi già pagati finanziariamente nell'esercizio ma la cui utilità economica maturerà negli esercizi futuri, rispettando il principio di competenza.",
     what: "Il periodo totale è di 6 mesi (novembre-aprile). 2 mesi (novembre e dicembre) sono di competenza dell'anno T e vanno a Conto Economico. I restanti 4 mesi (gennaio-aprile) competono all'anno T+1 e formano il Risconto Attivo nello Stato Patrimoniale.",
     howTemplate:
-      "Canone mensile = {canoneSemestrale} € / 6 = {canoneSemestrale_raw / 6} €/mese. Quota anno T+1 da rinviare al futuro = {canoneSemestrale_raw / 6} €/mese × 4 mesi = {correct} €.",
+      "Canone mensile = {canoneSemestrale} / 6 = {canoneSemestrale_raw / 6} €/mese. Quota anno T+1 da rinviare al futuro = {canoneSemestrale_raw / 6} €/mese × 4 mesi = {correct}.",
     trap: "La trappola classica è calcolare la quota dei 2 mesi dell'anno corrente anziché i 4 mesi di competenza futura da iscrivere a Risconto Attivo!",
   },
   sourceRef: "Slide Blocco IV - Scritture di Assestamento: Ratei e Risconti",
@@ -260,7 +261,7 @@ export function generateBlock4CombinatorialQuestions(): Question[] {
         difficulty: 2,
         type: "single-choice",
         stem: `In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente "${a.concept}"? (Test #${round})`,
-        options: [
+        options: shuffleArray([
           { id: "a", text: a.trueStatement, correct: true },
           { id: "b", text: a.falseStatement, correct: false },
           {
@@ -273,7 +274,7 @@ export function generateBlock4CombinatorialQuestions(): Question[] {
             text: "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
             correct: false,
           },
-        ].sort(() => Math.random() - 0.5),
+        ]),
         explanation: {
           why: a.why,
           what: a.what,

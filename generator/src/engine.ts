@@ -1,4 +1,6 @@
 import {
+  MultiTrueFalseItem,
+  ParametricOutputType,
   ParametricTemplate,
   ParametricVariable,
   Question,
@@ -65,6 +67,19 @@ export function sampleVariable(v: ParametricVariable): number {
 }
 
 /**
+ * Unbiased Fisher-Yates shuffle. Replaces the biased
+ * `.sort(() => Math.random() - 0.5)` pattern.
+ */
+export function shuffleArray<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/**
  * Interpolate placeholders like "{roi}" or expressions like "{q * (p - cv)}" inside a template string.
  */
 export function interpolate(
@@ -106,13 +121,94 @@ export function formatNumberIT(val: number, decimals = 1, unit = ""): string {
 }
 
 /**
+ * Compute formula-anchored distractor values for a sampled context.
+ * Distractors derived from `distractorFormulas` (typical student errors)
+ * are preferred; mechanical fallbacks are used only to fill up to `count`.
+ * Every distractor is validated: finite, distinct from the correct value
+ * and from each other, and non-trivially distant (relative diff > 2%
+ * or absolute diff > 0.05) so options are never near-duplicates.
+ */
+export function computeDistractors(
+  template: ParametricTemplate,
+  context: Record<string, number>,
+  correctVal: number,
+  count: number,
+): number[] {
+  const distractors: number[] = [];
+  const isNonTrivial = (d: number): boolean => {
+    if (!isFinite(d) || d === correctVal || distractors.includes(d)) {
+      return false;
+    }
+    const absDiff = Math.abs(d - correctVal);
+    if (absDiff <= 0.05) return false;
+    if (Math.abs(correctVal) > 1e-9) {
+      if (absDiff / Math.abs(correctVal) <= 0.02) return false;
+    }
+    return true;
+  };
+
+  if (template.distractorFormulas) {
+    for (const distExpr of template.distractorFormulas) {
+      if (distractors.length >= count) break;
+      try {
+        const dVal = Number(evaluateMath(distExpr, context).toFixed(1));
+        if (isNonTrivial(dVal)) {
+          distractors.push(dVal);
+        }
+      } catch {
+        // ignore invalid distractor calculations
+      }
+    }
+  }
+
+  // Mechanical fallbacks (last resort only)
+  const fallbacks = [
+    correctVal * 0.8,
+    correctVal * 1.2,
+    correctVal * 0.5,
+    correctVal * 1.5,
+    correctVal + 2.5,
+    Math.max(1, correctVal - 3.2),
+    correctVal + 5,
+    correctVal - 5,
+    correctVal + 1,
+    correctVal - 1,
+  ];
+  for (const fb of fallbacks) {
+    if (distractors.length >= count) break;
+    const roundedFb = Number(fb.toFixed(1));
+    if (isNonTrivial(roundedFb)) {
+      distractors.push(roundedFb);
+    }
+  }
+
+  return distractors;
+}
+
+/**
+ * Build the keyword variants accepted for a numeric free-text answer.
+ * The QuizRunner grades free-text by substring match requiring >= 50% of
+ * keywords, so at most 2 variants are emitted (comma + dot decimal
+ * separator); whole values collapse to a single keyword so any reasonable
+ * typing ("240", "240,0", "240%") matches.
+ */
+export function numericAnswerKeywords(correctVal: number): string[] {
+  if (Number.isInteger(correctVal)) {
+    return [String(correctVal)];
+  }
+  const comma = correctVal.toFixed(1).replace(".", ",");
+  const dot = correctVal.toFixed(1);
+  return comma === dot ? [comma] : [comma, dot];
+}
+
+/**
  * Instantiate a concrete Question from a ParametricTemplate.
  */
 export function instantiateTemplate(
   template: ParametricTemplate,
   seq: number,
   maxAttempts = 100,
-  targetType?: "single-choice" | "numeric-input",
+  targetType?: ParametricOutputType,
 ): Question {
   let attempts = 0;
   let context: Record<string, number> = {};
@@ -162,13 +258,33 @@ export function instantiateTemplate(
     context,
   );
 
-  const effectiveType = targetType ?? template.type;
-  const typeSuffix = targetType
-    ? targetType === "numeric-input"
+  const effectiveType: ParametricOutputType = targetType ?? template.type;
+  const typeSuffix =
+    effectiveType === "numeric-input"
       ? "NUM"
-      : "SC"
-    : "INST";
+      : effectiveType === "multi-choice"
+        ? "MC"
+        : effectiveType === "multi-true-false"
+          ? "MTF"
+          : effectiveType === "free-text"
+            ? "FT"
+            : targetType
+              ? "SC"
+              : "INST";
   const questionId = `${template.id}-${typeSuffix}-${String(seq).padStart(4, "0")}`;
+
+  const baseExplanation = {
+    why: template.explanationTemplate.why,
+    what: template.explanationTemplate.what,
+    how,
+    trap: template.explanationTemplate.trap,
+  };
+  const passthrough = {
+    formula: template.formulaKaTeX,
+    sourceRef: template.sourceRef,
+    prerequisites: template.prerequisites,
+    caseStudyRef: template.caseStudyRef,
+  };
 
   if (effectiveType === "numeric-input") {
     return {
@@ -186,52 +302,146 @@ export function instantiateTemplate(
         tolerance: template.tolerance ?? 0.1,
         unit: template.unit,
       },
-      explanation: {
-        why: template.explanationTemplate.why,
-        what: template.explanationTemplate.what,
-        how,
-        trap: template.explanationTemplate.trap,
-      },
-      formula: template.formulaKaTeX,
-      sourceRef: template.sourceRef,
+      explanation: baseExplanation,
+      ...passthrough,
     };
   }
 
-  // Single choice: generate distractors
-  const distractors: number[] = [];
-  if (template.distractorFormulas) {
-    for (const distExpr of template.distractorFormulas) {
-      try {
-        const dVal = Number(evaluateMath(distExpr, context).toFixed(1));
-        if (
-          dVal !== correctVal &&
-          !distractors.includes(dVal) &&
-          isFinite(dVal)
-        ) {
-          distractors.push(dVal);
-        }
-      } catch {
-        // ignore invalid distractor calculations
-      }
-    }
+  if (effectiveType === "free-text") {
+    return {
+      id: questionId,
+      version: 1,
+      block: template.block,
+      topic: template.topic,
+      tags: [...template.tags, "parametric-instance", "calcolo"],
+      track: template.track,
+      difficulty: template.difficulty,
+      type: "free-text",
+      stem: `${stem} Esprimi il risultato numerico (sono accettati sia la virgola sia il punto come separatore decimale).`,
+      // Dual grading support: the QuizRunner grades numerically when
+      // numericAnswer is present (tolerance-aware) and falls back to
+      // keywords otherwise (used by conceptual seeds).
+      numericAnswer: {
+        value: correctVal,
+        tolerance: template.tolerance ?? 0.1,
+        unit: template.unit,
+      },
+      freeTextKeywords: numericAnswerKeywords(correctVal),
+      explanation: baseExplanation,
+      ...passthrough,
+    };
   }
 
-  // Fallback plausibility offsets if not enough formulaic distractors
-  const fallbacks = [
-    correctVal * 0.8,
-    correctVal * 1.2,
-    correctVal + 2.5,
-    Math.max(1, correctVal - 3.2),
-  ];
-  for (const fb of fallbacks) {
-    const roundedFb = Number(fb.toFixed(1));
-    if (
-      roundedFb !== correctVal &&
-      !distractors.includes(roundedFb) &&
-      distractors.length < 3
-    ) {
-      distractors.push(roundedFb);
+  if (effectiveType === "multi-choice") {
+    // "Select all correct statements": 2 correct (numeric result + concept)
+    // + 2 wrong (typical-error values from distractor formulas).
+    const distractors = computeDistractors(template, context, correctVal, 2);
+    if (distractors.length < 2) {
+      throw new Error(
+        `Could not derive 2 valid distractors for multi-choice template ${template.id}`,
+      );
     }
+    const correctStr = formatNumberIT(correctVal, 1, template.unit ?? "");
+    const rawOptions: QuestionOption[] = shuffleArray([
+      {
+        id: "opt-corr-val",
+        text: `Il valore corretto ottenuto applicando la formula è ${correctStr}.`,
+        correct: true,
+      },
+      {
+        id: "opt-corr-concept",
+        text: template.explanationTemplate.what,
+        correct: true,
+      },
+      {
+        id: "opt-dist-1",
+        text: `Il valore corretto è pari a ${formatNumberIT(distractors[0], 1, template.unit ?? "")}.`,
+        correct: false,
+      },
+      {
+        id: "opt-dist-2",
+        text: `Il calcolo corretto porta a un risultato pari a ${formatNumberIT(distractors[1], 1, template.unit ?? "")}.`,
+        correct: false,
+      },
+    ]).map((opt, index) => ({
+      ...opt,
+      id: String.fromCharCode(97 + index), // 'a', 'b', 'c', 'd'
+    }));
+    return {
+      id: questionId,
+      version: 1,
+      block: template.block,
+      topic: template.topic,
+      tags: [...template.tags, "parametric-instance"],
+      track: template.track,
+      difficulty: template.difficulty,
+      type: "multi-choice",
+      stem: `${stem} Seleziona TUTTE le affermazioni corrette.`,
+      options: rawOptions,
+      explanation: {
+        ...baseExplanation,
+        how: `${how} Sono corrette l'opzione con valore ${correctStr} e l'enunciato concettuale; gli altri valori derivano da procedimenti errati tipici.`,
+      },
+      ...passthrough,
+    };
+  }
+
+  if (effectiveType === "multi-true-false") {
+    // 2 true (correct value + concept) + 2 false (typical-error values).
+    const distractors = computeDistractors(template, context, correctVal, 2);
+    if (distractors.length < 2) {
+      throw new Error(
+        `Could not derive 2 valid distractors for multi-true-false template ${template.id}`,
+      );
+    }
+    const correctStr = formatNumberIT(correctVal, 1, template.unit ?? "");
+    const rawItems: MultiTrueFalseItem[] = shuffleArray([
+      {
+        id: "mtf-corr-val",
+        statement: `Applicando la formula ai dati assegnati si ottiene ${correctStr}.`,
+        isTrue: true,
+      },
+      {
+        id: "mtf-concept",
+        statement: template.explanationTemplate.what,
+        isTrue: true,
+      },
+      {
+        id: "mtf-dist-1",
+        statement: `Applicando la formula ai dati assegnati si ottiene ${formatNumberIT(distractors[0], 1, template.unit ?? "")}.`,
+        isTrue: false,
+      },
+      {
+        id: "mtf-dist-2",
+        statement: `Un procedimento di calcolo alternativo valido porta a ${formatNumberIT(distractors[1], 1, template.unit ?? "")}.`,
+        isTrue: false,
+      },
+    ]).map((item, index) => ({ ...item, id: `item-${index + 1}` }));
+    return {
+      id: questionId,
+      version: 1,
+      block: template.block,
+      topic: template.topic,
+      tags: [...template.tags, "parametric-instance"],
+      track: template.track,
+      difficulty: template.difficulty,
+      type: "multi-true-false",
+      stem: `${stem} Indica se ciascuna affermazione è Vera o Falsa (tutte le risposte devono essere esatte).`,
+      multiTrueFalseItems: rawItems,
+      explanation: {
+        ...baseExplanation,
+        how: `${how} Il valore ${correctStr} e l'enunciato concettuale sono veri; gli altri due valori corrispondono a errori tipici di procedimento.`,
+      },
+      ...passthrough,
+    };
+  }
+
+  // Single choice: generate distractors (formula-anchored, validated)
+  const distractors = computeDistractors(template, context, correctVal, 3);
+  if (distractors.length < 3) {
+    throw new Error(
+      `Could not derive 3 valid distractors for single-choice template ${template.id}`,
+    );
   }
 
   const rawOptions: QuestionOption[] = [
@@ -247,14 +457,11 @@ export function instantiateTemplate(
     })),
   ];
 
-  // Shuffle options
-  const shuffledOptions = rawOptions
-    .map((opt) => ({ opt, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map((item, index) => ({
-      ...item.opt,
-      id: String.fromCharCode(97 + index), // 'a', 'b', 'c', 'd'
-    }));
+  // Shuffle options (Fisher-Yates, unbiased)
+  const shuffledOptions = shuffleArray(rawOptions).map((opt, index) => ({
+    ...opt,
+    id: String.fromCharCode(97 + index), // 'a', 'b', 'c', 'd'
+  }));
 
   return {
     id: questionId,
@@ -267,13 +474,7 @@ export function instantiateTemplate(
     type: "single-choice",
     stem,
     options: shuffledOptions,
-    explanation: {
-      why: template.explanationTemplate.why,
-      what: template.explanationTemplate.what,
-      how,
-      trap: template.explanationTemplate.trap,
-    },
-    formula: template.formulaKaTeX,
-    sourceRef: template.sourceRef,
+    explanation: baseExplanation,
+    ...passthrough,
   };
 }

@@ -6,6 +6,7 @@ import { block4Questions } from "./block-4";
 import { block5Questions } from "./block-5";
 import { block6Questions } from "./block-6";
 import { block7Questions } from "./block-7";
+import { additionalSeedQuestions } from "./block-seeds-2";
 
 export const allSeedQuestions: Question[] = [
   ...block1Questions,
@@ -15,6 +16,7 @@ export const allSeedQuestions: Question[] = [
   ...block5Questions,
   ...block6Questions,
   ...block7Questions,
+  ...additionalSeedQuestions,
 ];
 
 export {
@@ -25,4 +27,5 @@ export {
   block5Questions,
   block6Questions,
   block7Questions,
+  additionalSeedQuestions,
 };

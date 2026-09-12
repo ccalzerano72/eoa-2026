@@ -1,4 +1,5 @@
 import { ParametricTemplate, Question } from "../types";
+import { shuffleArray } from "../engine";
 
 /**
  * Template 1: Startup Valuation and Dilution (Valutazione Pre/Post Money e Diluizione)
@@ -22,10 +23,10 @@ export const startupValuationTemplate: ParametricTemplate = {
   type: "single-choice",
   unit: "%",
   stemTemplate:
-    "I fondatori di una startup informatica concordano con un fondo di Venture Capital una valutazione pre-money di {preMoney} milioni di euro. L'investitore decide di iniettare un aumento di capitale pari a {investimento} milioni di euro. Quale percentuale del capitale sociale (equity post-money) spetterà all'investitore?",
+    "I fondatori di una startup informatica concordano con un fondo di Venture Capital una valutazione pre-money di {preMoney}. L'investitore decide di iniettare un aumento di capitale pari a {investimento}. Quale percentuale del capitale sociale (equity post-money) spetterà all'investitore?",
   variables: {
-    preMoney: { min: 2, max: 10, step: 1, unit: "M€", decimals: 0 },
-    investimento: { min: 1, max: 4, step: 0.5, unit: "M€", decimals: 1 },
+    preMoney: { min: 2, max: 10, step: 1, unit: " M€", decimals: 0 },
+    investimento: { min: 1, max: 4, step: 0.5, unit: " M€", decimals: 1 },
   },
   correctFormula: "(investimento / (preMoney + investimento)) * 100",
   distractorFormulas: [
@@ -39,7 +40,7 @@ export const startupValuationTemplate: ParametricTemplate = {
     why: "Nei round di investimento in equity (seed, Series A), la quota di proprietà ceduta dipende dalla valutazione post-money, determinando il controllo societario e la diluizione dei founder.",
     what: "La valutazione post-money è la somma della valutazione pre-money e del nuovo capitale iniettato. La quota dell'investitore è il rapporto tra il capitale versato e il totale post-money.",
     howTemplate:
-      "Valutazione post-money = {preMoney} M€ + {investimento} M€ = {preMoney_raw + investimento_raw} M€. Quota investitore = ({investimento} M€ / {preMoney_raw + investimento_raw} M€) × 100 = {correct}%.",
+      "Valutazione post-money = {preMoney} + {investimento} = {preMoney_raw + investimento_raw} M€. Quota investitore = ({investimento} / {preMoney_raw + investimento_raw} M€) × 100 = {correct}.",
     trap: "ERRORE TIPICO: Dividere l'investimento per la valutazione pre-money anziché per quella post-money, sovrastimando la percentuale ceduta.",
   },
   sourceRef:
@@ -58,7 +59,7 @@ export const spanOfControlTemplate: ParametricTemplate = {
   track: "standard",
   difficulty: 2,
   type: "single-choice",
-  unit: "dipendenti",
+  unit: " dipendenti",
   stemTemplate:
     "Un'azienda con struttura gerarchica piramidale regolare adotta un'ampiezza media del controllo (span of control) pari a {span} collaboratori per ciascun manager. Se l'organizzazione ha {livelli} livelli manageriali intermedi al di sotto del CEO, quanti collaboratori operativi di base possono essere coordinati al livello più basso?",
   variables: {
@@ -76,7 +77,7 @@ export const spanOfControlTemplate: ParametricTemplate = {
     why: "Lo span of control determina se la struttura organizzativa è 'alta' (molti livelli gerarchici, span ridotto) o 'piatta' (pochi livelli, span ampio), con impatti diretti su costi fissi di supervisione e rapidità decisionale.",
     what: "In una gerarchia regolare a k livelli con ampiezza costante s, il numero di elementi coordinati alla base cresce esponenzialmente come s^k.",
     howTemplate:
-      "Capacità base = {span}^{livelli} = {correct} dipendenti operativi.",
+      "Capacità base = {span}^{livelli} = {correct} operativi.",
     trap: "Non moltiplicare semplicemente lo span per i livelli: la gerarchia si espande a ogni ramo secondo una progressione geometrica esponenziale.",
   },
   sourceRef: "Slide Blocco III - Progettazione Organizzativa e Mintzberg",
@@ -194,7 +195,7 @@ export function generateBlock3CombinatorialQuestions(): Question[] {
         difficulty: 2,
         type: "single-choice",
         stem: `Quale delle seguenti opzioni descrive con precisione la logica operativa di "${o.concept}"? (Q-Variant #${round})`,
-        options: [
+        options: shuffleArray([
           { id: "a", text: o.trueStatement, correct: true },
           { id: "b", text: o.falseStatement, correct: false },
           {
@@ -207,7 +208,7 @@ export function generateBlock3CombinatorialQuestions(): Question[] {
             text: "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
             correct: false,
           },
-        ].sort(() => Math.random() - 0.5),
+        ]),
         explanation: {
           why: o.why,
           what: o.what,
