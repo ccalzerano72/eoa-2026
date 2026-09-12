@@ -326,10 +326,10 @@ export function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-2xs">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-2xs overflow-x-hidden">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-2 sm:px-6 sm:py-3">
           {/* Brand & History Navigation Arrows */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Back / Forward Arrows */}
             <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200/80">
               <button
@@ -360,17 +360,17 @@ export function App() {
 
             <div
               onClick={() => navigateTo({ tab: "dashboard" })}
-              className="flex items-center gap-3 cursor-pointer select-none"
+              className="flex items-center gap-2 sm:gap-3 cursor-pointer select-none"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-600 text-white shadow-xs">
-                <GraduationCap className="h-6 w-6" />
+              <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-sky-600 text-white shadow-xs shrink-0">
+                <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
-              <div>
+              <div className="hidden sm:block">
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-xs font-bold text-sky-600 uppercase tracking-wider">
                     EOA 2026
                   </span>
-                  <span className="text-xs px-2 py-0.5 rounded bg-sky-50 text-sky-800 font-semibold border border-sky-200/60 hidden sm:inline-block">
+                  <span className="text-xs px-2 py-0.5 rounded bg-sky-50 text-sky-800 font-semibold border border-sky-200/60 hidden md:inline-block">
                     Ing. Informatica • UniPi
                   </span>
                 </div>
@@ -382,10 +382,10 @@ export function App() {
           </div>
 
           {/* Navigation links */}
-          <nav className="flex items-center gap-1 sm:gap-2">
+          <nav className="flex items-center gap-0.5 sm:gap-2 shrink-0">
             <button
               onClick={() => navigateTo({ tab: "dashboard" })}
-              className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer ${
+              className={`hidden sm:block px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer ${
                 activeTab === "dashboard"
                   ? "bg-sky-50 text-sky-700 font-bold"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
@@ -400,36 +400,39 @@ export function App() {
                   studyBlockNumber: studyBlock?.block || 1,
                 })
               }
-              className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
+              className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "study"
                   ? "bg-sky-50 text-sky-700 font-bold"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
               }`}
+              title="Studio"
             >
               <BookOpen className="h-4 w-4" />
-              <span>Studio</span>
+              <span className="hidden sm:inline">Studio</span>
             </button>
             <button
               onClick={() => navigateTo({ tab: "formula" })}
-              className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
+              className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "formula"
                   ? "bg-sky-50 text-sky-700 font-bold"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
               }`}
+              title="Formulario"
             >
               <Calculator className="h-4 w-4" />
-              <span>Formulario</span>
+              <span className="hidden sm:inline">Formulario</span>
             </button>
             <button
               onClick={() => navigateTo({ tab: "stats" })}
-              className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
+              className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "stats"
                   ? "bg-sky-50 text-sky-700 font-bold"
                   : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
               }`}
+              title="Storico & Stats"
             >
               <BarChart3 className="h-4 w-4" />
-              <span>Storico & Stats</span>
+              <span className="hidden md:inline">Storico & Stats</span>
               {quizHistory.length > 0 && (
                 <span className="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-sky-100 text-sky-700">
                   {quizHistory.length}
@@ -438,14 +441,15 @@ export function App() {
             </button>
             <button
               onClick={handleStartFullExam}
-              className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-1.5 shadow-2xs cursor-pointer ${
+              className={`p-2 sm:px-3.5 sm:py-1.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-1.5 shadow-2xs cursor-pointer ${
                 activeTab === "quiz" && !activeReviewSession
                   ? "bg-sky-600 text-white"
                   : "bg-emerald-600 text-white hover:bg-emerald-700"
               }`}
+              title="Simula Esame"
             >
               <PlayCircle className="h-4 w-4" />
-              <span>Simula Esame</span>
+              <span className="hidden sm:inline">Simula Esame</span>
             </button>
           </nav>
         </div>
