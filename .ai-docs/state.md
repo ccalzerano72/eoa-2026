@@ -57,10 +57,16 @@ triggers:
   - Implemented batch question generator `generator/src/build-questions.ts` (`npm run generate:questions`).
   - Generated and validated initial batch of 173 questions exported directly to `app/public/data/questions/sample.json` and `questions.json`.
 
+- **Milestone 2 (M2) — Interactive Study Content & Didactic Blocks**: COMPLETED.
+  - Authored and validated complete didactic knowledge blocks for all 7 syllabus blocks (`app/public/data/theory/blocco-1.json` through `blocco-7.json`).
+  - Structured strictly according to the BOOK Golden Rule (WHY decision problem, WHAT conceptual core, HOW schematic formulas, TRAP donotassume misconceptions, and CONCEPT SHIFT engineering vs managerial perspective).
+  - Integrated course case studies: Olivetti P101 (B1), Satispay / Exein / Davines (B2), Governance & Startup Funding (B3), Bilancio OIC & De Cecco (B4), Connecta S.r.l. & Growth Eats Cash (B5), Break-Even Analysis (B6), Business Model Canvas & All'Antico Vinaio (B7).
+  - Added horizontal block quick-selector bar to `App.tsx` for seamless switching between blocks 1 to 7 in the Study tab.
+
 ## In Progress
 
-- **Milestone 2 (M2) — Interactive Study Content**:
-  - Populating full didactic study blocks for Blocchi II–VII in `app/public/data/theory/` following the Golden Rule sequence (WHY/WHAT/HOW/TRAP).
+- **Milestone 4 (M4) — Large Scale Batch Generation**:
+  - Expanding parametric templates and combinatorics to reach 4,000–6,000 questions on disk.
 
 ## Planned
 

@@ -1,0 +1,149 @@
+{
+  "block": 4,
+  "title": "Il Bilancio d'Esercizio: Logica, Schemi e Competenza",
+  "subtitle": "Stato Patrimoniale, Conto Economico e principio di competenza",
+  "guidingQuestion": "Il bilancio è una fotografia istantanea o un film dinamico? Perché un'impresa con utili contabili record può trovarsi con il conto corrente bancario in rosso?",
+  "caseStudy": {
+    "id": "caso-bilancio-oic-de-cecco",
+    "name": "I Prospetti Contabili e l'Anatomia Industriale: Il Caso De Cecco",
+    "company": "De Cecco S.p.A. / Schemi OIC",
+    "year": "2020-2023",
+    "dilemma": "Come si leggono le decisioni strategiche di un grande gruppo industriale (investimenti in silos e grano, indebitamento bancario, dilazioni concesse alla GDO) analizzando i prospetti di bilancio?",
+    "summary": "Attraverso l'analisi del bilancio civilistico di De Cecco S.p.A. redatto secondo i principi contabili OIC, si osserva come lo Stato Patrimoniale fotografi un imponente capitale immobilizzato (pastifici, impianti, marchi storici) e un elevato attivo circolante (rimanenze di semola e crediti verso supermercati), controbilanciato da debiti verso banche e fornitori. Il Conto Economico a forma scalare mostra la generazione di valore della produzione (A) e l'assorbimento da parte dei costi industriali e del personale (B). La comprensione della differenza tra competenza economica e cassa spiega come gli utili dichiarati non siano immediatamente spendibili senza gestire i flussi finanziari.",
+    "coreLessons": [
+      "Lo Stato Patrimoniale misura la ricchezza netta accumulata a una certa data (stock: Impieghi = Fonti).",
+      "Il Conto Economico misura il valore economico creato o distrutto nell'anno (flusso: Ricavi - Costi = Utile/Perdita).",
+      "Il principio di competenza economica impone di registrare ricavi e costi quando maturano economicamente (consegna beni/erogazione servizi), non quando avviene l'incasso o il pagamento monetario.",
+      "L'ammortamento non è un'uscita di denaro: è la ripartizione contabile di un costo pluriennale già sostenuto in passato."
+    ],
+    "keytakeaway": "Il bilancio d'esercizio è il modello contabile fondamentale dell'impresa: chi non sa leggerlo non può valutare né la salute né il valore di alcun progetto aziendale."
+  },
+  "topics": [
+    {
+      "id": "fotografia-vs-film",
+      "title": "La Natura Duale del Bilancio: Stato Patrimoniale vs. Conto Economico",
+      "track": "essential",
+      "whyIntro": "Un software necessita di snapshot della memoria (stato istantaneo) e di log transazionali (eventi e throughput). Il bilancio risponde alla stessa esigenza conoscitiva per l'impresa.",
+      "whatBody": "Il bilancio d'esercizio si basa su una dualità inscindibile: lo Stato Patrimoniale (SP) è una fotografia istantanea al 31/12 che espone le attività (cosa l'azienda possiede: investimenti, crediti, cassa) e le passività con il patrimonio netto (come tali attività sono state finanziate: debito o capitale dei soci). Il Conto Economico (CE) è un filmato dinamico che riassume tutte le operazioni dell'esercizio (1/1 - 31/12), contrapponendo i ricavi (valore generato) ai costi (risorse consumate) per determinare l'Utile o la Perdita. Il trait d'union tra i due è proprio l'Utile netto d'esercizio, che dal CE confluisce nella voce A.IX del Patrimonio Netto in SP.",
+      "keypoints": [
+        {
+          "id": "kp-bil-1",
+          "title": "Identità Fondamentale dello Stato Patrimoniale",
+          "schematicFormula": "Attivo (Impieghi di Capitale) = Passivo (Debiti verso Terzi) + Patrimonio Netto (Mezzi Propri)",
+          "explanation": "L'Attivo rappresenta dove sono state investite le risorse; Passivo e Netto indicano la provenienza delle risorse (fonti esterne e interne). Per costruzione, le due sezioni quadrano sempre: Attivo = Passivo + Netto."
+        },
+        {
+          "id": "kp-bil-2",
+          "title": "Dinamica del Conto Economico e Connessione con lo SP",
+          "schematicFormula": "Valore della Produzione - Costi della Produzione ± Gestione Finanziaria - Imposte = Utile Netto → incrementa il Patrimonio Netto (SP)",
+          "explanation": "Se i ricavi superano i costi, l'utile generato nel periodo arricchisce il Patrimonio Netto dell'azienda alla data di chiusura del bilancio."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-bil-1",
+          "title": "Confondere il Patrimonio Netto con il Denaro in Banca",
+          "misconception": "Credere che un'azienda con 5 milioni di euro di Patrimonio Netto abbia 5 milioni di euro liquidi depositati sul conto corrente.",
+          "truth": "Il Patrimonio Netto è una grandezza ideale contabile posta nel Passivo che misura il valore contabile spettante ai soci. Il denaro liquido in banca è invece registrato nell'Attivo (Attivo Circolante - Disponibilità Liquide).",
+          "example": "Un'azienda può avere 10M€ di Patrimonio Netto interamente immobilizzati in capannoni e macchinari, e trovarsi con soli 2.000€ sul conto corrente, incapace di pagare gli stipendi di fine mese."
+        }
+      ],
+      "conceptShifts": [
+        {
+          "id": "shift-bil-1",
+          "title": "Modello di Stato e Flusso",
+          "technicalPerspective": "Una variabile contatore globale che si incrementa o azzera ad ogni ciclo di esecuzione.",
+          "managerialPerspective": "Una distinzione rigorosa tra grandezze di stock (SP a una data fissa) e grandezze di flusso (CE misurato su un intervallo temporale).",
+          "mindsetShift": "Dall'osservazione puntiforme delle singole transazioni alla quadratura sincronica di stock e flussi."
+        }
+      ]
+    },
+    {
+      "id": "competenza-vs-cassa",
+      "title": "Principio di Competenza Economica vs. Principio di Cassa",
+      "track": "essential",
+      "whyIntro": "Se un'azienda vende licenze software a dicembre per 1 milione di euro concedendo 120 giorni di pagamento ai clienti, ha generato ricchezza o no? Se si usasse il principio di cassa, l'anno chiuderebbe in perdita, falsando totalmente le decisioni aziendali.",
+      "whatBody": "Il principio di cassa registra le operazioni nel momento in cui avviene l'effettiva movimentazione monetaria (entrata o uscita di denaro). Il principio di competenza economica (obbligatorio nel bilancio d'esercizio ex art. 2423-bis c.c.) impone di imputare ricavi e costi all'esercizio al quale economicamente appartengono, a prescindere dalla manifestazione numeraria/monetaria. Un ricavo è di competenza quando il bene è consegnato o il servizio reso; un costo è di competenza quando è correlato al ricavo generato. Per riconciliare i due principi nascono gli strumenti di assestamento: ratei, risconti, fatture da emettere/ricevere.",
+      "keypoints": [
+        {
+          "id": "kp-com-1",
+          "title": "Regola dei Ratei e Risconti",
+          "schematicFormula": "Rateo = Manifestazione finanziaria POSTICIPATA (quota di costo/ricavo già maturata economicamente) | Risconto = Manifestazione finanziaria ANTICIPATA (quota di costo/ricavo già pagata/incassata ma che maturerà in futuro)",
+          "explanation": "Il rateo misura una prestazione già avvenuta il cui pagamento avverrà nell'anno nuovo; il risconto sospende dal CE un costo/ricavo già pagato/incassato ma di competenza dell'anno venturo."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-com-1",
+          "title": "Fatturato ≠ Incasso e Costo ≠ Uscita",
+          "misconception": "Ritenere che l'utile di 100.000€ indichi che l'azienda ha incassato 100.000€ in contanti.",
+          "truth": "Se i clienti non hanno ancora pagato le fatture, a fronte di 100.000€ di utile si registrano 100.000€ di Crediti verso Clienti nell'Attivo, e zero euro in cassa.",
+          "example": "Emettere fatture per 500.000€ di consulenza IT con pagamento a 180 giorni crea ricavi di competenza per 500.000€ ma zero cassa fino all'effettivo bonifico del cliente."
+        }
+      ]
+    },
+    {
+      "id": "ammortamento-e-fondi",
+      "title": "Ammortamento, TFR e Fondi Accantonamento",
+      "track": "standard",
+      "whyIntro": "Se acquisti un cluster di server GPU per 120.000€ che utilizzerai per 3 anni, addebitare tutti i 120.000€ di costo nel primo anno distruggerebbe il bilancio del primo esercizio, facendo apparire gli anni successivi ingiustificatamente profittevoli.",
+      "whatBody": "L'ammortamento è il procedimento contabile ed economico con cui il costo pluriennale di un bene ad utilità ripetuta (immobilizzazione materiale o immateriale) viene sistematicamente ripartito lungo la sua vita economica utile stimata. A Conto Economico si iscrive annualmente la 'quota di ammortamento' (costo di competenza dell'anno), mentre a Stato Patrimoniale il valore originario del bene viene ridotto mediante il 'fondo ammortamento' (portato in detrazione diretta della voce dell'attivo). Analogamente, il TFR (Trattamento di Fine Rapporto) e i fondi rischi/oneri registrano costi di competenza dell'anno a fronte di uscite di cassa future.",
+      "keypoints": [
+        {
+          "id": "kp-amm-1",
+          "title": "Formula della Quota di Ammortamento a Quote Costanti",
+          "schematicFormula": "Quota Ammortamento Annuo = (Costo Storico - Valore Residuo Presunto) / Vita Utile (Anni)",
+          "explanation": "Un server da 30.000€ con vita utile di 3 anni e valore residuo zero genera una quota di ammortamento a CE di 10.000€/anno per 3 anni."
+        },
+        {
+          "id": "kp-amm-2",
+          "title": "Valore Contabile Netto (VCN)",
+          "schematicFormula": "Valore Netto Contabile in Bilancio = Costo Storico di Acquisto - Fondo Ammortamento Accumulato",
+          "explanation": "Al termine del secondo anno, il server da 30.000€ compare nello SP per un valore netto contabile di 10.000€ (30.000 - 20.000 fondo)."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-amm-1",
+          "title": "Credere che l'ammortamento 'bruci liquidità' ogni anno",
+          "misconception": "Pensare che iscrivere 10.000€ di ammortamento comporti un prelievo o bonifico bancario di 10.000€ dal conto dell'azienda.",
+          "truth": "L'ammortamento è un 'costo non monetario' (costo calcolato): la cassa è uscita integralmente quando il bene è stato acquistato (o dilazionata dai mutui/fornitori), la quota annuale è una rettifica di valore che non tocca la cassa.",
+          "example": "Per questo motivo, nel calcolo del Cash Flow o dell'EBITDA, la quota di ammortamento viene ri-sommata all'utile netto."
+        }
+      ],
+      "conceptShifts": [
+        {
+          "id": "shift-amm-1",
+          "title": "Deprezzamento Hardware vs Ammortamento",
+          "technicalPerspective": "L'usura fisica dei componenti in silicio o l'obsolescenza tecnologica della scheda grafica.",
+          "managerialPerspective": "La correlazione economica tra il costo sostenuto per acquisire la capacità produttiva e i ricavi generati da tale impianto nel tempo.",
+          "mindsetShift": "Dal degrado fisico delle macchine alla ripartizione economica del valore contabile."
+        }
+      ]
+    },
+    {
+      "id": "schemi-civilistici-oic",
+      "title": "La Struttura Ufficiale OIC di Stato Patrimoniale e Conto Economico",
+      "track": "essential",
+      "whyIntro": "Nelle relazioni con banche, revisori e Agenzia delle Entrate, i bilanci non possono essere presentati in fogli di calcolo arbitrari: la legge impone schemi standardizzati inderogabili (artt. 2424 e 2425 c.c.).",
+      "whatBody": "Lo schema dello Stato Patrimoniale civilistico organizza l'Attivo in 4 macro-classi: A) Crediti verso soci per versamenti ancora dovuti; B) Immobilizzazioni (I Immateriali, II Materiali, III Finanziarie); C) Attivo Circolante (I Rimanenze, II Crediti, III Attività finanziarie che non costituiscono immobilizzazioni, IV Disponibilità liquide); D) Ratei e risconti attivi. Il Passivo si articola in: A) Patrimonio Netto; B) Fondi per rischi e oneri; C) TFR; D) Debiti (con separata indicazione di quelli esigibili oltre l'esercizio); E) Ratei e risconti passivi. Il Conto Economico ha forma scalare a costi e ricavi della produzione: A) Valore della produzione; B) Costi della produzione; Differenza A - B (Risultato Operativo caratteristico); C) Proventi e oneri finanziari; D) Rettifiche di valore di attività finanziarie; Risultato prima delle imposte; Imposte; Utile (o Perdita) d'esercizio.",
+      "keypoints": [
+        {
+          "id": "kp-oic-1",
+          "title": "Differenza A - B del Conto Economico OIC",
+          "schematicFormula": "A (Valore della Produzione: Ricavi + Variazione Rimanenze) - B (Costi della Produzione: Merci + Servizi + Personale + Ammortamenti) = Differenza A - B (Reddito Operativo della gestione tipica)",
+          "explanation": "La differenza (A - B) misura l'efficienza della gestione industriale e caratteristica, prima dell'impatto dei debiti/interessi finanziari (C) e delle tasse."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-oic-1",
+          "title": "Classificare i debiti per natura anziché distinguere l'orizzonte temporale",
+          "misconception": "Pensare che i debiti bancari siano tutti uguali indipendentemente dalla scadenza.",
+          "truth": "Il codice civile impone di indicare chiaramente per ciascuna voce di debito la quota esigibile entro l'esercizio (a breve termine) e oltre l'esercizio (a medio-lungo termine), distinzione vitale per l'equilibrio finanziario.",
+          "example": "Un debito di 1M€ esigibile a 30 giorni rappresenta una pressione di liquidità mortale; lo stesso debito rimborsabile in 15 anni tramite mutuo ipotecario è una solida fonte di finanziamento durevole."
+        }
+      ]
+    }
+  ]
+}

@@ -629,6 +629,61 @@ export function App() {
               </div>
             )}
 
+            {/* Horizontal Block Selector Bar */}
+            <div className="bg-white border-b border-slate-200 sticky top-14 z-20 shadow-2xs">
+              <div className="mx-auto max-w-5xl px-4 py-2.5 flex items-center gap-2 overflow-x-auto">
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider whitespace-nowrap mr-1 hidden md:inline">
+                  Blocchi:
+                </span>
+                {[
+                  { num: 1, label: "I. Impresa", name: "Impresa e Decisioni" },
+                  { num: 2, label: "II. Forme", name: "Forme Giuridiche" },
+                  {
+                    num: 3,
+                    label: "III. Governance",
+                    name: "Governance & Finanziamento",
+                  },
+                  {
+                    num: 4,
+                    label: "IV. Bilancio",
+                    name: "Bilancio d'Esercizio",
+                  },
+                  { num: 5, label: "V. Indici", name: "Indici & Cassa" },
+                  { num: 6, label: "VI. Costi", name: "Costi & BEP" },
+                  {
+                    num: 7,
+                    label: "VII. Canvas",
+                    name: "Business Model Canvas",
+                  },
+                ].map((b) => {
+                  const isActive = studyBlock?.block === b.num;
+                  return (
+                    <button
+                      key={b.num}
+                      onClick={() => handleNavigateToStudy(b.num)}
+                      title={b.name}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer flex items-center gap-1.5 shrink-0 ${
+                        isActive
+                          ? "bg-sky-600 text-white shadow-xs"
+                          : "bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900"
+                      }`}
+                    >
+                      <span
+                        className={`flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-black ${
+                          isActive
+                            ? "bg-white text-sky-700"
+                            : "bg-slate-300 text-slate-800"
+                        }`}
+                      >
+                        {b.num}
+                      </span>
+                      <span>{b.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {studyBlock ? (
               <StudyBlockViewer
                 block={studyBlock}
