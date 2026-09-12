@@ -7,7 +7,8 @@ export type QuizMode =
   | "traps-only" // focus on misconception-targeted questions
   | "calculations" // focus on numeric input & financial formulas
   | "case-studies" // focus on real company scenarios (Olivetti, Nokia, Ferrari...)
-  | "flash-cards"; // rapid front/back card review — no scoring, no timer
+  | "flash-cards" // rapid front/back card review — no scoring, no timer
+  | "spaced-review"; // intelligent review based on past errors and spaced repetition algorithm
 
 export interface UserResponse {
   questionId: string;

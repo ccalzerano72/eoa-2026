@@ -205,7 +205,9 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
     if (!hasAnsweredCurrent) return;
 
     if (
-      (mode === "free-practice" || mode === "traps-only") &&
+      (mode === "free-practice" ||
+        mode === "traps-only" ||
+        mode === "spaced-review") &&
       !showImmediateExplanation
     ) {
       setShowImmediateExplanation(true);
@@ -312,7 +314,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
     return (
       <div className="mx-auto max-w-3xl py-8 px-4 overflow-x-hidden">
         {/* Score Header */}
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 text-center shadow-md">
+        <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 text-center shadow-md">
           <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-100 text-sky-700 mb-4">
             <Award className="h-8 w-8" />
           </div>
@@ -522,13 +524,31 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           </div>
         </div>
       )}
-      <div className="flex items-center justify-between rounded-2xl bg-white p-3 sm:p-4 shadow-xs border border-slate-200 mb-6 gap-2">
+      {mode === "spaced-review" && (
+        <div className="flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 p-3 mb-4 text-sm">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-600 text-white shrink-0">
+            <span className="text-base">🧠</span>
+          </div>
+          <div className="min-w-0">
+            <span className="font-bold text-teal-900">
+              Ripasso Intelligente (Spaced Repetition)
+            </span>
+            <span className="text-teal-700 text-xs block">
+              Questi quesiti sono stati selezionati dall'algoritmo in base ai
+              tuoi errori passati e al tempo trascorso.
+            </span>
+          </div>
+        </div>
+      )}
+      <div className="flex items-center justify-between rounded-2xl bg-white dark:bg-slate-800 p-3 sm:p-4 shadow-xs border border-slate-200 dark:border-slate-700 mb-6 gap-2">
         <div className="flex items-center gap-2 shrink-0">
           <span
             className={`flex h-7 w-7 items-center justify-center rounded-lg font-mono text-xs font-bold ${
               mode === "traps-only"
                 ? "bg-rose-600 text-white"
-                : "bg-sky-600 text-white"
+                : mode === "spaced-review"
+                  ? "bg-teal-600 text-white"
+                  : "bg-sky-600 text-white"
             }`}
           >
             {session.currentIndex + 1}
@@ -561,15 +581,15 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
       </div>
 
       {/* Main Question Card */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-4 sm:p-8 shadow-sm overflow-x-hidden">
-        <div className="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+      <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 sm:p-8 shadow-sm overflow-x-hidden">
+        <div className="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
           <HelpCircle className="h-4 w-4 text-sky-500 shrink-0" />
           <span className="truncate">
             {currentQuestion.topic.replace(/-/g, " ")}
           </span>
         </div>
 
-        <h3 className="text-base sm:text-xl font-bold text-slate-950 leading-snug break-words">
+        <h3 className="text-base sm:text-xl font-bold text-slate-950 dark:text-slate-50 leading-snug break-words">
           {currentQuestion.stem}
         </h3>
 
@@ -593,15 +613,15 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   }
                   className={`w-full text-left p-4 rounded-xl border font-medium text-sm transition flex items-start gap-3 ${
                     isSelected
-                      ? "border-sky-600 bg-sky-50 text-sky-950 shadow-xs"
-                      : "border-slate-200 bg-slate-50/50 hover:bg-slate-100/80 text-slate-800"
+                      ? "border-sky-600 bg-sky-50 dark:bg-sky-900/50 text-sky-950 dark:text-sky-100 shadow-xs"
+                      : "border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-700/50 hover:bg-slate-100/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200"
                   }`}
                 >
                   <span
                     className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg font-mono text-xs font-bold ${
                       isSelected
                         ? "bg-sky-600 text-white"
-                        : "bg-white border border-slate-300 text-slate-600"
+                        : "bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-500 text-slate-600 dark:text-slate-300"
                     }`}
                   >
                     {opt.id.toUpperCase()}
@@ -627,15 +647,15 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   }}
                   className={`w-full text-left p-4 rounded-xl border font-medium text-sm transition flex items-start gap-3 ${
                     isChecked
-                      ? "border-emerald-600 bg-emerald-50 text-emerald-950 shadow-xs"
-                      : "border-slate-200 bg-slate-50/50 hover:bg-slate-100/80 text-slate-800"
+                      ? "border-emerald-600 bg-emerald-50 dark:bg-emerald-900/50 text-emerald-950 dark:text-emerald-100 shadow-xs"
+                      : "border-slate-200 dark:border-slate-600 bg-slate-50/50 dark:bg-slate-700/50 hover:bg-slate-100/80 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200"
                   }`}
                 >
                   <div
                     className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border mt-0.5 ${
                       isChecked
                         ? "bg-emerald-600 border-emerald-600 text-white"
-                        : "border-slate-300 bg-white"
+                        : "border-slate-300 dark:border-slate-500 bg-white dark:bg-slate-700"
                     }`}
                   >
                     {isChecked && <CheckCircle className="h-3.5 w-3.5" />}
@@ -652,8 +672,8 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 onClick={() => setCurrentAnswers({ booleanAnswer: true })}
                 className={`p-4 rounded-xl border text-center font-bold text-base transition ${
                   currentAnswers.booleanAnswer === true
-                    ? "border-sky-600 bg-sky-50 text-sky-950 ring-2 ring-sky-500"
-                    : "border-slate-200 bg-white hover:bg-slate-50 text-slate-700"
+                    ? "border-sky-600 bg-sky-50 dark:bg-sky-900/50 text-sky-950 dark:text-sky-100 ring-2 ring-sky-500"
+                    : "border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200"
                 }`}
               >
                 VERO
@@ -662,8 +682,8 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 onClick={() => setCurrentAnswers({ booleanAnswer: false })}
                 className={`p-4 rounded-xl border text-center font-bold text-base transition ${
                   currentAnswers.booleanAnswer === false
-                    ? "border-sky-600 bg-sky-50 text-sky-950 ring-2 ring-sky-500"
-                    : "border-slate-200 bg-white hover:bg-slate-50 text-slate-700"
+                    ? "border-sky-600 bg-sky-50 dark:bg-sky-900/50 text-sky-950 dark:text-sky-100 ring-2 ring-sky-500"
+                    : "border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200"
                 }`}
               >
                 FALSO
@@ -680,9 +700,9 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 return (
                   <div
                     key={item.id}
-                    className="p-3.5 rounded-xl border border-slate-200 bg-slate-50 flex items-center justify-between gap-4 text-sm"
+                    className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 flex items-center justify-between gap-4 text-sm"
                   >
-                    <span className="text-slate-800 leading-relaxed">
+                    <span className="text-slate-800 dark:text-slate-200 leading-relaxed">
                       {item.statement}
                     </span>
                     <div className="flex gap-2 shrink-0">
@@ -699,7 +719,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                         className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
                           currentVal === true
                             ? "bg-emerald-600 text-white"
-                            : "bg-white border border-slate-300 text-slate-700 hover:bg-slate-100"
+                            : "bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-500 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-600"
                         }`}
                       >
                         V
@@ -717,7 +737,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                         className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
                           currentVal === false
                             ? "bg-rose-600 text-white"
-                            : "bg-white border border-slate-300 text-slate-700 hover:bg-slate-100"
+                            : "bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-500 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-600"
                         }`}
                       >
                         F
@@ -732,7 +752,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           {/* NUMERIC INPUT */}
           {currentQuestion.type === "numeric-input" && (
             <div className="pt-2">
-              <label className="block text-xs font-semibold text-slate-600 uppercase mb-2">
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-2">
                 Inserisci il valore numerico calcolato:
               </label>
               <div className="flex items-center gap-3">
@@ -743,10 +763,10 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   onChange={(e) =>
                     setCurrentAnswers({ numericValue: e.target.value })
                   }
-                  className="font-mono text-lg font-bold p-3 rounded-xl border border-slate-300 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none w-48 bg-white"
+                  className="font-mono text-lg font-bold p-3 rounded-xl border border-slate-300 dark:border-slate-600 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-800 outline-none w-48 bg-white dark:bg-slate-700 dark:text-slate-100"
                 />
                 {currentQuestion.numericAnswer?.unit && (
-                  <span className="font-semibold text-slate-500 text-sm">
+                  <span className="font-semibold text-slate-500 dark:text-slate-400 text-sm">
                     {currentQuestion.numericAnswer.unit}
                   </span>
                 )}

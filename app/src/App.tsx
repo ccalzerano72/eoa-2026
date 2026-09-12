@@ -1,4 +1,11 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  Suspense,
+  lazy,
+} from "react";
 import type { Question, SyllabusBlock, StudyTrack } from "./types/question";
 import type { StudyBlock } from "./types/study";
 import type {
@@ -8,14 +15,40 @@ import type {
   QuizMode,
 } from "./types/quiz";
 import { QuizRunner } from "./components/quiz/QuizRunner";
-import { FlashCardRunner } from "./components/quiz/FlashCardRunner";
 import { StudyBlockViewer } from "./components/study/StudyBlockViewer";
-import { StatsHistoryView } from "./components/stats/StatsHistoryView";
-import { FormulaCheatsheetView } from "./components/formula/FormulaCheatsheetView";
-import { DuPontPlayground } from "./components/simulator/DuPontPlayground";
 import type { FormulaItem } from "./data/formulas";
 import { formulasData } from "./data/formulas";
-import { getQuizHistory, computeOverallStats } from "./services/storage";
+import {
+  getQuizHistory,
+  computeOverallStats,
+  getQuestionsNeedingReview,
+  getSpacedRepStats,
+  getThemePreference,
+  setThemePreference,
+} from "./services/storage";
+import type { ThemePreference } from "./services/storage";
+
+// Code Splitting: Lazy load heavy components
+const FlashCardRunner = lazy(() =>
+  import("./components/quiz/FlashCardRunner").then((m) => ({
+    default: m.FlashCardRunner,
+  })),
+);
+const StatsHistoryView = lazy(() =>
+  import("./components/stats/StatsHistoryView").then((m) => ({
+    default: m.StatsHistoryView,
+  })),
+);
+const FormulaCheatsheetView = lazy(() =>
+  import("./components/formula/FormulaCheatsheetView").then((m) => ({
+    default: m.FormulaCheatsheetView,
+  })),
+);
+const DuPontPlayground = lazy(() =>
+  import("./components/simulator/DuPontPlayground").then((m) => ({
+    default: m.DuPontPlayground,
+  })),
+);
 import {
   GraduationCap,
   BookOpen,
@@ -33,8 +66,24 @@ import {
   Filter,
   LayoutGrid,
   Zap,
+  Brain,
+  Sun,
+  Moon,
+  Monitor,
 } from "lucide-react";
 import { CollapsibleSection } from "./components/ui/CollapsibleSection";
+
+// Loading fallback for lazy-loaded components
+function LoadingFallback({ label = "Caricamento..." }: { label?: string }) {
+  return (
+    <div className="flex flex-col items-center justify-center py-20 px-4">
+      <div className="h-10 w-10 rounded-full border-4 border-sky-200 dark:border-sky-800 border-t-sky-600 dark:border-t-sky-400 animate-spin mb-4" />
+      <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+        {label}
+      </p>
+    </div>
+  );
+}
 
 type NavTab =
   | "dashboard"
@@ -61,6 +110,40 @@ export function App() {
   const [activeTrackFilter, setActiveTrackFilter] = useState<
     StudyTrack | "all"
   >("all");
+
+  // Theme state with persistence
+  const [theme, setTheme] = useState<ThemePreference>(() =>
+    getThemePreference(),
+  );
+
+  // Apply theme class to document
+  useEffect(() => {
+    const root = document.documentElement;
+
+    const applyTheme = (isDark: boolean) => {
+      if (isDark) {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+    };
+
+    if (theme === "system") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      applyTheme(mediaQuery.matches);
+
+      const handler = (e: MediaQueryListEvent) => applyTheme(e.matches);
+      mediaQuery.addEventListener("change", handler);
+      return () => mediaQuery.removeEventListener("change", handler);
+    } else {
+      applyTheme(theme === "dark");
+    }
+  }, [theme]);
+
+  const handleThemeChange = useCallback((newTheme: ThemePreference) => {
+    setTheme(newTheme);
+    setThemePreference(newTheme);
+  }, []);
 
   // Active quiz session and key (to preserve review or re-render when needed)
   const [activeReviewSession, setActiveReviewSession] =
@@ -328,27 +411,59 @@ export function App() {
     navigateTo({ tab: "quiz" });
   }, [allQuestions, filterByTrack, navigateTo]);
 
+  // Spaced Repetition: Intelligent Review Mode
+  const handleStartSpacedReview = useCallback(() => {
+    const allIds = allQuestions.map((q) => q.id);
+    const prioritizedIds = getQuestionsNeedingReview(allIds, 0.7);
+
+    if (prioritizedIds.length === 0) {
+      // No questions need review — fall back to random sample
+      const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
+      setActiveQuestions(shuffled.slice(0, 15));
+    } else {
+      // Get actual Question objects for the prioritized IDs
+      const idSet = new Set(prioritizedIds.slice(0, 20));
+      const selectedQuestions = allQuestions.filter((q) => idSet.has(q.id));
+      // Sort by the priority order
+      selectedQuestions.sort(
+        (a, b) => prioritizedIds.indexOf(a.id) - prioritizedIds.indexOf(b.id),
+      );
+      setActiveQuestions(selectedQuestions);
+    }
+
+    setActiveReviewSession(null);
+    setQuizMode("spaced-review");
+    setQuizRunnerKey(`spaced-${Date.now()}`);
+    navigateTo({ tab: "quiz" });
+  }, [allQuestions, navigateTo]);
+
+  // Spaced repetition stats for dashboard display
+  const spacedRepStats = useMemo(
+    () => getSpacedRepStats(allQuestions.map((q) => q.id)),
+    [allQuestions],
+  );
+
   const overallStats = useMemo(
     () => computeOverallStats(quizHistory),
     [quizHistory],
   );
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md shadow-2xs overflow-x-hidden">
+      <header className="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-2xs">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-2 sm:px-6 sm:py-3">
           {/* Brand & History Navigation Arrows */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             {/* Back / Forward Arrows */}
-            <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200/80">
+            <div className="flex items-center gap-1 bg-slate-100 dark:bg-slate-800 p-1 rounded-xl border border-slate-200/80 dark:border-slate-700">
               <button
                 disabled={!canGoBack}
                 onClick={goBack}
                 className={`p-1.5 rounded-lg transition ${
                   canGoBack
-                    ? "text-slate-700 hover:bg-white hover:text-slate-950 shadow-2xs cursor-pointer"
-                    : "text-slate-300 cursor-not-allowed"
+                    ? "text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-950 dark:hover:text-white shadow-2xs cursor-pointer"
+                    : "text-slate-300 dark:text-slate-600 cursor-not-allowed"
                 }`}
                 title="Torna alla schermata precedente (Alt + ←)"
               >
@@ -359,8 +474,8 @@ export function App() {
                 onClick={goForward}
                 className={`p-1.5 rounded-lg transition ${
                   canGoForward
-                    ? "text-slate-700 hover:bg-white hover:text-slate-950 shadow-2xs cursor-pointer"
-                    : "text-slate-300 cursor-not-allowed"
+                    ? "text-slate-700 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-slate-950 dark:hover:text-white shadow-2xs cursor-pointer"
+                    : "text-slate-300 dark:text-slate-600 cursor-not-allowed"
                 }`}
                 title="Vai alla schermata successiva (Alt + →)"
               >
@@ -377,14 +492,14 @@ export function App() {
               </div>
               <div className="hidden sm:block">
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs font-bold text-sky-600 uppercase tracking-wider">
+                  <span className="font-mono text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider">
                     EOA 2026
                   </span>
-                  <span className="text-xs px-2 py-0.5 rounded bg-sky-50 text-sky-800 font-semibold border border-sky-200/60 hidden md:inline-block">
+                  <span className="text-xs px-2 py-0.5 rounded bg-sky-50 dark:bg-sky-900/50 text-sky-800 dark:text-sky-200 font-semibold border border-sky-200/60 dark:border-sky-700 hidden md:inline-block">
                     Ing. Informatica • UniPi
                   </span>
                 </div>
-                <h1 className="text-base font-bold text-slate-950 leading-tight">
+                <h1 className="text-base font-bold text-slate-950 dark:text-slate-50 leading-tight">
                   Exam Trainer & Simulator
                 </h1>
               </div>
@@ -397,8 +512,8 @@ export function App() {
               onClick={() => navigateTo({ tab: "dashboard" })}
               className={`hidden sm:block px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition cursor-pointer ${
                 activeTab === "dashboard"
-                  ? "bg-sky-50 text-sky-700 font-bold"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                  ? "bg-sky-50 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 font-bold"
+                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
             >
               Dashboard
@@ -412,8 +527,8 @@ export function App() {
               }
               className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "study"
-                  ? "bg-sky-50 text-sky-700 font-bold"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                  ? "bg-sky-50 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 font-bold"
+                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
               title="Studio"
             >
@@ -424,8 +539,8 @@ export function App() {
               onClick={() => navigateTo({ tab: "formula" })}
               className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "formula"
-                  ? "bg-sky-50 text-sky-700 font-bold"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                  ? "bg-sky-50 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 font-bold"
+                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
               title="Formulario"
             >
@@ -436,8 +551,8 @@ export function App() {
               onClick={() => navigateTo({ tab: "simulator" })}
               className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "simulator"
-                  ? "bg-purple-50 text-purple-700 font-bold"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                  ? "bg-purple-50 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 font-bold"
+                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
               title="Simulatori Interattivi"
             >
@@ -448,15 +563,15 @@ export function App() {
               onClick={() => navigateTo({ tab: "stats" })}
               className={`p-2 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 cursor-pointer ${
                 activeTab === "stats"
-                  ? "bg-sky-50 text-sky-700 font-bold"
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                  ? "bg-sky-50 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 font-bold"
+                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
               title="Storico & Stats"
             >
               <BarChart3 className="h-4 w-4" />
               <span className="hidden md:inline">Storico & Stats</span>
               {quizHistory.length > 0 && (
-                <span className="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-sky-100 text-sky-700">
+                <span className="ml-0.5 px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-sky-100 dark:bg-sky-800 text-sky-700 dark:text-sky-200">
                   {quizHistory.length}
                 </span>
               )}
@@ -473,6 +588,66 @@ export function App() {
               <PlayCircle className="h-4 w-4" />
               <span className="hidden sm:inline">Simula Esame</span>
             </button>
+
+            {/* Theme Toggle - cycling on mobile, full on desktop */}
+            <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg border border-slate-200 dark:border-slate-700">
+              {/* Mobile: single cycling button */}
+              <button
+                onClick={() => {
+                  const next =
+                    theme === "light"
+                      ? "system"
+                      : theme === "system"
+                        ? "dark"
+                        : "light";
+                  handleThemeChange(next);
+                }}
+                className="sm:hidden p-1.5 rounded-md text-slate-600 dark:text-slate-300"
+                title={`Tema: ${theme === "light" ? "Chiaro" : theme === "dark" ? "Scuro" : "Sistema"}`}
+              >
+                {theme === "light" ? (
+                  <Sun className="h-4 w-4 text-amber-500" />
+                ) : theme === "dark" ? (
+                  <Moon className="h-4 w-4 text-indigo-500" />
+                ) : (
+                  <Monitor className="h-4 w-4 text-sky-500" />
+                )}
+              </button>
+              {/* Desktop: three buttons */}
+              <button
+                onClick={() => handleThemeChange("light")}
+                className={`hidden sm:block p-1.5 rounded-md transition ${
+                  theme === "light"
+                    ? "bg-white dark:bg-slate-700 text-amber-500 shadow-xs"
+                    : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+                }`}
+                title="Tema chiaro"
+              >
+                <Sun className="h-4 w-4" />
+              </button>
+              <button
+                onClick={() => handleThemeChange("system")}
+                className={`hidden sm:block p-1.5 rounded-md transition ${
+                  theme === "system"
+                    ? "bg-white dark:bg-slate-700 text-sky-500 shadow-xs"
+                    : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+                }`}
+                title="Segui sistema"
+              >
+                <Monitor className="h-4 w-4" />
+              </button>
+              <button
+                onClick={() => handleThemeChange("dark")}
+                className={`hidden sm:block p-1.5 rounded-md transition ${
+                  theme === "dark"
+                    ? "bg-white dark:bg-slate-700 text-indigo-500 shadow-xs"
+                    : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-300"
+                }`}
+                title="Tema scuro"
+              >
+                <Moon className="h-4 w-4" />
+              </button>
+            </div>
           </nav>
         </div>
       </header>
@@ -546,41 +721,41 @@ export function App() {
                 className="mt-8"
               >
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-center">
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="text-xs text-slate-500 font-semibold mb-1">
+                  <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                    <div className="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-1">
                       Media Voto Esame
                     </div>
-                    <div className="text-xl sm:text-2xl font-black text-slate-900">
+                    <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100">
                       {overallStats.examSimulationsCount > 0
                         ? `${overallStats.averageScaledGrade30}/30`
                         : "—"}
                     </div>
                   </div>
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="text-xs text-slate-500 font-semibold mb-1">
+                  <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                    <div className="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-1">
                       Tasso Superamento
                     </div>
-                    <div className="text-xl sm:text-2xl font-black text-emerald-600">
+                    <div className="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400">
                       {overallStats.examSimulationsCount > 0
                         ? `${overallStats.passRatePercentage}%`
                         : "—"}
                     </div>
                   </div>
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="text-xs text-slate-500 font-semibold mb-1">
+                  <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                    <div className="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-1">
                       Miglior Voto
                     </div>
-                    <div className="text-xl sm:text-2xl font-black text-sky-600">
+                    <div className="text-xl sm:text-2xl font-black text-sky-600 dark:text-sky-400">
                       {overallStats.bestScaledGrade30 > 0
                         ? `${overallStats.bestScaledGrade30}/30`
                         : "—"}
                     </div>
                   </div>
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="text-xs text-slate-500 font-semibold mb-1">
+                  <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                    <div className="text-xs text-slate-500 dark:text-slate-400 font-semibold mb-1">
                       Tempo Totale
                     </div>
-                    <div className="text-xl sm:text-2xl font-black text-amber-600">
+                    <div className="text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400">
                       {Math.round(overallStats.totalTimeSeconds / 60)} min
                     </div>
                   </div>
@@ -595,16 +770,16 @@ export function App() {
                 </button>
               </CollapsibleSection>
             ) : (
-              <div className="mt-8 rounded-2xl border border-dashed border-slate-300 bg-white/70 p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="mt-8 rounded-2xl border border-dashed border-slate-300 dark:border-slate-600 bg-white/70 dark:bg-slate-800/70 p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-start sm:items-center gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
                     <BarChart3 className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 text-sm">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm">
                       Nessuna simulazione ancora registrata
                     </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                       Le tue prove verranno salvate in locale, con statistiche
                       per blocco e voti su 30.
                     </p>
@@ -626,7 +801,7 @@ export function App() {
               subtitle="Struttura conforme al percorso EOA 2026 per Ingegneria Informatica"
               icon={<LayoutGrid className="h-5 w-5" />}
               badge={
-                <span className="hidden sm:inline text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+                <span className="hidden sm:inline text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                   7 Blocchi •{" "}
                   {allQuestions.length > 0
                     ? `${allQuestions.length.toLocaleString()} Quesiti`
@@ -691,20 +866,20 @@ export function App() {
                   <div
                     key={b.num}
                     onClick={() => handleNavigateToStudy(b.num)}
-                    className={`rounded-2xl border bg-white p-5 shadow-2xs hover:shadow-md transition cursor-pointer border-l-4 ${b.color}`}
+                    className={`rounded-2xl border bg-white dark:bg-slate-800 p-5 shadow-2xs hover:shadow-md transition cursor-pointer border-l-4 ${b.color}`}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-mono text-xs font-bold text-slate-400">
+                      <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500">
                         BLOCCO {b.num}
                       </span>
-                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-700">
+                      <span className="rounded-full bg-slate-100 dark:bg-slate-700 px-2 py-0.5 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
                         Caso: {b.case}
                       </span>
                     </div>
-                    <h4 className="text-base font-bold text-slate-900 mb-1">
+                    <h4 className="text-base font-bold text-slate-900 dark:text-slate-100 mb-1">
                       {b.title}
                     </h4>
-                    <p className="text-slate-600 text-xs leading-relaxed">
+                    <p className="text-slate-600 dark:text-slate-400 text-xs leading-relaxed">
                       {b.desc}
                     </p>
                   </div>
@@ -719,7 +894,7 @@ export function App() {
               defaultExpanded={false}
               className="mt-6"
             >
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-sky-600">•</span>
                   <span>
@@ -761,8 +936,8 @@ export function App() {
               className="mt-6"
             >
               {/* Track Selector Chips */}
-              <div className="flex items-center justify-center gap-1.5 flex-wrap mb-5 pb-4 border-b border-slate-100">
-                <Filter className="h-3.5 w-3.5 text-slate-400 mr-0.5" />
+              <div className="flex items-center justify-center gap-1.5 flex-wrap mb-5 pb-4 border-b border-slate-100 dark:border-slate-700">
+                <Filter className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500 mr-0.5" />
                 {(
                   [
                     {
@@ -805,7 +980,7 @@ export function App() {
                               : t.val === "standard"
                                 ? "bg-sky-600 text-white"
                                 : "bg-purple-600 text-white"
-                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                          : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
                       }`}
                     >
                       {t.badge ? `${t.badge} ` : ""}
@@ -815,26 +990,67 @@ export function App() {
                 })}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {/* Spaced Review - Intelligent Repetition */}
+                <button
+                  onClick={handleStartSpacedReview}
+                  className="group rounded-2xl border border-teal-200 dark:border-teal-800 bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/50 dark:to-cyan-900/50 p-5 text-left hover:bg-teal-50 dark:hover:bg-teal-900/70 hover:shadow-md transition cursor-pointer"
+                >
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-cyan-600 text-white group-hover:scale-105 transition shadow-md">
+                      <Brain className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-slate-900 dark:text-slate-100 text-sm">
+                        🧠 Ripasso Intelligente
+                      </h5>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Basato sui tuoi errori
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+                    L'algoritmo seleziona le domande su cui hai più difficoltà o
+                    che non rivedi da tempo.
+                  </p>
+                  {spacedRepStats.totalTracked > 0 ? (
+                    <div className="flex items-center gap-2 text-[11px]">
+                      <span className="px-2 py-0.5 rounded-full bg-rose-100 text-rose-700 font-semibold">
+                        {spacedRepStats.difficultCount} difficili
+                      </span>
+                      <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-semibold">
+                        {spacedRepStats.learningCount} in corso
+                      </span>
+                      <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-semibold">
+                        {spacedRepStats.masteredCount} ok
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="text-[11px] text-slate-400 italic">
+                      Completa qualche quiz per attivare il tracking
+                    </div>
+                  )}
+                </button>
+
                 {/* Flash Cards */}
                 <button
                   onClick={handleStartFlashCards}
-                  className="group rounded-2xl border border-violet-200 bg-violet-50/50 p-5 text-left hover:bg-violet-50 hover:shadow-md transition cursor-pointer"
+                  className="group rounded-2xl border border-violet-200 dark:border-violet-800 bg-violet-50/50 dark:bg-violet-900/30 p-5 text-left hover:bg-violet-50 dark:hover:bg-violet-900/50 hover:shadow-md transition cursor-pointer"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-100 text-violet-700 group-hover:bg-violet-200 transition">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-100 dark:bg-violet-800 text-violet-700 dark:text-violet-300 group-hover:bg-violet-200 dark:group-hover:bg-violet-700 transition">
                       <Layers className="h-5 w-5" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-slate-900 text-sm">
+                      <h5 className="font-bold text-slate-900 dark:text-slate-100 text-sm">
                         🃏 Flash Cards
                       </h5>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         Ripasso rapido fronte/retro
                       </p>
                     </div>
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                     Gira le card per rivedere concetti, formule e spiegazioni.
                     Nessun punteggio, nessun timer — puro ripasso veloce.
                   </p>
@@ -843,22 +1059,22 @@ export function App() {
                 {/* Traps Quiz */}
                 <button
                   onClick={handleStartTrapsQuiz}
-                  className="group rounded-2xl border border-rose-200 bg-rose-50/50 p-5 text-left hover:bg-rose-50 hover:shadow-md transition cursor-pointer"
+                  className="group rounded-2xl border border-rose-200 dark:border-rose-800 bg-rose-50/50 dark:bg-rose-900/30 p-5 text-left hover:bg-rose-50 dark:hover:bg-rose-900/50 hover:shadow-md transition cursor-pointer"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-700 group-hover:bg-rose-200 transition">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 dark:bg-rose-800 text-rose-700 dark:text-rose-300 group-hover:bg-rose-200 dark:group-hover:bg-rose-700 transition">
                       <AlertTriangle className="h-5 w-5" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-slate-900 text-sm">
+                      <h5 className="font-bold text-slate-900 dark:text-slate-100 text-sm">
                         ⚠ Quiz Trappole
                       </h5>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
                         20 quesiti sulle confusioni tipiche
                       </p>
                     </div>
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                     Allenati sui «Non Dare per Scontato»: le trappole
                     concettuali che fanno sbagliare all'esame.
                   </p>
@@ -866,11 +1082,11 @@ export function App() {
               </div>
 
               {activeTrackFilter !== "all" && (
-                <div className="mt-4 flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
-                  <Filter className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                <div className="mt-4 flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-400">
+                  <Filter className="h-3.5 w-3.5 text-slate-400 dark:text-slate-500 shrink-0" />
                   <span>
                     Filtro attivo:{" "}
-                    <strong className="text-slate-800">
+                    <strong className="text-slate-800 dark:text-slate-200">
                       {activeTrackFilter === "essential"
                         ? "◆ Essenziale"
                         : activeTrackFilter === "standard"
@@ -903,7 +1119,7 @@ export function App() {
                 {/* DuPont Playground Card */}
                 <button
                   onClick={() => navigateTo({ tab: "simulator" })}
-                  className="group rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-purple-50 p-5 text-left hover:shadow-lg hover:border-indigo-300 transition cursor-pointer"
+                  className="group rounded-2xl border border-indigo-200 dark:border-indigo-800 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/50 dark:to-purple-900/50 p-5 text-left hover:shadow-lg hover:border-indigo-300 dark:hover:border-indigo-600 transition cursor-pointer"
                 >
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-lg group-hover:scale-105 transition shrink-0">
@@ -911,14 +1127,14 @@ export function App() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h5 className="font-bold text-slate-900">
+                        <h5 className="font-bold text-slate-900 dark:text-slate-100">
                           DuPont Playground
                         </h5>
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-700 border border-purple-200">
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-800 text-purple-700 dark:text-purple-200 border border-purple-200 dark:border-purple-700">
                           Interattivo
                         </span>
                       </div>
-                      <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
                         Modifica slider di bilancio (Fatturato, Costi, Debito,
                         Equity, Tasso d'interesse) e osserva in tempo reale
                         l'impatto su <strong>ROI</strong>, <strong>ROE</strong>{" "}
@@ -1050,22 +1266,32 @@ export function App() {
 
         {/* FORMULARIO TAB */}
         {activeTab === "formula" && (
-          <FormulaCheatsheetView
-            onPracticeFormula={handlePracticeFormula}
-            onOpenStudy={handleOpenStudyFromFormula}
-          />
+          <Suspense
+            fallback={<LoadingFallback label="Caricamento Formulario..." />}
+          >
+            <FormulaCheatsheetView
+              onPracticeFormula={handlePracticeFormula}
+              onOpenStudy={handleOpenStudyFromFormula}
+            />
+          </Suspense>
         )}
 
         {/* QUIZ TAB */}
         {activeTab === "quiz" && (
           <div>
             {quizMode === "flash-cards" ? (
-              <FlashCardRunner
-                key={quizRunnerKey}
-                questions={filterByTrack(allQuestions)}
-                formulas={formulasData}
-                onExit={() => navigateTo({ tab: "dashboard" })}
-              />
+              <Suspense
+                fallback={
+                  <LoadingFallback label="Caricamento Flash Cards..." />
+                }
+              >
+                <FlashCardRunner
+                  key={quizRunnerKey}
+                  questions={filterByTrack(allQuestions)}
+                  formulas={formulasData}
+                  onExit={() => navigateTo({ tab: "dashboard" })}
+                />
+              </Suspense>
             ) : activeQuestions.length > 0 ? (
               <QuizRunner
                 key={quizRunnerKey}
@@ -1088,25 +1314,35 @@ export function App() {
 
         {/* STATS & HISTORY TAB */}
         {activeTab === "stats" && (
-          <StatsHistoryView
-            history={quizHistory}
-            onRefreshHistory={() => setQuizHistory(getQuizHistory())}
-            onReviewPastSession={handleReviewPastSession}
-            onStartExam={handleStartFullExam}
-            onNavigateToStudy={(b) => handleNavigateToStudy(b)}
-          />
+          <Suspense
+            fallback={<LoadingFallback label="Caricamento Statistiche..." />}
+          >
+            <StatsHistoryView
+              history={quizHistory}
+              onRefreshHistory={() => setQuizHistory(getQuizHistory())}
+              onReviewPastSession={handleReviewPastSession}
+              onStartExam={handleStartFullExam}
+              onNavigateToStudy={(b) => handleNavigateToStudy(b)}
+            />
+          </Suspense>
         )}
 
         {/* SIMULATOR TAB */}
         {activeTab === "simulator" && (
           <div className="mx-auto max-w-5xl py-8 px-4 sm:px-6">
-            <DuPontPlayground />
+            <Suspense
+              fallback={
+                <LoadingFallback label="Caricamento Simulatore DuPont..." />
+              }
+            >
+              <DuPontPlayground />
+            </Suspense>
           </div>
         )}
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+      <footer className="mt-auto border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
         <div className="mx-auto max-w-5xl px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>
             EOA Exam Trainer 2026 • C.d.S. Ingegneria Informatica, Università di

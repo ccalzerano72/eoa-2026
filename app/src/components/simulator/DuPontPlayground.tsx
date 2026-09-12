@@ -55,7 +55,10 @@ const DEFAULT_INPUTS: FinancialInputs = {
 };
 
 // Scenari precaricati per casi studio
-const PRESETS: Record<string, { name: string; inputs: FinancialInputs; description: string }> = {
+const PRESETS: Record<
+  string,
+  { name: string; inputs: FinancialInputs; description: string }
+> = {
   default: {
     name: "Situazione Base",
     inputs: DEFAULT_INPUTS,
@@ -70,7 +73,8 @@ const PRESETS: Record<string, { name: string; inputs: FinancialInputs; descripti
       debito: 320,
       tassoInteresse: 7,
     },
-    description: "D/E = 4, spread ridotto — la leva amplifica ma il rischio è alto",
+    description:
+      "D/E = 4, spread ridotto — la leva amplifica ma il rischio è alto",
   },
   negativeSpread: {
     name: "Spread Negativo ⚠️",
@@ -81,7 +85,8 @@ const PRESETS: Record<string, { name: string; inputs: FinancialInputs; descripti
       debito: 400,
       tassoInteresse: 8,
     },
-    description: "ROI < i — la leva finanziaria distrugge valore per gli azionisti",
+    description:
+      "ROI < i — la leva finanziaria distrugge valore per gli azionisti",
   },
   startupGrowth: {
     name: "Startup in Crescita",
@@ -108,11 +113,18 @@ const PRESETS: Record<string, { name: string; inputs: FinancialInputs; descripti
 };
 
 function calculateMetrics(inputs: FinancialInputs): DuPontMetrics {
-  const { fatturato, costiOperativi, capitaleInvestito, debito, tassoInteresse } = inputs;
+  const {
+    fatturato,
+    costiOperativi,
+    capitaleInvestito,
+    debito,
+    tassoInteresse,
+  } = inputs;
 
   const ebit = fatturato - costiOperativi;
   const ros = fatturato > 0 ? (ebit / fatturato) * 100 : 0;
-  const capitalTurnover = capitaleInvestito > 0 ? fatturato / capitaleInvestito : 0;
+  const capitalTurnover =
+    capitaleInvestito > 0 ? fatturato / capitaleInvestito : 0;
   const roi = capitaleInvestito > 0 ? (ebit / capitaleInvestito) * 100 : 0;
 
   const equity = Math.max(capitaleInvestito - debito, 1); // Evita divisione per zero
@@ -181,11 +193,11 @@ function SliderInput({
   return (
     <div className="space-y-1.5">
       <div className="flex items-center justify-between">
-        <label className="text-xs font-semibold text-slate-600 flex items-center gap-1.5">
+        <label className="text-xs font-semibold text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
           {label}
           {helpText && (
             <span title={helpText} className="cursor-help">
-              <Info className="h-3 w-3 text-slate-400" />
+              <Info className="h-3 w-3 text-slate-400 dark:text-slate-500" />
             </span>
           )}
         </label>
@@ -194,12 +206,14 @@ function SliderInput({
             type="number"
             value={value}
             onChange={(e) => onChange(Number(e.target.value))}
-            className="w-20 text-right text-sm font-mono font-bold text-slate-900 bg-slate-50 border border-slate-200 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-sky-500/30"
+            className="w-20 text-right text-sm font-mono font-bold text-slate-900 dark:text-slate-100 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-sky-500/30"
             min={min}
             max={max}
             step={step}
           />
-          <span className="text-xs text-slate-500 w-6">{unit}</span>
+          <span className="text-xs text-slate-500 dark:text-slate-400 w-6">
+            {unit}
+          </span>
         </div>
       </div>
       <input
@@ -209,9 +223,9 @@ function SliderInput({
         min={min}
         max={max}
         step={step}
-        className={`w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer ${colorClasses[color] || colorClasses.sky}`}
+        className={`w-full h-2 bg-slate-200 dark:bg-slate-600 rounded-lg appearance-none cursor-pointer ${colorClasses[color] || colorClasses.sky}`}
       />
-      <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+      <div className="flex justify-between text-[10px] text-slate-400 dark:text-slate-500 font-mono">
         <span>{formatNumber(min)}</span>
         <span>{formatNumber(max)}</span>
       </div>
@@ -228,12 +242,23 @@ interface MetricCardProps {
   formula?: string;
 }
 
-function MetricCard({ label, value, sublabel, trend, large, formula }: MetricCardProps) {
+function MetricCard({
+  label,
+  value,
+  sublabel,
+  trend,
+  large,
+  formula,
+}: MetricCardProps) {
   const trendColors: Record<string, string> = {
-    positive: "text-emerald-600 bg-emerald-50 border-emerald-200",
-    negative: "text-rose-600 bg-rose-50 border-rose-200",
-    neutral: "text-slate-700 bg-slate-50 border-slate-200",
-    warning: "text-amber-600 bg-amber-50 border-amber-200",
+    positive:
+      "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/50 border-emerald-200 dark:border-emerald-800",
+    negative:
+      "text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/50 border-rose-200 dark:border-rose-800",
+    neutral:
+      "text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-700/50 border-slate-200 dark:border-slate-600",
+    warning:
+      "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/50 border-amber-200 dark:border-amber-800",
   };
 
   const trendIcons: Record<string, React.ReactNode> = {
@@ -248,11 +273,17 @@ function MetricCard({ label, value, sublabel, trend, large, formula }: MetricCar
       title={formula}
     >
       <div className="flex items-center justify-between mb-1">
-        <span className="text-[10px] font-bold uppercase tracking-wide opacity-70">{label}</span>
+        <span className="text-[10px] font-bold uppercase tracking-wide opacity-70">
+          {label}
+        </span>
         {trend && trend !== "neutral" && trendIcons[trend]}
       </div>
-      <div className={`font-black ${large ? "text-2xl" : "text-xl"}`}>{value}</div>
-      {sublabel && <div className="text-[10px] mt-0.5 opacity-70">{sublabel}</div>}
+      <div className={`font-black ${large ? "text-2xl" : "text-xl"}`}>
+        {value}
+      </div>
+      {sublabel && (
+        <div className="text-[10px] mt-0.5 opacity-70">{sublabel}</div>
+      )}
     </div>
   );
 }
@@ -280,7 +311,11 @@ export function DuPontPlayground() {
 
   // Determine spread status for visualization
   const spreadStatus: "positive" | "negative" | "warning" =
-    metrics.spread > 2 ? "positive" : metrics.spread > 0 ? "warning" : "negative";
+    metrics.spread > 2
+      ? "positive"
+      : metrics.spread > 0
+        ? "warning"
+        : "negative";
 
   const roeStatus: "positive" | "negative" | "warning" =
     metrics.roe > 10 ? "positive" : metrics.roe > 0 ? "warning" : "negative";
@@ -294,39 +329,42 @@ export function DuPontPlayground() {
             <Zap className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-xl font-black text-slate-900">DuPont Playground</h2>
-            <p className="text-xs text-slate-500">
+            <h2 className="text-xl font-black text-slate-900 dark:text-slate-100">
+              DuPont Playground
+            </h2>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Simulatore Interattivo ROI / ROE e Leva Finanziaria
             </p>
           </div>
         </div>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          Modifica i valori di bilancio con gli slider e osserva in tempo reale l'impatto su{" "}
-          <strong>ROI</strong>, <strong>ROE</strong> e lo <strong>spread (ROI − i)</strong>. Quando
-          lo spread diventa negativo, la leva finanziaria distrugge valore invece di amplificarlo.
+        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          Modifica i valori di bilancio con gli slider e osserva in tempo reale
+          l'impatto su <strong>ROI</strong>, <strong>ROE</strong> e lo{" "}
+          <strong>spread (ROI − i)</strong>. Quando lo spread diventa negativo,
+          la leva finanziaria distrugge valore invece di amplificarlo.
         </p>
       </div>
 
       {/* Preset Scenarios */}
       <div className="mb-6">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xs font-bold text-slate-500 uppercase tracking-wide">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
             Scenari Precaricati
           </span>
           <button
             onClick={resetToDefault}
-            className="ml-auto flex items-center gap-1 text-xs text-slate-500 hover:text-slate-700 transition"
+            className="ml-auto flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition"
           >
             <RotateCcw className="h-3 w-3" />
             Reset
           </button>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
           {Object.entries(PRESETS).map(([key, preset]) => (
             <button
               key={key}
               onClick={() => loadPreset(key)}
-              className="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 transition text-slate-700"
+              className="px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 hover:border-slate-300 dark:hover:border-slate-500 transition text-slate-700 dark:text-slate-200 text-center whitespace-nowrap"
               title={preset.description}
             >
               {preset.name}
@@ -337,9 +375,9 @@ export function DuPontPlayground() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Input Sliders Panel */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
-          <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <span className="h-5 w-5 rounded-md bg-sky-100 text-sky-600 flex items-center justify-center text-xs font-black">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-5">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+            <span className="h-5 w-5 rounded-md bg-sky-100 dark:bg-sky-900 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xs font-black">
               1
             </span>
             Variabili di Bilancio (€ migliaia)
@@ -370,13 +408,13 @@ export function DuPontPlayground() {
               helpText="Tutti i costi prima degli oneri finanziari (materie prime, personale, ammortamenti...)"
             />
 
-            <div className="pt-2 border-t border-slate-100">
+            <div className="pt-2 border-t border-slate-100 dark:border-slate-700">
               <div className="flex items-center justify-between text-sm">
-                <span className="font-semibold text-slate-700">
+                <span className="font-semibold text-slate-700 dark:text-slate-300">
                   EBIT (Reddito Operativo)
                 </span>
                 <span
-                  className={`font-mono font-black ${metrics.ebit >= 0 ? "text-emerald-600" : "text-rose-600"}`}
+                  className={`font-mono font-black ${metrics.ebit >= 0 ? "text-emerald-600 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}`}
                 >
                   {formatNumber(metrics.ebit)} €k
                 </span>
@@ -407,16 +445,20 @@ export function DuPontPlayground() {
               helpText="Passività onerose (bancarie, obbligazioni)"
             />
 
-            <div className="pt-2 border-t border-slate-100">
+            <div className="pt-2 border-t border-slate-100 dark:border-slate-700">
               <div className="flex items-center justify-between text-sm">
-                <span className="font-semibold text-slate-700">Equity (Patrimonio Netto)</span>
-                <span className="font-mono font-black text-indigo-600">
+                <span className="font-semibold text-slate-700 dark:text-slate-300">
+                  Equity (Patrimonio Netto)
+                </span>
+                <span className="font-mono font-black text-indigo-600 dark:text-indigo-400">
                   {formatNumber(metrics.equity)} €k
                 </span>
               </div>
-              <div className="flex items-center justify-between text-xs text-slate-500 mt-1">
+              <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mt-1">
                 <span>Leverage (D/E)</span>
-                <span className="font-mono font-semibold">{metrics.leverage.toFixed(2)}x</span>
+                <span className="font-mono font-semibold">
+                  {metrics.leverage.toFixed(2)}x
+                </span>
               </div>
             </div>
 
@@ -437,9 +479,9 @@ export function DuPontPlayground() {
         {/* Results Panel */}
         <div className="space-y-4">
           {/* Key Metrics Grid */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
-            <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
-              <span className="h-5 w-5 rounded-md bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs font-black">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-5">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+              <span className="h-5 w-5 rounded-md bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-black">
                 2
               </span>
               Indicatori Calcolati
@@ -450,7 +492,13 @@ export function DuPontPlayground() {
                 label="ROS"
                 value={`${metrics.ros.toFixed(1)}%`}
                 sublabel="Margine Operativo"
-                trend={metrics.ros > 10 ? "positive" : metrics.ros > 0 ? "neutral" : "negative"}
+                trend={
+                  metrics.ros > 10
+                    ? "positive"
+                    : metrics.ros > 0
+                      ? "neutral"
+                      : "negative"
+                }
                 formula="ROS = EBIT / Fatturato"
               />
               <MetricCard
@@ -470,7 +518,13 @@ export function DuPontPlayground() {
                 label="ROI"
                 value={`${metrics.roi.toFixed(1)}%`}
                 sublabel="Return on Investment"
-                trend={metrics.roi > 8 ? "positive" : metrics.roi > 0 ? "neutral" : "negative"}
+                trend={
+                  metrics.roi > 8
+                    ? "positive"
+                    : metrics.roi > 0
+                      ? "neutral"
+                      : "negative"
+                }
                 large
                 formula="ROI = EBIT / Capitale Investito = ROS × Turnover"
               />
@@ -481,14 +535,14 @@ export function DuPontPlayground() {
           <div
             className={`rounded-2xl border-2 p-5 transition-colors ${
               spreadStatus === "positive"
-                ? "bg-emerald-50 border-emerald-300"
+                ? "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-700"
                 : spreadStatus === "warning"
-                  ? "bg-amber-50 border-amber-300"
-                  : "bg-rose-50 border-rose-300"
+                  ? "bg-amber-50 dark:bg-amber-900/30 border-amber-300 dark:border-amber-700"
+                  : "bg-rose-50 dark:bg-rose-900/30 border-rose-300 dark:border-rose-700"
             }`}
           >
-            <h3 className="text-sm font-bold mb-3 flex items-center gap-2">
-              <span className="h-5 w-5 rounded-md bg-white/80 flex items-center justify-center text-xs font-black">
+            <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+              <span className="h-5 w-5 rounded-md bg-white/80 dark:bg-slate-800/80 flex items-center justify-center text-xs font-black">
                 3
               </span>
               Spread e Effetto Leva
@@ -496,7 +550,7 @@ export function DuPontPlayground() {
 
             {/* Visual Spread Bar */}
             <div className="mb-4">
-              <div className="flex items-center justify-between text-xs font-semibold mb-2">
+              <div className="flex items-center justify-between text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
                 <span>ROI: {metrics.roi.toFixed(1)}%</span>
                 <span className="flex items-center gap-1">
                   <ArrowRight className="h-3 w-3" />
@@ -506,9 +560,9 @@ export function DuPontPlayground() {
                 <span>i: {inputs.tassoInteresse}%</span>
               </div>
 
-              <div className="relative h-8 bg-white/50 rounded-lg border overflow-hidden">
+              <div className="relative h-8 bg-white/50 dark:bg-slate-800/50 rounded-lg border dark:border-slate-600 overflow-hidden">
                 {/* Zero line */}
-                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-400 z-10" />
+                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-slate-400 dark:bg-slate-500 z-10" />
 
                 {/* Spread indicator */}
                 <div
@@ -516,7 +570,10 @@ export function DuPontPlayground() {
                     metrics.spread >= 0 ? "bg-emerald-500" : "bg-rose-500"
                   }`}
                   style={{
-                    left: metrics.spread >= 0 ? "50%" : `${50 + (metrics.spread / 20) * 50}%`,
+                    left:
+                      metrics.spread >= 0
+                        ? "50%"
+                        : `${50 + (metrics.spread / 20) * 50}%`,
                     width: `${Math.min(Math.abs(metrics.spread) / 20, 0.5) * 100}%`,
                   }}
                 />
@@ -525,7 +582,9 @@ export function DuPontPlayground() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span
                     className={`font-mono font-black text-lg ${
-                      metrics.spread >= 0 ? "text-emerald-700" : "text-rose-700"
+                      metrics.spread >= 0
+                        ? "text-emerald-700 dark:text-emerald-300"
+                        : "text-rose-700 dark:text-rose-300"
                     }`}
                   >
                     {formatPercent(metrics.spread)}
@@ -533,7 +592,7 @@ export function DuPontPlayground() {
                 </div>
               </div>
 
-              <div className="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+              <div className="flex justify-between text-[10px] text-slate-500 dark:text-slate-400 mt-1 font-mono">
                 <span>−20%</span>
                 <span>0</span>
                 <span>+20%</span>
@@ -544,42 +603,44 @@ export function DuPontPlayground() {
             <div
               className={`rounded-xl p-4 ${
                 roeStatus === "positive"
-                  ? "bg-emerald-100"
+                  ? "bg-emerald-100 dark:bg-emerald-900/50"
                   : roeStatus === "warning"
-                    ? "bg-amber-100"
-                    : "bg-rose-100"
+                    ? "bg-amber-100 dark:bg-amber-900/50"
+                    : "bg-rose-100 dark:bg-rose-900/50"
               }`}
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wide opacity-70">
+                  <div className="text-xs font-bold uppercase tracking-wide opacity-70 text-slate-700 dark:text-slate-300">
                     ROE (Return on Equity)
                   </div>
-                  <div className="text-3xl font-black">{metrics.roe.toFixed(1)}%</div>
+                  <div className="text-3xl font-black text-slate-900 dark:text-slate-100">
+                    {metrics.roe.toFixed(1)}%
+                  </div>
                 </div>
                 {roeStatus === "positive" ? (
-                  <TrendingUp className="h-8 w-8 opacity-50" />
+                  <TrendingUp className="h-8 w-8 opacity-50 text-emerald-600 dark:text-emerald-400" />
                 ) : roeStatus === "negative" ? (
-                  <TrendingDown className="h-8 w-8 opacity-50" />
+                  <TrendingDown className="h-8 w-8 opacity-50 text-rose-600 dark:text-rose-400" />
                 ) : (
-                  <AlertTriangle className="h-8 w-8 opacity-50" />
+                  <AlertTriangle className="h-8 w-8 opacity-50 text-amber-600 dark:text-amber-400" />
                 )}
               </div>
 
               {/* Formula breakdown */}
-              <div className="mt-3 pt-3 border-t border-black/10 text-xs font-mono">
+              <div className="mt-3 pt-3 border-t border-black/10 dark:border-white/10 text-xs font-mono text-slate-700 dark:text-slate-300">
                 <div className="flex flex-wrap items-center gap-1">
                   <span className="font-bold">ROE</span>
                   <span>=</span>
-                  <span className="px-1.5 py-0.5 rounded bg-white/50">
+                  <span className="px-1.5 py-0.5 rounded bg-white/50 dark:bg-slate-800/50">
                     ROI ({metrics.roi.toFixed(1)}%)
                   </span>
                   <span>+</span>
-                  <span className="px-1.5 py-0.5 rounded bg-white/50">
+                  <span className="px-1.5 py-0.5 rounded bg-white/50 dark:bg-slate-800/50">
                     Spread ({formatPercent(metrics.spread)})
                   </span>
                   <span>×</span>
-                  <span className="px-1.5 py-0.5 rounded bg-white/50">
+                  <span className="px-1.5 py-0.5 rounded bg-white/50 dark:bg-slate-800/50">
                     D/E ({metrics.leverage.toFixed(2)})
                   </span>
                 </div>
@@ -590,28 +651,29 @@ export function DuPontPlayground() {
             <div
               className={`mt-4 p-3 rounded-lg text-xs leading-relaxed ${
                 spreadStatus === "positive"
-                  ? "bg-emerald-100/50 text-emerald-800"
+                  ? "bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-200"
                   : spreadStatus === "warning"
-                    ? "bg-amber-100/50 text-amber-800"
-                    : "bg-rose-100/50 text-rose-800"
+                    ? "bg-amber-100/50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200"
+                    : "bg-rose-100/50 dark:bg-rose-900/30 text-rose-800 dark:text-rose-200"
               }`}
             >
               {spreadStatus === "positive" ? (
                 <>
-                  <strong>✓ Leva favorevole:</strong> Lo spread positivo significa che ogni euro
-                  preso in prestito genera più rendimento del suo costo. La leva{" "}
-                  <em>amplifica</em> il ROE.
+                  <strong>✓ Leva favorevole:</strong> Lo spread positivo
+                  significa che ogni euro preso in prestito genera più
+                  rendimento del suo costo. La leva <em>amplifica</em> il ROE.
                 </>
               ) : spreadStatus === "warning" ? (
                 <>
-                  <strong>⚠ Attenzione:</strong> Spread basso ma positivo. Un piccolo
-                  peggioramento di ROI o aumento dei tassi potrebbe invertire l'effetto leva.
+                  <strong>⚠ Attenzione:</strong> Spread basso ma positivo. Un
+                  piccolo peggioramento di ROI o aumento dei tassi potrebbe
+                  invertire l'effetto leva.
                 </>
               ) : (
                 <>
-                  <strong>✗ Leva distruttiva:</strong> ROI &lt; i significa che il debito costa più
-                  di quanto rende il capitale investito. Ogni euro di debito{" "}
-                  <em>riduce</em> il ROE degli azionisti.
+                  <strong>✗ Leva distruttiva:</strong> ROI &lt; i significa che
+                  il debito costa più di quanto rende il capitale investito.
+                  Ogni euro di debito <em>riduce</em> il ROE degli azionisti.
                 </>
               )}
             </div>
@@ -620,7 +682,7 @@ export function DuPontPlayground() {
           {/* Toggle Formulas */}
           <button
             onClick={() => setShowFormulas(!showFormulas)}
-            className="w-full flex items-center justify-center gap-2 text-xs font-semibold text-slate-500 hover:text-slate-700 transition py-2"
+            className="w-full flex items-center justify-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition py-2"
           >
             {showFormulas ? (
               <>
@@ -644,7 +706,8 @@ export function DuPontPlayground() {
                 <span className="text-amber-400">ROS</span> = EBIT / Fatturato
               </div>
               <div>
-                <span className="text-sky-400">Turnover</span> = Fatturato / Capitale Investito
+                <span className="text-sky-400">Turnover</span> = Fatturato /
+                Capitale Investito
               </div>
               <div>
                 <span className="text-emerald-400">ROI</span> ={" "}

@@ -111,6 +111,22 @@ triggers:
   - Dashboard "Modalità di Studio Avanzate" panel with two action cards (Flash Cards, Quiz Trappole) and inline track filter chips.
   - Production build (`tsc` + `vite build`) and oxlint validated with 0 errors.
 
+- **Performance & UX Enhancements (September 2026)**: COMPLETED.
+  - **Code Splitting**: Implemented React.lazy() for heavy components (`FlashCardRunner`, `StatsHistoryView`, `FormulaCheatsheetView`, `DuPontPlayground`) with Suspense boundaries and animated LoadingFallback spinner. Reduces initial bundle load.
+  - **Spaced Repetition System**: Full implementation in `storage.ts`:
+    - `QuestionPerformance` tracking per-question with ease factor (SM-2 inspired algorithm).
+    - `recordQuestionAttempt()` updates ease factor on correct/incorrect answers.
+    - `recordSessionPerformance()` batch updates from completed quiz sessions (auto-called by `saveQuizRecord()`).
+    - `getQuestionsNeedingReview()` returns prioritized question IDs based on low ease factor, time decay, and consecutive errors.
+    - `getSpacedRepStats()` computes mastered/learning/difficult counts for dashboard display.
+    - New localStorage key: `eoa_spaced_repetition_v1`.
+  - **Intelligent Review Mode ("Ripasso Intelligente")**: New `spaced-review` QuizMode that selects questions using spaced repetition algorithm. Dashboard card displays live stats (difficili/in corso/ok). Teal-colored banner in QuizRunner. Immediate explanation reveal like free-practice mode.
+  - **Dark Mode**: Full implementation with three-state toggle (Light ☀️ / System 🖥️ / Dark 🌙):
+    - Theme preference persisted in localStorage (`eoa_theme_preference`).
+    - CSS custom properties for dark mode colors in `index.css`.
+    - Tailwind `dark:` variants applied to: main wrapper, header, footer, LoadingFallback, QuizRunner cards and status bar.
+    - Toggle widget in navbar with visual feedback for active state.
+
 ## In Progress
 
 - None.

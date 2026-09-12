@@ -31,26 +31,26 @@ export function CollapsibleSection({
 
   return (
     <div
-      className={`rounded-2xl border border-slate-200 bg-white shadow-xs overflow-hidden ${className}`}
+      className={`rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xs overflow-hidden ${className}`}
     >
       {/* Clickable Header */}
       <button
         type="button"
         onClick={() => setIsExpanded((prev) => !prev)}
-        className="w-full flex items-center justify-between gap-3 p-5 sm:p-6 text-left cursor-pointer hover:bg-slate-50 transition-colors"
+        className="w-full flex items-center justify-between gap-3 p-5 sm:p-6 text-left cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
       >
         <div className="flex items-center gap-3 min-w-0">
           {icon && (
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400">
               {icon}
             </div>
           )}
           <div className="min-w-0">
-            <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+            <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 leading-snug">
               {title}
             </h3>
             {subtitle && (
-              <p className="text-xs text-slate-500 leading-snug mt-0.5">
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-snug mt-0.5">
                 {subtitle}
               </p>
             )}
@@ -59,7 +59,7 @@ export function CollapsibleSection({
         <div className="flex items-center gap-2 shrink-0">
           {badge}
           <ChevronDown
-            className={`h-5 w-5 text-slate-400 transition-transform duration-200 ${
+            className={`h-5 w-5 text-slate-400 dark:text-slate-500 transition-transform duration-200 ${
               isExpanded ? "rotate-180" : ""
             }`}
           />
