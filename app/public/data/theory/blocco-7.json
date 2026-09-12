@@ -130,6 +130,37 @@
           "example": "Se acquisire un abbonato costa 100€ (CAC) e l'utente paga 20€/mese ma disdice al terzo mese (LTV = 60€), l'azienda perde 40€ netti per ogni singolo nuovo cliente acquisito."
         }
       ]
+    },
+    {
+      "id": "modelli-di-business-aperti",
+      "title": "Modelli di Business Aperti (Open Business Model): Inside-Out e Outside-In",
+      "track": "approfondito",
+      "whyIntro": "Un'azienda come Philips possiede migliaia di brevetti che utilizza solo in parte. Un'altra, come LEGO, non ha abbastanza ingegneri per sviluppare tutte le idee dei propri fan. I modelli aperti risolvono entrambi i problemi trasformando i confini dell'impresa da muri a porte.",
+      "whatBody": "Nei modelli di business tradizionali ('chiusi'), tutte le risorse strategiche — ricerca, sviluppo, produzione, distribuzione — sono interne all'impresa. Nei modelli aperti, l'impresa collabora sistematicamente con partner esterni per creare e catturare valore, aprendo i propri processi verso l'esterno (outside-in) o cedendo risorse interne inutilizzate al mercato (inside-out).\n\nLe Due Direzioni dei Modelli Aperti:\n\n1. Outside-In (Integrazione di Innovazione Esterna):\nL'impresa incorpora attivamente tecnologie, brevetti, idee e conoscenze sviluppate da soggetti esterni (università, startup, fornitori specializzati, comunità di utenti) nei propri processi di R&S e produzione. L'obiettivo è ridurre il time-to-market, abbattere i costi di sviluppo e accedere a competenze non presenti internamente.\n• Tra le Risorse Chiave occorrono punti di accesso alle reti esterne (portali di open innovation, accordi di co-sviluppo).\n• Tra i Partner Chiave figurano le organizzazioni esterne che portano brevetti, intuizioni o prodotti già pronti.\n• Tra le Attività Chiave c'è la gestione delle connessioni tra entità esterne e il processo R&S interno.\n• Esempio: LEGO Ideas — la piattaforma dove i fan propongono nuovi set. I set che raggiungono 10.000 voti vengono valutati da LEGO per la produzione: il designer riceve una royalty. LEGO externalizza la fase di ideazione, abbattendo i costi di R&S e garantendo un bacino di prodotti già validati dal mercato.\n\n2. Inside-Out (Monetizzazione di Risorse Interne Inutilizzate):\nL'impresa cede a terzi (tramite licenze, vendite o partnership) la propria proprietà intellettuale, tecnologie o piattaforme che non riesce a sfruttare interamente all'interno. Genera flussi di ricavo aggiuntivi 'facili' su asset già sviluppati.\n• Tra le Risorse Chiave spiccano brevetti, software, piattaforme digitali e proprietà intellettuale non sfruttate.\n• I Flussi di Ricavo aggiuntivi derivano da royalties su licenze, tariffe di accesso o vendita di asset secondari.\n• Esempio: Philips — possiede un vastissimo portafoglio di brevetti in ambito medicale, illuminazione e consumer electronics. Parte di essi non vengono usati internamente ma vengono licenziati ad altre aziende di settori diversi, generando centinaia di milioni di euro di entrate royalty-based a costi marginali quasi nulli.\n\nDifferenza Rispetto alle Piattaforme Multi-Sided:\nLe piattaforme multi-sided connettono gruppi di utenti che si creano valore a vicenda. I modelli aperti invece riguardano il rapporto dell'impresa con i propri processi di innovazione e la propria proprietà intellettuale: si parla di strategia di R&S e di asset management, non di orchestrazione di network.",
+      "howDetails": "Esempi Integrati dalla Lezione del Corso:\n• Philips (Inside-Out): brevetti medicali e di illuminazione licenziati a produttori di altri settori (es. ETFLUX, aziende sanitarie). Il Canvas mostra 'Portale per licenze' nei Canali e 'Royalties / Vendita proprietà intellettuale' nei Flussi di Ricavo, accanto ai ricavi da vendita prodotti tradizionali.\n• LEGO (Outside-In + Inside-Out ibrido): partnership con università e istituzioni, 'Lead user' nei Partner Chiave, piattaforma Lego Ideas come Risorsa e Attività Chiave; i costi di brevetti e gestione piattaforma sono espliciti nella Struttura dei Costi.\n\nImplicazioni per l'Ingegnere:\nUn brevetto software o un algoritmo proprietario non sfruttato internamente può diventare una fonte di ricavo attraverso licenze. Al contrario, accedere a tecnologie esterne tramite licenze può essere più rapido e meno costoso che svilupparle da zero.",
+      "keypoints": [
+        {
+          "id": "kp-open-bm-1",
+          "title": "Le Due Direzioni dell'Apertura",
+          "schematicFormula": "Outside-In = Innovazione Esterna Integrata Internamente (↓ time-to-market) | Inside-Out = Risorse Interne Cedute all'Esterno (↑ flussi royalty)",
+          "explanation": "Le due direzioni non si escludono: un'impresa può contemporaneamente acquisire brevetti dall'esterno (outside-in) e licenziare i propri (inside-out), massimizzando il ritorno sull'intero portafoglio di conoscenza."
+        },
+        {
+          "id": "kp-open-bm-2",
+          "title": "Inside-Out: il Brevetto come Generatore di Rendita",
+          "schematicFormula": "Brevetto Inutilizzato Internamente + Licenza a Terzi → Royalty Revenue a Costo Marginale Quasi Zero",
+          "explanation": "Una volta sviluppata una tecnologia, licenziarla ad aziende di altri settori non cannibalizza il core business ma crea un flusso aggiuntivo quasi puro."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-open-bm-1",
+          "title": "Confondere modello aperto con perdita di controllo sull'IP",
+          "misconception": "Credere che aprire i propri processi o licenziare brevetti significhi cedere il vantaggio competitivo all'esterno.",
+          "truth": "L'apertura selettiva riguarda la proprietà intellettuale non strategica o non utilizzata internamente. I brevetti e le tecnologie che costituiscono il nucleo del vantaggio competitivo non vengono ceduti: vengono protetti e sfruttati internamente.",
+          "example": "Philips licenzia brevetti di illuminazione a produttori di componenti, ma non cede mai i brevetti dei suoi sistemi diagnostici medicali di punta, che rimangono il cuore della sua competitività."
+        }
+      ]
     }
   ]
 }

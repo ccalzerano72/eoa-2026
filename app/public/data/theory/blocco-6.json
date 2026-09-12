@@ -1,8 +1,8 @@
 {
   "block": 6,
   "title": "Costi, Decisioni e Analisi di Break-Even",
-  "subtitle": "Classificazione costi, Direct vs Full Costing, BEP, leva operativa e decisioni di breve periodo",
-  "guidingQuestion": "Quante unità dobbiamo vendere per coprire i costi e non chiudere in perdita? Come si calcola la leva operativa? Quando conviene accettare un ordine sottocosto o eliminare una linea di prodotto apparentemente in perdita?",
+  "subtitle": "Classificazione costi, Direct vs Full Costing, BEP, leva operativa, decisioni di breve periodo, Activity-Based Costing e configurazioni di costo",
+  "guidingQuestion": "Quante unità dobbiamo vendere per coprire i costi e non chiudere in perdita? Come si calcola la leva operativa? Quando conviene accettare un ordine sottocosto o eliminare una linea di prodotto apparentemente in perdita? Come si evita il sussidio incrociato tra prodotti con l'Activity-Based Costing?",
   "caseStudy": {
     "id": "caso-break-even-software-saas",
     "name": "La Struttura dei Costi nel Lancio di una Piattaforma Cloud SaaS",
@@ -157,6 +157,73 @@
           "misconception": "Cancellare un servizio dal catalogo perché il report a costo pieno mostra che genera una perdita di 10.000€.",
           "truth": "Se quel servizio aveva un mdc di +30.000€ e assorbiva 40.000€ di costi fissi comuni aziendali, cancellandolo i 40.000€ di costi comuni rimangono e l'utile aziendale complessivo calerà di 30.000€.",
           "example": "L'azienda che elimina progressivamente i prodotti apparentemente in perdita finisce per fallire perché i costi generali di sede restano identici ma non c'è più fatturato per coprirli."
+        }
+      ]
+    },
+    {
+      "id": "configurazioni-di-costo",
+      "title": "Configurazioni di Costo: dal Costo Primo al Costo Economico-Tecnico",
+      "track": "approfondito",
+      "whyIntro": "In un'azienda software non tutti i costi sono uguali: il costo di un bug fix è molto diverso dal costo di una campagna marketing o dallo stipendio del CEO. Scegliere la configurazione di costo sbagliata porta a prezzi errati e decisioni strategiche disastrose.",
+      "whatBody": "La contabilità direzionale (management accounting) si affianca alla contabilità generale obbligatoria con uno scopo radicalmente diverso: supportare le decisioni interne del management, non informare i terzi. Il principio fondamentale è 'costi diversi per scopi diversi'.\n\nDistinzione Fondamentale:\n• Contabilità Generale (Financial Accounting): obbligatoria per legge, rivolta a destinatari esterni (fisco, banche, soci), orientata al passato, vincolata ai principi contabili OIC/IFRS, ha per oggetto l'intera impresa, produce il bilancio d'esercizio.\n• Contabilità Direzionale (Management Accounting): volontaria, rivolta ai manager interni, orientata al futuro e alle decisioni, senza vincoli formali, ha per oggetto specifici 'oggetti di costo' (prodotto, cliente, progetto, reparto), produce report e budget.\n\nL'Oggetto di Costo:\nQualsiasi entità per la quale si vuole misurare separatamente un costo (un prodotto, un servizio, un cliente, un progetto). La classificazione di un costo come diretto o indiretto NON è una proprietà assoluta: dipende dall'oggetto di costo scelto. Lo stipendio di un capo-reparto è diretto rispetto al reparto, ma indiretto rispetto al singolo prodotto lavorato.\n\nLe 4 Configurazioni di Costo a 'Matrioska':\n\n1. Costo Primo:\nMaterie prime + Manodopera Diretta (soli costi diretti di produzione). Utile per valutare la pura efficienza produttiva.\n\n2. Costo Industriale (Pieno Industriale):\nCosto Primo + quota di Costi Indiretti Industriali (ammortamento macchinari, energia stabilimento, supervisione produzione). Tipicamente usato per valorizzare le rimanenze di magazzino e per decisioni Make or Buy.\n\n3. Costo Pieno Aziendale (Full Cost):\nCosto Industriale + Costi Commerciali + Costi Amministrativi e Generali. Copre tutti i costi operativi. È la base standard per la definizione del prezzo di listino (al quale si aggiunge un mark-up).\n\n4. Costo Economico-Tecnico:\nCosto Pieno Aziendale + Oneri Figurativi (costi impliciti non monetari: stipendio figurativo dell'imprenditore che non si remunera formalmente, interesse di calcolo sul capitale proprio investito). Non serve per calcolare il prezzo, ma per verificare ex post la sostenibilità economica di lungo periodo: 'Sto remunerando adeguatamente il mio capitale?'.",
+      "howDetails": "Quale Configurazione per Quale Decisione:\n- Ordine speciale (breve periodo): Costo Variabile (se MdC > 0 e c'è capacità inutilizzata, accettare).\n- Pricing di listino (medio periodo): Costo Pieno Aziendale + mark-up (preferibilmente calcolato con ABC per evitare sussidi incrociati).\n- Gara d'appalto: Costo Pieno Industriale come floor (prezzo minimo).\n- Verifica sostenibilità di lungo periodo: Costo Economico-Tecnico come benchmark.\n\nAttenzione: Il mark-up aggiunto al Costo Pieno Aziendale già include implicitamente la remunerazione del capitale. Usare il Costo Economico-Tecnico come base e aggiungere un ulteriore mark-up significherebbe contare due volte la stessa posta.",
+      "keypoints": [
+        {
+          "id": "kp-conf-cost-1",
+          "title": "Le 4 Configurazioni a Matrioska",
+          "schematicFormula": "Costo Primo ⊂ Costo Industriale ⊂ Costo Pieno Aziendale ⊂ Costo Economico-Tecnico",
+          "explanation": "Ogni configurazione aggiunge un nuovo strato di costi rispetto alla precedente: la scelta dipende dall'orizzonte temporale e dal tipo di decisione da supportare."
+        },
+        {
+          "id": "kp-conf-cost-2",
+          "title": "Contabilità Generale vs Direzionale",
+          "schematicFormula": "Cont. Generale = Obbligatoria · Passato · Terzi · Bilancio | Cont. Direzionale = Volontaria · Futuro · Manager · Report",
+          "explanation": "La contabilità direzionale non ha vincoli formali: può essere plasmata su misura per ogni specifica esigenza decisionale."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-conf-cost-1",
+          "title": "Usare il costo economico-tecnico come base di prezzo",
+          "misconception": "Credere che il prezzo si calcoli aggiungendo un mark-up al costo economico-tecnico (che già include gli oneri figurativi).",
+          "truth": "Il costo economico-tecnico è uno strumento di controllo strategico ex post, non una base di pricing: usarlo come punto di partenza del prezzo farebbe contare due volte la remunerazione del capitale."
+        }
+      ]
+    },
+    {
+      "id": "activity-based-costing",
+      "title": "Activity-Based Costing (ABC): Superare il Sussidio Incrociato",
+      "track": "approfondito",
+      "whyIntro": "Un'azienda cloud con 500 clienti standard e 30 clienti enterprise personalizzati rischia di prezzare il servizio enterprise troppo poco (perdendo soldi) e quello standard troppo (perdendo clienti), tutto per colpa di un coefficiente di ripartizione sbagliato. L'ABC risolve questo problema.",
+      "whatBody": "Il metodo tradizionale di allocazione dei costi indiretti usa un'unica base di riparto volumetrica (es. ore di manodopera diretta o ore macchina), applicando un coefficiente uniforme a tutti i prodotti. Questo genera sistematicamente il fenomeno del sussidio incrociato (cross-subsidization): i prodotti standard ad alto volume assorbono la maggior parte dei costi indiretti, anche se non li causano; i prodotti custom a basso volume sembrano economici, pur consumando la gran parte delle risorse di supporto.\n\nL'Activity-Based Costing (Cooper e Kaplan, Harvard Business School, 1988) ribalta la logica: 'Le risorse vengono consumate dalle attività; le attività vengono consumate dai prodotti'.\n\nI 4 Passi dell'ABC:\n1. Identificare le attività rilevanti: mappare le attività che assorbono risorse (es. setup macchine, gestione ordini, controllo qualità, supporto SLA dedicato, spedizioni).\n2. Attribuire i costi alle attività: determinare quanta parte di ciascuna risorsa (personale, spazi, tecnologia) viene consumata da ogni attività tramite i resource drivers (es. percentuale di tempo del personale).\n3. Identificare gli activity driver: scegliere la misura causale che spiega il consumo di ciascuna attività da parte dei prodotti (es. numero di setup, numero di ordini, numero di ispezioni). Questo passaggio è il più critico.\n4. Allocare i costi ai prodotti: costo unitario dell'activity driver × quantità di driver consumata dal prodotto.\n\nLa Gerarchia delle Attività di Cooper (1990):\n• Unit-level: eseguite per ogni singola unità prodotta (lavorazione, assemblaggio). Driver: ore macchina, ore MOD.\n• Batch-level: eseguite per ogni lotto (setup macchine, ispezione lotto, gestione ordine di produzione). Driver: numero di setup, numero di lotti.\n• Product-level: eseguite per mantenere un prodotto in gamma (design, ingegneria, gestione distinta base). Driver: numero di prodotti, numero di modifiche.\n• Facility-level: eseguite per mantenere la capacità generale (manutenzione stabilimento, direzione). Driver: allocazione uniforme.\n\nIl metodo tradizionale, usando basi volumetriche (unit-level), non riesce ad allocare correttamente i costi batch-level e product-level, spalmandoli indistintamente su tutti i volumi.\n\nQuando Conviene Usare l'ABC:\n- Elevata incidenza dei costi indiretti (>30-40% dei costi totali).\n- Ampia diversità nella gamma di prodotti/servizi (standard vs custom).\n- Presenza di prodotti a basso volume che richiedono molto supporto organizzativo.\n- Necessità di decisioni di pricing strategiche accurate.",
+      "howDetails": "Caso TechMilano S.r.l. — L'ABC Rivela la Verità sui Margini:\nTechMilano offre due servizi: CloudBase (hosting standard, 500 clienti) e CloudPro (soluzioni personalizzate, 30 clienti). Costi indiretti totali: 600.000€/anno.\n\nMetodo Tradizionale (base: numero clienti):\n- Coefficiente = 600.000€ / 530 clienti = 1.132€ / cliente\n- Costi allocati a CloudBase = 500 × 1.132 = 566.038€ (~94%)\n- Costi allocati a CloudPro = 30 × 1.132 = 33.962€ (~6%)\n→ CloudPro sembra un servizio redditizio con pochissimi costi indiretti.\n\nMetodo ABC (analisi delle attività effettive):\nAnalizzando le attività reali (personalizzazioni, supporto dedicato, gestione SLA, sviluppo custom), CloudPro — pur rappresentando solo il 5,7% dei clienti — consuma il 70% delle risorse di supporto.\n- Costi reali CloudPro: 70% × 600.000 = 420.000€ → 14.000€/cliente\n- Costi reali CloudBase: 30% × 600.000 = 180.000€ → 360€/cliente\n→ Il margine di CloudPro, apparentemente positivo col metodo tradizionale, è in realtà nullo o negativo.\n\nDecisioni possibili:\n1. Aumentare il prezzo di CloudPro per riflettere i costi reali.\n2. Standardizzare CloudPro riducendo le personalizzazioni.\n3. Abbandonare CloudPro e concentrarsi su CloudBase.",
+      "keypoints": [
+        {
+          "id": "kp-abc-1",
+          "title": "Logica ABC: Attività come Ponte",
+          "schematicFormula": "Risorse → (Resource Drivers) → Attività → (Activity Drivers) → Prodotti/Servizi",
+          "explanation": "L'ABC attribuisce i costi in base alle attività effettivamente consumate: prodotti diversi consumano attività in misura diversa, indipendentemente dal volume prodotto."
+        },
+        {
+          "id": "kp-abc-2",
+          "title": "Gerarchia delle Attività",
+          "schematicFormula": "Unit-level (volume) | Batch-level (lotto) | Product-level (gamma) | Facility-level (struttura)",
+          "explanation": "Il metodo tradizionale fallisce perché usa solo driver unit-level, ignorando i costi batch e product che spesso sono quelli più rilevanti per i prodotti custom."
+        },
+        {
+          "id": "kp-abc-3",
+          "title": "Il Sussidio Incrociato (Cross-Subsidization)",
+          "schematicFormula": "Metodo Tradizionale: Prodotto Standard 'Paga' i Costi Indiretti del Prodotto Custom → Prezzi Distorti → Decisioni Errate",
+          "explanation": "Senza ABC, i prodotti standard sembrano meno redditizi di quanto siano; i prodotti custom sembrano più redditizi di quanto siano, spingendo l'azienda a vendere ciò che la fa perdere soldi."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-abc-1",
+          "title": "Credere che il metodo tradizionale sia 'abbastanza preciso'",
+          "misconception": "Ritenere che allocare i costi indiretti con un coefficiente unico su ore-uomo o ore-macchina sia sufficientemente accurato per prendere decisioni di pricing.",
+          "truth": "Il metodo tradizionale è preciso solo se tutti i prodotti consumano le risorse proporzionalmente ai volumi. Appena esistono prodotti custom, complessi o a basso volume, il metodo tradizionale è sistematicamente sbagliato e porta a decisioni di pricing che erodono i margini.",
+          "example": "TechMilano: col metodo tradizionale il prezzo di CloudPro sembrava adeguato; con l'ABC emerge che era inferiore al costo pieno reale di 14.000€/cliente."
         }
       ]
     }
