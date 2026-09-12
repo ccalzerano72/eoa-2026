@@ -30,7 +30,9 @@ import {
   AlertTriangle,
   Layers,
   Filter,
+  LayoutGrid,
 } from "lucide-react";
+import { CollapsibleSection } from "./components/ui/CollapsibleSection";
 
 type NavTab = "dashboard" | "study" | "quiz" | "formula" | "stats";
 
@@ -476,19 +478,19 @@ export function App() {
                 point.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={handleStartFullExam}
-                  className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-6 py-3 font-bold text-sm text-slate-950 shadow-md transition cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-6 py-3 font-bold text-sm text-slate-950 shadow-md transition cursor-pointer w-full sm:w-auto"
                 >
-                  <PlayCircle className="h-5 w-5" />
+                  <PlayCircle className="h-5 w-5 shrink-0" />
                   <span>Avvia Simulazione Esame (Sequenziale)</span>
                 </button>
                 <button
                   onClick={() => handleNavigateToStudy(1)}
-                  className="inline-flex items-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3 font-bold text-sm text-white transition cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3 font-bold text-sm text-white transition cursor-pointer w-full sm:w-auto"
                 >
-                  <BookOpen className="h-5 w-5" />
+                  <BookOpen className="h-5 w-5 shrink-0" />
                   <span>Esplora Materiale di Studio</span>
                 </button>
               </div>
@@ -588,26 +590,22 @@ export function App() {
               </div>
             )}
 
-            {/* Syllabus 7 Blocks Grid */}
-            <div className="mt-12">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    I 7 Blocchi del Programma Didattico
-                  </h3>
-                  <p className="text-slate-500 text-xs sm:text-sm">
-                    Struttura conforme al percorso EOA 2026 per Ingegneria
-                    Informatica
-                  </p>
-                </div>
-                <span className="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+            {/* Syllabus 7 Blocks Grid — Collapsible on mobile */}
+            <CollapsibleSection
+              title="I 7 Blocchi del Programma Didattico"
+              subtitle="Struttura conforme al percorso EOA 2026 per Ingegneria Informatica"
+              icon={<LayoutGrid className="h-5 w-5" />}
+              badge={
+                <span className="hidden sm:inline text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
                   7 Blocchi •{" "}
                   {allQuestions.length > 0
                     ? `${allQuestions.length.toLocaleString()} Quesiti`
                     : "5.600+ Quesiti"}
                 </span>
-              </div>
-
+              }
+              defaultExpanded={false}
+              className="mt-10"
+            >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
                   {
@@ -682,14 +680,15 @@ export function App() {
                   </div>
                 ))}
               </div>
-            </div>
+            </CollapsibleSection>
 
-            {/* Exam Simulation Guidelines */}
-            <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
-              <div className="flex items-center gap-2.5 font-bold text-slate-900 mb-3">
-                <Award className="h-5 w-5 text-sky-600" />
-                <h4>Regole del Test Ufficiale EOA 2026</h4>
-              </div>
+            {/* Exam Simulation Guidelines — Collapsible */}
+            <CollapsibleSection
+              title="Regole del Test Ufficiale EOA 2026"
+              icon={<Award className="h-5 w-5 text-sky-600" />}
+              defaultExpanded={false}
+              className="mt-6"
+            >
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-sky-600">•</span>
@@ -721,80 +720,69 @@ export function App() {
                   </span>
                 </li>
               </ul>
-            </div>
+            </CollapsibleSection>
 
-            {/* Study Modes Panel — Flash Cards, Trappole, Track Selector */}
-            <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
-                <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-50 text-violet-600">
-                    <Sparkles className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900 text-sm sm:text-base">
-                      Modalità di Studio Avanzate
-                    </h4>
-                    <p className="text-xs text-slate-500">
-                      Ripasso rapido, allenamento sulle trappole e filtro per
-                      percorso
-                    </p>
-                  </div>
-                </div>
-
-                {/* Track Selector Chips */}
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  <Filter className="h-3.5 w-3.5 text-slate-400 mr-0.5" />
-                  {(
-                    [
-                      {
-                        val: "all" as const,
-                        label: "Tutti",
-                        badge: "",
-                        color: "slate",
-                      },
-                      {
-                        val: "essential" as const,
-                        label: "Essenziale",
-                        badge: "◆",
-                        color: "emerald",
-                      },
-                      {
-                        val: "standard" as const,
-                        label: "Standard",
-                        badge: "■",
-                        color: "sky",
-                      },
-                      {
-                        val: "advanced" as const,
-                        label: "Approfondito",
-                        badge: "○",
-                        color: "purple",
-                      },
-                    ] as const
-                  ).map((t) => {
-                    const isActive = activeTrackFilter === t.val;
-                    return (
-                      <button
-                        key={t.val}
-                        onClick={() => setActiveTrackFilter(t.val)}
-                        className={`px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
-                          isActive
-                            ? t.val === "all"
-                              ? "bg-slate-800 text-white"
-                              : t.val === "essential"
-                                ? "bg-emerald-600 text-white"
-                                : t.val === "standard"
-                                  ? "bg-sky-600 text-white"
-                                  : "bg-purple-600 text-white"
-                            : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                        }`}
-                      >
-                        {t.badge ? `${t.badge} ` : ""}
-                        {t.label}
-                      </button>
-                    );
-                  })}
-                </div>
+            {/* Study Modes Panel — Flash Cards, Trappole, Track Selector — Collapsible */}
+            <CollapsibleSection
+              title="Modalità di Studio Avanzate"
+              subtitle="Ripasso rapido, allenamento sulle trappole e filtro per percorso"
+              icon={<Sparkles className="h-5 w-5 text-violet-600" />}
+              defaultExpanded={false}
+              className="mt-6"
+            >
+              {/* Track Selector Chips */}
+              <div className="flex items-center gap-1.5 flex-wrap mb-5 pb-4 border-b border-slate-100">
+                <Filter className="h-3.5 w-3.5 text-slate-400 mr-0.5" />
+                {(
+                  [
+                    {
+                      val: "all" as const,
+                      label: "Tutti",
+                      badge: "",
+                      color: "slate",
+                    },
+                    {
+                      val: "essential" as const,
+                      label: "Essenziale",
+                      badge: "◆",
+                      color: "emerald",
+                    },
+                    {
+                      val: "standard" as const,
+                      label: "Standard",
+                      badge: "■",
+                      color: "sky",
+                    },
+                    {
+                      val: "advanced" as const,
+                      label: "Approfondito",
+                      badge: "○",
+                      color: "purple",
+                    },
+                  ] as const
+                ).map((t) => {
+                  const isActive = activeTrackFilter === t.val;
+                  return (
+                    <button
+                      key={t.val}
+                      onClick={() => setActiveTrackFilter(t.val)}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
+                        isActive
+                          ? t.val === "all"
+                            ? "bg-slate-800 text-white"
+                            : t.val === "essential"
+                              ? "bg-emerald-600 text-white"
+                              : t.val === "standard"
+                                ? "bg-sky-600 text-white"
+                                : "bg-purple-600 text-white"
+                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      }`}
+                    >
+                      {t.badge ? `${t.badge} ` : ""}
+                      {t.label}
+                    </button>
+                  );
+                })}
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -866,7 +854,7 @@ export function App() {
                   </span>
                 </div>
               )}
-            </div>
+            </CollapsibleSection>
           </div>
         )}
 
