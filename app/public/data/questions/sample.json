@@ -254,14 +254,14 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "In economia aziendale il profitto normale è considerato un costo implicito, rappresentando il rendimento minimo del capitale proprio in impieghi alternativi comparabili.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Nel bilancio civilistico il profitto normale dell'imprenditore è regolarmente iscritto tra i costi di produzione del Conto Economico.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "In economia aziendale il profitto normale è considerato un costo implicito, rappresentando il rendimento minimo del capitale proprio in impieghi alternativi comparabili.",
+        "correct": true
       },
       {
         "id": "c",
@@ -328,11 +328,6 @@
     "stem": "In relazione al tema \"Sistemi complicati vs sistemi complessi\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #1)",
     "options": [
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "Un'impresa è un sistema complesso adattivo in quanto costituita da agenti autonomi che interagiscono, apprendono e modificano il comportamento in risposta all'ambiente, generando proprietà emergenti non deducibili per semplice sommatoria lineare.",
         "correct": true
@@ -345,6 +340,11 @@
       {
         "id": "b",
         "text": "Un'impresa moderna è un sistema complicato deterministico: una volta note tutte le parti elementari e le procedure operative, il suo comportamento futuro è perfettamente prevedibile tramite simulazioni analitiche.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       }
     ],
@@ -486,14 +486,14 @@
     "stem": "In relazione al tema \"Paradigma ingegneristico vs paradigma manageriale\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #1)",
     "options": [
       {
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "correct": false
+      },
+      {
         "id": "a",
         "text": "Il paradigma ingegneristico si focalizza sull'ottimizzazione dell'efficienza interna e della funzionalità tecnica, mentre il paradigma manageriale privilegia l'efficacia sul mercato, la sostenibilità dei ricavi e la creazione di valore percepito dal cliente.",
         "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Nel paradigma manageriale il successo di un prodotto tecnologico dipende esclusivamente dal livello di sofisticazione algoritmica e dalle prestazioni di benchmark.",
-        "correct": false
       },
       {
         "id": "d",
@@ -501,8 +501,8 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "id": "b",
+        "text": "Nel paradigma manageriale il successo di un prodotto tecnologico dipende esclusivamente dal livello di sofisticazione algoritmica e dalle prestazioni di benchmark.",
         "correct": false
       }
     ],
@@ -570,8 +570,8 @@
         "correct": true
       },
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "id": "b",
+        "text": "La teoria classica dell'impresa esclude che la reputazione verso dipendenti e comunità abbia qualsiasi impatto sul valore economico d'impresa.",
         "correct": false
       },
       {
@@ -580,8 +580,8 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "La teoria classica dell'impresa esclude che la reputazione verso dipendenti e comunità abbia qualsiasi impatto sul valore economico d'impresa.",
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       }
     ],
@@ -644,16 +644,6 @@
     "stem": "In relazione al tema \"Fattori di produzione e remunerazione\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #1)",
     "options": [
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
-        "correct": false
-      },
-      {
         "id": "b",
         "text": "Il capitale d'impresa viene remunerato a priori con certezza assoluta, indipendentemente dal risultato operativo dell'esercizio.",
         "correct": false
@@ -662,6 +652,16 @@
         "id": "a",
         "text": "I fattori produttivi primari (lavoro, capitale, risorse naturali e imprenditorialità) vengono remunerati rispettivamente tramite salari, interessi/dividendi, rendite e profitto d'impresa.",
         "correct": true
+      },
+      {
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -723,8 +723,13 @@
     "stem": "In relazione al tema \"Costo opportunità e profitto normale\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #2)",
     "options": [
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "id": "b",
+        "text": "Nel bilancio civilistico il profitto normale dell'imprenditore è regolarmente iscritto tra i costi di produzione del Conto Economico.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       },
       {
@@ -733,13 +738,8 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "Nel bilancio civilistico il profitto normale dell'imprenditore è regolarmente iscritto tra i costi di produzione del Conto Economico.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       }
     ],
@@ -846,6 +846,11 @@
     "stem": "In relazione al tema \"Sistemi complicati vs sistemi complessi\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #2)",
     "options": [
       {
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "correct": false
+      },
+      {
         "id": "a",
         "text": "Un'impresa è un sistema complesso adattivo in quanto costituita da agenti autonomi che interagiscono, apprendono e modificano il comportamento in risposta all'ambiente, generando proprietà emergenti non deducibili per semplice sommatoria lineare.",
         "correct": true
@@ -853,11 +858,6 @@
       {
         "id": "c",
         "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       },
       {
@@ -969,24 +969,24 @@
     "stem": "In relazione al tema \"Efficienza tecnica vs efficienza economica\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #2)",
     "options": [
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
-        "correct": false
-      },
-      {
         "id": "b",
         "text": "L'efficienza tecnica coincide sempre con l'efficienza economica: minimizzare gli scarti di materiale garantisce automaticamente il massimo utile.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       },
       {
         "id": "a",
         "text": "Un processo produttivo tecnicamente efficiente (che non spreca risorse fisiche) può risultare economicamente inefficiente se i prezzi relativi dei fattori produttivi rendono conveniente una diversa combinazione di lavoro e capitale.",
         "correct": true
+      },
+      {
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -1092,6 +1092,11 @@
     "stem": "In relazione al tema \"Paradigma ingegneristico vs paradigma manageriale\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #2)",
     "options": [
       {
+        "id": "a",
+        "text": "Il paradigma ingegneristico si focalizza sull'ottimizzazione dell'efficienza interna e della funzionalità tecnica, mentre il paradigma manageriale privilegia l'efficacia sul mercato, la sostenibilità dei ricavi e la creazione di valore percepito dal cliente.",
+        "correct": true
+      },
+      {
         "id": "d",
         "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
@@ -1100,11 +1105,6 @@
         "id": "b",
         "text": "Nel paradigma manageriale il successo di un prodotto tecnologico dipende esclusivamente dal livello di sofisticazione algoritmica e dalle prestazioni di benchmark.",
         "correct": false
-      },
-      {
-        "id": "a",
-        "text": "Il paradigma ingegneristico si focalizza sull'ottimizzazione dell'efficienza interna e della funzionalità tecnica, mentre il paradigma manageriale privilegia l'efficacia sul mercato, la sostenibilità dei ricavi e la creazione di valore percepito dal cliente.",
-        "correct": true
       },
       {
         "id": "c",
@@ -1215,14 +1215,14 @@
     "stem": "In relazione al tema \"Responsabilità sociale e stakeholder theory\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #2)",
     "options": [
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       },
       {
-        "id": "a",
-        "text": "Secondo la stakeholder theory di Freeman, l'impresa per creare valore nel lungo termine deve bilanciare gli interessi di tutti i portatori d'interesse (clienti, dipendenti, fornitori, comunità locale), superando la pura shareholder primacy.",
-        "correct": true
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "correct": false
       },
       {
         "id": "b",
@@ -1230,9 +1230,9 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
-        "correct": false
+        "id": "a",
+        "text": "Secondo la stakeholder theory di Freeman, l'impresa per creare valore nel lungo termine deve bilanciare gli interessi di tutti i portatori d'interesse (clienti, dipendenti, fornitori, comunità locale), superando la pura shareholder primacy.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -1338,13 +1338,13 @@
     "stem": "In relazione al tema \"Fattori di produzione e remunerazione\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #2)",
     "options": [
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "id": "b",
+        "text": "Il capitale d'impresa viene remunerato a priori con certezza assoluta, indipendentemente dal risultato operativo dell'esercizio.",
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Il capitale d'impresa viene remunerato a priori con certezza assoluta, indipendentemente dal risultato operativo dell'esercizio.",
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       },
       {
@@ -1461,13 +1461,13 @@
     "stem": "In relazione al tema \"Costo opportunità e profitto normale\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #3)",
     "options": [
       {
-        "id": "b",
-        "text": "Nel bilancio civilistico il profitto normale dell'imprenditore è regolarmente iscritto tra i costi di produzione del Conto Economico.",
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "id": "b",
+        "text": "Nel bilancio civilistico il profitto normale dell'imprenditore è regolarmente iscritto tra i costi di produzione del Conto Economico.",
         "correct": false
       },
       {
@@ -1476,8 +1476,8 @@
         "correct": true
       },
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       }
     ],
@@ -1540,14 +1540,14 @@
     "stem": "In relazione al tema \"Sistemi complicati vs sistemi complessi\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #3)",
     "options": [
       {
-        "id": "b",
-        "text": "Un'impresa moderna è un sistema complicato deterministico: una volta note tutte le parti elementari e le procedure operative, il suo comportamento futuro è perfettamente prevedibile tramite simulazioni analitiche.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "Un'impresa è un sistema complesso adattivo in quanto costituita da agenti autonomi che interagiscono, apprendono e modificano il comportamento in risposta all'ambiente, generando proprietà emergenti non deducibili per semplice sommatoria lineare.",
         "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Un'impresa moderna è un sistema complicato deterministico: una volta note tutte le parti elementari e le procedure operative, il suo comportamento futuro è perfettamente prevedibile tramite simulazioni analitiche.",
+        "correct": false
       },
       {
         "id": "c",
@@ -1703,6 +1703,11 @@
         "correct": true
       },
       {
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "correct": false
+      },
+      {
         "id": "b",
         "text": "Nel paradigma manageriale il successo di un prodotto tecnologico dipende esclusivamente dal livello di sofisticazione algoritmica e dalle prestazioni di benchmark.",
         "correct": false
@@ -1710,11 +1715,6 @@
       {
         "id": "d",
         "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       }
     ],
@@ -1777,23 +1777,23 @@
     "stem": "In relazione al tema \"Responsabilità sociale e stakeholder theory\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #3)",
     "options": [
       {
-        "id": "a",
-        "text": "Secondo la stakeholder theory di Freeman, l'impresa per creare valore nel lungo termine deve bilanciare gli interessi di tutti i portatori d'interesse (clienti, dipendenti, fornitori, comunità locale), superando la pura shareholder primacy.",
-        "correct": true
-      },
-      {
         "id": "c",
         "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "id": "b",
+        "text": "La teoria classica dell'impresa esclude che la reputazione verso dipendenti e comunità abbia qualsiasi impatto sul valore economico d'impresa.",
         "correct": false
       },
       {
-        "id": "b",
-        "text": "La teoria classica dell'impresa esclude che la reputazione verso dipendenti e comunità abbia qualsiasi impatto sul valore economico d'impresa.",
+        "id": "a",
+        "text": "Secondo la stakeholder theory di Freeman, l'impresa per creare valore nel lungo termine deve bilanciare gli interessi di tutti i portatori d'interesse (clienti, dipendenti, fornitori, comunità locale), superando la pura shareholder primacy.",
+        "correct": true
+      },
+      {
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       }
     ],
@@ -1856,13 +1856,13 @@
     "stem": "In relazione al tema \"Fattori di produzione e remunerazione\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #3)",
     "options": [
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       },
       {
@@ -1935,13 +1935,8 @@
     "stem": "In relazione al tema \"Costo opportunità e profitto normale\", quale delle seguenti affermazioni descrive in modo rigoroso il principio economico adottato in Economia e Organizzazione Aziendale? (Scenario #4)",
     "options": [
       {
-        "id": "c",
-        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
-        "correct": false
-      },
-      {
-        "id": "b",
-        "text": "Nel bilancio civilistico il profitto normale dell'imprenditore è regolarmente iscritto tra i costi di produzione del Conto Economico.",
+        "id": "d",
+        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
         "correct": false
       },
       {
@@ -1950,8 +1945,13 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "L'efficienza contabile a breve termine è l'unico parametro che garantisce l'adattabilità dinamica di un'organizzazione.",
+        "id": "b",
+        "text": "Nel bilancio civilistico il profitto normale dell'imprenditore è regolarmente iscritto tra i costi di produzione del Conto Economico.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "I parametri fisici di calcolo e le specifiche tecniche rendono superflua ogni analisi sui costi di coordinamento e di mercato.",
         "correct": false
       }
     ],
@@ -2275,24 +2275,24 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Modello delle 5 Forze di Porter\"? (Test case #1)",
     "options": [
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
-        "correct": false
-      },
-      {
-        "id": "b",
-        "text": "Il modello delle 5 Forze di Porter afferma che l'unico fattore rilevante per determinare l'attrattività di un settore è il numero assoluto di concorrenti diretti presenti sul mercato.",
         "correct": false
       },
       {
         "id": "a",
         "text": "Nel modello di Porter, l'intensità della concorrenza e la redditività media di un settore dipendono da 5 forze competitive: rivalità tra concorrenti, minaccia di nuovi entranti, minaccia di prodotti sostitutivi, potere contrattuale dei fornitori e potere contrattuale dei clienti.",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Il modello delle 5 Forze di Porter afferma che l'unico fattore rilevante per determinare l'attrattività di un settore è il numero assoluto di concorrenti diretti presenti sul mercato.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -2359,11 +2359,6 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
-        "correct": false
-      },
-      {
         "id": "d",
         "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
@@ -2372,6 +2367,11 @@
         "id": "a",
         "text": "Secondo Porter un'impresa per ottenere un vantaggio competitivo sostenibile deve perseguire una tra tre strategie fondamentali: leadership di costo, differenziazione, o focalizzazione (su costo o differenziazione), evitando la trappola del 'bloccato a metà' (stuck in the middle).",
         "correct": true
+      },
+      {
+        "id": "b",
+        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -2433,6 +2433,16 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"VRIO Framework e Resource-Based View\"? (Test case #1)",
     "options": [
       {
+        "id": "a",
+        "text": "Secondo la Resource-Based View e il modello VRIO, una risorsa o competenza genera un vantaggio competitivo sostenibile solo se è al tempo stesso di Valore (V), Rara (R), Inimitabile (I) e supportata da un'Organizzazione (O) capace di sfruttarla.",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Qualsiasi tecnologia software open source o standard disponibile sul mercato costituisce di per sé un vantaggio competitivo difendibile e inimitabile per l'azienda che la adotta.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
@@ -2441,16 +2451,6 @@
         "id": "c",
         "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
         "correct": false
-      },
-      {
-        "id": "b",
-        "text": "Qualsiasi tecnologia software open source o standard disponibile sul mercato costituisce di per sé un vantaggio competitivo difendibile e inimitabile per l'azienda che la adotta.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "Secondo la Resource-Based View e il modello VRIO, una risorsa o competenza genera un vantaggio competitivo sostenibile solo se è al tempo stesso di Valore (V), Rara (R), Inimitabile (I) e supportata da un'Organizzazione (O) capace di sfruttarla.",
-        "correct": true
       }
     ],
     "explanation": {
@@ -2512,8 +2512,13 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Economie di scala vs Economie di scopo\"? (Test case #1)",
     "options": [
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "id": "a",
+        "text": "Le economie di scala si ottengono riducendo il costo medio unitario all'aumentare della scala di produzione di un singolo bene; le economie di scopo (o raggio d'azione) si realizzano quando la produzione congiunta di due o più beni distinti costa meno della loro produzione disgiunta.",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Le economie di scopo coincidono con le economie di apprendimento legate alla ripetizione temporale dello stesso compito produttivo.",
         "correct": false
       },
       {
@@ -2522,14 +2527,9 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Le economie di scopo coincidono con le economie di apprendimento legate alla ripetizione temporale dello stesso compito produttivo.",
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
-      },
-      {
-        "id": "a",
-        "text": "Le economie di scala si ottengono riducendo il costo medio unitario all'aumentare della scala di produzione di un singolo bene; le economie di scopo (o raggio d'azione) si realizzano quando la produzione congiunta di due o più beni distinti costa meno della loro produzione disgiunta.",
-        "correct": true
       }
     ],
     "explanation": {
@@ -2591,16 +2591,6 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Differenziazione vs Diversificazione\"? (Test case #1)",
     "options": [
       {
-        "id": "a",
-        "text": "La differenziazione è una strategia a livello di singola business unit volta a rendere l'offerta unica rispetto ai concorrenti dello stesso settore; la diversificazione è una strategia a livello corporate che comporta l'ingresso in nuovi settori o mercati merceologici.",
-        "correct": true
-      },
-      {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
         "correct": false
@@ -2609,6 +2599,16 @@
         "id": "b",
         "text": "Differenziazione e diversificazione sono sinonimi perfetti che indicano l'aggiunta di nuove funzionalità a un'applicazione esistente.",
         "correct": false
+      },
+      {
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "La differenziazione è una strategia a livello di singola business unit volta a rendere l'offerta unica rispetto ai concorrenti dello stesso settore; la diversificazione è una strategia a livello corporate che comporta l'ingresso in nuovi settori o mercati merceologici.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -2670,8 +2670,8 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Modello delle 5 Forze di Porter\"? (Test case #2)",
     "options": [
       {
-        "id": "b",
-        "text": "Il modello delle 5 Forze di Porter afferma che l'unico fattore rilevante per determinare l'attrattività di un settore è il numero assoluto di concorrenti diretti presenti sul mercato.",
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
       },
       {
@@ -2680,8 +2680,8 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "id": "b",
+        "text": "Il modello delle 5 Forze di Porter afferma che l'unico fattore rilevante per determinare l'attrattività di un settore è il numero assoluto di concorrenti diretti presenti sul mercato.",
         "correct": false
       },
       {
@@ -2793,24 +2793,24 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Strategie competitive di base (Porter)\"? (Test case #2)",
     "options": [
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
-        "correct": false
-      },
-      {
-        "id": "b",
-        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
         "correct": false
       },
       {
         "id": "a",
         "text": "Secondo Porter un'impresa per ottenere un vantaggio competitivo sostenibile deve perseguire una tra tre strategie fondamentali: leadership di costo, differenziazione, o focalizzazione (su costo o differenziazione), evitando la trappola del 'bloccato a metà' (stuck in the middle).",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -2921,8 +2921,8 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "id": "b",
+        "text": "Qualsiasi tecnologia software open source o standard disponibile sul mercato costituisce di per sé un vantaggio competitivo difendibile e inimitabile per l'azienda che la adotta.",
         "correct": false
       },
       {
@@ -2931,8 +2931,8 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Qualsiasi tecnologia software open source o standard disponibile sul mercato costituisce di per sé un vantaggio competitivo difendibile e inimitabile per l'azienda che la adotta.",
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
       }
     ],
@@ -3167,13 +3167,13 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "Differenziazione e diversificazione sono sinonimi perfetti che indicano l'aggiunta di nuove funzionalità a un'applicazione esistente.",
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "id": "b",
+        "text": "Differenziazione e diversificazione sono sinonimi perfetti che indicano l'aggiunta di nuove funzionalità a un'applicazione esistente.",
         "correct": false
       },
       {
@@ -3285,8 +3285,8 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Modello delle 5 Forze di Porter\"? (Test case #3)",
     "options": [
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "id": "b",
+        "text": "Il modello delle 5 Forze di Porter afferma che l'unico fattore rilevante per determinare l'attrattività di un settore è il numero assoluto di concorrenti diretti presenti sul mercato.",
         "correct": false
       },
       {
@@ -3295,8 +3295,8 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Il modello delle 5 Forze di Porter afferma che l'unico fattore rilevante per determinare l'attrattività di un settore è il numero assoluto di concorrenti diretti presenti sul mercato.",
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
       },
       {
@@ -3369,11 +3369,6 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
         "correct": false
@@ -3381,6 +3376,11 @@
       {
         "id": "d",
         "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
         "correct": false
       }
     ],
@@ -3443,11 +3443,6 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"VRIO Framework e Resource-Based View\"? (Test case #3)",
     "options": [
       {
-        "id": "b",
-        "text": "Qualsiasi tecnologia software open source o standard disponibile sul mercato costituisce di per sé un vantaggio competitivo difendibile e inimitabile per l'azienda che la adotta.",
-        "correct": false
-      },
-      {
         "id": "d",
         "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
@@ -3456,6 +3451,11 @@
         "id": "a",
         "text": "Secondo la Resource-Based View e il modello VRIO, una risorsa o competenza genera un vantaggio competitivo sostenibile solo se è al tempo stesso di Valore (V), Rara (R), Inimitabile (I) e supportata da un'Organizzazione (O) capace di sfruttarla.",
         "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Qualsiasi tecnologia software open source o standard disponibile sul mercato costituisce di per sé un vantaggio competitivo difendibile e inimitabile per l'azienda che la adotta.",
+        "correct": false
       },
       {
         "id": "c",
@@ -3522,13 +3522,13 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Economie di scala vs Economie di scopo\"? (Test case #3)",
     "options": [
       {
-        "id": "c",
-        "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "id": "c",
+        "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
         "correct": false
       },
       {
@@ -3606,6 +3606,11 @@
         "correct": true
       },
       {
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
+        "correct": false
+      },
+      {
         "id": "c",
         "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
         "correct": false
@@ -3613,11 +3618,6 @@
       {
         "id": "b",
         "text": "Differenziazione e diversificazione sono sinonimi perfetti che indicano l'aggiunta di nuove funzionalità a un'applicazione esistente.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
       }
     ],
@@ -3680,6 +3680,16 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Modello delle 5 Forze di Porter\"? (Test case #4)",
     "options": [
       {
+        "id": "a",
+        "text": "Nel modello di Porter, l'intensità della concorrenza e la redditività media di un settore dipendono da 5 forze competitive: rivalità tra concorrenti, minaccia di nuovi entranti, minaccia di prodotti sostitutivi, potere contrattuale dei fornitori e potere contrattuale dei clienti.",
+        "correct": true
+      },
+      {
+        "id": "c",
+        "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
@@ -3688,16 +3698,6 @@
         "id": "b",
         "text": "Il modello delle 5 Forze di Porter afferma che l'unico fattore rilevante per determinare l'attrattività di un settore è il numero assoluto di concorrenti diretti presenti sul mercato.",
         "correct": false
-      },
-      {
-        "id": "c",
-        "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "Nel modello di Porter, l'intensità della concorrenza e la redditività media di un settore dipendono da 5 forze competitive: rivalità tra concorrenti, minaccia di nuovi entranti, minaccia di prodotti sostitutivi, potere contrattuale dei fornitori e potere contrattuale dei clienti.",
-        "correct": true
       }
     ],
     "explanation": {
@@ -3803,6 +3803,11 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"Strategie competitive di base (Porter)\"? (Test case #4)",
     "options": [
       {
+        "id": "b",
+        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
@@ -3811,11 +3816,6 @@
         "id": "a",
         "text": "Secondo Porter un'impresa per ottenere un vantaggio competitivo sostenibile deve perseguire una tra tre strategie fondamentali: leadership di costo, differenziazione, o focalizzazione (su costo o differenziazione), evitando la trappola del 'bloccato a metà' (stuck in the middle).",
         "correct": true
-      },
-      {
-        "id": "b",
-        "text": "La strategia ottimale per qualsiasi impresa consiste nel massimizzare contemporaneamente la personalizzazione del prodotto e offrire sempre il prezzo più basso del mercato globale.",
-        "correct": false
       },
       {
         "id": "c",
@@ -3926,23 +3926,23 @@
     "stem": "Nel contesto dell'analisi strategica d'impresa, quale proposizione definisce correttamente \"VRIO Framework e Resource-Based View\"? (Test case #4)",
     "options": [
       {
-        "id": "c",
-        "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "Secondo la Resource-Based View e il modello VRIO, una risorsa o competenza genera un vantaggio competitivo sostenibile solo se è al tempo stesso di Valore (V), Rara (R), Inimitabile (I) e supportata da un'Organizzazione (O) capace di sfruttarla.",
         "correct": true
       },
       {
+        "id": "c",
+        "text": "Il vantaggio competitivo dipende esclusivamente da barriere doganali e sussidi statali garantiti.",
+        "correct": false
+      },
+      {
         "id": "b",
         "text": "Qualsiasi tecnologia software open source o standard disponibile sul mercato costituisce di per sé un vantaggio competitivo difendibile e inimitabile per l'azienda che la adotta.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "L'elasticità incrociata tra prodotti complementari elimina ogni forma di rivalità settoriale.",
         "correct": false
       }
     ],
@@ -4262,11 +4262,6 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "Nelle società di capitali (come Srl e SpA) vige l'autonomia patrimoniale perfetta: per le obbligazioni sociali risponde esclusivamente la società con il proprio patrimonio, proteggendo il patrimonio personale dei soci.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Nelle società di capitali i singoli soci rispondono sempre in solido e illimitatamente con i propri beni personali di tutti i debiti contratti dall'azienda.",
         "correct": false
@@ -4275,6 +4270,11 @@
         "id": "d",
         "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Nelle società di capitali (come Srl e SpA) vige l'autonomia patrimoniale perfetta: per le obbligazioni sociali risponde esclusivamente la società con il proprio patrimonio, proteggendo il patrimonio personale dei soci.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -4346,14 +4346,14 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "La struttura funzionale è ideale per imprese fortemente diversificate con centinaia di linee di prodotto completamente eterogenee su mercati globali.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "La struttura funzionale massimizza l'efficienza specialistica e le economie di scala all'interno di ciascuna funzione (es. R&D, Marketing, Produzione), ma soffre di scarsa flessibilità e conflitti interfunzionali all'aumentare della varietà di prodotti.",
         "correct": true
+      },
+      {
+        "id": "b",
+        "text": "La struttura funzionale è ideale per imprese fortemente diversificate con centinaia di linee di prodotto completamente eterogenee su mercati globali.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -4415,16 +4415,6 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Struttura a Matrice\"? (Q-Variant #1)",
     "options": [
       {
-        "id": "a",
-        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
-        "correct": false
-      },
-      {
         "id": "d",
         "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
@@ -4433,6 +4423,16 @@
         "id": "c",
         "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
         "correct": false
+      },
+      {
+        "id": "b",
+        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
+        "correct": true
       }
     ],
     "explanation": {
@@ -4494,13 +4494,13 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Meccanismi di coordinamento di Mintzberg\"? (Q-Variant #1)",
     "options": [
       {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
+        "id": "b",
+        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
       },
       {
@@ -4573,16 +4573,6 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Teoria dell'Agenzia e costi di agenzia\"? (Q-Variant #1)",
     "options": [
       {
-        "id": "a",
-        "text": "La teoria dell'agenzia studia i conflitti di interesse e l'asimmetria informativa tra il principale (azionista/proprietario) e l'agente (manager), che possono spingere l'agente a massimizzare i propri benefici privati a scapito del valore azionario.",
-        "correct": true
-      },
-      {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
         "correct": false
@@ -4590,6 +4580,16 @@
       {
         "id": "b",
         "text": "Nella teoria dell'agenzia si assume che manager e azionisti abbiano sempre funzioni di utilità perfettamente identiche e assenza totale di opportunismo.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "La teoria dell'agenzia studia i conflitti di interesse e l'asimmetria informativa tra il principale (azionista/proprietario) e l'agente (manager), che possono spingere l'agente a massimizzare i propri benefici privati a scapito del valore azionario.",
+        "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
       }
     ],
@@ -4652,8 +4652,13 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Società di Capitali (Srl, SpA) vs Società di Persone (Snc, Sas)\"? (Q-Variant #2)",
     "options": [
       {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
+        "id": "a",
+        "text": "Nelle società di capitali (come Srl e SpA) vige l'autonomia patrimoniale perfetta: per le obbligazioni sociali risponde esclusivamente la società con il proprio patrimonio, proteggendo il patrimonio personale dei soci.",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Nelle società di capitali i singoli soci rispondono sempre in solido e illimitatamente con i propri beni personali di tutti i debiti contratti dall'azienda.",
         "correct": false
       },
       {
@@ -4662,14 +4667,9 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Nelle società di capitali i singoli soci rispondono sempre in solido e illimitatamente con i propri beni personali di tutti i debiti contratti dall'azienda.",
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
-      },
-      {
-        "id": "a",
-        "text": "Nelle società di capitali (come Srl e SpA) vige l'autonomia patrimoniale perfetta: per le obbligazioni sociali risponde esclusivamente la società con il proprio patrimonio, proteggendo il patrimonio personale dei soci.",
-        "correct": true
       }
     ],
     "explanation": {
@@ -4780,9 +4780,9 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "La struttura funzionale massimizza l'efficienza specialistica e le economie di scala all'interno di ciascuna funzione (es. R&D, Marketing, Produzione), ma soffre di scarsa flessibilità e conflitti interfunzionali all'aumentare della varietà di prodotti.",
-        "correct": true
+        "id": "c",
+        "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
+        "correct": false
       },
       {
         "id": "b",
@@ -4790,9 +4790,9 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
-        "correct": false
+        "id": "a",
+        "text": "La struttura funzionale massimizza l'efficienza specialistica e le economie di scala all'interno di ciascuna funzione (es. R&D, Marketing, Produzione), ma soffre di scarsa flessibilità e conflitti interfunzionali all'aumentare della varietà di prodotti.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -4898,6 +4898,16 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Struttura a Matrice\"? (Q-Variant #2)",
     "options": [
       {
+        "id": "a",
+        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
+        "correct": false
+      },
+      {
         "id": "c",
         "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
         "correct": false
@@ -4906,16 +4916,6 @@
         "id": "d",
         "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
-      },
-      {
-        "id": "b",
-        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
-        "correct": true
       }
     ],
     "explanation": {
@@ -5021,13 +5021,8 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Meccanismi di coordinamento di Mintzberg\"? (Q-Variant #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Mintzberg individua 5 meccanismi fondamentali di coordinamento: adattamento reciproco, supervisione diretta, standardizzazione dei processi di lavoro, standardizzazione degli output e standardizzazione delle competenze.",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
       },
       {
@@ -5036,9 +5031,14 @@
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
+        "id": "b",
+        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Mintzberg individua 5 meccanismi fondamentali di coordinamento: adattamento reciproco, supervisione diretta, standardizzazione dei processi di lavoro, standardizzazione degli output e standardizzazione delle competenze.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -5144,9 +5144,9 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Teoria dell'Agenzia e costi di agenzia\"? (Q-Variant #2)",
     "options": [
       {
-        "id": "a",
-        "text": "La teoria dell'agenzia studia i conflitti di interesse e l'asimmetria informativa tra il principale (azionista/proprietario) e l'agente (manager), che possono spingere l'agente a massimizzare i propri benefici privati a scapito del valore azionario.",
-        "correct": true
+        "id": "c",
+        "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
+        "correct": false
       },
       {
         "id": "d",
@@ -5159,9 +5159,9 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
-        "correct": false
+        "id": "a",
+        "text": "La teoria dell'agenzia studia i conflitti di interesse e l'asimmetria informativa tra il principale (azionista/proprietario) e l'agente (manager), che possono spingere l'agente a massimizzare i propri benefici privati a scapito del valore azionario.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -5425,13 +5425,8 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Struttura a Matrice\"? (Q-Variant #3)",
     "options": [
       {
-        "id": "a",
-        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
       },
       {
@@ -5440,9 +5435,14 @@
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
+        "id": "b",
+        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
+        "correct": true
       }
     ],
     "explanation": {
@@ -5504,11 +5504,6 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Meccanismi di coordinamento di Mintzberg\"? (Q-Variant #3)",
     "options": [
       {
-        "id": "b",
-        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
         "correct": false
@@ -5522,6 +5517,11 @@
         "id": "a",
         "text": "Mintzberg individua 5 meccanismi fondamentali di coordinamento: adattamento reciproco, supervisione diretta, standardizzazione dei processi di lavoro, standardizzazione degli output e standardizzazione delle competenze.",
         "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -5583,6 +5583,16 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Teoria dell'Agenzia e costi di agenzia\"? (Q-Variant #3)",
     "options": [
       {
+        "id": "a",
+        "text": "La teoria dell'agenzia studia i conflitti di interesse e l'asimmetria informativa tra il principale (azionista/proprietario) e l'agente (manager), che possono spingere l'agente a massimizzare i propri benefici privati a scapito del valore azionario.",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Nella teoria dell'agenzia si assume che manager e azionisti abbiano sempre funzioni di utilità perfettamente identiche e assenza totale di opportunismo.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
@@ -5591,16 +5601,6 @@
         "id": "c",
         "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
         "correct": false
-      },
-      {
-        "id": "b",
-        "text": "Nella teoria dell'agenzia si assume che manager e azionisti abbiano sempre funzioni di utilità perfettamente identiche e assenza totale di opportunismo.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "La teoria dell'agenzia studia i conflitti di interesse e l'asimmetria informativa tra il principale (azionista/proprietario) e l'agente (manager), che possono spingere l'agente a massimizzare i propri benefici privati a scapito del valore azionario.",
-        "correct": true
       }
     ],
     "explanation": {
@@ -5662,6 +5662,11 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Società di Capitali (Srl, SpA) vs Società di Persone (Snc, Sas)\"? (Q-Variant #4)",
     "options": [
       {
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
+        "correct": false
+      },
+      {
         "id": "a",
         "text": "Nelle società di capitali (come Srl e SpA) vige l'autonomia patrimoniale perfetta: per le obbligazioni sociali risponde esclusivamente la società con il proprio patrimonio, proteggendo il patrimonio personale dei soci.",
         "correct": true
@@ -5674,11 +5679,6 @@
       {
         "id": "c",
         "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
       }
     ],
@@ -5790,13 +5790,13 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "La struttura funzionale è ideale per imprese fortemente diversificate con centinaia di linee di prodotto completamente eterogenee su mercati globali.",
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
+        "id": "b",
+        "text": "La struttura funzionale è ideale per imprese fortemente diversificate con centinaia di linee di prodotto completamente eterogenee su mercati globali.",
         "correct": false
       },
       {
@@ -5908,6 +5908,16 @@
     "stem": "Quale delle seguenti opzioni descrive con precisione la logica operativa di \"Struttura a Matrice\"? (Q-Variant #4)",
     "options": [
       {
+        "id": "a",
+        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
@@ -5916,16 +5926,6 @@
         "id": "c",
         "text": "La responsabilità patrimoniale dei soci prescinde dalla forma societaria adottata nello statuto costitutivo.",
         "correct": false
-      },
-      {
-        "id": "b",
-        "text": "La struttura a matrice azzera completamente ogni possibilità di conflitto interno tra responsabili di progetto e responsabili di funzione.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "La struttura a matrice combina contemporaneamente la dimensione funzionale (specializzazione) e la dimensione divisionale/progetto (focus sul risultato), introducendo il principio della doppia dipendenza gerarchica (violazione dell'unità di comando).",
-        "correct": true
       }
     ],
     "explanation": {
@@ -6041,13 +6041,13 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
+        "id": "d",
+        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Tutti i contratti di lavoro manageriale eliminano automaticamente ogni forma di azzardo morale.",
+        "id": "b",
+        "text": "Secondo Mintzberg l'adattamento reciproco è utilizzabile solo nelle organizzazioni gerarchiche gigantesche ed è del tutto vietato nelle startup snelle.",
         "correct": false
       }
     ],
@@ -6284,9 +6284,9 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Competenza Economica\"? (Test #1)",
     "options": [
       {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
-        "correct": false
+        "id": "a",
+        "text": "Secondo il principio di competenza economica, i costi e i ricavi devono essere imputati all'esercizio a cui si riferiscono economicamente (quando i servizi sono resi o i beni ceduti), a prescindere dal momento in cui avviene l'incasso o il pagamento monetario.",
+        "correct": true
       },
       {
         "id": "b",
@@ -6294,14 +6294,14 @@
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
       },
       {
-        "id": "a",
-        "text": "Secondo il principio di competenza economica, i costi e i ricavi devono essere imputati all'esercizio a cui si riferiscono economicamente (quando i servizi sono resi o i beni ceduti), a prescindere dal momento in cui avviene l'incasso o il pagamento monetario.",
-        "correct": true
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -6363,8 +6363,8 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Prudenza\"? (Test #1)",
     "options": [
       {
-        "id": "b",
-        "text": "Il principio di prudenza prescrive di registrare immediatamente gli utili sperati e previsti per il prossimo triennio al fine di mostrare un patrimonio solido agli investitori.",
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
         "correct": false
       },
       {
@@ -6373,13 +6373,13 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "id": "b",
+        "text": "Il principio di prudenza prescrive di registrare immediatamente gli utili sperati e previsti per il prossimo triennio al fine di mostrare un patrimonio solido agli investitori.",
         "correct": false
       }
     ],
@@ -6442,14 +6442,14 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Rimanenze Finali di Magazzino nel Conto Economico\"? (Test #1)",
     "options": [
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "Nel Conto Economico a valore della produzione, la voce 'Variazione delle rimanenze di prodotti in corso di lavorazione, semilavorati e finiti' rettifica i costi di periodo, sommandosi positivamente ai ricavi se le rimanenze finali superano quelle iniziali (produzione per il magazzino).",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "correct": false
       },
       {
         "id": "b",
@@ -6526,14 +6526,14 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "Lo Stato Patrimoniale fotografa la situazione stock delle attività, passività e patrimonio netto a una data precisa (31/12); il Conto Economico descrive il flusso dinamico dei ricavi e dei costi generati lungo l'intero arco temporale dell'esercizio.",
-        "correct": true
-      },
-      {
         "id": "d",
         "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Lo Stato Patrimoniale fotografa la situazione stock delle attività, passività e patrimonio netto a una data precisa (31/12); il Conto Economico descrive il flusso dinamico dei ricavi e dei costi generati lungo l'intero arco temporale dell'esercizio.",
+        "correct": true
       },
       {
         "id": "c",
@@ -6600,6 +6600,16 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Capitale Circolante Netto Operativo (CCNO)\"? (Test #1)",
     "options": [
       {
+        "id": "a",
+        "text": "Il CCNO è dato da Crediti Commerciali + Rimanenze di Magazzino - Debiti Commerciali verso fornitori; un incremento del CCNO indica che l'impresa sta assorbendo cassa per finanziare il ciclo operativo.",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Il Capitale Circolante Netto include unicamente la liquidità depositata sui conti correnti bancari.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
         "correct": false
@@ -6608,16 +6618,6 @@
         "id": "c",
         "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
-      },
-      {
-        "id": "b",
-        "text": "Il Capitale Circolante Netto include unicamente la liquidità depositata sui conti correnti bancari.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "Il CCNO è dato da Crediti Commerciali + Rimanenze di Magazzino - Debiti Commerciali verso fornitori; un incremento del CCNO indica che l'impresa sta assorbendo cassa per finanziare il ciclo operativo.",
-        "correct": true
       }
     ],
     "explanation": {
@@ -6679,13 +6679,8 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Competenza Economica\"? (Test #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Secondo il principio di competenza economica, i costi e i ricavi devono essere imputati all'esercizio a cui si riferiscono economicamente (quando i servizi sono resi o i beni ceduti), a prescindere dal momento in cui avviene l'incasso o il pagamento monetario.",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Nel bilancio d'esercizio civilistico vige il principio di cassa: un costo viene iscritto a Conto Economico solo ed esclusivamente quando il relativo importo è stato effettivamente addebitato sul conto corrente bancario.",
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
         "correct": false
       },
       {
@@ -6694,9 +6689,14 @@
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "id": "b",
+        "text": "Nel bilancio d'esercizio civilistico vige il principio di cassa: un costo viene iscritto a Conto Economico solo ed esclusivamente quando il relativo importo è stato effettivamente addebitato sul conto corrente bancario.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Secondo il principio di competenza economica, i costi e i ricavi devono essere imputati all'esercizio a cui si riferiscono economicamente (quando i servizi sono resi o i beni ceduti), a prescindere dal momento in cui avviene l'incasso o il pagamento monetario.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -6802,11 +6802,6 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Prudenza\"? (Test #2)",
     "options": [
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
@@ -6820,6 +6815,11 @@
         "id": "a",
         "text": "In base al principio di prudenza si devono contabilizzare le perdite e i rischi presunti o probabili anche se non definitivamente realizzati, mentre gli utili possono essere iscritti solo se effettivamente realizzati entro la chiusura dell'esercizio.",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -6930,8 +6930,8 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "id": "b",
+        "text": "Le rimanenze finali di magazzino rappresentano una perdita secca di liquidità che deve essere registrata unicamente tra gli oneri straordinari del Conto Economico.",
         "correct": false
       },
       {
@@ -6940,8 +6940,8 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Le rimanenze finali di magazzino rappresentano una perdita secca di liquidità che deve essere registrata unicamente tra gli oneri straordinari del Conto Economico.",
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
         "correct": false
       }
     ],
@@ -7048,13 +7048,8 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Stato Patrimoniale vs Conto Economico\"? (Test #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Lo Stato Patrimoniale fotografa la situazione stock delle attività, passività e patrimonio netto a una data precisa (31/12); il Conto Economico descrive il flusso dinamico dei ricavi e dei costi generati lungo l'intero arco temporale dell'esercizio.",
-        "correct": true
-      },
-      {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
       },
       {
@@ -7063,9 +7058,14 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Lo Stato Patrimoniale fotografa la situazione stock delle attività, passività e patrimonio netto a una data precisa (31/12); il Conto Economico descrive il flusso dinamico dei ricavi e dei costi generati lungo l'intero arco temporale dell'esercizio.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -7171,11 +7171,6 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Capitale Circolante Netto Operativo (CCNO)\"? (Test #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Il CCNO è dato da Crediti Commerciali + Rimanenze di Magazzino - Debiti Commerciali verso fornitori; un incremento del CCNO indica che l'impresa sta assorbendo cassa per finanziare il ciclo operativo.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Il Capitale Circolante Netto include unicamente la liquidità depositata sui conti correnti bancari.",
         "correct": false
@@ -7184,6 +7179,11 @@
         "id": "c",
         "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Il CCNO è dato da Crediti Commerciali + Rimanenze di Magazzino - Debiti Commerciali verso fornitori; un incremento del CCNO indica che l'impresa sta assorbendo cassa per finanziare il ciclo operativo.",
+        "correct": true
       },
       {
         "id": "d",
@@ -7294,8 +7294,8 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Competenza Economica\"? (Test #3)",
     "options": [
       {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "id": "b",
+        "text": "Nel bilancio d'esercizio civilistico vige il principio di cassa: un costo viene iscritto a Conto Economico solo ed esclusivamente quando il relativo importo è stato effettivamente addebitato sul conto corrente bancario.",
         "correct": false
       },
       {
@@ -7304,14 +7304,14 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Nel bilancio d'esercizio civilistico vige il principio di cassa: un costo viene iscritto a Conto Economico solo ed esclusivamente quando il relativo importo è stato effettivamente addebitato sul conto corrente bancario.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "Secondo il principio di competenza economica, i costi e i ricavi devono essere imputati all'esercizio a cui si riferiscono economicamente (quando i servizi sono resi o i beni ceduti), a prescindere dal momento in cui avviene l'incasso o il pagamento monetario.",
         "correct": true
+      },
+      {
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -7373,8 +7373,13 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Prudenza\"? (Test #3)",
     "options": [
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Il principio di prudenza prescrive di registrare immediatamente gli utili sperati e previsti per il prossimo triennio al fine di mostrare un patrimonio solido agli investitori.",
         "correct": false
       },
       {
@@ -7383,13 +7388,8 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "Il principio di prudenza prescrive di registrare immediatamente gli utili sperati e previsti per il prossimo triennio al fine di mostrare un patrimonio solido agli investitori.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
         "correct": false
       }
     ],
@@ -7452,9 +7452,9 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Rimanenze Finali di Magazzino nel Conto Economico\"? (Test #3)",
     "options": [
       {
-        "id": "a",
-        "text": "Nel Conto Economico a valore della produzione, la voce 'Variazione delle rimanenze di prodotti in corso di lavorazione, semilavorati e finiti' rettifica i costi di periodo, sommandosi positivamente ai ricavi se le rimanenze finali superano quelle iniziali (produzione per il magazzino).",
-        "correct": true
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "correct": false
       },
       {
         "id": "d",
@@ -7467,9 +7467,9 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
-        "correct": false
+        "id": "a",
+        "text": "Nel Conto Economico a valore della produzione, la voce 'Variazione delle rimanenze di prodotti in corso di lavorazione, semilavorati e finiti' rettifica i costi di periodo, sommandosi positivamente ai ricavi se le rimanenze finali superano quelle iniziali (produzione per il magazzino).",
+        "correct": true
       }
     ],
     "explanation": {
@@ -7531,14 +7531,14 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Stato Patrimoniale vs Conto Economico\"? (Test #3)",
     "options": [
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "Lo Stato Patrimoniale fotografa la situazione stock delle attività, passività e patrimonio netto a una data precisa (31/12); il Conto Economico descrive il flusso dinamico dei ricavi e dei costi generati lungo l'intero arco temporale dell'esercizio.",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "correct": false
       },
       {
         "id": "b",
@@ -7689,11 +7689,6 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Competenza Economica\"? (Test #4)",
     "options": [
       {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
@@ -7707,6 +7702,11 @@
         "id": "a",
         "text": "Secondo il principio di competenza economica, i costi e i ricavi devono essere imputati all'esercizio a cui si riferiscono economicamente (quando i servizi sono resi o i beni ceduti), a prescindere dal momento in cui avviene l'incasso o il pagamento monetario.",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -7812,11 +7812,6 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Principio di Prudenza\"? (Test #4)",
     "options": [
       {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "In base al principio di prudenza si devono contabilizzare le perdite e i rischi presunti o probabili anche se non definitivamente realizzati, mentre gli utili possono essere iscritti solo se effettivamente realizzati entro la chiusura dell'esercizio.",
         "correct": true
@@ -7829,6 +7824,11 @@
       {
         "id": "d",
         "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
       }
     ],
@@ -7940,6 +7940,11 @@
         "correct": true
       },
       {
+        "id": "b",
+        "text": "Le rimanenze finali di magazzino rappresentano una perdita secca di liquidità che deve essere registrata unicamente tra gli oneri straordinari del Conto Economico.",
+        "correct": false
+      },
+      {
         "id": "c",
         "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
@@ -7947,11 +7952,6 @@
       {
         "id": "d",
         "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
-        "correct": false
-      },
-      {
-        "id": "b",
-        "text": "Le rimanenze finali di magazzino rappresentano una perdita secca di liquidità che deve essere registrata unicamente tra gli oneri straordinari del Conto Economico.",
         "correct": false
       }
     ],
@@ -8058,24 +8058,24 @@
     "stem": "In sede di redazione e lettura del bilancio d'esercizio, quale principio definisce correttamente \"Stato Patrimoniale vs Conto Economico\"? (Test #4)",
     "options": [
       {
-        "id": "c",
-        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
+        "id": "b",
+        "text": "Lo Stato Patrimoniale e il Conto Economico sono documenti identici che riportano le stesse grandezze misurate con le stesse unità di misura temporale.",
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Lo Stato Patrimoniale e il Conto Economico sono documenti identici che riportano le stesse grandezze misurate con le stesse unità di misura temporale.",
+        "id": "d",
+        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "Tutti i beni aziendali devono essere valutati al presunto valore di cessione forzata in asta.",
         "correct": false
       },
       {
         "id": "a",
         "text": "Lo Stato Patrimoniale fotografa la situazione stock delle attività, passività e patrimonio netto a una data precisa (31/12); il Conto Economico descrive il flusso dinamico dei ricavi e dei costi generati lungo l'intero arco temporale dell'esercizio.",
         "correct": true
-      },
-      {
-        "id": "d",
-        "text": "Il risultato economico finale prescinde dalla distinzione tra gestione caratteristica e finanziaria.",
-        "correct": false
       }
     ],
     "explanation": {
@@ -8279,13 +8279,13 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "id": "c",
+        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
       }
     ],
@@ -8354,11 +8354,6 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
-        "correct": false
-      },
-      {
         "id": "b",
         "text": "Il Quick Ratio include le rimanenze di magazzino e le immobilizzazioni materiali tra le attività a pronta liquidità.",
         "correct": false
@@ -8367,6 +8362,11 @@
         "id": "a",
         "text": "Il Quick Ratio esclude le rimanenze di magazzino dalle attività correnti, misurando la capacità dell'impresa di far fronte ai debiti a breve termine unicamente con le disponibilità liquide immediate e differite.",
         "correct": true
+      },
+      {
+        "id": "c",
+        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -8429,16 +8429,6 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Ciclo di Conversione del Circolante (CCC)\"? (Variante #1)",
     "options": [
       {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "Il Cash Conversion Cycle misura il tempo che intercorre tra l'esborso monetario per l'acquisto dei fattori produttivi e l'incasso dei crediti dai clienti (CCC = DIO + DSO - DPO); un CCC negativo significa che l'impresa si autofinanzia grazie ai propri fornitori.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Avere un ciclo di conversione del circolante di 180 giorni è il segno infallibile di un'eccellente efficienza finanziaria e di abbondanza di cassa.",
         "correct": false
@@ -8447,6 +8437,16 @@
         "id": "c",
         "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Il Cash Conversion Cycle misura il tempo che intercorre tra l'esborso monetario per l'acquisto dei fattori produttivi e l'incasso dei crediti dai clienti (CCC = DIO + DSO - DPO); un CCC negativo significa che l'impresa si autofinanzia grazie ai propri fornitori.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -8519,13 +8519,13 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "id": "c",
+        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
       }
     ],
@@ -8589,6 +8589,16 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Rotazione del Capitale Investito (Capital Turnover)\"? (Variante #1)",
     "options": [
       {
+        "id": "c",
+        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "correct": false
+      },
+      {
         "id": "b",
         "text": "Il Turnover del capitale investito indica il numero di volte in cui i dipendenti cambiano mansione durante l'anno.",
         "correct": false
@@ -8597,16 +8607,6 @@
         "id": "a",
         "text": "Il Capital Turnover (Ricavi / Capitale Investito) esprime quanti euro di fatturato l'impresa riesce a generare per ogni euro di capitale impiegato negli asset aziendali.",
         "correct": true
-      },
-      {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
-        "correct": false
       }
     ],
     "explanation": {
@@ -8674,6 +8674,11 @@
         "correct": true
       },
       {
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "correct": false
+      },
+      {
         "id": "b",
         "text": "Indebitarsi conviene sempre e comunque, poiché gli interessi passivi possono essere dedotti dalle tasse garantendo un ROE infinito a costo zero.",
         "correct": false
@@ -8681,11 +8686,6 @@
       {
         "id": "c",
         "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
       }
     ],
@@ -8793,6 +8793,11 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Current Ratio vs Quick Ratio (Acid Test)\"? (Variante #2)",
     "options": [
       {
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "correct": false
+      },
+      {
         "id": "a",
         "text": "Il Quick Ratio esclude le rimanenze di magazzino dalle attività correnti, misurando la capacità dell'impresa di far fronte ai debiti a breve termine unicamente con le disponibilità liquide immediate e differite.",
         "correct": true
@@ -8800,11 +8805,6 @@
       {
         "id": "b",
         "text": "Il Quick Ratio include le rimanenze di magazzino e le immobilizzazioni materiali tra le attività a pronta liquidità.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
       },
       {
@@ -8917,16 +8917,6 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Ciclo di Conversione del Circolante (CCC)\"? (Variante #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Il Cash Conversion Cycle misura il tempo che intercorre tra l'esborso monetario per l'acquisto dei fattori produttivi e l'incasso dei crediti dai clienti (CCC = DIO + DSO - DPO); un CCC negativo significa che l'impresa si autofinanzia grazie ai propri fornitori.",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Avere un ciclo di conversione del circolante di 180 giorni è il segno infallibile di un'eccellente efficienza finanziaria e di abbondanza di cassa.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
@@ -8935,6 +8925,16 @@
         "id": "d",
         "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Avere un ciclo di conversione del circolante di 180 giorni è il segno infallibile di un'eccellente efficienza finanziaria e di abbondanza di cassa.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Il Cash Conversion Cycle misura il tempo che intercorre tra l'esborso monetario per l'acquisto dei fattori produttivi e l'incasso dei crediti dai clienti (CCC = DIO + DSO - DPO); un CCC negativo significa che l'impresa si autofinanzia grazie ai propri fornitori.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -9041,14 +9041,14 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"ROE vs ROI (Redditività dei Mezzi Propri vs Gestione Operativa)\"? (Variante #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Il ROI misura l'efficienza economica della gestione operativa e industriale prescindendo dalla struttura finanziaria e dalle imposte; il ROE misura il rendimento netto spettante agli azionisti per il capitale di rischio conferito.",
-        "correct": true
-      },
-      {
         "id": "d",
         "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Il ROI misura l'efficienza economica della gestione operativa e industriale prescindendo dalla struttura finanziaria e dalle imposte; il ROE misura il rendimento netto spettante agli azionisti per il capitale di rischio conferito.",
+        "correct": true
       },
       {
         "id": "b",
@@ -9165,6 +9165,11 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Rotazione del Capitale Investito (Capital Turnover)\"? (Variante #2)",
     "options": [
       {
+        "id": "c",
+        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "correct": false
+      },
+      {
         "id": "a",
         "text": "Il Capital Turnover (Ricavi / Capitale Investito) esprime quanti euro di fatturato l'impresa riesce a generare per ogni euro di capitale impiegato negli asset aziendali.",
         "correct": true
@@ -9172,11 +9177,6 @@
       {
         "id": "b",
         "text": "Il Turnover del capitale investito indica il numero di volte in cui i dipendenti cambiano mansione durante l'anno.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
       },
       {
@@ -9289,6 +9289,11 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Effetto Leva Finanziaria e Spread (ROI - i)\"? (Variante #3)",
     "options": [
       {
+        "id": "c",
+        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "correct": false
+      },
+      {
         "id": "b",
         "text": "Indebitarsi conviene sempre e comunque, poiché gli interessi passivi possono essere dedotti dalle tasse garantendo un ROE infinito a costo zero.",
         "correct": false
@@ -9302,11 +9307,6 @@
         "id": "a",
         "text": "La leva finanziaria ha effetto positivo sul ROE solo se la redditività del capitale investito (ROI) supera il costo medio del debito (i); se ROI < i, aumentare l'indebitamento distrugge redditività e riduce drasticamente il ROE.",
         "correct": true
-      },
-      {
-        "id": "c",
-        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
-        "correct": false
       }
     ],
     "explanation": {
@@ -9374,11 +9374,6 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
-        "correct": false
-      },
-      {
         "id": "b",
         "text": "Il Quick Ratio include le rimanenze di magazzino e le immobilizzazioni materiali tra le attività a pronta liquidità.",
         "correct": false
@@ -9386,6 +9381,11 @@
       {
         "id": "c",
         "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
       }
     ],
@@ -9534,11 +9534,6 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "Il ROI e il ROE sono lo stesso identico indice, calcolati entrambi dividendo l'utile netto per il capitale sociale.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
@@ -9546,6 +9541,11 @@
       {
         "id": "d",
         "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Il ROI e il ROE sono lo stesso identico indice, calcolati entrambi dividendo l'utile netto per il capitale sociale.",
         "correct": false
       }
     ],
@@ -9614,11 +9614,6 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "Il Capital Turnover (Ricavi / Capitale Investito) esprime quanti euro di fatturato l'impresa riesce a generare per ogni euro di capitale impiegato negli asset aziendali.",
-        "correct": true
-      },
-      {
         "id": "c",
         "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
@@ -9627,6 +9622,11 @@
         "id": "b",
         "text": "Il Turnover del capitale investito indica il numero di volte in cui i dipendenti cambiano mansione durante l'anno.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Il Capital Turnover (Ricavi / Capitale Investito) esprime quanti euro di fatturato l'impresa riesce a generare per ogni euro di capitale impiegato negli asset aziendali.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -9689,13 +9689,8 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Effetto Leva Finanziaria e Spread (ROI - i)\"? (Variante #4)",
     "options": [
       {
-        "id": "a",
-        "text": "La leva finanziaria ha effetto positivo sul ROE solo se la redditività del capitale investito (ROI) supera il costo medio del debito (i); se ROI < i, aumentare l'indebitamento distrugge redditività e riduce drasticamente il ROE.",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Indebitarsi conviene sempre e comunque, poiché gli interessi passivi possono essere dedotti dalle tasse garantendo un ROE infinito a costo zero.",
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
       },
       {
@@ -9704,9 +9699,14 @@
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "id": "b",
+        "text": "Indebitarsi conviene sempre e comunque, poiché gli interessi passivi possono essere dedotti dalle tasse garantendo un ROE infinito a costo zero.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "La leva finanziaria ha effetto positivo sul ROE solo se la redditività del capitale investito (ROI) supera il costo medio del debito (i); se ROI < i, aumentare l'indebitamento distrugge redditività e riduce drasticamente il ROE.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -9813,6 +9813,11 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Current Ratio vs Quick Ratio (Acid Test)\"? (Variante #4)",
     "options": [
       {
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
+        "correct": false
+      },
+      {
         "id": "c",
         "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
         "correct": false
@@ -9826,11 +9831,6 @@
         "id": "a",
         "text": "Il Quick Ratio esclude le rimanenze di magazzino dalle attività correnti, misurando la capacità dell'impresa di far fronte ai debiti a breve termine unicamente con le disponibilità liquide immediate e differite.",
         "correct": true
-      },
-      {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
-        "correct": false
       }
     ],
     "explanation": {
@@ -9937,6 +9937,11 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"Ciclo di Conversione del Circolante (CCC)\"? (Variante #4)",
     "options": [
       {
+        "id": "b",
+        "text": "Avere un ciclo di conversione del circolante di 180 giorni è il segno infallibile di un'eccellente efficienza finanziaria e di abbondanza di cassa.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
@@ -9945,11 +9950,6 @@
         "id": "a",
         "text": "Il Cash Conversion Cycle misura il tempo che intercorre tra l'esborso monetario per l'acquisto dei fattori produttivi e l'incasso dei crediti dai clienti (CCC = DIO + DSO - DPO); un CCC negativo significa che l'impresa si autofinanzia grazie ai propri fornitori.",
         "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Avere un ciclo di conversione del circolante di 180 giorni è il segno infallibile di un'eccellente efficienza finanziaria e di abbondanza di cassa.",
-        "correct": false
       },
       {
         "id": "c",
@@ -10061,24 +10061,24 @@
     "stem": "In sede di analisi finanziaria e patrimoniale, quale principio governa correttamente \"ROE vs ROI (Redditività dei Mezzi Propri vs Gestione Operativa)\"? (Variante #4)",
     "options": [
       {
-        "id": "d",
-        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
-        "correct": false
-      },
-      {
         "id": "b",
         "text": "Il ROI e il ROE sono lo stesso identico indice, calcolati entrambi dividendo l'utile netto per il capitale sociale.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Tutti gli indici di liquidità devono essere calcolati escludendo sempre i debiti verso fornitori.",
         "correct": false
       },
       {
         "id": "a",
         "text": "Il ROI misura l'efficienza economica della gestione operativa e industriale prescindendo dalla struttura finanziaria e dalle imposte; il ROE misura il rendimento netto spettante agli azionisti per il capitale di rischio conferito.",
         "correct": true
+      },
+      {
+        "id": "c",
+        "text": "Il livello dei tassi d'interesse bancari è del tutto irrilevante per la convenienza dell'indebitamento.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -10352,11 +10352,6 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Comportamento dei Costi Fissi al variare dei volumi\" per il controllo di gestione? (Variante #1)",
     "options": [
       {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
-        "correct": false
-      },
-      {
         "id": "b",
         "text": "All'aumentare della produzione il costo fisso unitario rimane perfettamente immutato e il costo fisso totale cresce linearmente con la quantità prodotta.",
         "correct": false
@@ -10369,6 +10364,11 @@
       {
         "id": "c",
         "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       }
     ],
@@ -10432,6 +10432,16 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Costi Sommersi (Sunk Costs) e Decisioni Razionali\" per il controllo di gestione? (Variante #1)",
     "options": [
       {
+        "id": "a",
+        "text": "I costi sommersi sono costi già sostenuti nel passato che non possono essere recuperati con alcuna decisione futura; l'analisi economica razionale impone di ignorarli completamente nelle decisioni di proseguimento o abbandono di un progetto.",
+        "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Un progetto software in grave perdita deve essere sempre completato a ogni costo per onorare i 2 milioni di euro già spesi negli anni precedenti.",
+        "correct": false
+      },
+      {
         "id": "c",
         "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
@@ -10440,16 +10450,6 @@
         "id": "d",
         "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
-      },
-      {
-        "id": "b",
-        "text": "Un progetto software in grave perdita deve essere sempre completato a ogni costo per onorare i 2 milioni di euro già spesi negli anni precedenti.",
-        "correct": false
-      },
-      {
-        "id": "a",
-        "text": "I costi sommersi sono costi già sostenuti nel passato che non possono essere recuperati con alcuna decisione futura; l'analisi economica razionale impone di ignorarli completamente nelle decisioni di proseguimento o abbandono di un progetto.",
-        "correct": true
       }
     ],
     "explanation": {
@@ -10512,8 +10512,8 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Margine di Sicurezza (MS) e Rischio Operativo\" per il controllo di gestione? (Variante #1)",
     "options": [
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       },
       {
@@ -10527,8 +10527,8 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
       }
     ],
@@ -10597,6 +10597,11 @@
         "correct": true
       },
       {
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "correct": false
+      },
+      {
         "id": "b",
         "text": "Ogni prodotto che mostra una perdita dopo l'allocazione dei costi generali deve essere tassativamente soppresso all'istante.",
         "correct": false
@@ -10604,11 +10609,6 @@
       {
         "id": "c",
         "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       }
     ],
@@ -10672,8 +10672,13 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Grado di Leva Operativa (GLO)\" per il controllo di gestione? (Variante #1)",
     "options": [
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "id": "b",
+        "text": "Il Grado di Leva Operativa dipende dall'ammontare dei debiti finanziari bancari contratti dall'azienda.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       },
       {
@@ -10682,13 +10687,8 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "Il Grado di Leva Operativa dipende dall'ammontare dei debiti finanziari bancari contratti dall'azienda.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
       }
     ],
@@ -10757,9 +10757,9 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
-        "correct": false
+        "id": "a",
+        "text": "All'aumentare dei volumi di produzione, i costi fissi totali rimangono costanti entro l'area di rilevanza, mentre il costo fisso unitario decresce iperbolicamente, determinando economie di assorbimento dei costi fissi.",
+        "correct": true
       },
       {
         "id": "b",
@@ -10767,9 +10767,9 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "All'aumentare dei volumi di produzione, i costi fissi totali rimangono costanti entro l'area di rilevanza, mentre il costo fisso unitario decresce iperbolicamente, determinando economie di assorbimento dei costi fissi.",
-        "correct": true
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -10876,11 +10876,6 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Costi Sommersi (Sunk Costs) e Decisioni Razionali\" per il controllo di gestione? (Variante #2)",
     "options": [
       {
-        "id": "b",
-        "text": "Un progetto software in grave perdita deve essere sempre completato a ogni costo per onorare i 2 milioni di euro già spesi negli anni precedenti.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
@@ -10888,6 +10883,11 @@
       {
         "id": "d",
         "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Un progetto software in grave perdita deve essere sempre completato a ogni costo per onorare i 2 milioni di euro già spesi negli anni precedenti.",
         "correct": false
       },
       {
@@ -11000,23 +11000,23 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Margine di Sicurezza (MS) e Rischio Operativo\" per il controllo di gestione? (Variante #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Il Margine di Sicurezza misura la percentuale massima di contrazione del fatturato o dei volumi che l'azienda può sopportare prima di entrare nell'area delle perdite operative (MS = (Q - Q*) / Q * 100).",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Un Margine di Sicurezza del 5% indica che l'azienda opera in condizioni di estrema tranquillità e lontananza dal punto di pareggio.",
         "correct": false
       },
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
-        "correct": false
+        "id": "a",
+        "text": "Il Margine di Sicurezza misura la percentuale massima di contrazione del fatturato o dei volumi che l'azienda può sopportare prima di entrare nell'area delle perdite operative (MS = (Q - Q*) / Q * 100).",
+        "correct": true
       },
       {
         "id": "d",
         "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
       }
     ],
@@ -11124,14 +11124,14 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Eliminazione di una linea di prodotto in perdita apparente\" per il controllo di gestione? (Variante #2)",
     "options": [
       {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
-        "correct": false
-      },
-      {
         "id": "a",
         "text": "Una linea di prodotto che chiude il proprio conto economico con una perdita netta contabile non deve essere eliminata se genera un Margine di Contribuzione positivo e i suoi costi fissi sono prevalentemente comuni e non eliminabili.",
         "correct": true
+      },
+      {
+        "id": "b",
+        "text": "Ogni prodotto che mostra una perdita dopo l'allocazione dei costi generali deve essere tassativamente soppresso all'istante.",
+        "correct": false
       },
       {
         "id": "c",
@@ -11139,8 +11139,8 @@
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Ogni prodotto che mostra una perdita dopo l'allocazione dei costi generali deve essere tassativamente soppresso all'istante.",
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       }
     ],
@@ -11248,11 +11248,6 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Grado di Leva Operativa (GLO)\" per il controllo di gestione? (Variante #2)",
     "options": [
       {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
@@ -11260,6 +11255,11 @@
       {
         "id": "b",
         "text": "Il Grado di Leva Operativa dipende dall'ammontare dei debiti finanziari bancari contratti dall'azienda.",
+        "correct": false
+      },
+      {
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       },
       {
@@ -11452,6 +11452,11 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Costi Sommersi (Sunk Costs) e Decisioni Razionali\" per il controllo di gestione? (Variante #3)",
     "options": [
       {
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "correct": false
+      },
+      {
         "id": "c",
         "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
@@ -11459,11 +11464,6 @@
       {
         "id": "b",
         "text": "Un progetto software in grave perdita deve essere sempre completato a ogni costo per onorare i 2 milioni di euro già spesi negli anni precedenti.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       },
       {
@@ -11612,14 +11612,14 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Eliminazione di una linea di prodotto in perdita apparente\" per il controllo di gestione? (Variante #3)",
     "options": [
       {
-        "id": "a",
-        "text": "Una linea di prodotto che chiude il proprio conto economico con una perdita netta contabile non deve essere eliminata se genera un Margine di Contribuzione positivo e i suoi costi fissi sono prevalentemente comuni e non eliminabili.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Ogni prodotto che mostra una perdita dopo l'allocazione dei costi generali deve essere tassativamente soppresso all'istante.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Una linea di prodotto che chiude il proprio conto economico con una perdita netta contabile non deve essere eliminata se genera un Margine di Contribuzione positivo e i suoi costi fissi sono prevalentemente comuni e non eliminabili.",
+        "correct": true
       },
       {
         "id": "c",
@@ -11702,13 +11702,13 @@
         "correct": true
       },
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
       }
     ],
@@ -11772,14 +11772,14 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Comportamento dei Costi Fissi al variare dei volumi\" per il controllo di gestione? (Variante #4)",
     "options": [
       {
-        "id": "a",
-        "text": "All'aumentare dei volumi di produzione, i costi fissi totali rimangono costanti entro l'area di rilevanza, mentre il costo fisso unitario decresce iperbolicamente, determinando economie di assorbimento dei costi fissi.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "All'aumentare della produzione il costo fisso unitario rimane perfettamente immutato e il costo fisso totale cresce linearmente con la quantità prodotta.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "All'aumentare dei volumi di produzione, i costi fissi totali rimangono costanti entro l'area di rilevanza, mentre il costo fisso unitario decresce iperbolicamente, determinando economie di assorbimento dei costi fissi.",
+        "correct": true
       },
       {
         "id": "c",
@@ -11896,13 +11896,13 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Costi Sommersi (Sunk Costs) e Decisioni Razionali\" per il controllo di gestione? (Variante #4)",
     "options": [
       {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
-        "correct": false
+        "id": "a",
+        "text": "I costi sommersi sono costi già sostenuti nel passato che non possono essere recuperati con alcuna decisione futura; l'analisi economica razionale impone di ignorarli completamente nelle decisioni di proseguimento o abbandono di un progetto.",
+        "correct": true
       },
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       },
       {
@@ -11911,9 +11911,9 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "I costi sommersi sono costi già sostenuti nel passato che non possono essere recuperati con alcuna decisione futura; l'analisi economica razionale impone di ignorarli completamente nelle decisioni di proseguimento o abbandono di un progetto.",
-        "correct": true
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -12020,9 +12020,9 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Margine di Sicurezza (MS) e Rischio Operativo\" per il controllo di gestione? (Variante #4)",
     "options": [
       {
-        "id": "a",
-        "text": "Il Margine di Sicurezza misura la percentuale massima di contrazione del fatturato o dei volumi che l'azienda può sopportare prima di entrare nell'area delle perdite operative (MS = (Q - Q*) / Q * 100).",
-        "correct": true
+        "id": "d",
+        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "correct": false
       },
       {
         "id": "b",
@@ -12030,13 +12030,13 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
-        "correct": false
+        "id": "a",
+        "text": "Il Margine di Sicurezza misura la percentuale massima di contrazione del fatturato o dei volumi che l'azienda può sopportare prima di entrare nell'area delle perdite operative (MS = (Q - Q*) / Q * 100).",
+        "correct": true
       },
       {
-        "id": "d",
-        "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
       }
     ],
@@ -12144,23 +12144,23 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso \"Eliminazione di una linea di prodotto in perdita apparente\" per il controllo di gestione? (Variante #4)",
     "options": [
       {
-        "id": "a",
-        "text": "Una linea di prodotto che chiude il proprio conto economico con una perdita netta contabile non deve essere eliminata se genera un Margine di Contribuzione positivo e i suoi costi fissi sono prevalentemente comuni e non eliminabili.",
-        "correct": true
-      },
-      {
         "id": "d",
         "text": "Il Margine di Contribuzione coincide sempre con l'Utile Netto dopo le imposte.",
         "correct": false
       },
       {
-        "id": "c",
-        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
+        "id": "b",
+        "text": "Ogni prodotto che mostra una perdita dopo l'allocazione dei costi generali deve essere tassativamente soppresso all'istante.",
         "correct": false
       },
       {
-        "id": "b",
-        "text": "Ogni prodotto che mostra una perdita dopo l'allocazione dei costi generali deve essere tassativamente soppresso all'istante.",
+        "id": "a",
+        "text": "Una linea di prodotto che chiude il proprio conto economico con una perdita netta contabile non deve essere eliminata se genera un Margine di Contribuzione positivo e i suoi costi fissi sono prevalentemente comuni e non eliminabili.",
+        "correct": true
+      },
+      {
+        "id": "c",
+        "text": "I costi fissi variano proporzionalmente a ogni singola unità addizionale venduta.",
         "correct": false
       }
     ],
@@ -12414,8 +12414,8 @@
         "correct": false
       },
       {
-        "id": "d",
-        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "id": "b",
+        "text": "Nel Business Model Canvas la Value Proposition corrisponde unicamente all'elenco dei costi operativi di produzione e alle specifiche del database.",
         "correct": false
       },
       {
@@ -12424,8 +12424,8 @@
         "correct": true
       },
       {
-        "id": "b",
-        "text": "Nel Business Model Canvas la Value Proposition corrisponde unicamente all'elenco dei costi operativi di produzione e alle specifiche del database.",
+        "id": "d",
+        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
         "correct": false
       }
     ],
@@ -12489,6 +12489,11 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Valore Attuale Netto (VAN / NPV) come criterio decisionale\"? (Variante #1)",
     "options": [
       {
+        "id": "d",
+        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "correct": false
+      },
+      {
         "id": "c",
         "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
@@ -12502,11 +12507,6 @@
         "id": "a",
         "text": "Il Valore Attuale Netto (VAN) è il criterio economico sovrano per la valutazione degli investimenti: un progetto crea valore per gli azionisti ed è finanziariamente accettabile se e solo se il suo VAN attualizzato al costo del capitale è strettamente positivo (VAN > 0).",
         "correct": true
-      },
-      {
-        "id": "d",
-        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
-        "correct": false
       }
     ],
     "explanation": {
@@ -12579,14 +12579,14 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "Un brevetto per invenzione industriale conferisce un monopolio temporaneo di sfruttamento economico (in genere 20 anni) a fronte della divulgazione pubblica dell'invenzione, purché soddisfi i requisiti di novità, attività inventiva e applicazione industriale.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Il brevetto protegge automaticamente l'invenzione per 100 anni senza richiedere alcuna descrizione tecnica né il pagamento di tasse di mantenimento.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Un brevetto per invenzione industriale conferisce un monopolio temporaneo di sfruttamento economico (in genere 20 anni) a fronte della divulgazione pubblica dell'invenzione, purché soddisfi i requisiti di novità, attività inventiva e applicazione industriale.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -12649,14 +12649,14 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Metriche Startup: Churn Rate e Runway\"? (Variante #1)",
     "options": [
       {
-        "id": "a",
-        "text": "Il Churn Rate misura la percentuale di clienti che abbandonano il servizio in un dato periodo, mentre la Runway indica i mesi di sopravvivenza finanziaria residui prima dell'esaurimento della cassa disponibile (Cassa / Burn Rate mensile).",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Un Churn Rate del 50% mensile in un'app SaaS è il valore ottimale per garantire la crescita esponenziale del business.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Il Churn Rate misura la percentuale di clienti che abbandonano il servizio in un dato periodo, mentre la Runway indica i mesi di sopravvivenza finanziaria residui prima dell'esaurimento della cassa disponibile (Cassa / Burn Rate mensile).",
+        "correct": true
       },
       {
         "id": "c",
@@ -12809,9 +12809,9 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Business Model Canvas: Value Proposition e Segmenti di Clientela\"? (Variante #2)",
     "options": [
       {
-        "id": "c",
-        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
-        "correct": false
+        "id": "a",
+        "text": "Nel Business Model Canvas di Osterwalder la Value Proposition descrive l'insieme dei prodotti e servizi che creano valore per uno specifico segmento di clientela, risolvendo un problema concreto o soddisfacendo un bisogno.",
+        "correct": true
       },
       {
         "id": "b",
@@ -12819,9 +12819,9 @@
         "correct": false
       },
       {
-        "id": "a",
-        "text": "Nel Business Model Canvas di Osterwalder la Value Proposition descrive l'insieme dei prodotti e servizi che creano valore per uno specifico segmento di clientela, risolvendo un problema concreto o soddisfacendo un bisogno.",
-        "correct": true
+        "id": "c",
+        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
+        "correct": false
       },
       {
         "id": "d",
@@ -12933,6 +12933,11 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Valore Attuale Netto (VAN / NPV) come criterio decisionale\"? (Variante #2)",
     "options": [
       {
+        "id": "b",
+        "text": "Un progetto con VAN negativo pari a -200.000 € deve essere approvato se il Payback Period è inferiore a un anno.",
+        "correct": false
+      },
+      {
         "id": "d",
         "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
         "correct": false
@@ -12946,11 +12951,6 @@
         "id": "a",
         "text": "Il Valore Attuale Netto (VAN) è il criterio economico sovrano per la valutazione degli investimenti: un progetto crea valore per gli azionisti ed è finanziariamente accettabile se e solo se il suo VAN attualizzato al costo del capitale è strettamente positivo (VAN > 0).",
         "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Un progetto con VAN negativo pari a -200.000 € deve essere approvato se il Payback Period è inferiore a un anno.",
-        "correct": false
       }
     ],
     "explanation": {
@@ -13057,13 +13057,13 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Proprietà Intellettuale: Brevetti vs Segreto Industriale\"? (Variante #2)",
     "options": [
       {
-        "id": "d",
-        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "id": "c",
+        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
+        "id": "d",
+        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
         "correct": false
       },
       {
@@ -13181,16 +13181,6 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Metriche Startup: Churn Rate e Runway\"? (Variante #2)",
     "options": [
       {
-        "id": "a",
-        "text": "Il Churn Rate misura la percentuale di clienti che abbandonano il servizio in un dato periodo, mentre la Runway indica i mesi di sopravvivenza finanziaria residui prima dell'esaurimento della cassa disponibile (Cassa / Burn Rate mensile).",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Un Churn Rate del 50% mensile in un'app SaaS è il valore ottimale per garantire la crescita esponenziale del business.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
@@ -13199,6 +13189,16 @@
         "id": "d",
         "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
         "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Un Churn Rate del 50% mensile in un'app SaaS è il valore ottimale per garantire la crescita esponenziale del business.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Il Churn Rate misura la percentuale di clienti che abbandonano il servizio in un dato periodo, mentre la Runway indica i mesi di sopravvivenza finanziaria residui prima dell'esaurimento della cassa disponibile (Cassa / Burn Rate mensile).",
+        "correct": true
       }
     ],
     "explanation": {
@@ -13305,24 +13305,24 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"TIR (Tasso Interno di Rendimento) vs VAN\"? (Variante #2)",
     "options": [
       {
-        "id": "b",
-        "text": "Il TIR è sempre superiore al VAN e non risente mai di ambiguità di calcolo o tassi multipli in flussi non convenzionali.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
+        "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Il TIR è sempre superiore al VAN e non risente mai di ambiguità di calcolo o tassi multipli in flussi non convenzionali.",
         "correct": false
       },
       {
         "id": "a",
         "text": "Il TIR è il tasso di attualizzazione che azzera il Valore Attuale Netto del progetto (VAN = 0); in caso di progetti mutuamente esclusivi con scale o profili temporali differenti, il criterio del VAN deve sempre prevalere sul TIR.",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -13429,16 +13429,6 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Business Model Canvas: Value Proposition e Segmenti di Clientela\"? (Variante #3)",
     "options": [
       {
-        "id": "a",
-        "text": "Nel Business Model Canvas di Osterwalder la Value Proposition descrive l'insieme dei prodotti e servizi che creano valore per uno specifico segmento di clientela, risolvendo un problema concreto o soddisfacendo un bisogno.",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Nel Business Model Canvas la Value Proposition corrisponde unicamente all'elenco dei costi operativi di produzione e alle specifiche del database.",
-        "correct": false
-      },
-      {
         "id": "d",
         "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
         "correct": false
@@ -13447,6 +13437,16 @@
         "id": "c",
         "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Nel Business Model Canvas la Value Proposition corrisponde unicamente all'elenco dei costi operativi di produzione e alle specifiche del database.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Nel Business Model Canvas di Osterwalder la Value Proposition descrive l'insieme dei prodotti e servizi che creano valore per uno specifico segmento di clientela, risolvendo un problema concreto o soddisfacendo un bisogno.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -13509,13 +13509,13 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Valore Attuale Netto (VAN / NPV) come criterio decisionale\"? (Variante #3)",
     "options": [
       {
-        "id": "b",
-        "text": "Un progetto con VAN negativo pari a -200.000 € deve essere approvato se il Payback Period è inferiore a un anno.",
+        "id": "c",
+        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
+        "id": "d",
+        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
         "correct": false
       },
       {
@@ -13524,8 +13524,8 @@
         "correct": true
       },
       {
-        "id": "d",
-        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "id": "b",
+        "text": "Un progetto con VAN negativo pari a -200.000 € deve essere approvato se il Payback Period è inferiore a un anno.",
         "correct": false
       }
     ],
@@ -13589,6 +13589,16 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Proprietà Intellettuale: Brevetti vs Segreto Industriale\"? (Variante #3)",
     "options": [
       {
+        "id": "d",
+        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
+        "correct": false
+      },
+      {
         "id": "b",
         "text": "Il brevetto protegge automaticamente l'invenzione per 100 anni senza richiedere alcuna descrizione tecnica né il pagamento di tasse di mantenimento.",
         "correct": false
@@ -13597,16 +13607,6 @@
         "id": "a",
         "text": "Un brevetto per invenzione industriale conferisce un monopolio temporaneo di sfruttamento economico (in genere 20 anni) a fronte della divulgazione pubblica dell'invenzione, purché soddisfi i requisiti di novità, attività inventiva e applicazione industriale.",
         "correct": true
-      },
-      {
-        "id": "c",
-        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
-        "correct": false
-      },
-      {
-        "id": "d",
-        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
-        "correct": false
       }
     ],
     "explanation": {
@@ -13669,9 +13669,9 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Metriche Startup: Churn Rate e Runway\"? (Variante #3)",
     "options": [
       {
-        "id": "a",
-        "text": "Il Churn Rate misura la percentuale di clienti che abbandonano il servizio in un dato periodo, mentre la Runway indica i mesi di sopravvivenza finanziaria residui prima dell'esaurimento della cassa disponibile (Cassa / Burn Rate mensile).",
-        "correct": true
+        "id": "c",
+        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
+        "correct": false
       },
       {
         "id": "b",
@@ -13684,9 +13684,9 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
-        "correct": false
+        "id": "a",
+        "text": "Il Churn Rate misura la percentuale di clienti che abbandonano il servizio in un dato periodo, mentre la Runway indica i mesi di sopravvivenza finanziaria residui prima dell'esaurimento della cassa disponibile (Cassa / Burn Rate mensile).",
+        "correct": true
       }
     ],
     "explanation": {
@@ -13749,24 +13749,24 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"TIR (Tasso Interno di Rendimento) vs VAN\"? (Variante #3)",
     "options": [
       {
-        "id": "d",
-        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
-        "correct": false
-      },
-      {
         "id": "b",
         "text": "Il TIR è sempre superiore al VAN e non risente mai di ambiguità di calcolo o tassi multipli in flussi non convenzionali.",
-        "correct": false
-      },
-      {
-        "id": "c",
-        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
       },
       {
         "id": "a",
         "text": "Il TIR è il tasso di attualizzazione che azzera il Valore Attuale Netto del progetto (VAN = 0); in caso di progetti mutuamente esclusivi con scale o profili temporali differenti, il criterio del VAN deve sempre prevalere sul TIR.",
         "correct": true
+      },
+      {
+        "id": "d",
+        "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
+        "correct": false
       }
     ],
     "explanation": {
@@ -13829,16 +13829,6 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Business Model Canvas: Value Proposition e Segmenti di Clientela\"? (Variante #4)",
     "options": [
       {
-        "id": "a",
-        "text": "Nel Business Model Canvas di Osterwalder la Value Proposition descrive l'insieme dei prodotti e servizi che creano valore per uno specifico segmento di clientela, risolvendo un problema concreto o soddisfacendo un bisogno.",
-        "correct": true
-      },
-      {
-        "id": "b",
-        "text": "Nel Business Model Canvas la Value Proposition corrisponde unicamente all'elenco dei costi operativi di produzione e alle specifiche del database.",
-        "correct": false
-      },
-      {
         "id": "c",
         "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
@@ -13847,6 +13837,16 @@
         "id": "d",
         "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
         "correct": false
+      },
+      {
+        "id": "b",
+        "text": "Nel Business Model Canvas la Value Proposition corrisponde unicamente all'elenco dei costi operativi di produzione e alle specifiche del database.",
+        "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Nel Business Model Canvas di Osterwalder la Value Proposition descrive l'insieme dei prodotti e servizi che creano valore per uno specifico segmento di clientela, risolvendo un problema concreto o soddisfacendo un bisogno.",
+        "correct": true
       }
     ],
     "explanation": {
@@ -13953,13 +13953,13 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Valore Attuale Netto (VAN / NPV) come criterio decisionale\"? (Variante #4)",
     "options": [
       {
-        "id": "a",
-        "text": "Il Valore Attuale Netto (VAN) è il criterio economico sovrano per la valutazione degli investimenti: un progetto crea valore per gli azionisti ed è finanziariamente accettabile se e solo se il suo VAN attualizzato al costo del capitale è strettamente positivo (VAN > 0).",
-        "correct": true
-      },
-      {
         "id": "d",
         "text": "Il modello Canvas è applicabile solo a imprese tradizionali escludendo ogni forma di business digitale.",
+        "correct": false
+      },
+      {
+        "id": "c",
+        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
         "correct": false
       },
       {
@@ -13968,9 +13968,9 @@
         "correct": false
       },
       {
-        "id": "c",
-        "text": "Gli investimenti ad alto rischio tecnologico devono sempre essere valutati ignorando i flussi di cassa futuri.",
-        "correct": false
+        "id": "a",
+        "text": "Il Valore Attuale Netto (VAN) è il criterio economico sovrano per la valutazione degli investimenti: un progetto crea valore per gli azionisti ed è finanziariamente accettabile se e solo se il suo VAN attualizzato al costo del capitale è strettamente positivo (VAN > 0).",
+        "correct": true
       }
     ],
     "explanation": {
@@ -14077,14 +14077,14 @@
     "stem": "Quale delle seguenti affermazioni descrive in modo rigoroso e corretto \"Proprietà Intellettuale: Brevetti vs Segreto Industriale\"? (Variante #4)",
     "options": [
       {
-        "id": "a",
-        "text": "Un brevetto per invenzione industriale conferisce un monopolio temporaneo di sfruttamento economico (in genere 20 anni) a fronte della divulgazione pubblica dell'invenzione, purché soddisfi i requisiti di novità, attività inventiva e applicazione industriale.",
-        "correct": true
-      },
-      {
         "id": "b",
         "text": "Il brevetto protegge automaticamente l'invenzione per 100 anni senza richiedere alcuna descrizione tecnica né il pagamento di tasse di mantenimento.",
         "correct": false
+      },
+      {
+        "id": "a",
+        "text": "Un brevetto per invenzione industriale conferisce un monopolio temporaneo di sfruttamento economico (in genere 20 anni) a fronte della divulgazione pubblica dell'invenzione, purché soddisfi i requisiti di novità, attività inventiva e applicazione industriale.",
+        "correct": true
       },
       {
         "id": "c",
