@@ -1,12 +1,15 @@
 import React from "react";
 import { Landmark, HelpCircle, CheckCircle2 } from "lucide-react";
 import type { CaseStudy } from "../../types/study";
+import { InteractiveDilemma } from "./InteractiveDilemma";
 
 interface CaseStudyCardProps {
   caseStudy: CaseStudy;
 }
 
 export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy }) => {
+  const hasInteractiveDilemma = !!caseStudy.interactiveDilemma;
+
   return (
     <div className="my-5 rounded-2xl border border-amber-300 bg-amber-50/70 p-5 shadow-sm">
       <div className="flex items-center justify-between border-b border-amber-200/80 pb-3">
@@ -30,13 +33,19 @@ export const CaseStudyCard: React.FC<CaseStudyCardProps> = ({ caseStudy }) => {
         )}
       </div>
 
-      <div className="mt-4 rounded-xl bg-white/90 p-3.5 border border-amber-200 text-amber-950 text-sm">
-        <div className="flex items-center gap-1.5 font-bold text-amber-900 mb-1">
-          <HelpCircle className="h-4 w-4 text-amber-600" />
-          <span>Il Dilemma Decisionale:</span>
+      {/* Interactive Dilemma — shown if available */}
+      {hasInteractiveDilemma ? (
+        <InteractiveDilemma caseStudy={caseStudy} />
+      ) : (
+        /* Fallback: static dilemma display */
+        <div className="mt-4 rounded-xl bg-white/90 p-3.5 border border-amber-200 text-amber-950 text-sm">
+          <div className="flex items-center gap-1.5 font-bold text-amber-900 mb-1">
+            <HelpCircle className="h-4 w-4 text-amber-600" />
+            <span>Il Dilemma Decisionale:</span>
+          </div>
+          <p className="italic font-medium">{caseStudy.dilemma}</p>
         </div>
-        <p className="italic font-medium">{caseStudy.dilemma}</p>
-      </div>
+      )}
 
       <p className="mt-3.5 text-sm leading-relaxed text-slate-800">
         {caseStudy.summary}

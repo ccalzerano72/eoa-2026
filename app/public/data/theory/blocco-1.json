@@ -16,7 +16,33 @@
       "Miopia manageriale (short-termism): privilegiare i dividendi immediati a scapito degli investimenti a lungo termine in ricerca e sviluppo distrugge il valore futuro.",
       "La strategia della scarsità e la gestione rigorosa dei trade-off permettono di difendere un posizionamento di eccellenza nel tempo."
     ],
-    "keytakeaway": "L'impresa non è un problema ingegneristico isolato da risolvere con un algoritmo: è un sistema aperto, socio-tecnico e complesso vincolato dalla sostenibilità economica e dai flussi finanziari."
+    "keytakeaway": "L'impresa non è un problema ingegneristico isolato da risolvere con un algoritmo: è un sistema aperto, socio-tecnico e complesso vincolato dalla sostenibilità economica e dai flussi finanziari.",
+    "interactiveDilemma": {
+      "question": "Siamo nel 1964. Olivetti ha appena creato la Programma 101, il primo personal computer al mondo. L'azienda è indebitata per l'acquisizione di Underwood. Il consiglio di amministrazione deve decidere: cosa fare della divisione elettronica?",
+      "context": "Olivetti è un'azienda italiana leader mondiale nelle macchine da scrivere. Ha investito nella divisione elettronica guidata dal genio di Mario Tchou e Pier Giorgio Perotto, creando tecnologia che anticipa di anni la concorrenza americana. Tuttavia, l'acquisizione della Underwood ha generato un forte indebitamento. I finanzieri del 'Gruppo di Intervento' premono per concentrarsi sul core business tradizionale.",
+      "choices": [
+        {
+          "id": "choice-sell",
+          "label": "Vendere la divisione elettronica",
+          "description": "Cedere la divisione a un acquirente estero (General Electric) per ridurre il debito e concentrarsi sulle macchine da scrivere, il business storico e profittevole.",
+          "isHistorical": true
+        },
+        {
+          "id": "choice-keep",
+          "label": "Mantenere e investire nell'elettronica",
+          "description": "Ristrutturare il debito con altre modalità, tagliare i dividendi e continuare a investire nella divisione elettronica che rappresenta il futuro dell'informatica.",
+          "isHistorical": false
+        },
+        {
+          "id": "choice-spinoff",
+          "label": "Creare uno spin-off indipendente",
+          "description": "Separare la divisione elettronica in una società autonoma, cercando nuovi investitori interessati all'innovazione tecnologica.",
+          "isHistorical": false
+        }
+      ],
+      "historicalOutcome": "Il 'Gruppo di Intervento' convinse il consiglio a vendere la divisione elettronica a General Electric, definendola 'un neo da estirpare'. La Programma 101, il primo PC della storia, fu ceduta insieme a tutti i brevetti. General Electric e poi IBM capitalizzarono su quella tecnologia, mentre Olivetti rimase intrappolata nel mercato morente delle macchine da scrivere. L'Italia perse la leadership mondiale dell'informatica per sempre.",
+      "lessonLearned": "La miopia finanziaria di breve termine (short-termism) e l'incapacità di riconoscere il valore strategico dell'innovazione tecnologica possono distruggere un vantaggio competitivo insostituibile. La solidità tecnica senza autonomia finanziaria lascia l'impresa vulnerabile alle pressioni di stakeholder con orizzonti temporali diversi."
+    }
   },
   "topics": [
     {

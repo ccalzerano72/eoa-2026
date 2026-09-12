@@ -23,6 +23,17 @@ export interface ConceptShift {
   mindsetShift: string; // Il salto concettuale
 }
 
+/**
+ * Interactive Dilemma Choice for Case Studies
+ * Allows students to make a decision before revealing the historical outcome
+ */
+export interface DilemmaChoice {
+  id: string;
+  label: string; // Short label for the button (e.g., "Vendere la divisione")
+  description: string; // Fuller explanation of this choice
+  isHistorical: boolean; // True if this is what the company actually did
+}
+
 export interface CaseStudy {
   id: string;
   name: string; // e.g. "Olivetti: La Programma 101"
@@ -32,6 +43,14 @@ export interface CaseStudy {
   summary: string;
   coreLessons: string[];
   keytakeaway: string;
+  // Interactive dilemma fields (optional for backward compatibility)
+  interactiveDilemma?: {
+    question: string; // The decision question posed to the student
+    context: string; // Brief context before the choice (setting the scene)
+    choices: DilemmaChoice[];
+    historicalOutcome: string; // What actually happened as a result
+    lessonLearned: string; // Key insight from this decision
+  };
 }
 
 export interface StudyTopic {

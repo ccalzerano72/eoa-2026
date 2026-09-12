@@ -16,7 +16,39 @@
       "La riclassificazione finanziaria dello Stato Patrimoniale è indispensabile per verificare la solvibilità a breve (CCN, Margine di Tesoreria, Quick Ratio).",
       "Il ROE misura il rendimento per i soci azionisti, ma può essere artificiosamente gonfiato dal debito tramite la Leva Finanziaria, che amplifica esponenzialmente il rischio di rovina se il ROI scende sotto il costo del denaro."
     ],
-    "keytakeaway": "Il fatturato è vanità, l'utile è sanità mentale, ma la cassa è l'unica realtà che garantisce la continuità dell'impresa."
+    "keytakeaway": "Il fatturato è vanità, l'utile è sanità mentale, ma la cassa è l'unica realtà che garantisce la continuità dell'impresa.",
+    "interactiveDilemma": {
+      "question": "Sei il CFO di Connecta S.r.l. È gennaio e hai appena ricevuto ordini per 4 milioni di euro (il doppio dell'anno scorso). Per evadere gli ordini devi acquistare componenti per 400.000€ (pagamento a 30 giorni) e i clienti pagheranno a 120 giorni. Il fido bancario attuale copre solo 200.000€. Cosa fai?",
+      "context": "Connecta produce moduli IoT di successo. Il mercato sta esplodendo e gli ordini sono raddoppiati. L'utile previsto è di 250.000€, un record aziendale. Il CEO vuole accettare tutti gli ordini per cavalcare l'onda. Tu hai davanti i numeri del Cash Conversion Cycle e sai che ci sarà un gap temporale tra uscite (acquisti da pagare a 30gg) ed entrate (incassi dai clienti a 120gg).",
+      "choices": [
+        {
+          "id": "choice-accept-all",
+          "label": "Accettare tutti gli ordini",
+          "description": "Il mercato è in crescita, gli utili sono record, i clienti sono affidabili. Fidarsi del fatto che 'i soldi arriveranno' e procedere con la produzione.",
+          "isHistorical": true
+        },
+        {
+          "id": "choice-negotiate-bank",
+          "label": "Negoziare prima nuove linee di credito",
+          "description": "Prima di accettare gli ordini, andare in banca con un business plan dettagliato e ottenere l'aumento del fido o linee di anticipo fatture per coprire il gap di cassa.",
+          "isHistorical": false
+        },
+        {
+          "id": "choice-limit-growth",
+          "label": "Accettare solo ordini compatibili con la cassa",
+          "description": "Rifiutare parte degli ordini per mantenere la crescita entro i limiti dell'autofinanziamento, evitando di dipendere dal credito bancario.",
+          "isHistorical": false
+        },
+        {
+          "id": "choice-renegotiate-terms",
+          "label": "Rinegoziare i termini di pagamento",
+          "description": "Chiedere ai clienti acconti o pagamenti anticipati, e ai fornitori dilazioni più lunghe, per ridurre il gap del Cash Conversion Cycle.",
+          "isHistorical": false
+        }
+      ],
+      "historicalOutcome": "Connecta accettò tutti gli ordini senza pianificare la copertura finanziaria. Il Capitale Circolante Netto Commerciale esplose di 800.000€ mentre l'utile fu solo di 250.000€. L'azienda bruciò 550.000€ di cassa in pochi mesi. A giugno, con i conti correnti a zero e il fido esaurito, non riuscì a pagare gli stipendi né i fornitori di chip. Entrò in default tecnico proprio mentre festeggiava l'anno record di vendite.",
+      "lessonLearned": "La crescita consuma cassa prima di generarla (Growth Eats Cash). Il gap temporale tra quando paghi (fornitori a 30gg) e quando incassi (clienti a 120gg) crea un fabbisogno finanziario che l'utile contabile non copre. Prima di accettare una crescita esplosiva, devi avere le linee di credito già in posto o rinegoziare i termini commerciali."
+    }
   },
   "topics": [
     {
