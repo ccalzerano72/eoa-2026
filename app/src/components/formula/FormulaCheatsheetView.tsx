@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import { formulasData, type FormulaItem } from "../../data/formulas";
 import { FormulaBlock } from "../ui/FormulaBlock";
 import {
@@ -39,6 +39,19 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
     null,
   );
   const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  // Ref for scrolling to expanded formula explanation
+  const expandedSectionRef = useRef<HTMLDivElement | null>(null);
+
+  // Scroll to expanded section when a formula is expanded
+  useEffect(() => {
+    if (expandedFormulaId && expandedSectionRef.current) {
+      expandedSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [expandedFormulaId]);
 
   // Filtered formulas
   const filteredFormulas = useMemo(() => {
@@ -287,7 +300,10 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
 
                   {/* Expandable Golden Rule Section */}
                   {isExpanded && (
-                    <div className="p-5 md:p-6 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-100 dark:border-slate-700 space-y-4 animate-in fade-in-50 duration-200 text-xs md:text-sm">
+                    <div
+                      ref={expandedSectionRef}
+                      className="p-5 md:p-6 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-100 dark:border-slate-700 space-y-4 animate-in fade-in-50 duration-200 text-xs md:text-sm scroll-mt-24"
+                    >
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="bg-white dark:bg-slate-800 p-3.5 rounded-lg border border-slate-200/80 dark:border-slate-700 shadow-2xs">
                           <span className="inline-block text-2xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400 mb-1">
