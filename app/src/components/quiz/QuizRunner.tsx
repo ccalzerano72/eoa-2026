@@ -11,7 +11,6 @@ import { saveQuizRecord } from "../../services/storage";
 import {
   Clock,
   ArrowRight,
-  ArrowLeft,
   ChevronLeft,
   ChevronRight,
   RotateCcw,

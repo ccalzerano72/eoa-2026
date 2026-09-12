@@ -1,4 +1,10 @@
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, {
+  useState,
+  useMemo,
+  useRef,
+  useEffect,
+  useCallback,
+} from "react";
 import { formulasData, type FormulaItem } from "../../data/formulas";
 import { FormulaBlock } from "../ui/FormulaBlock";
 import {
@@ -8,6 +14,8 @@ import {
   AlertTriangle,
   ChevronDown,
   ChevronUp,
+  ChevronLeft,
+  ChevronRight,
   Copy,
   Check,
   Calculator,
@@ -40,6 +48,10 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
   );
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
+  // Navigation state for single-formula view on mobile
+  const [currentFormulaIndex, setCurrentFormulaIndex] = useState(0);
+  const formulaCardRefs = useRef<Map<string, HTMLDivElement>>(new Map());
+
   // Ref for scrolling to expanded formula explanation
   const expandedSectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -52,6 +64,11 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
       });
     }
   }, [expandedFormulaId]);
+
+  // Reset formula index when filters change
+  useEffect(() => {
+    setCurrentFormulaIndex(0);
+  }, [searchTerm, selectedBlock]);
 
   // Filtered formulas
   const filteredFormulas = useMemo(() => {
@@ -77,14 +94,40 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
     });
   }, [searchTerm, selectedBlock]);
 
+  // Navigation functions
+  const scrollToFormula = useCallback((index: number, formulaId: string) => {
+    setCurrentFormulaIndex(index);
+    setTimeout(() => {
+      const ref = formulaCardRefs.current.get(formulaId);
+      ref?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  }, []);
+
+  const goToPrevFormula = useCallback(() => {
+    if (currentFormulaIndex > 0) {
+      const newIndex = currentFormulaIndex - 1;
+      const formulaId = filteredFormulas[newIndex]?.id;
+      if (formulaId) scrollToFormula(newIndex, formulaId);
+    }
+  }, [currentFormulaIndex, filteredFormulas, scrollToFormula]);
+
+  const goToNextFormula = useCallback(() => {
+    if (currentFormulaIndex < filteredFormulas.length - 1) {
+      const newIndex = currentFormulaIndex + 1;
+      const formulaId = filteredFormulas[newIndex]?.id;
+      if (formulaId) scrollToFormula(newIndex, formulaId);
+    }
+  }, [currentFormulaIndex, filteredFormulas, scrollToFormula]);
+
   const handleCopyKaTeX = (id: string, katex: string) => {
     navigator.clipboard.writeText(katex);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const toggleExpand = (id: string) => {
+  const toggleExpand = (id: string, index: number) => {
     setExpandedFormulaId((prev) => (prev === id ? null : id));
+    setCurrentFormulaIndex(index);
   };
 
   return (
@@ -192,6 +235,69 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
           {searchTerm && <span>Filtro attivo: «{searchTerm}»</span>}
         </div>
 
+        {/* Sticky Navigation Bar */}
+        {filteredFormulas.length > 1 && (
+          <div className="sticky top-0 z-20 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm rounded-xl border border-slate-200 dark:border-slate-700 p-3 shadow-sm">
+            <div className="flex items-center justify-between gap-3">
+              <button
+                onClick={goToPrevFormula}
+                disabled={currentFormulaIndex === 0}
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-2 font-semibold text-sm transition cursor-pointer ${
+                  currentFormulaIndex === 0
+                    ? "bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed"
+                    : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-500"
+                }`}
+              >
+                <ChevronLeft className="h-4 w-4" />
+                <span className="hidden sm:inline">Prec.</span>
+              </button>
+
+              {/* Quick Jump Dots/Numbers */}
+              <div className="flex-1 flex items-center justify-center gap-1 overflow-x-auto px-2 scrollbar-thin">
+                {filteredFormulas.length <= 20 ? (
+                  // Show numbered buttons for <= 20 formulas
+                  filteredFormulas.map((f, idx) => (
+                    <button
+                      key={f.id}
+                      onClick={() => scrollToFormula(idx, f.id)}
+                      className={`h-7 min-w-7 px-1.5 rounded-md font-mono text-xs font-bold transition cursor-pointer ${
+                        idx === currentFormulaIndex
+                          ? "bg-blue-600 text-white ring-2 ring-offset-1 ring-blue-400 dark:ring-offset-slate-900"
+                          : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
+                      }`}
+                      title={f.name}
+                    >
+                      {idx + 1}
+                    </button>
+                  ))
+                ) : (
+                  // Show compact indicator for > 20 formulas
+                  <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
+                    Formula{" "}
+                    <span className="font-bold text-blue-600 dark:text-blue-400">
+                      {currentFormulaIndex + 1}
+                    </span>{" "}
+                    di {filteredFormulas.length}
+                  </span>
+                )}
+              </div>
+
+              <button
+                onClick={goToNextFormula}
+                disabled={currentFormulaIndex === filteredFormulas.length - 1}
+                className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-2 font-semibold text-sm transition cursor-pointer ${
+                  currentFormulaIndex === filteredFormulas.length - 1
+                    ? "bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed"
+                    : "bg-blue-600 text-white hover:bg-blue-700"
+                }`}
+              >
+                <span className="hidden sm:inline">Succ.</span>
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        )}
+
         {filteredFormulas.length === 0 ? (
           <div className="rounded-xl border border-dashed border-slate-200 dark:border-slate-700 p-12 text-center bg-slate-50/50 dark:bg-slate-800/50">
             <Compass className="h-10 w-10 text-slate-300 dark:text-slate-600 mx-auto mb-3" />
@@ -214,14 +320,17 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6">
-            {filteredFormulas.map((item) => {
+            {filteredFormulas.map((item, itemIndex) => {
               const isExpanded = expandedFormulaId === item.id;
               const isCopied = copiedId === item.id;
 
               return (
                 <div
                   key={item.id}
-                  className="rounded-xl border border-slate-200/90 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xs hover:border-blue-200 dark:hover:border-blue-700 hover:shadow-md transition-all duration-200 overflow-hidden"
+                  ref={(el) => {
+                    if (el) formulaCardRefs.current.set(item.id, el);
+                  }}
+                  className="rounded-xl border border-slate-200/90 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xs hover:border-blue-200 dark:hover:border-blue-700 hover:shadow-md transition-all duration-200 overflow-hidden scroll-mt-20"
                 >
                   {/* Card Top bar */}
                   <div className="p-5 md:p-6 border-b border-slate-100 dark:border-slate-700">
@@ -350,7 +459,7 @@ export const FormulaCheatsheetView: React.FC<FormulaCheatsheetViewProps> = ({
                   {/* Actions Bottom Bar */}
                   <div className="px-5 py-3.5 bg-slate-50/80 dark:bg-slate-900/50 flex flex-wrap items-center justify-between gap-3">
                     <button
-                      onClick={() => toggleExpand(item.id)}
+                      onClick={() => toggleExpand(item.id, itemIndex)}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                     >
                       {isExpanded ? (
