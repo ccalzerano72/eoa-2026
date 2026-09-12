@@ -170,7 +170,7 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
 
   if (deck.length === 0) {
     return (
-      <div className="mx-auto max-w-2xl py-20 text-center text-slate-500">
+      <div className="mx-auto max-w-2xl py-20 px-4 text-center text-slate-500">
         <Layers className="h-10 w-10 mx-auto mb-4 text-slate-300" />
         <p className="font-semibold text-slate-700">
           Nessuna flash card disponibile con i filtri selezionati.
@@ -191,16 +191,16 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
   }
 
   return (
-    <div className="mx-auto max-w-2xl py-8 px-4">
+    <div className="mx-auto max-w-2xl py-8 px-4 overflow-x-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
+      <div className="flex items-center justify-between mb-6 gap-3">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-violet-100 text-violet-700 shrink-0">
             <Layers className="h-5 w-5" />
           </div>
-          <div>
+          <div className="min-w-0">
             <h2 className="text-lg font-bold text-slate-900">Flash Cards</h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 hidden sm:block">
               Ripasso rapido • Premi Spazio per girare, ← → per navigare
             </p>
           </div>
@@ -208,7 +208,7 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
         {onExit && (
           <button
             onClick={onExit}
-            className="rounded-xl border border-slate-300 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition cursor-pointer"
+            className="rounded-xl border border-slate-300 px-3 sm:px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition cursor-pointer shrink-0"
           >
             Esci
           </button>
@@ -216,9 +216,9 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
       </div>
 
       {/* Filters */}
-      <div className="flex flex-wrap items-center gap-2 mb-6">
+      <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-6 overflow-x-auto pb-2">
         {/* Block chips */}
-        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">
+        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1 shrink-0">
           Blocco:
         </span>
         {(
@@ -236,7 +236,7 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
           <button
             key={b.val}
             onClick={() => setBlockFilter(b.val)}
-            className={`px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
+            className={`px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
               blockFilter === b.val
                 ? "bg-violet-600 text-white shadow-xs"
                 : "bg-slate-100 text-slate-700 hover:bg-slate-200"
@@ -246,12 +246,12 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
           </button>
         ))}
 
-        <div className="w-px h-5 bg-slate-200 mx-1" />
+        <div className="w-px h-5 bg-slate-200 mx-1 shrink-0 hidden sm:block" />
 
         {/* Source chips */}
         <button
           onClick={() => setSourceFilter("all")}
-          className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
             sourceFilter === "all"
               ? "bg-violet-600 text-white"
               : "bg-slate-100 text-slate-700 hover:bg-slate-200"
@@ -261,32 +261,35 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
         </button>
         <button
           onClick={() => setSourceFilter("questions")}
-          className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
             sourceFilter === "questions"
               ? "bg-sky-600 text-white"
               : "bg-slate-100 text-slate-700 hover:bg-slate-200"
           }`}
         >
-          <BookOpen className="h-3 w-3" /> Domande
+          <BookOpen className="h-3 w-3" />{" "}
+          <span className="hidden sm:inline">Domande</span>
         </button>
         <button
           onClick={() => setSourceFilter("formulas")}
-          className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 ${
             sourceFilter === "formulas"
               ? "bg-emerald-600 text-white"
               : "bg-slate-100 text-slate-700 hover:bg-slate-200"
           }`}
         >
-          <Calculator className="h-3 w-3" /> Formule
+          <Calculator className="h-3 w-3" />{" "}
+          <span className="hidden sm:inline">Formule</span>
         </button>
 
-        <div className="w-px h-5 bg-slate-200 mx-1" />
+        <div className="w-px h-5 bg-slate-200 mx-1 shrink-0 hidden sm:block" />
 
         <button
           onClick={handleReshuffle}
-          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition cursor-pointer"
+          className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100 transition cursor-pointer shrink-0"
         >
-          <Shuffle className="h-3 w-3" /> Mescola
+          <Shuffle className="h-3 w-3" />{" "}
+          <span className="hidden sm:inline">Mescola</span>
         </button>
       </div>
 
@@ -300,8 +303,8 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
           }}
         >
           {/* Top badge bar */}
-          <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 pt-4 z-10">
-            <div className="flex items-center gap-2">
+          <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 sm:px-5 pt-4 z-10">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="px-2 py-0.5 rounded-full bg-slate-100 text-[11px] font-bold text-slate-600 font-mono">
                 Blocco {card.block}
               </span>
@@ -315,22 +318,22 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
                 {card.source === "formula" ? "Formula" : "Concetto"}
               </span>
             </div>
-            <span className="text-xs text-slate-400 font-mono font-semibold">
+            <span className="text-xs text-slate-400 font-mono font-semibold shrink-0">
               {currentIndex + 1} / {deck.length}
             </span>
           </div>
 
           {/* FRONT */}
           {!isFlipped && (
-            <div className="flex flex-col items-center justify-center px-8 pt-16 pb-12 min-h-[340px]">
+            <div className="flex flex-col items-center justify-center px-4 sm:px-8 pt-16 pb-12 min-h-[340px]">
               <div className="mb-4">
                 <Eye className="h-5 w-5 text-slate-300" />
               </div>
-              <p className="text-center text-lg sm:text-xl font-bold text-slate-900 leading-snug whitespace-pre-line">
+              <p className="text-center text-base sm:text-xl font-bold text-slate-900 leading-snug whitespace-pre-line break-words max-w-full">
                 {card.front}
               </p>
               {card.formulaKaTeX && (
-                <div className="mt-5">
+                <div className="mt-5 max-w-full overflow-x-auto">
                   <FormulaBlock formula={card.formulaKaTeX} />
                 </div>
               )}
@@ -342,39 +345,39 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
 
           {/* BACK */}
           {isFlipped && (
-            <div className="px-6 sm:px-8 pt-14 pb-8 min-h-[340px]">
+            <div className="px-4 sm:px-8 pt-14 pb-8 min-h-[340px] overflow-x-hidden">
               <div className="flex items-center gap-2 mb-4">
-                <EyeOff className="h-4 w-4 text-violet-500" />
+                <EyeOff className="h-4 w-4 text-violet-500 shrink-0" />
                 <span className="text-xs font-bold text-violet-700 uppercase tracking-wider">
                   Spiegazione (Regola d'Oro)
                 </span>
               </div>
 
               {card.formulaKaTeX && (
-                <div className="mb-4">
+                <div className="mb-4 max-w-full overflow-x-auto">
                   <FormulaBlock formula={card.formulaKaTeX} />
                 </div>
               )}
 
               <div className="space-y-3 text-sm">
-                <div>
+                <div className="break-words">
                   <span className="font-semibold text-sky-800">Perché: </span>
                   <span className="text-slate-700">{card.back.why}</span>
                 </div>
-                <div>
+                <div className="break-words">
                   <span className="font-semibold text-sky-800">Cosa: </span>
                   <span className="text-slate-700">{card.back.what}</span>
                 </div>
-                <div>
+                <div className="break-words overflow-x-auto">
                   <span className="font-semibold text-sky-800">Come: </span>
                   <span className="text-slate-900 font-mono text-xs">
                     {card.back.how}
                   </span>
                 </div>
                 {card.back.trap && (
-                  <div className="mt-3 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-900 text-xs">
+                  <div className="mt-3 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-900 text-xs break-words">
                     <div className="flex items-center gap-1.5 font-bold mb-1">
-                      <AlertTriangle className="h-3.5 w-3.5 text-rose-600" />
+                      <AlertTriangle className="h-3.5 w-3.5 text-rose-600 shrink-0" />
                       <span>Trappola d'Esame:</span>
                     </div>
                     {card.back.trap}
@@ -391,21 +394,21 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
       )}
 
       {/* Navigation */}
-      <div className="flex items-center justify-between mt-6">
+      <div className="flex items-center justify-between mt-6 gap-2">
         <button
           disabled={currentIndex === 0}
           onClick={(e) => {
             e.stopPropagation();
             goPrev();
           }}
-          className={`inline-flex items-center gap-1.5 rounded-xl px-5 py-2.5 font-semibold text-sm transition ${
+          className={`inline-flex items-center gap-1 sm:gap-1.5 rounded-xl px-3 sm:px-5 py-2.5 font-semibold text-sm transition ${
             currentIndex === 0
               ? "bg-slate-100 text-slate-300 cursor-not-allowed"
               : "bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 cursor-pointer shadow-xs"
           }`}
         >
           <ChevronLeft className="h-4 w-4" />
-          Precedente
+          <span className="hidden sm:inline">Precedente</span>
         </button>
 
         <button
@@ -414,10 +417,10 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
             setCurrentIndex(0);
             setIsFlipped(false);
           }}
-          className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-xs font-semibold bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200 transition cursor-pointer"
+          className="inline-flex items-center gap-1 sm:gap-1.5 rounded-xl px-3 sm:px-4 py-2 text-xs font-semibold bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200 transition cursor-pointer"
         >
           <RotateCcw className="h-3.5 w-3.5" />
-          Ricomincia
+          <span className="hidden sm:inline">Ricomincia</span>
         </button>
 
         <button
@@ -426,19 +429,19 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
             e.stopPropagation();
             goNext();
           }}
-          className={`inline-flex items-center gap-1.5 rounded-xl px-5 py-2.5 font-semibold text-sm transition ${
+          className={`inline-flex items-center gap-1 sm:gap-1.5 rounded-xl px-3 sm:px-5 py-2.5 font-semibold text-sm transition ${
             currentIndex >= deck.length - 1
               ? "bg-slate-100 text-slate-300 cursor-not-allowed"
               : "bg-violet-600 text-white hover:bg-violet-700 cursor-pointer shadow-sm"
           }`}
         >
-          Prossima
+          <span className="hidden sm:inline">Prossima</span>
           <ChevronRight className="h-4 w-4" />
         </button>
       </div>
 
       {/* Keyboard hints */}
-      <div className="mt-4 text-center text-xs text-slate-400">
+      <div className="mt-4 text-center text-xs text-slate-400 hidden sm:block">
         <span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-500">
           ←
         </span>{" "}

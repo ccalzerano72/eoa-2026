@@ -16,7 +16,13 @@
     --color-eoa-purple-light: #faf5ff;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-slate-50 text-slate-900 antialiased min-h-screen font-sans;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }

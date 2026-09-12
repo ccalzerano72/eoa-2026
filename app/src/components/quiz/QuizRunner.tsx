@@ -310,30 +310,32 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
   // Render Quiz Review if finished
   if (session.isFinished) {
     return (
-      <div className="mx-auto max-w-3xl py-8 px-4">
+      <div className="mx-auto max-w-3xl py-8 px-4 overflow-x-hidden">
         {/* Score Header */}
-        <div className="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-md">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 text-center shadow-md">
           <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-100 text-sky-700 mb-4">
             <Award className="h-8 w-8" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
             {summary.isPassed ? "Test Superato!" : "Test Non Superato"}
           </h2>
           <div className="my-4 flex items-center justify-center gap-3">
             <span
-              className={`text-5xl font-black ${
+              className={`text-4xl sm:text-5xl font-black ${
                 summary.isPassed ? "text-emerald-600" : "text-rose-600"
               }`}
             >
               {summary.scaledGrade30}
             </span>
-            <span className="text-2xl font-semibold text-slate-400">/ 30</span>
+            <span className="text-xl sm:text-2xl font-semibold text-slate-400">
+              / 30
+            </span>
           </div>
           <p className="text-slate-600 text-sm">
             Risposte corrette: <strong>{summary.correctCount}</strong> su{" "}
             <strong>{summary.totalQuestions}</strong> (
             {Math.round((summary.correctCount / summary.totalQuestions) * 100)}
-            %) • Tempo impiegato: {formatTimer(summary.timeTakenSeconds)}
+            %) • Tempo: {formatTimer(summary.timeTakenSeconds)}
           </p>
 
           <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold">
@@ -342,7 +344,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           </div>
 
           {/* Action buttons */}
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-2 sm:gap-3">
             <button
               onClick={() => {
                 hasSavedRef.current = false;
@@ -357,26 +359,31 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 }));
                 setCurrentAnswers({});
               }}
-              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-700 transition cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 sm:px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-700 transition cursor-pointer text-sm"
             >
               <RotateCcw className="h-4 w-4" />
-              Ripeti Test
+              <span className="hidden sm:inline">Ripeti Test</span>
+              <span className="sm:hidden">Ripeti</span>
             </button>
             {onViewStats && (
               <button
                 onClick={onViewStats}
-                className="inline-flex items-center gap-2 rounded-xl bg-indigo-50 border border-indigo-200 px-5 py-2.5 font-semibold text-indigo-700 hover:bg-indigo-100 transition cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-xl bg-indigo-50 border border-indigo-200 px-4 sm:px-5 py-2.5 font-semibold text-indigo-700 hover:bg-indigo-100 transition cursor-pointer text-sm"
               >
                 <BarChart3 className="h-4 w-4" />
-                Vedi Storico & Statistiche
+                <span className="hidden sm:inline">
+                  Vedi Storico & Statistiche
+                </span>
+                <span className="sm:hidden">Stats</span>
               </button>
             )}
             {onExit && (
               <button
                 onClick={onExit}
-                className="rounded-xl border border-slate-300 px-5 py-2.5 font-semibold text-slate-700 hover:bg-slate-100 transition cursor-pointer"
+                className="rounded-xl border border-slate-300 px-4 sm:px-5 py-2.5 font-semibold text-slate-700 hover:bg-slate-100 transition cursor-pointer text-sm"
               >
-                Torna al Menu
+                <span className="hidden sm:inline">Torna al Menu</span>
+                <span className="sm:hidden">Menu</span>
               </button>
             )}
           </div>
@@ -393,22 +400,22 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             return (
               <div
                 key={q.id}
-                className={`rounded-2xl border p-6 bg-white shadow-2xs ${
+                className={`rounded-2xl border p-4 sm:p-6 bg-white shadow-2xs overflow-x-hidden ${
                   isOk ? "border-emerald-200" : "border-rose-200"
                 }`}
               >
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-3 gap-2 flex-wrap">
                   <div className="flex items-center gap-2">
                     {isOk ? (
-                      <CheckCircle className="h-5 w-5 text-emerald-600" />
+                      <CheckCircle className="h-5 w-5 text-emerald-600 shrink-0" />
                     ) : (
-                      <XCircle className="h-5 w-5 text-rose-600" />
+                      <XCircle className="h-5 w-5 text-rose-600 shrink-0" />
                     )}
                     <span className="font-bold text-slate-900">
                       Quesito #{idx + 1}
                     </span>
                     <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 font-mono text-slate-600">
-                      Blocco {q.block}
+                      Bl. {q.block}
                     </span>
                   </div>
                   <span
@@ -416,38 +423,44 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                       isOk ? "text-emerald-700" : "text-rose-700"
                     }`}
                   >
-                    {isOk ? "Corretto (+1)" : "Errato (0)"}
+                    {isOk ? "+1" : "0"}
                   </span>
                 </div>
 
-                <p className="mt-3 text-slate-900 font-medium">{q.stem}</p>
+                <p className="mt-3 text-slate-900 font-medium break-words">
+                  {q.stem}
+                </p>
 
-                {q.formula && <FormulaBlock formula={q.formula} />}
+                {q.formula && (
+                  <div className="max-w-full overflow-x-auto">
+                    <FormulaBlock formula={q.formula} />
+                  </div>
+                )}
 
                 {/* Explanation Block */}
-                <div className="mt-4 rounded-xl bg-slate-50 p-4 border border-slate-200 text-sm space-y-2">
+                <div className="mt-4 rounded-xl bg-slate-50 p-3 sm:p-4 border border-slate-200 text-sm space-y-2">
                   <div className="flex items-center gap-1.5 font-bold text-slate-800 text-xs uppercase tracking-wider">
-                    <Lightbulb className="h-4 w-4 text-amber-500" />
+                    <Lightbulb className="h-4 w-4 text-amber-500 shrink-0" />
                     <span>Spiegazione (Regola d'Oro):</span>
                   </div>
-                  <div>
+                  <div className="break-words">
                     <span className="font-semibold text-slate-700">
                       Perché:
                     </span>{" "}
                     <span className="text-slate-600">{q.explanation.why}</span>
                   </div>
-                  <div>
+                  <div className="break-words">
                     <span className="font-semibold text-slate-700">Cosa:</span>{" "}
                     <span className="text-slate-600">{q.explanation.what}</span>
                   </div>
-                  <div>
+                  <div className="break-words overflow-x-auto">
                     <span className="font-semibold text-slate-700">Come:</span>{" "}
                     <span className="text-slate-900 font-mono text-xs">
                       {q.explanation.how}
                     </span>
                   </div>
                   {q.explanation.trap && (
-                    <div className="pt-2 text-rose-900 text-xs border-t border-slate-200">
+                    <div className="pt-2 text-rose-900 text-xs border-t border-slate-200 break-words">
                       <span className="font-bold">Trappola d'esame:</span>{" "}
                       {q.explanation.trap}
                     </div>
@@ -457,10 +470,10 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 {/* Lesson reference & Deep Link to Study */}
                 <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2.5">
                   {q.sourceRef ? (
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium min-w-0">
                       <BookOpen className="h-3.5 w-3.5 text-sky-600 shrink-0" />
-                      <span>
-                        Fonte didattica:{" "}
+                      <span className="truncate">
+                        Fonte:{" "}
                         <strong className="text-slate-700">
                           {q.sourceRef}
                         </strong>
@@ -472,10 +485,13 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   {onNavigateToStudy && (
                     <button
                       onClick={() => onNavigateToStudy(q.block, q.topic)}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-sky-50 px-3 py-1.5 text-xs font-bold text-sky-700 hover:bg-sky-100 hover:text-sky-900 border border-sky-200/80 transition cursor-pointer shadow-2xs"
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-sky-50 px-2 sm:px-3 py-1.5 text-xs font-bold text-sky-700 hover:bg-sky-100 hover:text-sky-900 border border-sky-200/80 transition cursor-pointer shadow-2xs shrink-0"
                     >
                       <BookOpen className="h-3.5 w-3.5" />
-                      <span>Vai alla Lezione (Blocco {q.block})</span>
+                      <span className="hidden sm:inline">
+                        Vai alla Lezione (Blocco {q.block})
+                      </span>
+                      <span className="sm:hidden">Lezione</span>
                       <ExternalLink className="h-3 w-3 ml-0.5 opacity-70" />
                     </button>
                   )}
@@ -490,12 +506,12 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
 
   // Active Quiz View
   return (
-    <div className="mx-auto max-w-2xl py-6 px-4">
+    <div className="mx-auto max-w-2xl py-6 px-4 overflow-x-hidden">
       {/* Top Status Bar */}
       {mode === "traps-only" && (
         <div className="flex items-center gap-2.5 rounded-2xl bg-rose-50 border border-rose-200 p-3 mb-4 text-sm">
           <AlertCircle className="h-5 w-5 text-rose-600 shrink-0" />
-          <div>
+          <div className="min-w-0">
             <span className="font-bold text-rose-900">
               Modalità Trappole Concettuali
             </span>
@@ -506,8 +522,8 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           </div>
         </div>
       )}
-      <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-xs border border-slate-200 mb-6">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between rounded-2xl bg-white p-3 sm:p-4 shadow-xs border border-slate-200 mb-6 gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <span
             className={`flex h-7 w-7 items-center justify-center rounded-lg font-mono text-xs font-bold ${
               mode === "traps-only"
@@ -518,23 +534,26 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             {session.currentIndex + 1}
           </span>
           <span className="text-slate-500 text-sm">
-            di {session.questions.length} quesiti
+            di {session.questions.length}
           </span>
         </div>
 
         {/* Progress pill */}
-        <div className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
-          Blocco {currentQuestion.block} • {currentQuestion.track.toUpperCase()}
+        <div className="text-xs font-semibold px-2 sm:px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 truncate max-w-[120px] sm:max-w-none">
+          <span className="hidden sm:inline">
+            Blocco {currentQuestion.block} •{" "}
+          </span>
+          {currentQuestion.track.toUpperCase()}
         </div>
 
         {/* Timer — only show for timed modes */}
         {session.timeLimitSeconds ? (
-          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-700">
+          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-700 shrink-0">
             <Clock className="h-4 w-4 text-sky-600" />
             <span>{formatTimer(remainingSeconds)}</span>
           </div>
         ) : (
-          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-400">
+          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-400 shrink-0">
             <Clock className="h-4 w-4 text-slate-300" />
             <span>{formatTimer(session.elapsedSeconds)}</span>
           </div>
@@ -542,18 +561,22 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
       </div>
 
       {/* Main Question Card */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+      <div className="rounded-3xl border border-slate-200 bg-white p-4 sm:p-8 shadow-sm overflow-x-hidden">
         <div className="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
-          <HelpCircle className="h-4 w-4 text-sky-500" />
-          <span>{currentQuestion.topic.replace(/-/g, " ")}</span>
+          <HelpCircle className="h-4 w-4 text-sky-500 shrink-0" />
+          <span className="truncate">
+            {currentQuestion.topic.replace(/-/g, " ")}
+          </span>
         </div>
 
-        <h3 className="text-lg sm:text-xl font-bold text-slate-950 leading-snug">
+        <h3 className="text-base sm:text-xl font-bold text-slate-950 leading-snug break-words">
           {currentQuestion.stem}
         </h3>
 
         {currentQuestion.formula && (
-          <FormulaBlock formula={currentQuestion.formula} />
+          <div className="max-w-full overflow-x-auto">
+            <FormulaBlock formula={currentQuestion.formula} />
+          </div>
         )}
 
         {/* Input area based on question type */}
@@ -770,9 +793,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                     </span>
                   </div>
                   <div>
-                    <span className="font-semibold text-slate-700">
-                      Cosa:{" "}
-                    </span>
+                    <span className="font-semibold text-slate-700">Cosa: </span>
                     <span className="text-slate-600 text-xs">
                       {currentQuestion.explanation.what}
                     </span>
