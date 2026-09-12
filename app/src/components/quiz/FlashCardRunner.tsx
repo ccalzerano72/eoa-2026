@@ -132,6 +132,8 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
 
   const goNext = useCallback(() => {
     if (currentIndex < deck.length - 1) {
+      // Scroll to top when moving to next card
+      window.scrollTo({ top: 0, behavior: "instant" });
       setCurrentIndex((i) => i + 1);
       setIsFlipped(false);
     }
@@ -139,6 +141,8 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
 
   const goPrev = useCallback(() => {
     if (currentIndex > 0) {
+      // Scroll to top when moving to previous card
+      window.scrollTo({ top: 0, behavior: "instant" });
       setCurrentIndex((i) => i - 1);
       setIsFlipped(false);
     }
@@ -429,6 +433,7 @@ export const FlashCardRunner: React.FC<FlashCardRunnerProps> = ({
         <button
           onClick={(e) => {
             e.stopPropagation();
+            window.scrollTo({ top: 0, behavior: "instant" });
             setCurrentIndex(0);
             setIsFlipped(false);
           }}

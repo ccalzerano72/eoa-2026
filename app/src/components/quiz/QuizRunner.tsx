@@ -227,6 +227,8 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
         isFinished: true,
       }));
     } else {
+      // Scroll to top when moving to next question
+      window.scrollTo({ top: 0, behavior: "instant" });
       setSession((prev) => ({
         ...prev,
         currentIndex: prev.currentIndex + 1,
@@ -358,6 +360,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             <button
               onClick={() => {
                 hasSavedRef.current = false;
+                window.scrollTo({ top: 0, behavior: "instant" });
                 setSession((prev) => ({
                   ...prev,
                   id: `quiz-${Date.now()}`,
