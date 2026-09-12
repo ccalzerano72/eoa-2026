@@ -1,165 +1,135 @@
 {
   "block": 5,
   "title": "Analisi per Indici, Redditività e Dinamica Finanziaria",
-  "subtitle": "Riclassificazione finanziaria, ROE, ROI, Leva Finanziaria e paradosso Growth Eats Cash",
-  "guidingQuestion": "Come può un'azienda con vendite in crescita del +100% e utile contabile positivo fallire improvvisamente per mancanza di cassa?",
+  "subtitle": "Riclassificazione finanziaria, margini, indici di liquidità e redditività, leva finanziaria e Growth Eats Cash",
+  "guidingQuestion": "Come può un'azienda con vendite in crescita del +100% e utile netto positivo fallire improvvisamente per insolvenza? Come si riclassifica un bilancio per valutare solidità, liquidità e convenienza dell'indebitamento bancario?",
   "caseStudy": {
     "id": "caso-connecta-growth-eats-cash",
     "name": "La Trappola della Crescita: Il Caso Connecta S.r.l.",
     "company": "Connecta S.r.l. / De Cecco",
-    "year": "2021-2024",
-    "dilemma": "Perché un'azienda tech o manifatturiera che raddoppia ordini, fatturato e profitti contabili rischia di trovarsi con i conti bancari bloccati e l'impossibilità di pagare gli stipendi?",
-    "summary": "Connecta S.r.l. sviluppa sensori IoT e registra un'esplosione della domanda. Raddoppia i ricavi passando da 2M€ a 4M€, chiudendo con un utile netto positivo di 250.000€. Tuttavia, per evadere gli ordini, Connecta deve acquistare semilavorati in anticipo (aumentando le scorte nel magazzino) e concede ai clienti della grande distribuzione pagamenti a 90-120 giorni. I fornitori pretendono il saldo a 30 giorni. Il Capitale Circolante Netto (CCN) commerciale esplode, assorbendo 800.000€ di liquidità: l'utile di 250.000€ non basta minimamente a coprire il fabbisogno di cassa. L'azienda incappa nel celebre paradosso 'Growth Eats Cash' (la crescita divora la cassa).",
+    "year": "2021-2026",
+    "dilemma": "Perché un'azienda tecnologica o manifatturiera che raddoppia ordini, fatturato e profitti contabili rischia di trovarsi con i conti bancari bloccati e l'impossibilità materiale di pagare gli stipendi a fine mese?",
+    "summary": "Connecta S.r.l. produce moduli IoT per l'automazione industriale. In un anno registra un boom di vendite: il fatturato passa da 2.000.000€ a 4.000.000€, chiudendo l'esercizio con un utile netto record di 250.000€. Tuttavia, per evadere gli ordini crescenti, Connecta ha dovuto acquistare scorte massive di componenti elettronici (+400.000€ nel magazzino) e concedere ai clienti industriali pagamenti dilazionati a 120 giorni (+600.000€ di crediti commerciali). I fornitori esteri di chip, invece, hanno preteso il pagamento perentorio a 30 giorni (+200.000€ di debiti commerciali). Il Capitale Circolante Netto Commerciale è esploso: 400.000€ (scorte) + 600.000€ (crediti) - 200.000€ (fornitori) = +800.000€ di fabbisogno finanziario addizionale. L'utile di 250.000€ non è bastato a coprire gli 800.000€ assorbiti dal circolante: Connecta ha bruciato 550.000€ di cassa liquida, finendo in default tecnico per carenza di fido bancario. È il classico paradosso 'Growth Eats Cash' (la crescita divora la cassa).",
     "coreLessons": [
-      "La crescita del fatturato non è autofinanziante: ogni euro in più di vendita richiede investimenti aggiuntivi in scorte e crediti v/clienti.",
-      "L'utile contabile è una stima economica; la cassa è un fatto oggettivo.",
-      "La riclassificazione finanziaria dello Stato Patrimoniale è indispensabile per verificare la solvibilità a breve termine (CCN e indici di liquidità).",
-      "Il ROE misura il rendimento degli azionisti, ma può essere artificiosamente gonfiato dall'indebitamento (Leva Finanziaria), che aumenta esponenzialmente il rischio di fallimento."
+      "La crescita del fatturato non è mai autofinanziante: ogni euro in più di vendita richiede investimenti proporzionali in crediti verso clienti e scorte di magazzino.",
+      "L'utile contabile è un'opinione fondata su stime e convenzioni; la cassa liquida è un fatto oggettivo che determina la sopravvivenza.",
+      "La riclassificazione finanziaria dello Stato Patrimoniale è indispensabile per verificare la solvibilità a breve (CCN, Margine di Tesoreria, Quick Ratio).",
+      "Il ROE misura il rendimento per i soci azionisti, ma può essere artificiosamente gonfiato dal debito tramite la Leva Finanziaria, che amplifica esponenzialmente il rischio di rovina se il ROI scende sotto il costo del denaro."
     ],
-    "keytakeaway": "Fatturato è vanità, utile è sanità mentale, ma la cassa è l'unica realtà che garantisce la sopravvivenza d'impresa."
+    "keytakeaway": "Il fatturato è vanità, l'utile è sanità mentale, ma la cassa è l'unica realtà che garantisce la continuità dell'impresa."
   },
   "topics": [
     {
-      "id": "riclassificazione-e-ccn",
-      "title": "Riclassificazione Finanziaria dello SP e Capitale Circolante Netto (CCN)",
+      "id": "riclassificazione-finanziaria-e-margini-sp",
+      "title": "Riclassificazione Finanziaria dello SP e Margini Strutturali (CCN, MT, MS)",
       "track": "essential",
-      "whyIntro": "Lo Stato Patrimoniale civilistico OIC raggruppa le voci per destinazione d'uso. Per capire se l'azienda riuscirà a rimborsare i debiti in scadenza nei prossimi 12 mesi occorre riclassificarlo secondo il criterio finanziario (liquidità ed esigibilità).",
-      "whatBody": "La riclassificazione finanziaria ordina l'Attivo in base alla rapidità con cui i beni si trasformeranno in denaro: Attivo Fisso (Immobilizzazioni nette) e Attivo Circolante o Corrente (Liquidità immediate, Liquidità differite come i crediti, e Rimanenze di magazzino). Il Passivo viene ordinato in base alla scadenza di rimborso: Passivo Corrente (debiti esigibili entro 12 mesi), Passivo Consolidato (debiti a medio-lungo termine) e Patrimonio Netto (Mezzi Propri). Il Capitale Circolante Netto (CCN) misura la differenza tra Attivo Corrente e Passivo Corrente: se positivo, indica che le attività a breve sono sufficienti a coprire le passività a breve.",
+      "whyIntro": "Lo schema civilistico OIC raggruppa le voci per destinazione economica funzionale. Per una banca o per il CFO, tuttavia, ciò che conta è sapere se l'azienda sarà in grado di pagare i debiti che scadono nei prossimi 30, 60 o 90 giorni.",
+      "whatBody": "La Riclassificazione Finanziaria riordina le voci dello Stato Patrimoniale secondo il principio della liquidità (per l'Attivo) e dell'esigibilità (per il Passivo), adottando un orizzonte temporale spartiacque di 12 mesi (l'anno di esercizio):\n\n1. ATTIVO RICLASSIFICATO (Impieghi di Capitale):\n• Attivo Corrente o Circolante (AC, realizzabile entro 12 mesi):\n  - Liquidità Immediate ($Li$): cassa contanti, saldi attivi di conto corrente bancario, titoli prontamente monetizzabili.\n  - Liquidità Differite ($Ld$): crediti commerciali verso clienti a breve termine, crediti tributari da incassare entro l'anno.\n  - Rimanenze ($R$): scorte di materie prime, semilavorati e prodotti finiti a magazzino.\n• Attivo Fisso Netto (AFN, immobilizzazioni nette durevoli a oltre 12 mesi): immobilizzazioni immateriali, materiali e finanziarie al netto dei rispettivi fondi ammortamento.\n\n2. PASSIVO E NETTO RICLASSIFICATO (Fonti di Finanziamento):\n• Passivo Corrente ($PC$, esigibile entro 12 mesi): debiti verso fornitori a breve, scoperti di conto corrente, quote di mutuo in scadenza nell'anno, debiti tributari e previdenziali.\n• Passivo Consolidato ($MLT$, esigibile oltre 12 mesi): mutui ipotecari, prestiti obbligazionari, debiti verso altri finanziatori a medio-lungo termine, TFR residuo.\n• Patrimonio Netto ($PN$ o Capitale Proprio $E$): capitale sociale, riserve e utile d'esercizio.\n(La somma di Passivo Consolidato e Patrimonio Netto costituisce il 'Capitale Permanente').\n\n3. I Margini di Stato Patrimoniale:\n• Capitale Circolante Netto ($CCN$):\n  $$CCN = AC - PC = (PN + MLT) - AFN$$\n  Se $CCN > 0$: l'attivo a breve copre integralmente il passivo a breve; il capitale permanente finanzia tutte le immobilizzazioni e un cuscinetto di attivo corrente.\n  Se $CCN < 0$: squilibrio finanziario strutturale grave; l'azienda finanzia investimenti a lungo termine con debiti a vista o a 30 giorni!\n• Margine di Tesoreria ($MT$):\n  $$MT = (Li + Ld) - PC$$\n  Esclude le rimanenze per valutare se la liquidità già monetizzata o di imminente incasso è sufficiente a pagare tutti i debiti a breve.\n• Margine di Struttura Primario ($MS_1$):\n  $$MS_1 = PN - AFN$$\n  Indica se il solo capitale proprio dei soci è sufficiente a finanziare tutti gli impianti e le immobilizzazioni.\n• Margine di Struttura Secondario ($MS_2$):\n  $$MS_2 = (PN + MLT) - AFN$$\n  Coincide matematicamente con il $CCN$: misura la copertura delle immobilizzazioni con il capitale durevole complessivo.",
+      "howDetails": "Identità Fondamentali della Riclassificazione:\nTotale Impieghi = Attivo Corrente (AC) + Attivo Fisso Netto (AFN)\nTotale Fonti = Passivo Corrente (PC) + Passivo Consolidato (MLT) + Patrimonio Netto (PN)\nCCN = AC - PC\nSe CCN > 0 ⇒ Capitale Permanente (PN + MLT) > AFN.",
       "keypoints": [
         {
           "id": "kp-ccn-1",
-          "title": "Formula del Capitale Circolante Netto (CCN)",
-          "schematicFormula": "CCN = Attivo Corrente (AC) - Passivo Corrente (PC)",
-          "explanation": "Se CCN > 0, l'azienda ha un margine di sicurezza finanziario a breve termine; se CCN < 0, l'azienda finanzia immobilizzazioni con debiti a breve scadenza, rischiando l'insolvenza."
+          "title": "Formula del Capitale Circolante Netto",
+          "schematicFormula": "CCN = Attivo Corrente (AC) - Passivo Corrente (PC) = Capitale Permanente (PN + MLT) - Attivo Fisso Netto (AFN)",
+          "explanation": "Esprime l'equilibrio finanziario a breve termine: deve essere positivo per garantire margine di manovra operativo."
         },
         {
           "id": "kp-ccn-2",
-          "title": "Current Ratio e Quick Ratio (Test Acido)",
-          "schematicFormula": "Current Ratio = AC / PC | Quick Ratio (Acid Test) = (Liquidità Immediate + Liquidità Differite) / PC",
-          "explanation": "Il Quick Ratio esclude le rimanenze di magazzino (meno liquide e soggette a svalutazione o invenduto) per valutare la solvibilità istantanea verso i creditori a breve termine."
-        },
-        {
-          "id": "kp-ccn-3",
-          "title": "Margine di Struttura",
-          "schematicFormula": "Margine di Struttura Primario = Mezzi Propri (Patrimonio Netto) - Attivo Fisso Netto",
-          "explanation": "Misura la capacità dell'impresa di coprire tutti gli investimenti pluriennali durevoli mediante il solo capitale di rischio dei soci senza ricorrere a debiti."
+          "title": "Margine di Tesoreria",
+          "schematicFormula": "Margine di Tesoreria = (Liquidità Immediate + Liquidità Differite) - Passivo Corrente",
+          "explanation": "Misura la solvibilità istantanea dell'impresa a prescindere dalla vendita del magazzino."
         }
       ],
       "traps": [
         {
           "id": "trap-ccn-1",
-          "title": "Ignorare la composizione interna dell'Attivo Corrente",
-          "misconception": "Pensare che avere un CCN di +500.000€ garantisca totale tranquillità finanziaria anche se è composto per il 90% da magazzino obsoleto.",
-          "truth": "Se le scorte non si vendono o i crediti sono verso clienti insolventi, il CCN appare positivo sulla carta ma l'azienda non ha euro liquidi per onorare il Passivo Corrente in scadenza.",
-          "example": "Un'azienda con 450.000€ di chip obsoleti a magazzino, 50.000€ di crediti e 100.000€ di debiti a 30 giorni ha un CCN positivo (+400k€) ma fallirà alla scadenza dei debiti per mancanza di cassa."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-ccn-1",
-          "title": "Gestione del Buffer",
-          "technicalPerspective": "Un buffer di memoria FIFO per assorbire i picchi transitori di pacchetti di rete.",
-          "managerialPerspective": "Un polmone finanziario di liquidità per sincronizzare il ciclo incassi-pagamenti tra clienti e fornitori.",
-          "mindsetShift": "Dal dimensionamento di un buffer dati alla gestione del fabbisogno di capitale circolante."
+          "title": "Avere CCN positivo ma magazzino invendibile",
+          "misconception": "Pensare che un CCN di +500.000€ garantisca la sicurezza se l'Attivo Corrente è formato per 450.000€ da scorte di magazzino obsolete.",
+          "truth": "Se le merci non si vendono, la liquidità effettiva è zero e il Margine di Tesoreria è negativo: l'azienda diventerà insolvente non appena i creditori chiederanno il pagamento del Passivo Corrente."
         }
       ]
     },
     {
-      "id": "roe-roi-redditivita",
-      "title": "Gli Indici di Redditività: ROE e ROI",
+      "id": "indici-liquidita-e-solvibilita",
+      "title": "Indici di Liquidità: Current Ratio e Quick Ratio (Acid Test)",
       "track": "essential",
-      "whyIntro": "Per decidere se investire in un'azienda informatica, l'azionista vuole sapere quanto rende ogni euro di capitale proprio investito (ROE); il direttore di stabilimento deve invece sapere se la gestione industriale sta rendendo più o meno del mercato (ROI).",
-      "whatBody": "Il ROE (Return on Equity) è l'indice di redditività globale dell'impresa dal punto di vista degli azionisti: rapporta l'Utile Netto finale al Patrimonio Netto. Il ROI (Return on Investment) è l'indice di redditività della gestione operativa: rapporta il Risultato Operativo (EBIT o Differenza A-B) al Capitale Investito Netto Totale (Attivo Netto), prescindendo da come l'azienda è finanziata (se con debito o capitale proprio) e dal carico fiscale. Il ROI si scompone nel prodotto tra la redditività delle vendite (ROS = RO / Ricavi) e il tasso di rotazione del capitale investito (Turnover = Ricavi / Capitale Investito).",
+      "whyIntro": "I valori assoluti in euro dei margini dipendono dalla dimensione dell'azienda: 100.000€ di CCN sono enormi per una startup ma insignificanti per un'azienda da 100 milioni di fatturato. Gli indici di bilancio (rapporti) consentono confronti oggettivi.",
+      "whatBody": "Gli indici di liquidità misurano la capacità dell'impresa di far fronte tempestivamente ed economicamente alle obbligazioni finanziarie a breve termine:\n\n1. Current Ratio (Indice di Liquidità Secondaria o di Disponibilità):\n$$CR = \\frac{\\text{Attivo Corrente (AC)}}{\\text{Passivo Corrente (PC)}}$$\n• Valore Benchmark Fisiologico: compreso tra 1,5 e 2,0.\n• Interpretazione: se $CR < 1$, il passivo a breve supera l'attivo a breve (CCN negativo): l'azienda è in tensione finanziaria. Se $CR > 2$, l'azienda potrebbe avere troppa liquidità oziose o troppe scorte immobilizzate che riducono la redditività complessiva.\n\n2. Quick Ratio (Indice di Liquidità Primaria o Acid Test):\n$$QR = \\frac{\\text{Liquidità Immediate (Li) + Liquidità Differite (Ld)}}{\\text{Passivo Corrente (PC)}} = \\frac{\\text{Attivo Corrente - Rimanenze}}{\\text{Passivo Corrente}}$$\n• Valore Benchmark Fisiologico: compreso tra 0,8 e 1,2 (ottimale $\\ge 1,0$).\n• Interpretazione: isola le componenti monetarie certe (cassa e crediti sani) espungendo le scorte di magazzino, che richiedono tempo per essere vendute e incassate. Un $QR < 1$ evidenzia che, in assenza di nuove vendite, l'azienda non ha abbastanza risorse liquide per estinguere i debiti in scadenza entro l'anno.",
+      "howDetails": "Relazione tra Margini e Indici di Liquidità:\n- Se CCN > 0 ⇔ Current Ratio > 1\n- Se CCN = 0 ⇔ Current Ratio = 1\n- Se CCN < 0 ⇔ Current Ratio < 1\n- Se Margine di Tesoreria > 0 ⇔ Quick Ratio > 1.",
       "keypoints": [
         {
-          "id": "kp-roe-1",
-          "title": "Formule Fondamentali del ROE e del ROI",
-          "schematicFormula": "ROE = (Utile Netto / Patrimonio Netto) · 100 | ROI = (Risultato Operativo / Capitale Investito Netto) · 100",
-          "explanation": "Il ROI misura l'efficienza degli impianti e dei processi operativi dell'azienda; il ROE sintetizza l'effetto combinato della gestione operativa, finanziaria e fiscale per i soci."
-        },
-        {
-          "id": "kp-roe-2",
-          "title": "Scomposizione di Du Pont del ROI",
-          "schematicFormula": "ROI = ROS (Margine sulle vendite: RO / Ricavi) · Rotazione Capitale (Efficienza impieghi: Ricavi / CI)",
-          "explanation": "Un'azienda può raggiungere un ROI del 20% vendendo software con margini altissimi e pochi volumi (alto ROS), oppure vendendo hardware a basso margine ma con altissima rotazione delle scorte (alta rotazione)."
+          "id": "kp-liq-1",
+          "title": "Current Ratio vs. Quick Ratio",
+          "schematicFormula": "Current Ratio = AC / PC (Soglia ≥ 1,5) | Quick Ratio = (AC - Rimanenze) / PC (Soglia ≥ 1,0)",
+          "explanation": "Il Quick Ratio è il test più severo perché misura la capacità di pagamento senza fare affidamento sulle vendite future di magazzino."
         }
       ],
       "traps": [
         {
-          "id": "trap-roe-1",
-          "title": "Valutare la bontà gestionale guardando solo il ROE",
-          "misconception": "Ritenere che un'azienda con ROE al 35% sia gestita meglio di una con ROE al 15%.",
-          "truth": "Un ROE elevatissimo può essere il mero frutto di un indebitamento colossale (capitale proprio piccolissimo al denominatore), che rende l'azienda fragile e vulnerabile al minimo aumento dei tassi di interesse.",
-          "example": "Se un'azienda ha Utile Netto 35.000€ e Patrimonio Netto di soli 100.000€ a fronte di 2.000.000€ di debiti bancari, il ROE è 35%, ma l'azienda è sull'orlo del crac finanziario."
+          "id": "trap-liq-1",
+          "title": "Credere che un Current Ratio di 1,0 sia sufficiente",
+          "misconception": "Pensare che se AC = PC (Current Ratio = 1,0) la situazione sia perfetta.",
+          "truth": "Un indice pari a 1,0 significa che qualsiasi ritardo di un cliente nell'incasso crediti o qualsiasi svalutazione delle merci provocherà un'insolvenza immediata verso i fornitori o le banche."
         }
       ]
     },
     {
-      "id": "leva-finanziaria",
-      "title": "La Formula della Leva Finanziaria",
-      "track": "standard",
-      "whyIntro": "Conviene all'azienda indebitarsi con le banche per finanziare un nuovo impianto o l'apertura di una filiale estera? La risposta dipende dal differenziale tra la redditività operativa e il costo del debito.",
-      "whatBody": "L'effetto leva finanziaria descrive la relazione matematica che lega il rendimento del capitale proprio (ROE) alla redditività operativa (ROI), al costo medio dell'indebitamento (i = Oneri Finanziari / Debiti Finanziari) e al rapporto di indebitamento (D/E, Leverage). Quando il ROI è superiore al tasso di interesse bancario (spread positivo: ROI > i), ogni euro preso a prestito genera un rendimento maggiore del suo costo, e la differenza va ad amplificare il ROE degli azionisti. Se invece il ROI scende al di sotto di i (spread negativo: ROI < i), la leva agisce al contrario in modo distruttivo, prosciugando l'utile e portando il ROE in territorio negativo.",
+      "id": "indici-redditivita-du-pont-e-leva-finanziaria",
+      "title": "Indici di Redditività (ROE, ROI, ROS), Albero di Du Pont e la Leva Finanziaria",
+      "track": "essential",
+      "whyIntro": "Un investitore vuole sapere quanto rende il proprio capitale (ROE). Un direttore operativo vuole sapere se la gestione industriale è efficiente (ROI). Come si legano questi due indicatori attraverso il debito bancario?",
+      "whatBody": "1. Gli Indici di Redditività Fondamentali:\n• ROE (Return on Equity - Redditività del Capitale Proprio):\n  $$ROE = \\frac{\\text{Utile Netto (RN)}}{\\text{Patrimonio Netto (PN)}} \\cdot 100$$\n  Misura il tasso di remunerazione del capitale di rischio conferito dagli azionisti; va confrontato con il rendimento di investimenti alternativi a parità di rischio (BOT, titoli di Stato, azioni del settore).\n• ROI (Return on Investment - Redditività del Capitale Investito Netto):\n  $$ROI = \\frac{\\text{Risultato Operativo (RO / EBIT)}}{\\text{Capitale Investito Netto (CIN)}} \\cdot 100$$\n  Misura la capacità della gestione caratteristica e tipica dell'impresa di produrre reddito a prescindere dalle scelte finanziarie (debiti) e fiscali (tasse).\n• ROS (Return on Sales - Redditività delle Vendite):\n  $$ROS = \\frac{\\text{Risultato Operativo (RO)}}{\\text{Ricavi di Vendita (V)}} \\cdot 100$$\n  Misura il margine operativo medio su ogni 100 euro di fatturato.\n• Tasso di Rotazione del Capitale Investito ($Turnover$):\n  $$Turnover = \\frac{\\text{Ricavi di Vendita (V)}}{\\text{Capitale Investito Netto (CIN)}}$$\n  Misura quante volte il capitale investito ruota attraverso le vendite durante l'esercizio.\n\n2. La Scomposizione di Du Pont del ROI:\n$$ROI = ROS \\cdot Turnover = \\frac{RO}{V} \\cdot \\frac{V}{CIN} = \\frac{RO}{CIN}$$\nDimostra che un'impresa può ottenere un ROI del 20% in due modi strategici diversi:\n- Strategia di Margine (es. software proprietario di nicchia, Apple, moda lusso): alto ROS (30%) e bassa rotazione (0,66x).\n- Strategia di Volume (es. e-commerce di componentistica, grande distribuzione): basso ROS (3%) e altissima rotazione delle scorte (6,6x).\n\n3. La Formula della Leva Finanziaria (Relazione di Modigliani-Miller):\nIl legame matematico tra la redditività operativa ($ROI$) e il rendimento degli azionisti ($ROE$) è regolato dall'indebitamento:\n$$ROE = \\left[ ROI + (ROI - i) \\cdot \\frac{D}{E} \\right] \\cdot (1 - t)$$\nDove:\n- $i = \\frac{\\text{Oneri Finanziari (OF)}}{\\text{Debiti Finanziari (D)}}$ è il costo medio percentuale dell'indebitamento.\n- $D / E$ (Leverage) è il rapporto tra Debito finanziario ($D$) ed Equity/Patrimonio Netto ($E$).\n- $(ROI - i)$ è lo 'Spread' o differenziale di rendimento.\n- $t$ è l'aliquota media delle imposte sul reddito (es. 24% IRES).\n\nI Tre Regimi della Leva Finanziaria:\n• Effetto Moltiplicatore Positivo ($ROI > i$): lo spread è positivo; ogni euro di debito costa meno di quanto rende investito nell'attività industriale: la differenza va ad arricchire gli azionisti, moltiplicando il $ROE$.\n• Effetto Neutro ($ROI = i$): l'indebitamento non modifica il $ROE$.\n• Effetto Moltiplicatore Negativo o Boomerang ($ROI < i$): lo spread è negativo; il costo degli interessi bancari divora l'intero margine operativo, distruggendo il rendimento degli azionisti e precipitando il $ROE$ in perdita.",
+      "howDetails": "Esempio Numerico di Calcolo della Leva:\nDati: ROI = 10%, Tasso interesse debito i = 4%, Aliquota t = 20%.\n- Caso A (Senza Debito, D/E = 0):\n  ROE = [10% + (10% - 4%) * 0] * (1 - 0.20) = 10% * 0.80 = 8%.\n- Caso B (Con Debito Moderato, D/E = 2):\n  ROE = [10% + (10% - 4%) * 2] * (1 - 0.20) = [10% + 12%] * 0.80 = 22% * 0.80 = 17,6%!\n- Caso C (Shock di Mercato: il ROI scende al 2% mentre i sale al 5%, con D/E = 3):\n  Spread = 2% - 5% = -3%.\n  ROE = [2% + (-3%) * 3] * 0.80 = [2% - 9%] * 0.80 = -7% * 0.80 = -5,6% (Perdita netta devastante).",
       "keypoints": [
         {
-          "id": "kp-lev-1",
-          "title": "Equazione Fondamentale della Leva Finanziaria",
+          "id": "kp-du-1",
+          "title": "Albero di Du Pont",
+          "schematicFormula": "ROI = ROS (Margine di Profitto per Unità Venduta) · Turnover (Velocità di Rotazione del Capitale)",
+          "explanation": "Permette di diagnosticare se un calo del ROI derivi da un'erosione dei margini commerciali o da un rallentamento delle vendite."
+        },
+        {
+          "id": "kp-lev-form-1",
+          "title": "Equazione della Leva Finanziaria",
           "schematicFormula": "ROE = [ ROI + (ROI - i) · (D / E) ] · (1 - t)",
-          "explanation": "Dove: ROI = redditività operativa; i = tasso medio d'interesse passivo sui debiti; D/E = rapporto tra Debiti finanziari (D) e Mezzi Propri/Equity (E); t = aliquota fiscale sulle imposte."
-        },
-        {
-          "id": "kp-lev-2",
-          "title": "Condizione di Convenienza dell'Indebitamento",
-          "schematicFormula": "Se ROI > i → Aumentare il debito moltiplica il ROE | Se ROI < i → Il debito distrugge la redditività e accelera il fallimento",
-          "explanation": "L'indebitamento non crea valore operativo: si limita a trasferire e amplificare il rischio industriale sulla testa degli azionisti."
+          "explanation": "L'indebitamento è una lama a doppio taglio: moltiplica i guadagni quando il business va bene, ma amplifica le perdite e accelera il dissesto nelle crisi."
         }
       ],
       "traps": [
         {
-          "id": "trap-lev-1",
-          "title": "L'effetto boomerang della leva nei periodi di crisi",
-          "misconception": "Credere che se la leva ha funzionato bene in anni di boom economico con tassi bassi, sia una strategia permanentemente priva di controindicazioni.",
-          "truth": "Basta una flessione temporanea del fatturato che abbassa il ROI al di sotto di i, o un rialzo dei tassi da parte delle Banche Centrali, per trasformare una leva moltiplicatrice in una trappola mortale.",
-          "example": "Se ROI = 4%, i = 6% e D/E = 4: ROE = 4% + (4% - 6%) · 4 = 4% - 8% = -4%. L'azienda chiude in perdita a causa del carico di interessi."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-lev-1",
-          "title": "Amplificazione di Segnale",
-          "technicalPerspective": "Un amplificatore operazionale che aumenta il guadagno di tensione proporzionalmente al feedback resistivo.",
-          "managerialPerspective": "Una struttura del capitale che amplifica i rendimenti ma aumenta proporzionalmente la varianza e il rischio di default.",
-          "mindsetShift": "Dall'amplificazione lineare del segnale alla gestione del rischio di rovina finanziaria asimmetrico."
+          "id": "trap-lev-2",
+          "title": "Scambiare un ROE alto per solidità aziendale",
+          "misconception": "Credere che un'azienda con ROE al 40% sia solidissima e priva di rischi.",
+          "truth": "Se il ROE al 40% è ottenuto con D/E = 8 (un euro di equity e 8 euro di debiti), basta una variazione dell'1% del ROI o un rialzo dei tassi da parte della BCE per azzerare l'utile e portare i libri contabili in tribunale."
         }
       ]
     },
     {
-      "id": "growth-eats-cash",
-      "title": "Il Paradosso 'Growth Eats Cash' e Ciclo del Circolante",
+      "id": "dinamica-finanziaria-e-paradosso-growth-eats-cash",
+      "title": "Tempi Medi del Circolante (DIO, DSO, DPO) e Paradosso 'Growth Eats Cash'",
       "track": "essential",
-      "whyIntro": "Spesso gli ingegneri che fondano una startup celebrano l'aumento degli ordini come garanzia di trionfo. Nel mondo reale, crescere troppo in fretta è una delle cause primarie di fallimento aziendale.",
-      "whatBody": "Il paradosso 'Growth Eats Cash' si manifesta quando il tasso di crescita delle vendite supera la capacità dell'impresa di autofinanziare l'espansione del Capitale Circolante Netto Commerciale (CCN Commerciale = Crediti Clienti + Magazzino - Debiti Fornitori). Più l'azienda vende, più deve anticipare contante per acquistare materie prime e pagare dipendenti, mentre incasserà dai clienti solo a mesi di distanza. La metrica guida è il Ciclo di Conversione della Cassa (CCC o Cash Conversion Cycle), dato dai giorni medi di giacenza del magazzino (DIO) più i giorni medi di incasso crediti (DSO) meno i giorni medi di pagamento fornitori (DPO). Se il CCC è positivo, la crescita drena liquidità.",
+      "whyIntro": "Perché le startup e le aziende industriali in fortissima crescita falliscono più frequentemente di quelle stagnanti? La risposta risiede nei giorni medi di sfasamento temporale tra acquisti, magazzino, vendite e incassi.",
+      "whatBody": "1. Gli Indici di Durata Media del Capitale Circolante:\nPer comprendere la velocità con cui le risorse si muovono nel ciclo operativo, si calcolano tre durate medie espresse in giorni (tempo medio di rotazione):\n• DIO (Days Inventory Outstanding - Giorni Medi di Scorta a Magazzino):\n  $$DIO = \\frac{\\text{Rimanenze Medie di Magazzino}}{\\text{Costo del Venduto o Acquisti annui}} \\cdot 365$$\n  Indica per quanti giorni una materia prima o un prodotto finito resta fermo a magazzino prima di essere impiegato o venduto.\n• DSO (Days Sales Outstanding - Giorni Medi di Incasso Crediti Clienti):\n  $$DSO = \\frac{\\text{Crediti Commerciali verso Clienti}}{\\text{Fatturato / Ricavi di Vendita annui}} \\cdot 365$$\n  Misura il tempo medio concesso ai clienti per saldare le fatture (dilazione media di vendita).\n• DPO (Days Payables Outstanding - Giorni Medi di Pagamento Fornitori):\n  $$DPO = \\frac{\\text{Debiti Commerciali verso Fornitori}}{\\text{Acquisti annui di merci e servizi}} \\cdot 365$$\n  Misura il tempo medio ottenuto dai fornitori prima di effettuare il pagamento (dilazione passiva).\n\n2. Il Ciclo di Conversione del Circolante (Cash Conversion Cycle - CCC):\n$$CCC = DIO + DSO - DPO$$\nRappresenta l'intervallo temporale netto (in giorni) che intercorre tra l'esborso monetario per l'acquisto dei fattori produttivi e l'incasso monetario dalle vendite dei prodotti finiti.\n• Se $CCC > 0$: l'azienda paga i fornitori prima di aver incassato dai clienti; ha un fabbisogno finanziario strutturale che assorbe liquidità.\n• Se $CCC < 0$ (es. modello Amazon, Dell o grande distribuzione): l'azienda incassa dai clienti immediatamente (con carta di credito o contanti) e paga i fornitori a 60-90 giorni; in questo caso il ciclo del circolante genera cassa liquida spontanea!\n\n3. Il Paradosso 'Growth Eats Cash':\nQuando un'azienda cresce rapidamente (es. raddoppio del fatturato $+100\\%$):\n- Deve acquistare materie prime e semilavorati per sostenere i volumi futuri $\\implies$ le scorte aumentano proporzionalmente ($+\\Delta R$).\n- Emette più fatture con pagamento differito $\\implies$ i crediti verso clienti aumentano in valore assoluto ($+\\Delta C$).\n- L'incremento del debito fornitori ($+\\Delta D_{forn}$) copre solo una frazione del fabbisogno.\n- Risultato: La variazione netta del Capitale Circolante Commerciale ($\\Delta CCN_{comm} = \\Delta R + \\Delta C - \\Delta D_{forn}$) assorbe cassa in misura enormemente superiore all'utile netto generato dalle nuove vendite.\nSenza nuove linee di credito bancario (castelletto fidi, factoring pro-soluto o anticipo fatture) o aumenti di capitale, l'azienda si ritrova con le casse vuote pur avendo registrato il miglior utile della sua storia.",
+      "howDetails": "Strategie Manageriali per Disinnescare il Growth Eats Cash:\n1. Ridurre il DSO: sconti cassa per pagamento immediato (es. sconto 2% se paghi a vista), solleciti automatici, cessione dei crediti tramite Factoring pro-soluto.\n2. Ridurre il DIO: produzione Just-in-Time, accordi di consignment stock con i fornitori per evitare stoccaggi massivi.\n3. Aumentare il DPO: negoziazione di termini di pagamento più lunghi con i fornitori strategici.\n4. Finanziamenti Autoliquidanti: collegare la crescita degli affidamenti bancari direttamente all'emissione delle fatture commerciali.",
       "keypoints": [
         {
-          "id": "kp-gec-1",
-          "title": "Formula del Cash Conversion Cycle (CCC)",
-          "schematicFormula": "CCC = DSO (Giorni Crediti Clienti) + DIO (Giorni Scorte Magazzino) - DPO (Giorni Debiti Fornitori)",
-          "explanation": "Rappresenta il numero di giorni durante i quali un euro speso per la produzione rimane congelato nel processo prima di ritornare in cassa sotto forma di incasso."
+          "id": "kp-ccc-1",
+          "title": "Formula del Cash Conversion Cycle",
+          "schematicFormula": "Cash Conversion Cycle (Giorni) = DIO (Scorte) + DSO (Crediti Clienti) - DPO (Debiti Fornitori)",
+          "explanation": "Ogni giorno in più di CCC significa denaro intrappolato nel ciclo operativo che richiede copertura finanziaria da banche o soci."
         },
         {
-          "id": "kp-gec-2",
-          "title": "Dinamica del Modello di Business a CCC Negativo",
-          "schematicFormula": "Modello Negativo (es. Amazon, GDO): Incasso immediato dai clienti (DSO ~ 0) + Scorte snelle + Pagamento fornitori a 90 giorni → I fornitori finanziano la crescita",
-          "explanation": "Chi ha CCC negativo genera cassa crescendo; chi ha CCC positivo (es. manifattura B2B con pagamenti lunghi) consuma cassa crescendo."
+          "id": "kp-gec-rule-1",
+          "title": "Regola Aurea di Sopravvivenza nella Crescita",
+          "schematicFormula": "Fabbisogno Cassa = ΔCCN Commerciale (ΔScorte + ΔCrediti - ΔFornitori) > Utile Netto → Default Tecnico per Mancanza di Cassa",
+          "explanation": "Crescere a ritmi superiori alla velocità di rotazione del circolante consuma liquidità a una velocità letale."
         }
       ],
       "traps": [
         {
           "id": "trap-gec-1",
-          "title": "Credere che l'aumento degli ordini risolva spontaneamente i problemi di cassa",
-          "misconception": "Pensare che se manca liquidità basti incrementare le vendite per far entrare più soldi in azienda.",
-          "truth": "Se il ciclo del capitale circolante è lungo, accettare ordini più grandi accelera il prosciugamento della cassa e anticipa il fallimento.",
-          "example": "Se vendere 1M€ richiede 200k€ di circolante, passare a 3M€ di vendite richiederà 600k€ di cassa aggiuntiva: se le banche non concedono linee di credito, l'azienda si ferma pur avendo il portafoglio ordini pieno."
+          "title": "Festeggiare ordini record senza verificare le scadenze finanziarie",
+          "misconception": "Credere che vincere una commessa enorme da milioni di euro sia automaticamente una benedizione per l'azienda.",
+          "truth": "Se la commessa richiede l'acquisto immediato di materiale costoso con pagamento a 30 giorni e il cliente pagherà solo a collaudo ultimato dopo 180 giorni, l'azienda fallirà durante l'esecuzione del progetto se non dispone di linee di credito dedicate."
         }
       ]
     }

@@ -1,147 +1,193 @@
 {
   "block": 2,
   "title": "Le Forme Giuridiche e l'Autonomia Patrimoniale",
-  "subtitle": "Dall'impresa individuale alle società di persone e di capitali",
-  "guidingQuestion": "Come si sceglie la veste giuridica ottimale per un'impresa? Perché fondare una S.n.c. invece di una S.r.l. può mettere a repentaglio il patrimonio personale e la casa dei fondatori?",
+  "subtitle": "Dall'impresa individuale alle società di capitali, startup innovative ed economia civile",
+  "guidingQuestion": "Come si sceglie la forma giuridica ottimale per un'impresa? Perché fondare una S.n.c. invece di una S.r.l. può mettere a rischio la casa e i risparmi personali dei fondatori?",
   "caseStudy": {
     "id": "caso-satispay-exein-davines",
     "name": "Dalla Ricerca alla B-Corp: Satispay, Exein e Davines",
     "company": "Satispay / Exein / Davines",
-    "year": "2013-2022",
-    "dilemma": "Quale forma societaria permette a una startup tecnologica di raccogliere milioni da fondi di Venture Capital proteggendo i fondatori, o a un'azienda matura di vincolare statutariamente l'impatto etico e sociale oltre al mero profitto?",
-    "summary": "Satispay è passata da S.r.l. a S.p.A. per abilitare la raccolta massiva di capitali da fondi internazionali e creare diverse classi di azioni. Exein, startup di cybersecurity IoT nata da ricercatori universitari, sfrutta lo status di S.r.l. innovativa per accedere a sgravi fiscali e incentivare il team con piani di work for equity. Davines Group, eccellenza della cosmesi sostenibile, ha scelto la qualifica di Società Benefit e la certificazione B-Corp per blindare statutariamente gli obiettivi di sostenibilità ambientale e benessere dei dipendenti a fianco del profitto.",
+    "year": "2013-2026",
+    "dilemma": "Quale architettura giuridica consente a una startup fintech di raccogliere centinaia di milioni da fondi di Venture Capital (Satispay), a una deep-tech di valorizzare brevetti e trattenere talenti (Exein), o a un'eccellenza industriale di vincolare per statuto la sostenibilità ambientale e sociale accanto al profitto (Davines)?",
+    "summary": "La scelta della forma giuridica è la prima fondamentale decisione strategica d'impresa. Satispay ha iniziato come S.r.l. ed è passata a S.p.A. per abilitare round di investimento internazionali complessi, emettere diverse categorie di azioni e gestire la governance tra soci fondatori e fondi di Venture Capital. Exein, nata a Roma come spinoff di cybersecurity per dispositivi IoT, ha sfruttato lo status speciale di 'Startup Innovativa' per accedere a sgravi fiscali per R&D, facilitare la brevettazione e attrarre ricercatori con piani di incentivazione 'work for equity' (stock option). Davines Group, multinazionale cosmetica con radici a Parma, ha scelto la qualifica giuridica italiana di Società Benefit e la certificazione globale B-Corp per sancire nel proprio statuto un duplice scopo: massimizzare il profitto nel rispetto di rigidi obiettivi vincolanti di tutela ambientale e benessere sociale per i dipendenti e il territorio.",
     "coreLessons": [
-      "La responsabilità limitata (autonomia patrimoniale perfetta) è condizione indispensabile per intraprendere attività ad alto rischio tecnologico o finanziario.",
-      "La S.p.A. è il veicolo d'elezione per attrarre Venture Capital e investitori istituzionali, grazie alla negoziabilità e alla standardizzazione delle azioni.",
-      "Lo status di Startup Innovativa offre deroghe strategiche al diritto societario ordinario (gestione delle perdite, quote senza diritto di voto, piani di incentivazione del personale in equity).",
-      "Le Società Benefit integrano nel proprio statuto un duplice scopo: massimizzazione del profitto e creazione di beneficio comune per l'ecosistema sociale e ambientale."
+      "La responsabilità limitata (autonomia patrimoniale perfetta) è condizione inderogabile per intraprendere attività ad alto rischio tecnologico o finanziario.",
+      "La S.p.A. è il veicolo societario indispensabile per attrarre investitori istituzionali e quotarsi sui mercati finanziari regolamentati, grazie alla standardizzazione e negoziabilità delle azioni.",
+      "Lo status di Startup Innovativa (D.L. 179/2012) deroga al diritto societario ordinario consentendo quote prive di voto, piani di work for equity e crowdfunding.",
+      "Le Società Benefit integrano nello statuto il 'duplice scopo' (profitto + beneficio comune), superando la logica miope della sola massimizzazione degli utili per gli azionisti."
     ],
-    "keytakeaway": "La forma giuridica non è un mero adempimento burocratico: è l'architettura legale che determina la ripartizione del rischio, la capacità di raccolta finanziaria e la governance strategica d'impresa."
+    "keytakeaway": "La forma giuridica non è un mero adempimento notarile o fiscale: è l'architettura legale che distribuisce il rischio, definisce la governabilità e abilita l'accesso ai mercati dei capitali."
   },
   "topics": [
     {
-      "id": "autonomia-patrimoniale",
-      "title": "Autonomia Patrimoniale e Ripartizione del Rischio",
+      "id": "autonomia-patrimoniale-e-personalita-giuridica",
+      "title": "Autonomia Patrimoniale, Personalità Giuridica e Ripartizione del Rischio",
       "track": "essential",
-      "whyIntro": "Un errore di progettazione software o un attacco informatico possono causare danni milionari ai clienti. Se la veste giuridica non separa i patrimoni, i creditori possono pignorare i conti bancari e gli immobili personali dei fondatori.",
-      "whatBody": "L'autonomia patrimoniale definisce il grado di separazione tra il patrimonio della società e quello personale dei singoli soci. Si distingue in imperfetta (tipica delle società di persone, dove i soci rispondono solidalmente e illimitatamente con i propri beni presenti e futuri) e perfetta (tipica delle società di capitali, dotate di personalità giuridica, dove per i debiti risponde solo ed esclusivamente il patrimonio sociale).",
+      "whyIntro": "Un bug critico nel codice di un software enterprise o una violazione di dati (data breach) possono causare milioni di euro di danni ai clienti. Se la forma giuridica non separa il patrimonio aziendale da quello privato, i creditori possono pignorare i conti bancari e le case dei fondatori.",
+      "whatBody": "L'autonomia patrimoniale definisce il grado di impermeabilità tra il patrimonio della società e il patrimonio personale dei singoli soci:\n\n• Autonomia Patrimoniale Perfetta (tipica delle Società di Capitali):\nIl patrimonio della società è totalmente e irrevocabilmente separato da quello dei soci. La società è un soggetto di diritto autonomo dotato di Personalità Giuridica. Per i debiti e le obbligazioni contratte dalla società risponde SOLO ED ESCLUSIVAMENTE il patrimonio sociale. I soci rischiano unicamente la quota di capitale sottoscritta e non possono mai essere chiamati a pagare con i propri beni personali.\n\n• Autonomia Patrimoniale Imperfetta (tipica delle Società di Persone e Ditte Individuali):\nNon vi è una separazione patrimoniale assoluta. La società è priva di personalità giuridica. Per i debiti sociali rispondono i soci solidalmente (ciascun socio può essere costretto a pagare l'intero debito per tutti gli altri) e illimitatamente (con tutti i propri beni presenti e futuri).\n\nIl Beneficio di Escussione (art. 2304 c.c.):\nNelle società di persone regolari (es. S.n.c. iscritta nel Registro delle Imprese), i creditori sociali non possono pretendere il pagamento direttamente dai singoli soci se non dopo aver infruttuosamente escusso (tentato di pignorare) il patrimonio sociale. Tuttavia, se il patrimonio della società è insufficiente o nullo, il creditore può rivalersi per intero sul patrimonio personale di uno qualsiasi dei soci a sua scelta.",
+      "howDetails": "Procedura Operativa dell'Escussione (art. 2304 c.c.):\n1. Il creditore notifica il decreto ingiuntivo alla società.\n2. Tenta l'esecuzione forzata sui conti e beni aziendali.\n3. Se il verbale di pignoramento è negativo o incapiente, notifica il precetto al socio con il patrimonio personale più cospicuo.\n4. Il socio escusso paga il 100% del debito e ottiene azione di regresso interno verso gli altri cosoci (i quali, se nullatenenti, non rimborseranno nulla).",
       "keypoints": [
         {
           "id": "kp-aut-1",
           "title": "Regola dell'Autonomia Patrimoniale",
-          "schematicFormula": "Società di capitali = Autonomia Perfetta (Rischio limitato al capitale conferito) | Società di persone = Autonomia Imperfetta (Responsabilità illimitata e solidale)",
-          "explanation": "Nelle società di capitali i creditori sociali non possono in alcun caso aggredire il patrimonio privato dei soci; nelle società di persone i soci fungono da garanzia patrimoniale di ultima istanza per la società."
+          "schematicFormula": "Società di Capitali = Autonomia Perfetta (Rischio limitato al conferimento) | Società di Persone = Autonomia Imperfetta (Rischio illimitato e solidale)",
+          "explanation": "Nelle società di capitali i beni personali dei soci sono blindati; nelle società di persone i soci garantiscono i debiti col proprio patrimonio."
         },
         {
           "id": "kp-aut-2",
-          "title": "Beneficio di Escussione",
-          "schematicFormula": "Beneficio di Escussione: Creditori sociali → Escutono prima Patrimonio Sociale → Se insufficiente → Patrimonio Personale dei Soci",
-          "explanation": "Nelle S.n.c. regolari il creditore deve dimostrare di aver infruttuosamente tentato di riscuotere sul patrimonio della società prima di poter pignorare i beni dei singoli soci (art. 2304 c.c.)."
+          "title": "Solidarietà Passiva",
+          "schematicFormula": "Responsabilità Solidale: Debito Sociale = Richiedibile al 100% a un Singolo Socio a Scelta del Creditore",
+          "explanation": "Il creditore aggredisce il socio più facoltoso, lasciando a quest'ultimo il rischio di recuperare le quote dagli altri soci."
         }
       ],
       "traps": [
         {
           "id": "trap-aut-1",
-          "title": "La tentazione della S.n.c. 'economica'",
-          "misconception": "Pensare che costituire una S.n.c. convenga perché ha costi notarili inferiori e non richiede un capitale sociale minimo.",
-          "truth": "Il risparmio iniziale sui costi di costituzione viene azzerato dall'esposizione illimitata del patrimonio personale dei soci: un singolo credito non onorato può causare il fallimento personale del socio.",
-          "example": "Se una S.n.c. accumula 300.000€ di debiti verso fornitori o fisco, i creditori possono rivalersi interamente sulla casa di proprietà di uno qualsiasi dei soci, a prescindere dalla sua percentuale di quota."
+          "title": "Confondere quota di partecipazione con quota di debito",
+          "misconception": "Pensare che possedendo il 10% di una S.n.c., in caso di fallimento o insolvenza si debba rispondere solo del 10% dei debiti accumulati.",
+          "truth": "La responsabilità verso l'esterno è solidale: il creditore può pretendere il 100% dell'intero debito anche dal socio con quota minima.",
+          "example": "Se una S.n.c. fallisce con 500.000€ di debiti, un socio al 5% può vedersi pignorare l'intera casa di proprietà per saldare il debito comune."
         }
       ],
       "conceptShifts": [
         {
           "id": "shift-aut-1",
-          "title": "Gestione del Rischio",
-          "technicalPerspective": "Eliminare i singoli punti di fallimento (single points of failure) nel codice mediante ridondanza e unit test.",
-          "managerialPerspective": "Isolare il rischio imprenditoriale ed economico confinandolo all'interno di una persona giuridica distinta dai fondatori.",
-          "mindsetShift": "Dall'ottimizzazione tecnica dell'affidabilità alla separazione giuridica della responsabilità patrimoniale."
+          "title": "Isolamento dei Guasti",
+          "technicalPerspective": "Implementare sandboxing e isolamento dei processi software per evitare che il crash di un modulo blocchi l'intero sistema operativo.",
+          "managerialPerspective": "Costituire una società di capitali con personalità giuridica per confinare il rischio economico all'interno dell'entità societaria senza intaccare i patrimoni personali.",
+          "mindsetShift": "Dall'isolamento logico computazionale all'isolamento giuridico patrimoniale del rischio d'impresa."
+        }
+      ]
+    },
+    {
+      "id": "impresa-individuale",
+      "title": "L'Impresa Individuale: Semplicità Iniziale vs. Limiti alla Crescita",
+      "track": "standard",
+      "whyIntro": "Quando un singolo sviluppatore o professionista vuole iniziare a vendere servizi o software, l'impresa individuale appare come la via più immediata ed economica. Tuttavia, porta con sé forti barriere strutturali.",
+      "whatBody": "L'impresa individuale fa capo a una singola persona fisica che ne è contemporaneamente proprietario, gestore e garante:\n\n• Caratteristiche Fondamentali:\n- Nessun capitale sociale minimo richiesto per la costituzione.\n- Nessun atto notarile obbligatorio (basta l'apertura di Partita IVA e l'iscrizione in Camera di Commercio/Registro delle Imprese).\n- Nome commerciale: la Ditta (deve contenere almeno il cognome o la sigla dell'imprenditore).\n- Massima agilità e velocità decisionale (nessuna assemblea, nessun consiglio di amministrazione).\n\n• Limiti Critici e Ragioni del Cambio di Forma Giuridica:\n1. Responsabilità Illimitata: l'imprenditore risponde con tutti i beni presenti e futuri (nessuna separazione tra conto aziendale e conto famiglia).\n2. Limiti di Credibilità sul Mercato: clienti corporate o multinazionali rifiutano spesso contratti di fornitura strategica con imprese individuali.\n3. Accesso ai Capitali Precluso: non è possibile raccogliere Venture Capital o emettere azioni o quote per attrarre investitori.\n4. Impossibilità di Trattenere Talenti: non si possono assegnare stock option o quote societarie ai collaboratori chiave per incentivarli (nessuna equity partnership).\n5. Limiti Fiscali: tassazione progressiva IRPEF sui redditi personali che può raggiungere aliquote superiori al 43%, contro l'aliquota fissa IRES (24%) delle società di capitali.",
+      "howDetails": "Fattori Decisionale di Uscita dall'Impresa Individuale:\nNon appena l'attività assume dipendenti, sottoscrive contratti con penali significative o ha bisogno di capitali per scalare oltre l'artigianato digitale, il passaggio a società di capitali (S.r.l.) diventa obbligatorio per proteggere la persona fisica.",
+      "keypoints": [
+        {
+          "id": "kp-ind-1",
+          "title": "Profilo dell'Impresa Individuale",
+          "schematicFormula": "Impresa Individuale = Zero Capitale Minimo · Massima Flessibilità · Responsabilità Personale Illimitata",
+          "explanation": "Adatta solo alla fase embrionale di testing o a liberi professionisti privi di rischio operativo d'investimento."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-ind-1",
+          "title": "Credere che l'assicurazione professionale sostituisca la forma societaria",
+          "misconception": "Pensare che una polizza RC professionale protegga completamente l'imprenditore individuale dai debiti aziendali.",
+          "truth": "L'assicurazione copre solo specifici sinistri colposi entro precisi massimali, ma non tutela contro debiti commerciali verso fornitori, banche, fisco o crisi di solvibilità generale."
         }
       ]
     },
     {
       "id": "societa-di-persone",
-      "title": "Società di Persone: S.n.c. e S.a.s.",
+      "title": "Società di Persone: S.n.c. e S.a.s. e il Divieto di Immistione",
       "track": "standard",
-      "whyIntro": "Quando un piccolo gruppo di professionisti o artigiani con fortissima fiducia reciproca vuole operare con flessibilità gestionale massima e senza gli obblighi formali di bilancio delle S.p.A., le società di persone offrono una struttura agile ma esigente.",
-      "whatBody": "Nelle società di persone l'elemento fiduciario personale (intuitus personae) prevale sul conferimento di capitale. La circolazione delle quote richiede il consenso unanime di tutti i soci (salvo patto contrario). Nella S.n.c. tutti i soci sono amministratori e rispondono illimitatamente. Nella S.a.s. coesistono due categorie distinte: i soci accomandatari (amministrano e rispondono illimitatamente) e i soci accomandanti (investitori con responsabilità limitata alla quota, soggetti al rigoroso divieto di immistione nella gestione).",
+      "whyIntro": "Quando più professionisti o sviluppatori fondano un'attività con forte legame fiduciario reciproco, le società di persone offrono costi di gestione ridotti, ma espongono a rischi patrimoniali devastanti se non governate correttamente.",
+      "whatBody": "Nelle società di persone prevale l'elemento personale e fiduciario (intuitus personae) rispetto all'apporto di capitale. I soci non possono trasferire la propria quota a terzi senza il consenso unanime di tutti gli altri soci (salvo patto contrario statutario).\n\n1. S.n.c. (Società in Nome Collettivo):\n- Tutti i soci sono solidalmente e illimitatamente responsabili per le obbligazioni sociali.\n- L'amministrazione spetta disgiuntamente a ciascun socio (ciascuno può compiere atti vincolanti per la società all'insaputa degli altri, salvo diritto di veto prima dell'atto).\n- I soci hanno il divieto legale di concorrenza (non possono esercitare attività concorrenti per conto proprio o altrui).\n\n2. S.a.s. (Società in Accomandita Semplice):\nSi caratterizza per la coesistenza obbligatoria di due categorie distinte di soci:\n• Soci Accomandatari: gestiscono e amministrano la società; rispondono solidalmente e illimitatamente con il proprio patrimonio personale.\n• Soci Accomandanti: sono puri conferenti di capitale (finanziatori); la loro responsabilità è rigorosamente limitata alla quota conferita.\n\nIl Divieto di Immistione (art. 2320 c.c.):\nI soci accomandanti non possono compiere atti di amministrazione, né trattare o concludere affari in nome della società, se non in forza di procura speciale per singoli affari rilasciata dagli accomandatari.\nSanzione inderogabile: se l'accomandante vìola il divieto di immistione (es. firma contratti, assume dipendenti, impartisce ordini operativi vincolanti), perde per legge il beneficio della responsabilità limitata e risponde illimitatamente e solidalmente per tutti i debiti sociali presenti, passati e futuri della società!",
+      "howDetails": "Regola di Gestione della S.a.s.:\nRagione Sociale: deve contenere il nome di almeno un socio accomandatario. Se un socio accomandante consente che il proprio nome sia inserito nella ragione sociale, risponde di fronte ai terzi illimitatamente per i debiti della S.a.s.",
       "keypoints": [
         {
           "id": "kp-sas-1",
-          "title": "Dicotomia della S.a.s. e Divieto di Immistione",
-          "schematicFormula": "Accomandatari = Gestione + Responsabilità Illimitata | Accomandanti = Capitale + Responsabilità Limitata (Divieto di immistione ex art. 2320 c.c.)",
-          "explanation": "Se il socio accomandante compie atti di amministrazione o tratta affari a nome della società senza procura speciale per singoli atti, decade dal beneficio della responsabilità limitata e risponde con tutto il suo patrimonio per tutti i debiti sociali."
+          "title": "Dicotomia S.a.s. e Divieto di Immistione",
+          "schematicFormula": "Accomandatario = Gestione + Rischio Illimitato | Accomandante = Solo Capitale + Rischio Limitato (art. 2320 c.c.)",
+          "explanation": "L'accomandante che mette becco nella gestione decade dalla protezione patrimoniale e rischia tutti i propri beni personali."
         }
       ],
       "traps": [
         {
           "id": "trap-sas-1",
-          "title": "L'accomandante che 'dà ordini'",
-          "misconception": "Ritenere che un socio accomandante di maggioranza possa legittimamente prendere decisioni quotidiane o firmare contratti per l'azienda senza rischi.",
-          "truth": "La violazione del divieto di immistione è severissima: il socio accomandante diventa illimitatamente responsabile per tutti i debiti sociali passati, presenti e futuri dell'azienda.",
-          "example": "Un socio accomandante che negozia e sottoscrive un contratto di fornitura hardware con un fornitore perde la protezione patrimoniale per tutte le obbligazioni della S.a.s."
+          "title": "L'accomandante che firma accordi commerciali",
+          "misconception": "Ritenere che un socio accomandante con l'80% delle quote possa firmare contratti di fornitura hardware o accordi con i clienti senza rischi patrimoniali.",
+          "truth": "Qualsiasi atto gestorio continuativo compiuto dall'accomandante fa scattare l'art. 2320 c.c., trasformandolo istantaneamente in debitore illimitato per l'intero passivo della società."
         }
       ]
     },
     {
       "id": "societa-di-capitali",
-      "title": "Società di Capitali: S.r.l. e S.p.A.",
+      "title": "Società di Capitali: S.r.l., S.p.A. e S.a.p.a.",
       "track": "essential",
-      "whyIntro": "Per sviluppare piattaforme software scalabili, commercializzare prodotti complessi o attrarre capitali di rischio da terzi investitori, è necessario uno scudo protettivo completo e strumenti finanziari standardizzati.",
-      "whatBody": "Nelle società di capitali l'elemento finanziario è centrale. La S.r.l. (Società a responsabilità limitata) è il modello più flessibile, con capitale minimo ordinario di 10.000€ (o 1€ per S.r.l. semplificata) e capitale suddiviso in quote non rappresentate da titoli azionari. La S.p.A. (Società per azioni) ha capitale minimo di 50.000€, capitale suddiviso in azioni standardizzate e liberamente trasferibili, organi collegiali formali (CdA e Collegio Sindacale obbligatorio) ed è la forma prescritta per la quotazione in borsa e per grandi emissioni obbligazionarie.",
+      "whyIntro": "Per sviluppare piattaforme software scalabili, commercializzare prodotti complessi o attrarre milioni di euro da fondi di Venture Capital, è obbligatorio adottare una struttura con autonomia patrimoniale perfetta e titoli negoziabili.",
+      "whatBody": "Nelle società di capitali l'elemento finanziario e patrimoniale è preminente rispetto alle persone dei soci. Esiste una netta separazione giuridica tra la proprietà (soci) e il governo aziendale (amministratori).\n\n1. S.r.l. (Società a Responsabilità Limitata):\n- Il capitale sociale minimo ordinario è 10.000€ (oppure 1€ per la S.r.l. semplificata - S.r.l.s.).\n- Il capitale è suddiviso in 'Quote' (porzioni ideali di proprietà non rappresentate da azioni né incorporabili in titoli di credito).\n- Massima flessibilità statutaria: i soci possono personalizzare liberamente la governance (amministrazione congiunta, disgiunta, CdA o amministratore unico) e assegnare particolari diritti a singoli soci.\n\n2. S.p.A. (Società per Azioni):\n- Il capitale sociale minimo per legge è 50.000€.\n- Il capitale è suddiviso in 'Azioni' (titoli omogenei, standardizzati, fungibili, divisibili e liberamente trasferibili sul mercato).\n- Struttura organizzativa corporativa e rigida: Assemblea dei Soci, Consiglio di Amministrazione (o Amministratore Unico), Collegio Sindacale (organo di controllo contabile e di legalità obbligatorio).\n- Unica forma abilitata alla quotazione su mercati regolamentati (Borsa) e all'emissione massiva di prestiti obbligazionari.\n\n3. S.a.p.a. (Società in Accomandita per Azioni):\n- Struttura formale di una S.p.A., ma con l'anima di una S.a.s.: il capitale è diviso in azioni, ma gli amministratori (soci accomandatari) sono tali di diritto a tempo indeterminato e rispondono illimitatamente e solidalmente per le obbligazioni sociali sorte durante il periodo del loro ufficio.",
+      "howDetails": "Confronto Strutturale Quote vs Azioni:\n• Quota (S.r.l.): È unica per ciascun socio ed esprime in percentuale la misura della sua partecipazione patrimoniale. Non può costituire oggetto di offerta al pubblico (salvo startup innovative).\n• Azione (S.p.A.): Ha un valore nominale unitario fisso (es. 1€); il socio possiede un numero intero di azioni. Ciascuna azione conferisce uguali diritti di voto e dividendo.",
       "keypoints": [
         {
           "id": "kp-cap-1",
-          "title": "Confronto Strutturale S.r.l. vs S.p.A.",
-          "schematicFormula": "S.r.l.: Quote personalizzate · Capitale min. 10.000€ · Flessibilità statutaria | S.p.A.: Azioni standardizzate · Capitale min. 50.000€ · Apertura a mercati e obbligazioni",
-          "explanation": "Le quote di S.r.l. esprimono la misura della partecipazione del socio e non possono essere incorporate in titoli di credito né costituire oggetto di offerta al pubblico (salvo deroghe per startup/PMI innovative); le azioni di S.p.A. sono titoli omogenei, divisibili e fungibili."
+          "title": "Confronto S.r.l. vs S.p.A.",
+          "schematicFormula": "S.r.l.: Quote · Capitale min. 10k€ · Flessibilità gestionale | S.p.A.: Azioni · Capitale min. 50k€ · Borsa e Obbligazioni",
+          "explanation": "La S.r.l. è il vestito ideale per PMI e startup iniziali; la S.p.A. è il veicolo irrinunciabile per grandi imprese e scalabilità sui mercati di capitali."
         }
       ],
       "traps": [
         {
           "id": "trap-cap-1",
-          "title": "Confondere la S.r.l. Semplificata (S.r.l.s.) con una S.r.l. completa",
-          "misconception": "Credere che costituire una S.r.l.s. con 1 euro di capitale sia sempre la scelta ideale per una startup ad alta crescita.",
-          "truth": "La S.r.l.s. impone uno statuto standard inderogabile per legge: non permette di personalizzare i diritti dei soci, creare categorie speciali di quote o regolamentare patti parasociali necessari per i venture capitalist.",
-          "example": "Un fondo di venture capital non investirà mai in una S.r.l.s. se non previo passaggio a S.r.l. ordinaria con adozione di uno statuto su misura contenente clausole di tag-along, drag-along e clausole di liquidazione preferenziale."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-cap-1",
-          "title": "Rappresentazione della Proprietà",
-          "technicalPerspective": "Una variabile o puntatore che memorizza una percentuale arbitraria di possesso del codice sorgente.",
-          "managerialPerspective": "Uno strumento finanziario (azione o quota) che incorpora specifici diritti patrimoniali (utili, liquidazione) e amministrativi (voto, controllo).",
-          "mindsetShift": "Dalla titolarità informale del lavoro alla formalizzazione dei diritti corporativi negoziabili sul mercato."
+          "title": "La tentazione della S.r.l. Semplificata (S.r.l.s.) con 1 euro",
+          "misconception": "Credere che costituire una S.r.l.s. con 1€ dal notaio convenga sempre perché non costa nulla di capitale iniziale.",
+          "truth": "La S.r.l.s. impone per legge uno statuto standard non modificabile: impedisce clausole di governance personalizzate, categorie speciali di quote e patti parasociali. Nessun fondo di Venture Capital investirà mai in una S.r.l.s. senza prima obbligare i soci a trasformarla in S.r.l. ordinaria."
         }
       ]
     },
     {
       "id": "startup-innovativa-e-societa-benefit",
-      "title": "Startup Innovative e Società Benefit",
+      "title": "Startup Innovative (D.L. 179/2012) e Società Benefit (L. 208/2015)",
       "track": "approfondito",
-      "whyIntro": "Le norme del codice civile ordinario risalgono al 1942. Il legislatore moderno ha introdotto regimi speciali per agevolare chi fa R&D tecnologica rischiosa o vuole perseguire finalità di sostenibilità sociale e ambientale.",
-      "whatBody": "La Startup Innovativa (D.L. 179/2012) è una società di capitali con oggetto sociale prevalente dedicato a prodotti o servizi innovativi ad alto valore tecnologico. Beneficia di deroghe civilistiche (quote prive di diritto di voto, piani di work for equity, gestione agevolata delle perdite di capitale). La Società Benefit (L. 208/2015) aggiunge allo scopo di lucro statutario l'obbligo di operare in modo responsabile, sostenibile e trasparente nei confronti di persone, comunità, territori e ambiente, nominando un responsabile dell'impatto e pubblicando una relazione annuale di rendicontazione.",
+      "whyIntro": "Il diritto societario del 1942 era rigido e pensato per industrie tradizionali pesanti. Per favorire l'ecosistema digitale e le tecnologie di frontiera, il legislatore italiano ha introdotto regimi speciali su misura.",
+      "whatBody": "Due qualifiche societarie cruciali per l'ingegnere e l'imprenditore moderno:\n\n1. La Startup Innovativa (D.L. 179/2012):\nSocietà di capitali (costituita come S.r.l. o S.p.A.) con oggetto sociale prevalente focalizzato sullo sviluppo, produzione e commercializzazione di prodotti o servizi innovativi ad alto valore tecnologico.\n• Requisiti Generali: non essere quotata, valore produzione < 5M€, divieto assoluto di distribuire utili per i primi 5 anni, non costituita da fusione/scissione.\n• Requisiti di Innovazione (deve rispettarne ALMENO 1 su 3):\n  a) Spese in R&D pari ad almeno il 15% del maggior valore tra costo e valore totale della produzione.\n  b) Personale qualificato: almeno 1/3 con dottorato di ricerca o 2/3 con laurea magistrale in materie scientifico-tecnologiche.\n  c) Titolarità o licenza esclusiva di un brevetto industriale registrato o di un software originale registrato presso la SIAE.\n• Deroghe Speciali al Diritto Societario Ordinario:\n  - Possibilità di creare quote speciali prive di diritto di voto o a voto non proporzionale anche in S.r.l.\n  - Piani di incentivazione 'Work for Equity' esenti da imposte per dipendenti, sviluppatori e advisor.\n  - Possibilità di effettuare campagne di Equity Crowdfunding online sul pubblico per raccogliere capitale.\n  - Moratoria di 1 anno per ripianare le perdite che intaccano il capitale sociale.\n\n2. La Società Benefit (L. 208/2015) e la Certificazione B-Corp:\n• Società Benefit (Veste Giuridica Italiana): una forma societaria lucrative ordinaria (S.r.l. o S.p.A.) che modifica il proprio statuto per aggiungere allo scopo di lucro il perseguimento formale di una o più finalità di 'Beneficio Comune' (impatto positivo o riduzione di impatti negativi su lavoratori, comunità, ambiente, fornitori). Obbligo di nominare un Responsabile dell'Impatto e pubblicare ogni anno una Relazione di Impatto allegata al bilancio.\n• B-Corp (Certificazione Privata): riconoscimento volontario rilasciato dall'ente non-profit internazionale B Lab alle aziende che superano un punteggio minimo di 80/200 nel questionario standardizzato BIA (B Impact Assessment).",
+      "howDetails": "Distinzione Chiave Benefit vs B-Corp:\n• Società Benefit = Riconoscimento legale formale iscritto nello Statuto societario depositato al Registro Imprese (vincolo contrattuale per gli amministratori).\n• B-Corp = Marchio e certificazione privata di eccellenza rilasciata da terzi indipendenti.",
       "keypoints": [
         {
           "id": "kp-inn-1",
-          "title": "Requisiti Alternativi Startup Innovativa",
-          "schematicFormula": "Deve rispettare almeno 1 su 3: Spese R&D ≥ 15% del valore della produzione | Personale altamente qualificato (≥ 1/3 dottori di ricerca o 2/3 laureati magistrali) | Titolare/depositaria di brevetto industriale o software registrato SIAE",
-          "explanation": "Oltre a non distribuire utili per i primi 5 anni, avere valore della produzione annua inferiore a 5M€ e non derivare da fusione o scissione."
+          "title": "I 3 Criteri Alternativi di Startup Innovativa",
+          "schematicFormula": "Startup Innovativa = Spese R&D ≥ 15% OPPURE Personale Qualificato (1/3 PhD o 2/3 Magistrali) OPPURE Brevetto / Software SIAE",
+          "explanation": "Basta possedere anche uno solo di questi 3 requisiti per accedere alle deroghe societarie e agli sgravi per gli investitori."
         },
         {
-          "id": "kp-ben-1",
-          "title": "Società Benefit vs Certificazione B-Corp",
-          "schematicFormula": "Società Benefit = Veste giuridica legale inserita nello Statuto (L. 208/2015) | B-Corp = Certificazione privata di impatto rilasciata dall'ente terzo B Lab (BIA score ≥ 80)",
-          "explanation": "Un'azienda italiana può essere Società Benefit senza essere certificata B-Corp, e viceversa; molte aziende virtuose (come Davines) adottano entrambi i riconoscimenti."
+          "id": "kp-inn-2",
+          "title": "Società Benefit vs B-Corp",
+          "schematicFormula": "Società Benefit = Modifica Statutaria Legale (Duplice Scopo: Profitto + Beneficio Comune) | B-Corp = Certificazione Privata B Lab (Score BIA ≥ 80)",
+          "explanation": "La qualifica Benefit protegge legalmente i manager che investono in sostenibilità evitando accuse di infedeltà da azionisti speculativi."
         }
       ],
       "traps": [
         {
           "id": "trap-inn-1",
-          "title": "Ritenere la Società Benefit una ONLUS no-profit",
-          "misconception": "Credere che la Società Benefit o la B-Corp rinuncino al profitto e alla remunerazione del capitale investito.",
-          "truth": "Le Società Benefit sono a tutti gli effetti imprese lucrative che distribuiscono dividendi: il loro statuto vincola gli amministratori a bilanciare l'interesse degli azionisti con quello della collettività e dell'ambiente.",
-          "example": "Se gli amministratori di una S.p.A. ordinaria possono essere revocati per non aver massimizzato l'utile a breve termine, in una Società Benefit l'investimento in riduzione delle emissioni è formalmente protetto dagli attacchi degli azionisti speculativi."
+          "title": "Credere che la Società Benefit sia una ONLUS no-profit",
+          "misconception": "Pensare che le Società Benefit o le B-Corp non facciano profitto o non distribuiscano dividendi agli azionisti.",
+          "truth": "Le Società Benefit sono a tutti gli effetti imprese commerciali for-profit altamente competitive, il cui statuto impone tuttavia di non calpestare ambiente e società per massimizzare il profitto di breve termine."
+        }
+      ]
+    },
+    {
+      "id": "spettro-degli-scopi-ed-economia-civile",
+      "title": "Lo Spettro degli Scopi d'Impresa e l'Economia Civile di Stefano Zamagni",
+      "track": "approfondito",
+      "whyIntro": "Il modello capitalista tradizionale concepiva solo due poli: o l'impresa for-profit orientata unicamente a massimizzare l'utile per gli azionisti, o la beneficenza no-profit. Oggi esiste un continuum di modelli e una nuova visione teorica: l'Economia Civile.",
+      "whatBody": "1. Lo Spettro degli Scopi d'Impresa (The Spectrum of Purposes):\nL'impresa moderna si posiziona lungo una gradazione di orientamenti:\n• For-Profit Tradizionale: massimizzazione esclusiva del valore per gli azionisti (shareholder primacy); la responsabilità sociale (CSR) è solo reputazionale o di conformità legale ('responsabilità in negativo': non fare danni visibili).\n• B-Corp / Società Benefit: impresa lucrativa che bilancia istituzionalmente il profitto con il beneficio sociale e ambientale condiviso.\n• Social Business (Muhammad Yunus, Nobel per la Pace): impresa autofinanziata e sostenibile tramite il mercato, concepita per risolvere un problema sociale o ambientale. Il vincolo statutario impone il divieto assoluto di distribuzione di dividendi: gli investitori possono recuperare solo il capitale originario conferito, mentre il 100% degli utili viene reinvestito per ampliare la missione sociale.\n• Not-for-Profit / Terzo Settore: enti e organizzazioni (ONLUS, associazioni, cooperative sociali) soggetti a rigido vincolo di non distribuzione degli utili (non-distribution constraint), finalizzati unicamente a scopi ideali, solidaristici o assistenziali.\n\n2. L'Economia Civile e il Pensiero di Stefano Zamagni:\nL'approccio economico non deve ridursi al mero utilitarismo:\n• Le 3 Etiche d'Impresa:\n  1. Utilitarismo (Jeremy Bentham, 1780): agisco unicamente per massimizzare la mia utilità individuale ('faccio per il mio tornaconto'); domina lo scambio di equivalenti (prezzo = controprestazione).\n  2. Contrattualismo: agisco per rispetto del dovere normativo ('faccio perché sono vincolato dal contratto o dalla legge'); genera responsabilità in negativo.\n  3. Etica delle Virtù ed Economia Civile: agisco perché riconosco l'opera come bene in sé ('faccio perché promuove la fioritura umana e il bene comune'); genera responsabilità in positivo.\n\n• Motivazioni del Lavoratore e il Dono:\n- Motivazione Estrinseca: fare qualcosa per la ricompensa monetaria (l'incentivo economico formale, concordato ex-ante).\n- Motivazione Intrinseca: agire per passione, senso del dovere, dignità e autorealizzazione (il lavoro degno).\n- Il Premio (ex-post): non è dovuto per contratto come l'incentivo, ma è il riconoscimento libero e gratificante del valore generato.\n- Il Dono come Categoria Economica: il dono non è carità assistenziale, ma 'dare senza perdere e prendere senza togliere', creando un legame relazionale che sblocca coordinamento e fiducia reciproca.",
+      "howDetails": "La Parabola dei Cammelli di Stefano Zamagni:\nUn cammelliere lascia in eredità ai tre figli 11 cammelli: al primo lascia la metà (1/2), al secondo un quarto (1/4), al terzo un sesto (1/6). Poiché 11 non è divisibile né per 2, né per 4, né per 6, scoppia una lite furibonda e insanabile tra fratelli per pretendere un cammello in più.\nUn secondo cammelliere, amico di famiglia, interviene e DONA gratuitamente un suo cammello, portando il totale a 12 cammelli:\n- Il primo figlio riceve la sua metà esatta: 12 / 2 = 6 cammelli.\n- Il secondo figlio riceve il suo quarto: 12 / 4 = 3 cammelli.\n- Il terzo figlio riceve il suo sesto: 12 / 6 = 2 cammelli.\nSommando i cammelli distribuiti con giustizia: 6 + 3 + 2 = 11 cammelli!\nAvanza esattamente il 12° cammello, che viene riconsegnato con gratitudine al saggio cammelliere donatore.\nLezione economica profonda: il dono (il dodicesimo cammello) non impoverisce chi lo compie, ma è il bene relazionale che sblocca l'impasse distributiva e genera valore e armonia nel sistema economico.",
+      "keypoints": [
+        {
+          "id": "kp-civ-1",
+          "title": "La Logica del Dodicesimo Cammello",
+          "schematicFormula": "Economia Civile = Scambio di Equivalenti (Mercato) + Redistribuzione (Stato) + Principio di Gratuità (Dono Relazionale)",
+          "explanation": "Senza il dono della fiducia e della cooperazione reciproca, i contratti formali e la legge generano paralisi e contenziosi distruttivi."
+        },
+        {
+          "id": "kp-civ-2",
+          "title": "Responsabilità in Negativo vs in Positivo",
+          "schematicFormula": "Resp. in Negativo = Evitare Danni e Rispettare Norme | Resp. in Positivo = Rigenerare Territorio e Persone (Bene Comune)",
+          "explanation": "L'impresa civile non si limita a pagare le tasse e non inquinare; persegue deliberatamente la prosperità condivisa della comunità."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-civ-1",
+          "title": "Ridurre il dono a perdita a fondo perduto",
+          "misconception": "Pensare che in economia introdurre la dimensione del dono significhi fare beneficenza passiva e perdere denaro.",
+          "truth": "Il dono è il carburante della reciprocità: nelle aziende tecnologiche moderne (come l'open source o il mentoring), donare codice e competenze crea un ecosistema florido che moltiplica il valore per tutti i partecipanti."
         }
       ]
     }

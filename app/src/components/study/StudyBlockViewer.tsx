@@ -123,7 +123,7 @@ export const StudyBlockViewer: React.FC<StudyBlockViewerProps> = ({
                   <Compass className="h-4 w-4" />
                   <span>Il Perché Decisionale (Golden Rule)</span>
                 </div>
-                <p className="text-slate-700 text-sm leading-relaxed">
+                <p className="text-slate-700 text-sm leading-relaxed whitespace-pre-line">
                   {topic.whyIntro}
                 </p>
 
@@ -132,10 +132,22 @@ export const StudyBlockViewer: React.FC<StudyBlockViewerProps> = ({
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-2">
                     Il Concetto Chiave
                   </span>
-                  <p className="text-slate-800 text-sm leading-relaxed font-medium">
+                  <div className="text-slate-800 text-sm leading-relaxed font-medium whitespace-pre-line space-y-2">
                     {topic.whatBody}
-                  </p>
+                  </div>
                 </div>
+
+                {/* HOW: Operational & Methodological Details */}
+                {topic.howDetails && (
+                  <div className="mt-4 pt-4 border-t border-slate-100 bg-slate-50/60 -mx-5 -mb-5 p-5 rounded-b-xl border-t-slate-200/60">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-2">
+                      Approfondimento Operativo & Procedura (COME)
+                    </span>
+                    <div className="text-slate-700 text-sm leading-relaxed whitespace-pre-line space-y-2 font-mono text-xs sm:text-sm">
+                      {topic.howDetails}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Keypoints */}

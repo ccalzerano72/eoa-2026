@@ -1,147 +1,162 @@
 {
   "block": 6,
   "title": "Costi, Decisioni e Analisi di Break-Even",
-  "subtitle": "Costi fissi vs variabili, margine di contribuzione, BEP e leva operativa",
-  "guidingQuestion": "Quante unità dobbiamo vendere o quale fatturato minimo dobbiamo incassare per coprire interamente i costi e non chiudere l'anno in perdita?",
+  "subtitle": "Classificazione costi, Direct vs Full Costing, BEP, leva operativa e decisioni di breve periodo",
+  "guidingQuestion": "Quante unità dobbiamo vendere per coprire i costi e non chiudere in perdita? Come si calcola la leva operativa? Quando conviene accettare un ordine sottocosto o eliminare una linea di prodotto apparentemente in perdita?",
   "caseStudy": {
     "id": "caso-break-even-software-saas",
-    "name": "Il Punto di Pareggio nel Lancio di una Piattaforma Cloud SaaS",
+    "name": "La Struttura dei Costi nel Lancio di una Piattaforma Cloud SaaS",
     "company": "CloudTech Solutions",
-    "year": "2023-2024",
-    "dilemma": "Con costi fissi enormi per lo sviluppo software e l'infrastruttura server (120.000€/anno) e un costo variabile marginale quasi nullo per ogni utente (4€/anno), quanti abbonamenti a 24€/anno dobbiamo vendere per raggiungere il punto di pareggio e come reagiscono i profitti a una flessione del 10% degli abbonati?",
-    "summary": "CloudTech progetta un servizio software B2B. L'analisi preliminare evidenzia una struttura di costo a fortissima rigidità: i costi fissi (salari dei programmatori, canoni server dedicati, licenze base, ammortamenti) ammontano a 120.000€ l'anno. Il costo variabile unitario di banda e supporto per utente è di soli 4€. Fissato il prezzo di abbonamento annuale a 24€, il margine di contribuzione unitario è di 20€ (p - cv). Il Break-Even Point si raggiunge a 6.000 abbonati (120.000 / 20). Superata tale soglia, ogni utente aggiuntivo genera quasi puro profitto, ma al di sotto di 6.000 utenti l'azienda sprofonda rapidamente in perdita a causa dell'elevata Leva Operativa.",
+    "year": "2023-2026",
+    "dilemma": "Con costi fissi giganteschi per lo sviluppo software e l'infrastruttura (120.000€/anno) e un costo variabile marginale quasi nullo per ogni utente (4€/anno), quanti abbonamenti a 24€/anno dobbiamo vendere per pareggiare (BEP)? Come reagiscono i profitti se le vendite oscillano del ±10%?",
+    "summary": "CloudTech Solutions lancia una piattaforma software B2B basata su abbonamento annuale. L'analisi della struttura dei costi evidenzia un'elevatissima rigidità operativa: i costi fissi (salari dei programmatori, canoni cloud base dedicati, ammortamento dello sviluppo software, spese generali) ammontano a 120.000€ l'anno. Il costo variabile unitario per erogare il servizio a un utente aggiuntivo (banda server elastica, API di terze parti, commissioni di pagamento) è di soli 4€ all'anno. Fissando il prezzo di abbonamento annuale a 24€, il Margine di Contribuzione unitario è di 20€ (p - cv). Il Break-Even Point (punto di pareggio) si attesta esattamente a 6.000 abbonati (120.000€ / 20€). Superata la soglia di pareggio, ogni nuovo abbonato genera quasi puro reddito operativo; tuttavia, finché l'azienda è sotto i 6.000 utenti, la pesantezza dei costi fissi genera perdite rilevanti. Questa forte sensibilità dell'utile alle oscillazioni della domanda è misurata dal Grado di Leva Operativa (GLO).",
     "coreLessons": [
-      "I costi fissi non variano con il volume di produzione nel breve periodo; i costi variabili crescono proporzionalmente alle quantità prodotte.",
-      "Il Margine di Contribuzione misura la capacità di ogni unità venduta di contribuire alla copertura dei costi fissi e, successivamente, alla formazione del reddito operativo.",
-      "Il Break-Even Point identifica il volume minimo di attività per cui i Ricavi Totali eguagliano i Costi Totali (RO = 0).",
-      "Un'azienda ad alta intensità di costi fissi presenta un Grado di Leva Operativa (GLO) elevato: grandi opportunità di profitto quando il mercato tira, ma gravissimo rischio di perdita se la domanda cala."
+      "I costi fissi restano invariati al variare del volume di produzione entro l'intervallo di capacità; i costi variabili crescono proporzionalmente alle unità prodotte o erogate.",
+      "Il Margine di Contribuzione (p - cv) misura quanto ogni singola vendita contribuisce prima alla copertura dei costi fissi complessivi e poi alla formazione dell'utile operativo.",
+      "Il Break-Even Point identifica il volume di attività in cui i Ricavi Totali eguagliano i Costi Totali (Reddito Operativo = 0).",
+      "Una struttura a prevalenza di costi fissi (tipica del software e del cloud) comporta un elevato Grado di Leva Operativa (GLO): profitti esponenziali quando la domanda cresce, ma perdite rapide e profonde in caso di flessione.",
+      "Nelle decisioni di breve periodo (Make-or-Buy, chiusura linee, ordini speciali sottocosto) contano unicamente i costi e i ricavi differenziali marginali: il Full Costing basato su ripartizioni arbitrarie induce in errori fatali."
     ],
-    "keytakeaway": "Capire la struttura dei costi aziendali permette di stabilire i prezzi, valutare la redditività dei progetti e comprendere la vulnerabilità dell'impresa alle oscillazioni di mercato."
+    "keytakeaway": "Comprendere l'anatomia dei costi aziendali permette di stabilire i prezzi, fissare gli obiettivi di vendita e prendere decisioni tattiche razionali senza farsi ingannare dai costi fissi comuni."
   },
   "topics": [
     {
-      "id": "classificazione-costi",
-      "title": "Classificazione dei Costi: Fissi, Variabili, Diretti e Indiretti",
+      "id": "classificazione-costi-e-comportamento",
+      "title": "Classificazione dei Costi: Fissi, Variabili, Diretti, Indiretti e a Gradino",
       "track": "essential",
-      "whyIntro": "Per decidere se accettare una commessa speciale a un prezzo ribassato o se dismettere un server sottoutilizzato, non serve il costo medio totale contabile: serve sapere quali costi aumenteranno o spariranno a seguito della decisione.",
-      "whatBody": "I costi si classificano secondo molteplici criteri. In base alla variabilità rispetto ai volumi: Costi Fissi (CF, che non variano entro l'intervallo di capacità produttiva, come affitti, canoni server, stipendi amministrativi) e Costi Variabili (CV, che variano in proporzione ai volumi, come materie prime, provvigioni, energia di processo). In base all'imputabilità all'oggetto di costo: Costi Diretti (attribuibili in modo certo ed esclusivo, es. ore programmatore dedicate al progetto) e Costi Indiretti (costi comuni condivisi da ripartire con criteri di allocazione, es. spese generali di sede). I Costi Affondati (Sunk Costs) sono spese già sostenute e non recuperabili, che non devono mai influenzare le decisioni future.",
+      "whyIntro": "Nessuna decisione aziendale può essere presa guardando il semplice costo contabile medio a consuntivo. Se il management deve decidere se accettare una commessa o esternalizzare un servizio, deve sapere esattamente quali costi varieranno a seguito della scelta.",
+      "whatBody": "I costi aziendali si classificano secondo due dimensioni ortogonali fondamentali:\n\n1. In Relazione al Volume di Attività (Comportamento dei Costi):\n• Costi Fissi ($CF$): costi che non variano al variare del volume di produzione entro un determinato intervallo di capacità produttiva (relevant range). Esempi: canoni di locazione degli uffici, stipendi del personale a tempo indeterminato, ammortamenti di impianti e server, licenze software enterprise annuali.\n  - Costi Fissi di Struttura: legati alla capacità produttiva installata (impianti, immobili); non possono essere ridotti nel breve termine senza distruggere la capacità operativa.\n  - Costi Fissi Discrezionali o di Sviluppo: decisi annualmente dal management (pubblicità, formazione, consulenze, R&D); possono essere rimodulati tempestivamente.\n  - Costi a Gradino (Step-fixed costs): costi che rimangono costanti entro una certa soglia e poi compiono un salto discontinuo (es. noleggiare un secondo server o assumere un secondo turno di manutenzione quando si supera un certo carico).\n• Costi Variabili ($CV$): costi che variano in misura direttamente proporzionale al volume di produzione o vendita ($CV = cv \\cdot Q$). Esempi: materie prime, componenti hardware assemblati, provvigioni commerciali di vendita, costi di imballaggio e spedizione, consumo di elettricità industriale.\n• Funzione del Costo Totale: $CT = CF + (cv \\cdot Q)$.\n• Costo Medio Unitario: $CMU = \\frac{CT}{Q} = \\frac{CF}{Q} + cv$. All'aumentare di $Q$, il costo fisso unitario ($CF / Q$) si riduce asintoticamente (economie di assorbimento dei costi fissi), mentre il costo variabile unitario ($cv$) rimane costante.\n\n2. In Relazione all'Oggetto di Costo (Imputabilità):\n• Costi Diretti: fattori produttivi impiegati in modo esclusivo per uno specifico prodotto, commessa o servizio, misurabili oggettivamente (es. ore lavorate da uno sviluppatore dedicate interamente al progetto X, costo del microchip Y).\n• Costi Indiretti (Comuni o Generali): fattori condivisi da più prodotti o dall'intera azienda (es. stipendio del CEO, riscaldamento e pulizia della sede, connettività Internet aziendale, costi amministrativi). Non potendo essere misurati direttamente sul singolo prodotto, richiedono basi di ripartizione convenzionali (es. in proporzione alle ore di manodopera, ai metri quadri o al fatturato).",
+      "howDetails": "Distinzione Fondamentale di Orizzonte Temporale:\nNel breve termine i costi fissi sono vincolati e incomprimibili; nel lunghissimo termine tutti i costi diventano variabili, poiché l'azienda può dismettere impianti, rinegoziare contratti o espandere gli stabilimenti.",
       "keypoints": [
         {
-          "id": "kp-cst-1",
-          "title": "Funzione Lineare del Costo Totale",
-          "schematicFormula": "CT = CF + (cv · Q) | Costo Medio Unitario = (CF / Q) + cv",
-          "explanation": "All'aumentare della quantità Q prodotta, il costo fisso unitario (CF/Q) si riduce progressivamente (economie di assorbimento dei costi fissi), mentre il costo variabile unitario (cv) rimane costante."
+          "id": "kp-cla-cost-1",
+          "title": "Equazione del Costo Totale Lineare",
+          "schematicFormula": "Costo Totale = Costi Fissi + (Costo Variabile Unitario · Quantità) | Costo Medio = (CF / Q) + cv",
+          "explanation": "Aumentare i volumi abbatte l'incidenza dei costi fissi su ogni singola unità, riducendo il costo medio unitario."
         }
       ],
       "traps": [
         {
-          "id": "trap-cst-1",
-          "title": "La trappola dei Costi Affondati (Sunk Cost Fallacy)",
-          "misconception": "Continuare a spendere soldi su un progetto software fallimentare solo perché 'vi abbiamo già investito 200.000€ nei mesi scorsi'.",
-          "truth": "I 200.000€ sono ormai persi indipendentemente da cosa accadrà domani: l'unica domanda razionale è se i ricavi futuri attesi supereranno i costi incrementali necessari per completare l'opera.",
-          "example": "Se completare il software richiede altri 50.000€ e il mercato genererà ricavi per soli 20.000€, completarlo aumenterà la perdita di altri 30.000€."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-cst-1",
-          "title": "Costo Marginale del Software",
-          "technicalPerspective": "Copiare un file binario o deployare un container docker aggiuntivo ha un costo computazionale prossimo a zero.",
-          "managerialPerspective": "Il costo variabile marginale è zero, ma i costi fissi di sviluppo iniziale e manutenzione architetturale sono giganteschi e richiedono elevatissimi volumi per essere ammortizzati.",
-          "mindsetShift": "Dalla replicabilità tecnica a costo zero alla copertura economica della struttura fissa."
+          "id": "trap-cost-1",
+          "title": "Trattare il costo fisso come un costo unitario costante",
+          "misconception": "Credere che il costo fisso unitario sia fisso a qualsiasi livello di produzione.",
+          "truth": "Il costo fisso è costante solo nel suo ammontare TOTALE; il costo fisso unitario varia inversamente rispetto alla quantità prodotta (dimezza se raddoppia la produzione).",
+          "example": "Se l'affitto dei server è 10.000€/mese, con 1.000 utenti costa 10€ ad utente; con 10.000 utenti costa solo 1€ ad utente."
         }
       ]
     },
     {
-      "id": "margine-di-contribuzione",
-      "title": "Il Margine di Contribuzione (MdC)",
+      "id": "direct-costing-vs-full-costing-e-mdc",
+      "title": "Direct Costing vs. Full Costing e il Margine di Contribuzione (MdC)",
       "track": "essential",
-      "whyIntro": "Se un'azienda vende 3 prodotti software differenti, quale prodotto conviene spingere con le campagne commerciali quando la capacità dei programmatori è limitata?",
-      "whatBody": "Il Margine di Contribuzione unitario (MdCu) è la differenza tra il prezzo di vendita unitario (p) e il costo variabile unitario (cv). Rappresenta quanto residua da ogni singola vendita per contribuire prima a coprire i costi fissi complessivi dell'azienda e, una volta coperti questi, a generare il Reddito Operativo. Il Margine di Contribuzione percentuale (o Ratio) esprime il margine come percentuale del prezzo di vendita: MdC% = (p - cv) / p.",
+      "whyIntro": "Se un'azienda vende tre linee di software diverse, quale linea genera reale profitto e quale distrugge valore? Se si allineano i costi indiretti con percentuali arbitrarie, si rischia di chiudere la linea più redditizia.",
+      "whatBody": "1. I Due Metodi di Calcolo dei Costi:\n• Full Costing (Costo Pieno ad Assorbimento):\nImputa all'oggetto di costo sia i costi variabili sia una quota dei costi fissi comuni indiretti tramite criteri convenzionali di ripartizione (driver di costo). Limite grave: la ripartizione è inevitabilmente arbitraria; cambiare la base di ripartizione (es. da ore-uomo a fatturato) trasforma una linea apparentemente in utile in una in perdita, inducendo il management in clamorosi errori decisionali.\n• Direct Costing (Costo Variabile / Diretto):\nImputa al prodotto esclusivamente i suoi costi variabili (e gli eventuali costi fissi specifici), evitando qualsiasi ripartizione forzata dei costi generali comuni.\n\n2. La Logica del Margine di Contribuzione (MdC):\n• Margine di Contribuzione Unitario ($mdc$):\n  $$mdc = p - cv$$\n  Misura la capacità del singolo pezzo venduto di 'contribuire' alla copertura dei costi fissi comuni aziendali e alla formazione del profitto.\n• Margine di Contribuzione Totale ($MdC_{tot}$):\n  $$MdC_{tot} = (p - cv) \\cdot Q = \\text{Fatturato Totale} - \\text{Costi Variabili Totali}$$\n• Margine di Contribuzione Percentuale ($mdc\\%$ o Ratio):\n  $$mdc\\% = \\frac{p - cv}{p} = \\frac{MdC_{tot}}{\\text{Fatturato}}$$\n• Margine di Contribuzione di II Livello:\n  $$MdC_{II} = MdC_{tot} - CF_{\\text{specifici della linea}}$$\n  Misura se la linea di prodotto copre i suoi costi fissi dedicati e supporta la struttura aziendale generale.",
+      "howDetails": "Confronto Metodologico per il Conto Economico di Prodotto:\nRicavi Linea A: 100.000€\n- Costi Variabili Linea A: 60.000€\n= MdC di I Livello: 40.000€ (MdC% = 40%)\n- Costi Fissi Specifici Linea A (marketing dedicato): 15.000€\n= MdC di II Livello: 25.000€\nPoiché MdC II > 0, la linea genera 25.000€ netti per coprire i costi fissi comuni dell'azienda (sede, stipendi generali).",
       "keypoints": [
         {
-          "id": "kp-mdc-1",
-          "title": "Formule del Margine di Contribuzione",
-          "schematicFormula": "MdC Unitario = p - cv | MdC Totale = (p - cv) · Q = Ricavi Totali - Costi Variabili Totali | MdC% = (p - cv) / p",
-          "explanation": "Se MdCu è negativo (p < cv), l'azienda perde denaro su ogni pezzo venduto: più vende, più la perdita aumenta. Nessun volume può compensare un MdC unitario negativo."
+          "id": "kp-mdc-form-1",
+          "title": "Equazioni del Margine di Contribuzione",
+          "schematicFormula": "mdc Unitario = p - cv | MdC Totale = Ricavi - Costi Variabili = CF + Reddito Operativo | mdc% = (p - cv) / p",
+          "explanation": "Se mdc < 0 (prezzo inferiore al costo variabile), l'azienda perde denaro su ogni vendita: nessun volume potrà mai salvare l'impresa."
         }
       ],
       "traps": [
         {
-          "id": "trap-mdc-1",
-          "title": "Pensare di poter compensare un prezzo inferiore al costo variabile 'facendo grandi volumi'",
-          "misconception": "Credere alla battuta aziendale: 'Perdiamo 2 euro su ogni pezzo, ma recuperiamo con i volumi enormi!'.",
-          "truth": "I volumi permettono di spalmare i costi fissi, ma moltiplicano le perdite se il prezzo non copre almeno i costi variabili diretti.",
-          "example": "Se vendi un dispositivo hardware a 80€ che ti costa 90€ di componenti e assemblaggio (cv), vendere 100.000 unità genera 1.000.000€ di perdite solo sui costi variabili, prima ancora di pagare affitti e stipendi."
+          "id": "trap-mdc-illusione-1",
+          "title": "Pensare di recuperare un mdc negativo aumentando i volumi",
+          "misconception": "Credere al paradosso manageriale: 'Perdiamo 5 euro per ogni utente registrato, ma faremo profitti grazie ai grandi numeri di scala!'.",
+          "truth": "Se p < cv, ogni vendita aggiuntiva scava una perdita incrementale più profonda; i volumi ammortizzano solo i costi fissi, mai un margine variabile negativo."
         }
       ]
     },
     {
-      "id": "break-even-point",
-      "title": "Formule del Break-Even Point (BEP)",
+      "id": "break-even-point-analisi-pareggio",
+      "title": "Analisi del Punto di Pareggio (Break-Even Analysis) e Utile Obiettivo",
       "track": "essential",
-      "whyIntro": "Prima di avviare una startup o lanciare una nuova linea di prodotti, gli investitori pretendono di conoscere il volume minimo di vendita necessario per azzerare le perdite e iniziare a guadagnare.",
-      "whatBody": "Il Break-Even Point (Punto di Pareggio) è il livello di attività (espresso in quantità fisica Q* o in fatturato monetario R*) in cui i Ricavi Totali eguagliano i Costi Totali, determinando un Reddito Operativo nullo (RO = RT - CT = 0). Ponendo RT = CF + CV, si ricava che la quantità di pareggio è data dal rapporto tra i Costi Fissi Totali e il Margine di Contribuzione unitario. Nel caso di produzioni multiprodotto o quando non ha senso definire un'unità fisica omogenea, si calcola il fatturato di pareggio dividendo i Costi Fissi per il Margine di Contribuzione percentuale medio.",
+      "whyIntro": "Prima di lanciare qualsiasi nuovo servizio o prodotto, investitori e banche chiedono: 'Qual è il volume minimo di vendita necessario per non perdere denaro?'. Il modello di Break-Even risponde con precisione algebrica.",
+      "whatBody": "Il Break-Even Point (Punto di Pareggio, $BEP$) è il volume di attività in cui i Ricavi Totali eguagliano esattamente i Costi Totali, azzerando il Reddito Operativo ($RO = RT - CT = 0$):\n\n1. Formula della Quantità di Pareggio ($Q^*$):\nPonendo $RT = CT$:\n$$p \\cdot Q^* = CF + cv \\cdot Q^* \\implies Q^* \\cdot (p - cv) = CF$$\n$$Q^* = \\frac{CF}{p - cv} = \\frac{CF}{mdc}$$\nLa quantità di pareggio è data dal rapporto tra i Costi Fissi Totali e il Margine di Contribuzione unitario.\n\n2. Formula del Fatturato di Pareggio ($R^*$):\nIndispensabile per imprese multiprodotto o di servizi dove non esiste un'unità fisica omogenea:\n$$R^* = p \\cdot Q^* = \\frac{CF}{(p - cv) / p} = \\frac{CF}{mdc\\%}$$\nIl fatturato minimo per coprire i costi fissi è dato dal rapporto tra Costi Fissi e Margine di Contribuzione percentuale.\n\n3. Calcolo del Volume per un Utile Obiettivo ($Q_{target}$):\nSe il management o gli azionisti impongono un Reddito Operativo target ($RO_{target}$):\n$$p \\cdot Q - (CF + cv \\cdot Q) = RO_{target}$$\n$$Q_{target} = \\frac{CF + RO_{target}}{p - cv} = \\frac{CF + RO_{target}}{mdc}$$\nL'utile desiderato si comporta algebricamente come un costo fisso aggiuntivo da coprire.",
+      "howDetails": "I 4 Presupposti di Linearità del Modello BEP:\n1. Prezzo di vendita unitario ($p$) costante (nessuno sconto di quantità).\n2. Costo variabile unitario ($cv$) costante (nessun rincaro o economia di scala nell'acquisto materiali).\n3. Costi fissi ($CF$) rigorosamente costanti entro il relevant range.\n4. Assenza di variazione delle scorte (tutto ciò che si produce viene interamente venduto nell'esercizio, $Q_{prodotta} = Q_{venduta}$).",
       "keypoints": [
         {
-          "id": "kp-bep-1",
-          "title": "Quantità e Fatturato di Pareggio",
-          "schematicFormula": "Q* = CF / (p - cv) = CF / MdCu | R* = CF / [ (p - cv) / p ] = CF / MdC%",
-          "explanation": "All'aumentare dei Costi Fissi o all'aumentare dei Costi Variabili, il punto di pareggio si sposta verso destra, richiedendo maggiori vendite per non chiudere in perdita."
+          "id": "kp-bep-form-1",
+          "title": "Formule Fondamentali del BEP",
+          "schematicFormula": "Quantità Pareggio Q* = CF / (p - cv) | Fatturato Pareggio R* = CF / [ (p - cv) / p ]",
+          "explanation": "All'aumentare dei costi fissi o variabili, il BEP si sposta verso destra, aumentando il rischio operativo dell'impresa."
         },
         {
-          "id": "kp-bep-2",
-          "title": "BEP con Utile Obiettivo",
+          "id": "kp-bep-target-1",
+          "title": "Quantità per Utile Obiettivo",
           "schematicFormula": "Q_target = (CF + Utile Obiettivo) / (p - cv)",
-          "explanation": "Permette di calcolare quante unità vendere non solo per pareggiare, ma per raggiungere un determinato reddito operativo prefissato dagli azionisti."
+          "explanation": "Permette di dimensionare il budget commerciale per conseguire la redditività prefissata dai soci."
         }
       ],
       "traps": [
         {
-          "id": "trap-bep-1",
-          "title": "Dimenticare che il BEP presuppone l'invarianza della capacità produttiva",
-          "misconception": "Pensare che la formula lineare del BEP valga all'infinito per qualsiasi quantità venduta.",
-          "truth": "La linearità del modello vale solo all'interno dell'intervallo di significatività (relevant range): superata la capacità massima degli impianti o dei server, scattano nuovi costi fissi a gradino (step-fixed costs).",
-          "example": "Se la fabbrica può produrre al massimo 10.000 pezzi, e il BEP calcolato fosse 12.000 pezzi, l'azienda non potrebbe mai raggiungere il pareggio senza prima acquistare un secondo stabilimento."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-bep-1",
-          "title": "Punto di Equilibrio",
-          "technicalPerspective": "Il punto di intersezione geometrico tra due rette cartesiane y1 = m1*x e y2 = m2*x + q.",
-          "managerialPerspective": "La soglia di rischio vitale per l'azienda che separa l'area della distruzione di valore da quella della sostenibilità economica.",
-          "mindsetShift": "Dall'intersezione matematica statica al dimensionamento della tolleranza al rischio di mercato."
+          "id": "trap-bep-range-1",
+          "title": "Ignorare i limiti della capacità produttiva",
+          "misconception": "Calcolare un BEP di 15.000 unità e ritenere il progetto fattibile senza verificare i limiti dello stabilimento.",
+          "truth": "Se gli impianti hanno una capacità massima teorica di 12.000 unità, il BEP a 15.000 unità è irraggiungibile: l'azienda lavorerebbe al 100% rimanendo perennemente in perdita."
         }
       ]
     },
     {
-      "id": "leva-operativa-e-sicurezza",
-      "title": "Grado di Leva Operativa (GLO) e Margine di Sicurezza",
+      "id": "leva-operativa-e-margine-sicurezza",
+      "title": "Grado di Leva Operativa (GLO) e Margine di Sicurezza (MS)",
       "track": "standard",
-      "whyIntro": "Se il mercato subisce una contrazione del 15% della domanda, di quanto calerà il nostro utile operativo? Crollerà del 15% o del 75%? La risposta è misurata dalla Leva Operativa.",
-      "whatBody": "La Leva Operativa misura la sensibilità del Reddito Operativo alle variazioni percentuali del volume di vendita o del fatturato. Il Grado di Leva Operativa (GLO) è calcolato come rapporto tra il Margine di Contribuzione Totale e il Reddito Operativo ad un dato livello di produzione: GLO = MdC_tot / RO = [Q · (p - cv)] / [Q · (p - cv) - CF]. Più un'azienda è vicina al punto di pareggio (RO vicino a zero), più il GLO tende a infinito. Il Margine di Sicurezza (MS) misura invece la percentuale di calo delle vendite che l'azienda può sopportare prima di entrare nell'area delle perdite: MS = (Q - Q*) / Q = 1 / GLO.",
+      "whyIntro": "Se il mercato subisce una flessione del 10% delle vendite a causa di una recessione o dell'ingresso di un concorrente, di quanto crollerà l'utile operativo aziendale? La risposta dipende dalla rigidità della struttura dei costi.",
+      "whatBody": "1. Il Grado di Leva Operativa (GLO):\nLa Leva Operativa misura la sensibilità percentuale del Reddito Operativo al variare della quantità venduta o del fatturato:\n$$GLO = \\frac{\\% \\Delta RO}{\\% \\Delta Q} = \\frac{MdC_{tot}}{RO} = \\frac{Q \\cdot (p - cv)}{Q \\cdot (p - cv) - CF}$$\n• Significato Economico: indica il fattore moltiplicativo dell'utile. Se $GLO = 4$, un aumento del $+10\\%$ delle vendite produce un incremento del $+40\\%$ del Reddito Operativo ($4 \\cdot 10\\%$); ma simmetricamente un calo del $-10\\%$ delle vendite distrugge il $-40\\%$ del reddito!\n• Valore a Ridosso del Pareggio: man mano che $Q$ si avvicina a $Q^*$ (dove $RO \\to 0$), il denominatore tende a zero e il $GLO \\to +\\infty$ (massima vulnerabilità).\n\n2. Il Margine di Sicurezza (MS):\nMisura la riduzione percentuale massima che il volume di vendita o il fatturato attuale può subire prima che l'azienda entri nell'area delle perdite ($RO < 0$):\n$$MS = \\frac{Q_{\\text{attuale}} - Q^*}{Q_{\\text{attuale}}} \\cdot 100 = \\frac{R_{\\text{attuale}} - R^*}{R_{\\text{attuale}}} \\cdot 100$$\n• Relazione Duale Perfetta tra GLO e Margine di Sicurezza:\n$$MS = \\frac{1}{GLO}$$\nSe un'azienda lavora con $GLO = 5$, il suo Margine di Sicurezza è esattamente pari a $1 / 5 = 20\\%$. Ciò significa che un calo delle vendite superiore al 20% farà chiudere il bilancio in perdita!",
+      "howDetails": "Trade-off Strategico tra Strutture di Costo:\n• Struttura Rigida (Alto GLO: molti Costi Fissi, bassi Costi Variabili - es. software, semiconduttori, telco, ferrovie): BEP elevato, Margine di Sicurezza basso, ma profitti esplosivi non appena si supera il pareggio.\n• Struttura Flessibile (Basso GLO: pochi Costi Fissi, molti Costi Variabili - es. consulenza, agenzie, retail tradizionale): BEP basso, Margine di Sicurezza elevato, ma profitti che crescono lentamente.",
       "keypoints": [
         {
-          "id": "kp-glo-1",
-          "title": "Formula del Grado di Leva Operativa (GLO)",
-          "schematicFormula": "GLO = MdC Totale / Reddito Operativo | Variazione % RO = GLO · Variazione % Vendite",
-          "explanation": "Se un'azienda ha GLO = 4, un incremento del 10% delle vendite produrrà un aumento del +40% del Reddito Operativo; simmetricamente, un calo del 10% delle vendite distruggerà il 40% del reddito."
+          "id": "kp-glo-form-1",
+          "title": "Formula del Grado di Leva Operativa",
+          "schematicFormula": "GLO = MdC Totale / Reddito Operativo | %ΔRO = GLO · %ΔQ",
+          "explanation": "Misura l'amplificazione del rischio operativo d'impresa derivante dalla presenza di costi fissi."
         },
         {
-          "id": "kp-glo-2",
-          "title": "Margine di Sicurezza (MS)",
-          "schematicFormula": "MS = (Q - Q*) / Q · 100 = (Fatturato Attuale - R*) / Fatturato Attuale · 100 = 1 / GLO",
-          "explanation": "Un'azienda con GLO = 5 ha un Margine di Sicurezza del 20% (1/5): una flessione del fatturato superiore al 20% farà chiudere l'esercizio in perdita."
+          "id": "kp-ms-rel-1",
+          "title": "Relazione Duale GLO - Margine di Sicurezza",
+          "schematicFormula": "Margine di Sicurezza (MS) = (Q - Q*) / Q = 1 / GLO",
+          "explanation": "Più la leva operativa è elevata, più il cuscinetto di sicurezza contro le flessioni di mercato è sottile."
         }
       ],
       "traps": [
         {
-          "id": "trap-glo-1",
-          "title": "Equiparare la leva operativa a un valore costante nel tempo",
-          "misconception": "Considerare il GLO come un parametro intrinseco fisso dell'azienda, valido a qualunque livello di vendita.",
-          "truth": "Il GLO varia continuamente al variare del punto di lavoro Q: decresce man mano che ci si allontana dal punto di pareggio verso volumi elevati, e cresce esponenzialmente quando le vendite scendono verso il BEP.",
-          "example": "A ridosso del BEP, una minima variazione di 100 pezzi può raddoppiare l'utile o azzerarlo (GLO altissimo); a volumi tripli rispetto al BEP, il GLO si stabilizza vicino a 1."
+          "id": "trap-glo-cost-1",
+          "title": "Considerare il GLO come un valore costante per l'azienda",
+          "misconception": "Pensare che il GLO calcolato a budget rimanga identico a qualsiasi livello di produzione.",
+          "truth": "Il GLO varia continuamente al variare del volume venduto Q: è altissimo a ridosso del BEP e si avvicina progressivamente a 1 man mano che i volumi diventano giganteschi rispetto ai costi fissi."
+        }
+      ]
+    },
+    {
+      "id": "decisioni-di-breve-termine-costi-rilevanti",
+      "title": "Decisioni di Breve Periodo: Make or Buy, Eliminazione Linee e Ordini Speciali",
+      "track": "approfondito",
+      "whyIntro": "Nelle decisioni operative rapide, applicare le metodologie contabili tradizionali di costo pieno porta a scelte disastrose: eliminare prodotti redditizi o rifiutare commesse che avrebbero arricchito l'azienda.",
+      "whatBody": "Nelle decisioni di breve periodo (capacità produttiva fissa), la regola aurea dell'economia gestionale impone di considerare esclusivamente i Costi Rilevanti (costi differenziali che cambiano a seconda della scelta), ignorando categoricamente i costi fissi comuni e i costi affondati (sunk costs).\n\n1. Decisione di Make or Buy (Produrre internamente o Acquistare all'esterno):\nUn'azienda produce un componente software o hardware internamente con costo variabile $cv_{\\text{make}} = 12€$ e costi fissi comuni allocati per 8€ (Costo Pieno contabile = 20€). Un fornitore esterno offre lo stesso componente a $P_{\\text{buy}} = 15€$.\n• Errore comune: confrontare 15€ con 20€ e decidere di comprare all'esterno credendo di risparmiare 5€.\n• Analisi corretta sui Costi Rilevanti: i costi fissi comuni (8€) non spariranno se compriamo all'esterno! Comprando all'esterno l'azienda spenderà 15€ e continuerà a pagare gli 8€ di costi fissi (Costo complessivo = 23€), subendo una perdita netta di 3€ a pezzo!\n• Regola Decisionale Make or Buy:\nConviene comprare all'esterno (BUY) solo se: $P_{\\text{buy}} < cv_{\\text{make}} + CF_{\\text{specifici eliminabili}}$.\n\n2. Decisione di Eliminazione di una Linea di Prodotto / Servizio:\nSpesso il bilancio a costo pieno mostra che un servizio è 'in perdita' perché il prezzo di vendita non copre la quota di costi generali allocati.\n• Regola del Margine di Contribuzione: finché una linea di prodotto genera un Margine di Contribuzione positivo ($mdc = p - cv > 0$), essa fornisce un contributo netto alla copertura dei costi fissi generali dell'impresa.\n• Se la linea venisse soppressa, i ricavi e i costi variabili sparirebbero, ma i costi fissi comuni resterebbero intatti, andando a gravare sulle linee superstiti e peggiorando il risultato operativo complessivo dell'azienda!\n• Si elimina la linea solo se il suo margine di contribuzione totale non copre nemmeno i suoi costi fissi specifici ed eliminabili ($MdC_{II} < 0$).\n\n3. Accettazione di Ordini Speciali Sottocosto:\nUn cliente estero richiede una fornitura speciale di 1.000 licenze software a un prezzo ribassato di 35€ (il prezzo di listino normale è 60€ e il costo medio pieno è 45€).\n• Regola di Convenienza: se l'azienda ha capacità produttiva inutilizzata (server o personale sottoutilizzati) e la fornitura non disturba né cannibalizza il mercato normale a prezzo pieno:\n  Poiché $cv = 10€$, ogni licenza genera un margine di contribuzione differenziale di $35€ - 10€ = +25€$!\n  Accettare l'ordine incrementerà l'utile operativo aziendale di esattamente $25€ \\cdot 1.000 = +25.000€$, anche se il prezzo è largamente inferiore al costo pieno!",
+      "howDetails": "Algoritmo Decisionale per Ordini Speciali:\n1. C'è capacità produttiva residua non sfruttata?\n2. Il prezzo offerto supera il costo variabile incrementale unitario ($p_{\\text{spec}} > cv$)?\n3. Ci sono costi fissi specifici aggiuntivi da sostenere per la commessa?\n4. L'ordine speciale rischia di cannibalizzare i clienti attuali a prezzo pieno?\nSe 1 e 2 sono Sì e 3 e 4 non creano impatti negativi superiori al margine, l'ordine speciale VA SEMPRE ACCETTATO.",
+      "keypoints": [
+        {
+          "id": "kp-make-buy-1",
+          "title": "Regola Aurea del Make or Buy",
+          "schematicFormula": "Conviene BUY solo se: Prezzo Fornitore < Costo Variabile Interno + Costi Fissi Specifici Risparmiabili",
+          "explanation": "I costi fissi comuni incomprimibili non devono mai essere inclusi nel confronto economico."
+        },
+        {
+          "id": "kp-elim-line-1",
+          "title": "Regola di Soppressione Prodotti",
+          "schematicFormula": "Se mdc = p - cv > 0 → Mantenere la linea di prodotto (Eliminarla ridurrebbe l'utile globale)",
+          "explanation": "Qualsiasi margine unitario positivo concorre ad assorbire i costi generali comuni della struttura."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-elim-line-2",
+          "title": "Eliminare un prodotto con mdc positivo cadendo nella spirale dei costi fissi",
+          "misconception": "Cancellare un servizio dal catalogo perché il report a costo pieno mostra che genera una perdita di 10.000€.",
+          "truth": "Se quel servizio aveva un mdc di +30.000€ e assorbiva 40.000€ di costi fissi comuni aziendali, cancellandolo i 40.000€ di costi comuni rimangono e l'utile aziendale complessivo calerà di 30.000€.",
+          "example": "L'azienda che elimina progressivamente i prodotti apparentemente in perdita finisce per fallire perché i costi generali di sede restano identici ma non c'è più fatturato per coprirli."
         }
       ]
     }

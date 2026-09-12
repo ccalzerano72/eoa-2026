@@ -1,75 +1,263 @@
 {
   "block": 1,
   "title": "Impresa e Decisioni",
-  "subtitle": "L'impresa come sistema aperto e complesso",
-  "guidingQuestion": "Cos'è un'impresa? È diversa da un'azienda? Perché la miglior tecnologia da sola non garantisce il successo?",
+  "subtitle": "I fondamenti dell'economia d'impresa, l'organizzazione complessa e i bias decisionali",
+  "guidingQuestion": "Cos'è un'impresa? Come si distingue da un'azienda? Perché la migliore soluzione ingegneristica fallisce se ignora la sostenibilità economica e i limiti cognitivi umani?",
   "caseStudy": {
-    "id": "caso-olivetti",
-    "name": "Olivetti e la Programma 101 (1964-1965)",
-    "company": "Olivetti",
-    "year": "1964",
-    "dilemma": "Se avevamo la tecnologia migliore (il primo personal computer della storia), perché abbiamo perso la leadership cedendo la divisione a General Electric?",
-    "summary": "Olivetti creò con la P101 il primo calcolatore da tavolo programmabile. Tuttavia, l'indebitamento per l'acquisizione della Underwood e l'ingresso di finanzieri miopi portarono alla svendita del settore elettronico, definito 'un neo da estirpare'.",
+    "id": "caso-olivetti-ferrari-nokia",
+    "name": "Dalla P101 alla Strategia della Scarsità: Olivetti, Ferrari e Nokia",
+    "company": "Olivetti / Ferrari / Nokia",
+    "year": "1964-2026",
+    "dilemma": "Perché un'azienda tecnologicamente all'avanguardia mondiale può fallire o essere svenduta (Olivetti, Nokia), mentre un'altra mantiene margini e valore ineguagliati nel tempo limitando deliberatamente la produzione (Ferrari)?",
+    "summary": "Nel 1965 Olivetti presentò la Programma 101, il primo personal computer al mondo progettato da Pier Giorgio Perotto e Mario Tchou. Tuttavia, a causa dell'indebitamento per l'acquisizione di Underwood e dell'intervento di finanzieri miopi ('Gruppo di Intervento'), la divisione elettronica fu liquidata a General Electric come 'un neo da estirpare', perdendo la leadership informatica mondiale. All'opposto, Ferrari preserva il proprio valore globale applicando la regola aurea di Enzo Ferrari ('produrre sempre un'auto in meno rispetto alla domanda del mercato') e affrontando i trade-off dell'elettrificazione senza snaturare il brand. Nokia, infine, dominatore incontrastato dei telefoni cellulari negli anni '90 e 2000, soccombette alla rivoluzione smartphone per la trappola delle competenze (competence trap) e l'ostinata difesa del sistema proprietario Symbian.",
     "coreLessons": [
-      "La superiorità tecnica è condizione necessaria ma non sufficiente per la sopravvivenza d'impresa.",
-      "L'equilibrio finanziario e la struttura del capitale determinano la libertà strategica dell'azienda.",
-      "Miopia manageriale (short-termism): privilegiare i dividendi immediati della meccanica rispetto agli investimenti a lungo termine nell'elettronica."
+      "La superiorità tecnica e ingegneristica è condizione necessaria ma assolutamente non sufficiente per la sopravvivenza d'impresa.",
+      "L'equilibrio finanziario e la struttura del capitale determinano l'autonomia e la libertà strategica dell'azienda.",
+      "Miopia manageriale (short-termism): privilegiare i dividendi immediati a scapito degli investimenti a lungo termine in ricerca e sviluppo distrugge il valore futuro.",
+      "La strategia della scarsità e la gestione rigorosa dei trade-off permettono di difendere un posizionamento di eccellenza nel tempo."
     ],
-    "keytakeaway": "L'impresa non è un problema ingegneristico isolato: è un sistema complesso vincolato dalla sostenibilità economica e finanziaria."
+    "keytakeaway": "L'impresa non è un problema ingegneristico isolato da risolvere con un algoritmo: è un sistema aperto, socio-tecnico e complesso vincolato dalla sostenibilità economica e dai flussi finanziari."
   },
   "topics": [
     {
-      "id": "complicato-vs-complesso",
-      "title": "Complicato vs. Complesso",
+      "id": "fondamenti-economia-e-paradigma",
+      "title": "I Fondamenti dell'Economia e il Paradigma EOA per Ingegneri",
       "track": "essential",
-      "whyIntro": "Gli ingegneri informatici padroneggiano sistemi complicati (microprocessori, compilatori). Trattare un'impresa come un sistema complicato conduce a fallimenti decisionali sistematici.",
-      "whatBody": "Un sistema complicato è composto da molte parti predicibili e controllabili mediante regole fisse. Un sistema complesso è composto da agenti autonomi (persone, mercati, concorrenti) che interagiscono in modo non lineare, generando proprietà emergenti e mutamenti imprevedibili.",
+      "whyIntro": "Un ingegnere informatico che si focalizza unicamente sull'ottimizzazione del codice, delle feature o delle architetture hardware rischia di sviluppare capolavori tecnici che non generano valore o portano l'azienda al collasso finanziario. Capire l'economia significa comprendere le regole del gioco in cui il software vive.",
+      "whatBody": "La Scienza Economica è lo studio del modo in cui i singoli individui e le società umane scelgono di allocare risorse scarse tra usi alternativi, al fine di produrre, scambiare e consumare beni e servizi per soddisfare bisogni illimitati.\n\nTre pilastri inscindibili:\n1. Scarsità: tempo, capitale monetario, lavoro, capacità computazionale e materie prime sono finiti.\n2. Bisogni: i desideri umani e le esigenze di mercato sono potenzialmente infiniti.\n3. Scelta: non potendo avere tutto contemporaneamente, ogni scelta impone la rinuncia ad altre opportunità.\n\nBranche fondamentali:\n• Economia Politica (Macro e Microeconomia): approccio 'dall'alto', studia i grandi aggregati (inflazione, PIL, disoccupazione) o i modelli teorici di comportamento di mercati ideali.\n• Economia Aziendale e Management: approccio 'dal basso', studia la nascita, il funzionamento, la struttura, il governo e lo sviluppo sostenibile dell'impresa concreta.\n\nLe 3 Mentalità di fronte alla Gestione Aziendale:\n1. Tecnica-produttiva (unilaterale): focalizzata sulle prestazioni tecnologiche e sulla perfezione ingegneristica; rischia la resistenza al mercato o l'inerzia.\n2. Finanziaria (unilaterale): focalizzata unicamente sulla cassa immediata; in tempi floridi spinge a spese eccessive, in tempi duri taglia investimenti strategici (confonde capacità di spesa con convenienza economica).\n3. Economica o Gestionale (globale e di sintesi): bilancia e sintetizza fattibilità tecnica, redditività economica e sostenibilità finanziaria nel lungo periodo.",
+      "howDetails": "Verifica di Coerenza Decisionale EOA:\n1. Verifica Tecnica: La soluzione rispetta i vincoli di fattibilità e performance?\n2. Verifica Economica: I ricavi prospettici superano tutti i costi (inclusi i costi opportunità)?\n3. Verifica Finanziaria: Le entrate monetarie coprono le uscite nei tempi dovuti senza generare crisi di liquidità?\nSe manca anche solo una di queste tre condizioni, l'iniziativa è destinata al fallimento.",
+      "keypoints": [
+        {
+          "id": "kp-econ-1",
+          "title": "Equazione della Scarsità",
+          "schematicFormula": "Risorse Scarse + Bisogni Illimitati → Scelta Obbligata (Costo Opportunità)",
+          "explanation": "L'economia esiste perché le risorse sono limitate; ogni allocazione implica un sacrificio quantificabile."
+        },
+        {
+          "id": "kp-econ-2",
+          "title": "Sintesi della Mentalità Gestionale",
+          "schematicFormula": "Mentalità Gestionale = Sintesi(Fattibilità Tecnica + Redditività Economica + Solvibilità Finanziaria)",
+          "explanation": "L'ingegnere-manager non sceglie la soluzione tecnologicamente perfetta, ma quella che massimizza il valore globale sostenibile."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-econ-1",
+          "title": "Fattibilità tecnica = Convenienza economica",
+          "misconception": "Credere che se un software o un sistema hardware è tecnicamente superiore e fattibile, allora sia automaticamente un'ottima operazione aziendale.",
+          "truth": "La perfezione tecnica priva di domanda di mercato o con costi superiori al valore percepito dal cliente è distruzione netta di ricchezza.",
+          "example": "Olivetti creò con la P101 il primo PC al mondo, ma la miopia del consiglio d'amministrazione e i vincoli finanziari portarono alla cessione della divisione."
+        }
+      ],
+      "conceptShifts": [
+        {
+          "id": "shift-econ-1",
+          "title": "Paradigma Ingegneristico vs Aziendale",
+          "technicalPerspective": "Massimizzare le prestazioni del sistema e l'efficienza algoritmica a risorse date.",
+          "managerialPerspective": "Allocare le risorse scarse per garantire la sopravvivenza, la creazione di valore e il vantaggio competitivo duraturo.",
+          "mindsetShift": "Dall'ottimizzazione locale di un componente tecnico alla redditività globale dell'intero sistema socio-economico."
+        }
+      ]
+    },
+    {
+      "id": "definizione-impresa-azienda-flussi",
+      "title": "Cos'è un'Impresa: Sistema Complesso, Creazione di Valore e Mappa dei Flussi",
+      "track": "essential",
+      "whyIntro": "Nel linguaggio comune i termini 'impresa', 'azienda' e 'società' vengono usati come sinonimi. In economia e nel diritto rappresentano concetti profondamente diversi, con ruoli precisi.",
+      "whatBody": "Definizione formale:\n• Impresa (art. 2082 c.c.): l'attività economica professionalmente organizzata al fine della produzione o dello scambio di beni o di servizi. Rappresenta l'aspetto dinamico, funzionale e finalistico.\n• Azienda (art. 2555 c.c.): il complesso dei beni e delle risorse (materiali, immateriali, contratti, know-how) organizzati dall'imprenditore per l'esercizio dell'impresa. Rappresenta l'aspetto strumentale e patrimoniale.\n\nI 4 Denominatori Comuni dell'Impresa:\n1. Sistema complesso ed aperto: composto da una pluralità di elementi eterogenei integrati ed interdipendenti, in continuo interscambio di materia, denaro e informazione con l'ambiente esterno.\n2. Natura economica: finalizzato a soddisfare bisogni umani impiegando risorse scarse.\n3. Fine di creare ricchezza: l'impresa deve realizzare prodotti/servizi il cui valore economico di mercato sia superiore alla somma del valore delle risorse consumate (Valore Output > Valore Input).\n4. Modalità di condivisione della ricchezza: la ricchezza creata (o distrutta) viene ripartita tra i partecipanti (stipendi ai dipendenti, pagamenti ai fornitori, tasse allo Stato, interessi ai creditori, dividendi ai soci).\n\nLa Mappa dei Flussi con i Mercati:\n• Mercato degli Input (Fornitori): fornitura di materie prime, componenti tecnologici e servizi in cambio di uscite finanziarie (acquisti/debiti verso fornitori).\n• Mercato del Lavoro: apporto di tempo e competenze umane in cambio di stipendi, salari e previdenza.\n• Mercato degli Output (Clienti): vendita di prodotti finiti o servizi digitali in cambio di entrate finanziarie (ricavi/crediti commerciali).\n• Mercato Finanziario (Azionisti e Creditori): raccolta di capitale proprio (equity) o capitale di debito (finanziamenti bancari, obbligazioni) in cambio di dividendi o interessi passivi e rimborso delle quote capitale.\n• Pubblica Amministrazione e Stato: fruizione di beni pubblici, normative e infrastrutture a fronte del pagamento di imposte e tasse.",
+      "howDetails": "Condizione Fondamentale di Creazione di Valore:\nValore Aggiunto = Valore Output di Mercato - Valore Input Acquistati da Terzi\nSe Valore Aggiunto ≤ 0, l'attività sta letteralmente distruggendo risorse della collettività trasformando risorse di valore in prodotti che valgono meno.",
+      "keypoints": [
+        {
+          "id": "kp-imp-1",
+          "title": "Impresa vs. Azienda",
+          "schematicFormula": "Impresa = Attività economica organizzata (art. 2082 c.c.) | Azienda = Strumenti e beni organizzati (art. 2555 c.c.)",
+          "explanation": "L'impresa è il processo decisionale e produttivo (azione); l'azienda è l'apparato patrimoniale che lo rende possibile (mezzo)."
+        },
+        {
+          "id": "kp-imp-2",
+          "title": "Condizione di Vita dell'Impresa",
+          "schematicFormula": "Valore Output > Somma Valore Input (Creazione Netta di Ricchezza)",
+          "explanation": "Senza creazione sistematica di valore aggiunto superiore ai costi sostenuti, l'impresa esaurisce le proprie risorse e muore."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-imp-1",
+          "title": "L'azienda come entità fisica isolata",
+          "misconception": "Pensare che l'azienda sia un insieme chiuso di macchinari, uffici o server indipendente dall'ambiente circostante.",
+          "truth": "L'azienda è un sistema aperto: dipende vitalmente dai flussi continui di scambio con fornitori, clienti, mercati di capitali e istituzioni pubbliche.",
+          "example": "Se si interrompe il flusso creditizio o di approvvigionamento chip, l'azienda si ferma anche se possiede i migliori macchinari e dipendenti."
+        }
+      ]
+    },
+    {
+      "id": "soggetti-aziendali-governance-stakeholder",
+      "title": "Soggetto Economico, Soggetto Giuridico e Teoria degli Stakeholder",
+      "track": "standard",
+      "whyIntro": "Nelle organizzazioni aziendali chi firma i contratti non sempre coincide con chi prende le decisioni reali. Distinguere la titolarità giuridica dal potere effettivo è fondamentale per comprendere le dinamiche di potere e di governance.",
+      "whatBody": "Dicotomia fondamentale:\n• Soggetto Giuridico: la persona fisica (es. l'imprenditore individuale) o la persona giuridica (es. la S.p.A. o S.r.l.) a cui fanno capo ex lege tutti i diritti, gli obblighi e le responsabilità nascenti dall'attività economica.\n• Soggetto Economico: la persona fisica o il gruppo di persone fisiche che, detenendo il controllo del capitale di voto o esercitando influenza dominante, orienta e determina le decisioni strategiche della gestione d'impresa.\n\nShareholder vs Stakeholder Theory:\n• Shareholder (Azionista): detiene quote di capitale proprio; il modello tradizionale della shareholder primacy fissa come unico scopo dell'impresa la massimizzazione del profitto per i soci.\n• Stakeholder (Portatore di Interesse): qualsiasi soggetto (individuo, gruppo, istituzione) che influenza o è influenzato dal raggiungimento degli obiettivi aziendali.\n  - Stakeholder Primari: soci azionisti, manager, lavoratori dipendenti, fornitori, clienti, creditori finanziari (banche).\n  - Stakeholder Secondari: lo Stato e gli enti locali, i concorrenti di settore, la comunità territoriale e l'ambiente.",
+      "howDetails": "Classificazione dei Soggetti nelle varie forme societarie:\n• Società di persone (S.n.c.): I soci sono sia soggetto economico che soggetto giuridico (non c'è personalità giuridica distinta).\n• Società di capitali (S.p.A.): Il soggetto giuridico è l'ente astratto della società stessa (persona giuridica); il soggetto economico è il gruppo di controllo degli azionisti di maggioranza unitamente al top management.",
+      "keypoints": [
+        {
+          "id": "kp-sog-1",
+          "title": "Dicotomia Giuridico vs. Economico",
+          "schematicFormula": "Soggetto Giuridico = Chi risponde legalmente | Soggetto Economico = Chi esercita il potere gestionale",
+          "explanation": "In una grande S.p.A. il soggetto giuridico è la società stessa; il soggetto economico è l'azionista di controllo o il management."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-sog-1",
+          "title": "Confondere azionisti di minoranza e soggetto economico",
+          "misconception": "Credere che possedere azioni di una società implichi automaticamente far parte del soggetto economico.",
+          "truth": "I piccoli azionisti sono semplici conferenti di capitale (investitori) senza alcun potere decisionale effettivo sulla gestione aziendale."
+        }
+      ]
+    },
+    {
+      "id": "management-funzioni-imprenditore-vs-manager",
+      "title": "Le 4 Funzioni del Management e Imprenditore vs. Manager",
+      "track": "essential",
+      "whyIntro": "Molte startup promettenti falliscono quando passano dalla fase di ideazione alla fase di scalabilità perché i fondatori non sanno passare dalla visione imprenditoriale al coordinamento manageriale disciplinato.",
+      "whatBody": "Gestione (Management): l'arte e la disciplina scientifica di coordinare e impiegare risorse umane, finanziarie e tecnologiche per raggiungere gli obiettivi prefissati con efficacia (raggiungere il risultato giusto) ed efficienza (utilizzare il minor quantitativo di risorse).\n\nLe 4 Funzioni di Base del Management:\n1. Pianificazione: formulare la visione strategica, fissare gli obiettivi di lungo termine e delineare i piani operativi per conseguirli.\n2. Organizzazione: definire la struttura dei ruoli, allocare compiti e responsabilità, disegnare i flussi di lavoro (workflow) e la catena di comando.\n3. Leadership: motivare, guidare, ispirare e coordinare le persone affinché convergano verso la missione comune.\n4. Controllo: misurare costantemente i risultati conseguiti, confrontarli con i benchmark di budget e intervenire con tempestive azioni correttive.\n\nMatrice Comparativa: Imprenditore vs Manager:\n• Ruolo: L'Imprenditore fonda l'impresa, definisce la visione e assume il rischio supremo; il Manager amministra l'organizzazione ottimizzando i processi per raggiungere gli obiettivi definiti.\n• Orizzonte Temporale: L'Imprenditore proietta lo sguardo sul lungo termine (5-10+ anni); il Manager risponde tipicamente a metriche di medio-breve termine (1-3 anni o risultati trimestrali).\n• Capitale e Rischio: L'Imprenditore rischia il proprio capitale patrimoniale; il Manager protegge e valorizza il capitale conferito da terzi azionisti.\n• Motivazione Guida: L'Imprenditore ricerca indipendenza, innovazione e creazione di valore durevole; il Manager persegue efficienza, stabilità, prestigio professionale, bonus e stock option.\n\nIl Rischio di Short-Termism:\nQuando la gestione aziendale è dominata da logiche puramente manageriali a breve termine, si corre il rischio di tagliare la R&D per alzare i profitti del trimestre o ricorrere a pratiche di buy-back (riacquisto di azioni proprie per gonfiarne il valore a breve) a scapito della salute futura dell'impresa.",
+      "howDetails": "La Sequenza del Controllo di Gestione:\nObiettivo di Budget → Rilevazione Consuntivo → Calcolo Scostamento (Delta) → Analisi delle Cause (Prezzo, Volume, Efficienza) → Azione Correttiva.",
+      "keypoints": [
+        {
+          "id": "kp-man-1",
+          "title": "Le 4 Fasi del Ciclo di Gestione",
+          "schematicFormula": "Management = Pianificazione → Organizzazione → Leadership → Controllo",
+          "explanation": "Ciclo continuo e ricorsivo di retroazione per allineare l'azione aziendale agli obiettivi strategici."
+        },
+        {
+          "id": "kp-man-2",
+          "title": "Contrasto Imprenditore vs Manager",
+          "schematicFormula": "Imprenditore = Visione · Rischio proprio · Lungo periodo | Manager = Metodo · Capitale altrui · Medio-breve periodo",
+          "explanation": "Due figure complementari ma con incentivi, orizzonti temporali e propensioni al rischio differenti."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-man-1",
+          "title": "Efficacia vs Efficienza",
+          "misconception": "Considerare l'efficienza (fare le cose al minor costo possibile) equivalente all'efficacia.",
+          "truth": "Si può essere massimamente efficienti nel produrre un software o un bene che nessuno vuole (inefficacia totale): fare la cosa giusta (efficacia) precede sempre il farla bene (efficienza)."
+        }
+      ]
+    },
+    {
+      "id": "complicato-vs-complesso",
+      "title": "Complicato vs. Complesso: Sistemi Ordinati vs. Sistemi Adattivi",
+      "track": "essential",
+      "whyIntro": "Gli ingegneri informatici padroneggiano sistemi complicati (microprocessori, compilatori, cluster). Trattare un'impresa come un sistema complicato conduce a fallimenti decisionali sistematici.",
+      "whatBody": "La distinzione tra complicato e complesso è fondamentale per comprendere la dinamica dell'impresa:\n\n• Sistema Complicato (Complicated):\nComposto da moltissime parti e strati logici, ma con relazioni di causa-effetto lineari, stabili e predicibili. Con sufficienti informazioni, tempo e competenze specialistiche, il sistema può essere interamente modellato, scomposto e rimontato con precisione matematica deterministica (es. un circuito integrato a 3 nanometri, un motore a turbina, un sistema operativo).\n\n• Sistema Complesso (Complex):\nComposto da numerosi agenti autonomi, eterogenei e interdipendenti (lavoratori, consumatori, fornitori, competitor) che apprendono e reagiscono continuamente alle reciproche azioni. Le relazioni di causa-effetto non sono lineari, retroagiscono (feedback loop) e generano 'proprietà emergenti' imprevedibili non deducibili dalle caratteristiche dei singoli agenti isolati.\n\nImplicazioni per l'Ingegnere Informatico:\nUn'azienda non può essere gestita come un algoritmo deterministico. In condizioni di complessità, i piani rigidi falliscono e occorrono modularità, sperimentazione rapida, tolleranza agli errori ed elevata capacità di apprendimento organizzativo.",
+      "howDetails": "Matrice di Cynefin / Confronto:\n- Complicato: Relazione causa-effetto analizzabile con esperti (Sense - Analyze - Respond). Approccio Good Practice.\n- Complesso: Relazione causa-effetto comprensibile solo a posteriori per via dell'emergenza (Probe - Sense - Respond). Approccio Emergent Practice.",
       "keypoints": [
         {
           "id": "kp-comp-1",
-          "title": "Formula della Complessità",
-          "schematicFormula": "Complicato = scomponibile · prevedibile | Complesso = adattivo · emergente · incerto",
-          "explanation": "Nel complicato la causa determina univocamente l'effetto; nel complesso l'azione retroagisce sull'ambiente in modo non deterministico."
+          "title": "Dicotomia Complicato vs Complesso",
+          "schematicFormula": "Complicato = Scomponibile · Deterministico · Ripetibile | Complesso = Adattivo · Non lineare · Emergente",
+          "explanation": "Nel complicato la causa determina univocamente l'effetto; nel complesso l'azione modifica l'ambiente e genera conseguenze non predicibili a priori."
         }
       ],
       "traps": [
         {
           "id": "trap-comp-1",
-          "title": "La trappola dell'illusione di controllo algoritmico",
-          "misconception": "Credere di poter pianificare le dinamiche aziendali come un diagramma di Gantt immutabile o un algoritmo a stati finiti.",
-          "truth": "L'impresa opera in condizioni di incertezza strategica e razionalità limitata (Herbert Simon): occorrono capacità di adattamento e apprendimento continuo."
+          "title": "L'illusione del controllo algoritmico totale",
+          "misconception": "Credere di poter pianificare le dinamiche d'impresa come un diagramma di Gantt immutabile o una macchina a stati finiti deterministica.",
+          "truth": "L'impresa opera in condizioni di incertezza strategica e razionalità limitata: occorre progettare organizzazioni flessibili e resilienti."
         }
       ],
       "conceptShifts": [
         {
           "id": "shift-comp-1",
-          "title": "Progettazione di sistemi",
-          "technicalPerspective": "Ottimizzare un algoritmo per massimizzare l'efficienza computazionale in condizioni stabili.",
-          "managerialPerspective": "Costruire un'organizzazione resiliente capace di sopravvivere ai cambiamenti esogeni di mercato.",
-          "mindsetShift": "Dall'ottimizzazione statica dell'efficienza alla robustezza sistemica e adattabilità."
+          "title": "Progettazione di Sistemi",
+          "technicalPerspective": "Ottimizzare un'architettura software monolitica per minimizzare la latenza in condizioni di carico stabile.",
+          "managerialPerspective": "Costruire un'organizzazione modulare capace di adattarsi a shock esogeni di domanda o regolamentari.",
+          "mindsetShift": "Dall'ottimizzazione statica dell'efficienza locale alla resilienza e adattabilità del sistema complessivo."
         }
       ]
     },
     {
       "id": "tradeoff-e-costo-opportunita",
-      "title": "Trade-off e Costo Opportunità",
+      "title": "Trade-off e Costo Opportunità: La Struttura e il Prezzo della Scelta",
       "track": "essential",
-      "whyIntro": "Ogni scelta aziendale impiega risorse scarse (tempo, capitale, competenze) escludendo alternative potenzialmente redditizie.",
-      "whatBody": "Il costo opportunità non è una spesa monetaria registrata a bilancio, ma il mancato beneficio della migliore alternativa a cui si è rinunciato compiendo una scelta.",
+      "whyIntro": "Ogni decisione manageriale impiega risorse scarse (tempo, capitale, sviluppatori, attenzione), escludendo automaticamente alternative concorrenti.",
+      "whatBody": "Trade-off e Costo Opportunità sono concetti complementari ma nettamente distinti:\n\n• Trade-off (Struttura della scelta):\nDescrive qualitativamente la situazione di scambio e conflitto tra opzioni in competizione sulla Frontiera delle Possibilità Produttive (PPF). Indica che per aumentare una dimensione desiderabile occorre accettare il degrado di un'altra (es. performance vs consumo energetico, livello di servizio del magazzino vs capitale immobilizzato, rispetto dei tempi vs rispetto del budget). Il trade-off coinvolge l'insieme di TUTTE le alternative a cui si rinuncia.\n\n• Costo Opportunità (Misura quantitativa della scelta):\nRappresenta il valore economico o l'utilità della MIGLIORE alternativa sacrificata compiendo una scelta. Non è un esborso contabile registrato nel bilancio, ma un costo implicito irrinunciabile per qualsiasi analisi di convenienza.\n\nAttenzione alla Regola d'Oro del Costo Opportunità:\nIl costo opportunità NON è la somma di tutte le alternative escluse, ma corrisponde ESCLUSIVAMENTE al valore della migliore opzione a cui si è rinunciato.\nEsempio concreto:\nSe uno studente dedica il sabato pomeriggio a preparare EOA (Opzione A, utilità attesa 8/10), rinunciando a lavorare come tutor pagato 50€ (Opzione B, valore 7/10) e ad andare al cinema (Opzione C, valore 5/10):\n- Il Trade-off è la rinuncia congiunta al lavoro retribuito e al cinema.\n- Il Costo Opportunità è UNICAMENTE il valore dell'Opzione B (50€ o utilità 7/10), non la somma di B e C!",
+      "howDetails": "Confronto Strutturale:\n- Natura: Trade-off = Qualitativo e descrittivo ('Quale caratteristica sacrifico?') | Costo Opportunità = Quantitativo e valutativo ('Quanto mi costa non aver scelto la seconda migliore opzione?')\n- Formula del Profitto Economico:\nProfitto Economico = Ricavi Totali - (Costi Contabili Espliciti + Costi Opportunità Impliciti)",
       "keypoints": [
         {
           "id": "kp-opp-1",
-          "title": "Costo Opportunità",
-          "schematicFormula": "Costo Opportunità = Rendimento della migliore alternativa sacrificata",
-          "explanation": "Se investo 100k€ in un progetto che rende il 4%, rinunciando a un investimento privo di rischio che rende il 5%, sto distruggendo valore economico pur registrando un utile contabile."
+          "title": "Regola del Costo Opportunità",
+          "schematicFormula": "Costo Opportunità = Valore(Migliore Alternativa Non Scelta) [MAI la somma delle alternative]",
+          "explanation": "Misura il reale prezzo economico della scelta, quantificando il rendimento del miglior uso alternativo delle risorse."
         }
       ],
       "traps": [
         {
           "id": "trap-opp-1",
+          "title": "Sommare le alternative scartate",
+          "misconception": "Credere che il costo opportunità sia dato dalla somma dei valori di tutte le opzioni rifiutate.",
+          "truth": "Le risorse possono essere impiegate in una sola alternativa alla volta; pertanto, il sacrificio corrisponde soltanto alla migliore opzione a cui si rinuncia."
+        },
+        {
+          "id": "trap-opp-2",
           "title": "Confondere costo monetario e costo economico",
-          "misconception": "Ritenere che un'attività o risorsa 'già pagata' sia gratuita nel presente (Sunk Cost Fallacy).",
-          "truth": "I costi affondati (sunk costs) non devono influenzare le decisioni future: conta solo il valore incrementale e il costo opportunità delle risorse ancora impiegabili."
+          "misconception": "Ritenere che un'attività o risorsa interna 'non pagata con fattura' sia priva di costo.",
+          "truth": "Impiegare uno sviluppatore senior su un progetto interno a bassa priorità non comporta un nuovo esborso contabile, ma ha un costo opportunità enorme pari al valore che avrebbe generato sui progetti primari."
+        }
+      ]
+    },
+    {
+      "id": "economia-comportamentale-e-bias-cognitivi",
+      "title": "Economia Comportamentale: Razionalità Limitata e i Bias Decisionali",
+      "track": "standard",
+      "whyIntro": "La teoria economica neoclassica assume l'esistenza di un decisore perfetto (Homo Oeconomicus), onnisciente e privo di emozioni. Nella realtà, gli ingegneri e i manager prendono decisioni affetti da scorciatoie mentali (euristiche) e bias sistematici che deviano regolarmente dall'ottimo teorico.",
+      "whatBody": "L'economia comportamentale studia come le persone decidono realmente, evidenziando limiti cognitivi e distorsioni sistematiche:\n\n1. Herbert Simon (1955, Premio Nobel 1978) — Razionalità Limitata (Bounded Rationality) e Satisficing:\nIl decisore opera sotto 3 vincoli ineludibili: capacità cognitiva finita, informazioni disponibili incomplete o imperfette, tempo a disposizione limitato. Pertanto, l'uomo non ottimizza, ma adotta il 'satisficing' (satisfy + suffice): interrompe la ricerca non appena identifica la prima opzione 'abbastanza buona' che supera la soglia minima di soddisfazione.\n\n2. Shane Frederick et al. (2009) & Plantinga et al. (2017) — Opportunity Cost Neglect:\nLe persone dimenticano sistematicamente di considerare i costi opportunità a meno che non siano resi espliciti. Nell'esperimento del DVD Sony a 99$, l'aggiunta dell'opzione 'No, tenendo i 99$ per altri acquisti' fa crollare gli acquisti immediati. La ricerca su larga scala (N=2.325) ha dimostrato che questa cecità è identica sia nei ceti a basso reddito sia in quelli ad alto reddito.\n\n3. Daniel Kahneman & Amos Tversky (1979, Premio Nobel 2002) — Prospect Theory e Loss Aversion:\nLe perdite pesano psicologicamente circa il doppio (2x) rispetto a guadagni di pari entità ('losses loom larger than gains'). La funzione di valore è concava per i guadagni (avversione al rischio) e convessa per le perdite (propensione al rischio per evitare il danno). Nelle aziende, questo spiega la resistenza all'adozione di nuovi sistemi software (il timore di malfunzionamenti o perdite a breve pesa molto più del +20% di efficienza prospettica a lungo termine).\n\n4. Amos Tversky & Daniel Kahneman (1981) — Framing Effect:\nIl modo in cui un'opzione viene presentata (incorniciata) altera radicalmente la decisione. Nel celebre Asian Disease Problem, presentare un piano in termini di vite salvate (frame positivo) induce scelte caute e certe; presentarlo in termini di morti previste (frame negativo) scatena la propensione all'azzardo per evitare la perdita certa. Nei progetti software: dire 'risparmieremo 300k€ all'anno' genera meno impatto che dire 'se non aggiorniamo il server perderemo 300k€ all'anno'.\n\n5. Richard Thaler (1985, Premio Nobel 2017) — Mental Accounting (Contabilità Mentale):\nLe persone violano il principio fondamentale di fungibilità della moneta (1€ è sempre 1€): suddividono il denaro in conti mentali distinti in base alla provenienza o destinazione d'uso. Nelle imprese, i manager trattano i budget di dipartimento come recinti intoccabili: se avanzano 50k€ nella manutenzione e mancano 30k€ nel marketing promettente, i fondi non vengono riallocati ignorando il costo opportunità.\n\n6. Sheena Iyengar & Mark Lepper (2000) — Choice Overload (Sovraccarico di Scelta):\nEsperimento delle marmellate: un banco con 24 gusti attira il 60% dei visitatori ma converte solo il 3% in acquisti effettivi; un banco con 6 gusti attira il 40% ma converte il 30% in acquisti. Un eccesso di opzioni genera ansia, affaticamento decisionale e paralisi, inducendo il decisore a mantenere lo status quo.\n\n7. William Samuelson & Richard Zeckhauser (1988) — Status Quo Bias e Sunk Cost Fallacy:\n• Status Quo Bias: tendenza irrazionale a mantenere lo stato attuale percependo ogni mutamento come una potenziale perdita.\n• Sunk Cost Fallacy (Trappola dei Costi Affondati): continuare a finanziare un progetto fallimentare solo perché si sono già spesi tempo o denaro in passato. In economia i costi irrecuperabili passati devono essere azzerati nelle decisioni razionali: contano unicamente i costi e i benefici marginali futuri.",
+      "howDetails": "Protocollo di De-biasing Decisionale:\n1. Esplicitazione del Costo Opportunità: Prima di approvare una spesa, domandarsi: 'Se non facessimo questo, quale sarebbe il miglior impiego alternativo di questi fondi?'.\n2. Test di Inversione del Frame: Riformulare la proposta sia in termini di guadagno che in termini di perdita potenziale per verificare se la scelta cambia.\n3. Azzeramento dei Costi Affondati (Zero-Base Review): Chiedersi: 'Se iniziassimo oggi da zero con il budget residuo, finanzieremmo questo progetto?'.",
+      "keypoints": [
+        {
+          "id": "kp-bias-1",
+          "title": "Loss Aversion (Kahneman & Tversky)",
+          "schematicFormula": "Valore Psicologico(Perdita X) ≈ 2 · Valore Psicologico(Guadagno X)",
+          "explanation": "La sofferenza per una perdita è circa doppia rispetto al piacere provato per un guadagno equivalente."
+        },
+        {
+          "id": "kp-bias-2",
+          "title": "Regola Aurea sui Costi Affondati",
+          "schematicFormula": "Decisione Razionale = f(Costi Futuri Marginali, Benefici Futuri Marginali) [Ignorare Sunk Costs]",
+          "explanation": "Il denaro già speso è irrecuperabile e non deve inquinare le scelte strategiche sul futuro."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-bias-1",
+          "title": "Insistere su un software fallimentare per i soldi già spesi",
+          "misconception": "Continuare a investire centinaia di ore e migliaia di euro in un'architettura software difettosa solo 'perché ci abbiamo già lavorato per sei mesi'.",
+          "truth": "I sei mesi di lavoro sono un costo affondato (sunk cost) irrecuperabile. Se passare a un nuovo framework oggi è più economico e promettente nel futuro, il vecchio codice va abbandonato immediatamente."
+        }
+      ]
+    },
+    {
+      "id": "casi-studio-blocco-1",
+      "title": "I Casi Studio Guida: Olivetti P101, Ferrari e Nokia",
+      "track": "standard",
+      "whyIntro": "I concetti teorici di razionalità limitata, trade-off, miopia manageriale e sostenibilità economica prendono vita nelle storie aziendali che hanno segnato l'industria tecnologica e globale.",
+      "whatBody": "Analisi approfondita dei tre casi studio didattici del Blocco 1:\n\n1. Olivetti e il Dramma del 1964 (Programma 101):\nNegli anni '50 e '60 Olivetti rappresentava l'avanguardia mondiale nel design e nella meccanica di precisione (Lettera 22, calcolatrici elettromeccaniche). Adriano Olivetti comprese prima di chiunque altro che il futuro sarebbe stato nell'elettronica, creando a Pisa il laboratorio guidato da Mario Tchou che produsse l'Elea 9003.\nNel 1965, il team di Pier Giorgio Perotto progettò la Programma 101, il primo vero personal computer al mondo (programmabile, memorizzazione su scheda magnetica, stampante incorporata), utilizzato persino dalla NASA per la missione Apollo 11.\nPerché l'Italia ha perso l'informatica?\nAlla morte improvvisa di Adriano Olivetti (1960) e di Mario Tchou (1961), la società si trovò fortemente indebitata per l'acquisizione dell'americana Underwood. Entrò un 'Gruppo di Intervento' finanziario (guidato da FIAT, Pirelli e Mediobanca di Enrico Cuccia) con mentalità puramente finanziaria a breve termine. L'elettronica venne definita da Vittorio Valletta 'un neo da estirpare che bruciava cassa' rispetto ai profitti sicuri della meccanica tradizionale. La divisione elettronica venne svenduta agli americani di General Electric, azzerando per sempre la leadership italiana nel silicio.\n\n2. Ferrari: La Strategia della Scarsità e il Dilemma dell'Elettrico:\nCome riesce Ferrari a mantenere margini operativi stellari (superiori al 25%) e quotazioni azionarie record?\nEnzo Ferrari enunciò il principio strategico guida: 'La Ferrari produrrà sempre un'automobile in meno di quanto il mercato richieda'. Questa deliberate scarcity trasforma l'auto da semplice mezzo di trasporto a bene Veblen di lusso estremo, creando code d'attesa e azzerando la svalutazione dell'usato.\nOggi Ferrari affronta il trade-off dell'elettrificazione: come rispettare i vincoli sulle emissioni senza disperdere l'esperienza emotiva acustica e meccanica che definisce l'identità del marchio? La risposta risiede nel bilanciamento tra eccellenza tecnica e difesa rigorosa del valore del brand.\n\n3. Nokia e la Trappola delle Competenze:\nNei primi anni 2000, Nokia deteneva oltre il 40% del mercato mondiale dei cellulari con margini altissimi e un'efficienza logistica leggendaria. Nel 2007 Apple lancia l'iPhone e Google presenta Android.\nNokia cadde preda di molteplici bias: status quo bias, competence trap e mental accounting. I vertici valutarono l'iPhone un prodotto di nicchia con pessima autonomia della batteria e scarse doti radioelettriche (giudizio tecnico-funzionale unilaterale). Rimasero aggrappati al sistema operativo Symbian, concepito per tastiere fisiche e con un'architettura frammentata, fino al collasso improvviso delle vendite e alla svendita a Microsoft nel 2013.",
+      "howDetails": "Sintesi dei Fattori Chiave di Successo/Fallimento:\n- Olivetti: Genio ingegneristico + Errore di struttura finanziaria e Miopia manageriale = Distruzione di leadership.\n- Ferrari: Gestione rigorosa della scarsità + Difesa del brand value + Margini elevati = Creazione continua di valore.\n- Nokia: Supremazia industriale passata + Competence trap + Resistenza al cambio di paradigma = Obsolescenza rapida.",
+      "keypoints": [
+        {
+          "id": "kp-casi-1",
+          "title": "La Lezione di Olivetti",
+          "schematicFormula": "Leadership Tecnologica - Solidità Finanziaria = Vulnerabilità Strategica (Svendita del Valore)",
+          "explanation": "Senza una finanza sana e azionisti con visione a lungo termine, la migliore tecnologia al mondo finisce per essere liquidata."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-casi-1",
+          "title": "La trappola delle competenze (Competence Trap)",
+          "misconception": "Ritenere che ciò che ha reso un'azienda leader indiscussa nel passato continui a proteggerla nel futuro.",
+          "truth": "I salti di paradigma tecnologico e di modello di business (come lo smartphone touch contro il cellulare a tastiera) rendono le competenze legacy una zavorra se non si ha il coraggio di cannibalizzare i propri prodotti attuali."
         }
       ]
     }

@@ -57,11 +57,17 @@ triggers:
   - Implemented batch question generator `generator/src/build-questions.ts` (`npm run generate:questions`).
   - Generated and validated initial batch of 173 questions exported directly to `app/public/data/questions/sample.json` and `questions.json`.
 
-- **Milestone 2 (M2) — Interactive Study Content & Didactic Blocks**: COMPLETED.
-  - Authored and validated complete didactic knowledge blocks for all 7 syllabus blocks (`app/public/data/theory/blocco-1.json` through `blocco-7.json`).
-  - Structured strictly according to the BOOK Golden Rule (WHY decision problem, WHAT conceptual core, HOW schematic formulas, TRAP donotassume misconceptions, and CONCEPT SHIFT engineering vs managerial perspective).
-  - Integrated course case studies: Olivetti P101 (B1), Satispay / Exein / Davines (B2), Governance & Startup Funding (B3), Bilancio OIC & De Cecco (B4), Connecta S.r.l. & Growth Eats Cash (B5), Break-Even Analysis (B6), Business Model Canvas & All'Antico Vinaio (B7).
-  - Added horizontal block quick-selector bar to `App.tsx` for seamless switching between blocks 1 to 7 in the Study tab.
+- **Milestone 2 (M2) — Interactive Study Content & Didactic Blocks**: COMPLETED (Massive Overhaul & Full Course Alignment).
+  - Authored, validated and fully aligned all 7 didactic knowledge blocks (`app/public/data/theory/blocco-1.json` through `blocco-7.json`) covering 100% of the material in `materiale/1-md/` (46 documents, slides and notes).
+  - Dataset metrics: 37 in-depth topics, 62 keypoint cards, 38 trap cards, concept shifts, and complete procedural details (`howDetails`).
+  - Blocco 1: Economia, definizioni art. 2082 e 2555 c.c., flussi di mercato, stakeholder theory, funzioni management, imprenditore vs manager, complicato vs complesso, trade-off vs costo opportunità, rassegna completa bias (Simon, Frederick, Kahneman & Tversky, Thaler, Iyengar & Lepper, Samuelson & Zeckhauser), casi Olivetti, Ferrari e Nokia.
+  - Blocco 2: Autonomia patrimoniale perfetta/imperfetta, beneficio di escussione (art. 2304), impresa individuale, S.n.c., S.a.s. con divieto di immistione (art. 2320), S.r.l., S.p.A., S.a.p.a., Startup Innovativa (D.L. 179/2012), spettro degli scopi (B-Corp, Società Benefit L. 208/2015, Social Business, Terzo Settore) ed Economia Civile di Stefano Zamagni (parabola degli 11 cammelli).
+  - Blocco 3: Azioni (ordinarie, risparmio, voto plurimo, maggiorato), obbligazioni (ordinarie, convertibili, subordinate), modelli di governance (tradizionale art. 2380-bis, dualistico, monistico), caso Parmalat, filiera VC completa (LP, GP, carried interest, power law, CVC), patti parasociali e clausole (liquidation preference, anti-dilution, drag/tag along, vesting & cliff).
+  - Blocco 4: Modello del valore vs contabile (metafora diga), capitale di funzionamento, i 4 documenti OIC (SP, CE, Rendiconto Finanziario, Nota Integrativa), clausola generale verità/chiarezza/correttezza, principi art. 2423-bis (prudenza, competenza, continuità), ratei e risconti, ammortamento, magazzino FIFO/LIFO/CMP in inflazione.
+  - Blocco 5: Riclassificazione finanziaria SP, margini strutturali (CCN, MT, MS1, MS2), indici di liquidità (Current e Quick Ratio), redditività (ROE, ROI, ROS, Turnover, Du Pont), formula Modigliani-Miller della leva finanziaria con spread (ROI - i), durate medie circolante (DIO, DSO, DPO, CCC) e dinamica Growth Eats Cash.
+  - Blocco 6: Costi fissi/variabili/diretti/indiretti/a gradino, Direct Costing vs Full Costing, MdC unitario/totale/percentuale, Break-Even Point (volume e fatturato), utile obiettivo, Grado di Leva Operativa (GLO), Margine di Sicurezza (1/GLO) e le 3 decisioni di breve periodo (Make or Buy, chiusura linee, ordini speciali).
+  - Blocco 7: Definizione business model (prodotto vs modello vs strategia), i 9 blocchi del Canvas (fasi canali, tipologie ricavi e prezzi fissi/dinamici), strategie competitive di Michael Porter con rischio stuck in the middle, modelli digitali (Freemium, SaaS, Razor & Blades) ed economie di rete in piattaforme two-sided.
+  - Frontend: aggiornato `StudyBlockViewer.tsx` con supporto a formattazione a paragrafi (`whitespace-pre-line`) e rendering degli approfondimenti operativi e procedurali (`howDetails`).
 
 ## In Progress
 

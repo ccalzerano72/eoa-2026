@@ -1,141 +1,173 @@
 {
   "block": 3,
   "title": "Governance e Finanziamento dell'Impresa",
-  "subtitle": "Chi decide nell'impresa e con quali risorse: capitale di rischio e di debito",
-  "guidingQuestion": "Chi comanda davvero in un'azienda quando la proprietà è frazionata? Come si finanzia la crescita tecnologica senza perdere il controllo societario?",
+  "subtitle": "Titoli finanziari (azioni e obbligazioni), modelli di governance e filiera del Venture Capital",
+  "guidingQuestion": "Chi comanda davvero nell'impresa quando la proprietà è frazionata? Quali strumenti finanziari (azioni ordinarie, risparmio, obbligazioni) e clausole di Venture Capital permettono di finanziare la crescita senza perdere il controllo societario?",
   "caseStudy": {
     "id": "caso-governance-startup-funding",
-    "name": "La Scalata e la Diluizione: Dai Garage ai Fondi di Venture Capital",
-    "company": "Tech Ventures & Governance S.p.A.",
-    "year": "2018-2024",
-    "dilemma": "Come può un team di ingegneri fondatori raccogliere decine di milioni di euro per scalare sui mercati globali mantenendo la guida della visione tecnologica ed evitando di essere estromessi dal proprio Consiglio di Amministrazione?",
-    "summary": "Nelle prime fasi (Bootstrapping, FFF) i fondatori detengono il 100% delle quote ma affrontano una grave penuria di cassa ('valle della morte'). Con l'ingresso di Business Angel e fondi di Venture Capital (Round Seed, Series A, Series B), l'azienda raccoglie capitali a fronte della cessione di quote azionarie (equity dilution). Nei contratti di investimento (Term Sheet), gli investitori introducono clausole di governance stringenti: seggi nel CdA con diritti di veto, clausole di liquidazione preferenziale e meccanismi anti-diluizione. Se i fondatori non comprendono la separazione tra proprietà e controllo, rischiano di trovarsi in minoranza e perdere la direzione strategica.",
+    "name": "Dalla Scalata di Scalapay al Default di Parmalat: Governance e Finanza",
+    "company": "Scalapay / Parmalat / Musixmatch",
+    "year": "2003-2026",
+    "dilemma": "Come può una startup tecnologica (Scalapay) scalare raccogliendo mezzo miliardo da fondi di Venture Capital senza farsi esautorare dai contratti di investimento, mentre una multinazionale quotata (Parmalat) collassa per il fallimento sistemico dei controlli di governance interna?",
+    "summary": "Nelle prime fasi di una startup tecnologica (Bootstrapping, FFF) i fondatori detengono il 100% delle quote ma affrontano la 'valle della morte' della cassa. Attraverso l'ingresso graduale di Business Angels (come Musixmatch a Bologna) e round successivi guidati da fondi di Venture Capital internazionali (come Scalapay, che ha raccolto 497M$ in due anni diventando unicorno), l'impresa raccoglie risorse a fronte di equity dilution. Tuttavia, i Term Sheet dei fondi impongono clausole pesanti: liquidation preference, diritti di veto e seggi nel CdA. Sul fronte opposto, il crac Parmalat (2003) rappresenta il più grave fallimento di Corporate Governance europeo: la totale concentrazione del potere nelle mani di una famiglia padronale, l'assenza di consiglieri indipendenti nel CdA e la compiacenza del Collegio Sindacale e delle società di revisione hanno consentito di nascondere 14 miliardi di debiti fittizi con lettere di credito contraffatte (Bank of America), distruggendo i risparmi di decine di migliaia di obbligazionisti e azionisti.",
     "coreLessons": [
-      "La proprietà (azionisti) conferisce il capitale, ma l'amministrazione (CdA/CEO) detiene il potere decisionale esecutivo.",
-      "La raccolta di equity non crea un debito da rimborsare con interessi, ma comporta la diluizione della percentuale proprietaria e la condivisione del controllo.",
-      "Il capitale di debito (prestiti bancari, obbligazioni) richiede il pagamento inderogabile di oneri finanziari e rimborso del capitale, esponendo al rischio di insolvenza.",
-      "Le clausole dei patti parasociali e la composizione del CdA contano quanto la percentuale nominale di possesso delle azioni."
+      "La proprietà (azionisti) conferisce il capitale, ma l'amministrazione (CdA/CEO) esercita in via esclusiva il potere decisionale esecutivo.",
+      "L'Equity (capitale di rischio) non crea un debito da rimborsare a scadenza, ma impone la diluizione proprietaria e la condivisione del controllo.",
+      "Il Debito (banche, obbligazioni) costa meno in termini di rendimento atteso, ma crea obblighi inderogabili di rimborso cedolare ed espone l'impresa al rischio di default per insolvenza.",
+      "Nel Venture Capital la logica di portafoglio segue la 'Power Law': la maggior parte delle startup fallisce, ma una singola azienda eccezionale genera ritorni superiori a tutti gli investimenti complessivi del fondo.",
+      "Senza organi di controllo indipendenti e contrappesi reali di governance (come emerso nel caso Parmalat), il management opportunista può deviare risorse e distruggere l'impresa."
     ],
-    "keytakeaway": "Finanziare l'innovazione richiede un trade-off continuo tra autonomia decisionale e velocità di crescita: la governance è il tavolo dove si negozia questo equilibrio."
+    "keytakeaway": "Finanziare l'innovazione richiede un trade-off continuo tra autonomia decisionale e velocità di crescita: la governance e i contratti parasociali sono il tavolo dove si negozia il potere reale."
   },
   "topics": [
     {
-      "id": "modelli-governance",
-      "title": "I Modelli di Corporate Governance",
+      "id": "strumenti-finanziari-equity-vs-debito",
+      "title": "Equity vs. Debito: Azioni, Obbligazioni e la Struttura del Capitale",
       "track": "essential",
-      "whyIntro": "Nelle grandi aziende e nelle S.p.A. quotate, milioni di azionisti non possono gestire quotidianamente i server, gli appalti o le assunzioni. Occorre una struttura chiara di pesi e contrappesi istituzionali.",
-      "whatBody": "La corporate governance definisce il sistema di regole, relazioni e processi mediante cui le imprese sono dirette e controllate. Nel diritto societario italiano coesistono tre modelli alternativi: il Modello Tradizionale (Assemblea dei soci, Consiglio di Amministrazione o Amministratore Unico, e Collegio Sindacale per il controllo di legalità), il Modello Dualistico di derivazione tedesca (Consiglio di Sorveglianza nominato dai soci, che a sua volta nomina il Consiglio di Gestione), e il Modello Monistico di derivazione anglosassone (CdA, al cui interno è costituito il Comitato per il Controllo sulla Gestione).",
+      "whyIntro": "Per acquistare server, assumere ingegneri informatici e finanziare 24 mesi di R&D, l'impresa ha bisogno di capitali. Scegliere la combinazione errata tra capitale proprio (equity) e capitale di credito (debito) può portare alla diluizione totale dei fondatori o alla bancarotta per insolvenza.",
+      "whatBody": "La distinzione fondamentale tra fonti di finanziamento risiede nel profilo di rischio, nella priorità di rimborso e nella natura della remunerazione:\n\n1. Capitale Proprio (Equity / Azioni):\n- Status: il conferente diventa socio e comproprietario dell'impresa.\n- Profilo di Rischio: massimo. L'azionista è 'residual claimant' (viene remunerato e rimborsato solo dopo che TUTTI i creditori terzi sono stati soddisfatti).\n- Remunerazione: variabile e residuale (dividendi distribuiti solo se c'è utile d'esercizio deliberato dall'assemblea, oltre al capital gain in caso di aumento del valore delle quote).\n- Scadenza: nessuna scadenza di rimborso obbligatoria (il capitale resta vincolato all'azienda a tempo indeterminato).\n- Diritti: conferisce diritti amministrativi (voto in assemblea) e patrimoniali.\n\nTipologie di Azioni nelle S.p.A.:\n• Azioni Ordinarie: attribuiscono pieni diritti amministrativi (un'azione = un voto in tutte le assemblee) e pieni diritti patrimoniali.\n• Azioni di Risparmio: prive per legge del diritto di voto, ma privilegiate nella distribuzione del dividendo (aliquota maggiorata minima) e nel rimborso del capitale in sede di scioglimento; riservate alle società quotate per piccoli risparmiatori.\n• Azioni a Voto Plurimo: introdotte nell'ordinamento italiano per consentire ai fondatori di mantenere il controllo societario; possono attribuire fino a un massimo di 3 voti per ciascuna azione.\n• Azioni a Voto Maggiorato: beneficio statutario che premia gli azionisti 'fedeli' che mantengono ininterrottamente le azioni per almeno 24 mesi continuativi (fino a 2 voti per azione; non è una categoria speciale di azioni ma un diritto personale).\n\n2. Capitale di Credito (Debito / Obbligazioni):\n- Status: il sottoscrittore è un creditore terzo della società.\n- Profilo di Rischio: basso/moderato. Il rimborso del capitale e il pagamento degli interessi sono obblighi contrattuali inderogabili indipendenti dall'utile aziendale.\n- Remunerazione: predeterminata e periodica (tasso di interesse fisso o variabile tramite cedole obbligazionarie).\n- Scadenza: prefissata (a breve, medio o lungo termine).\n\nTipologie di Obbligazioni (Bonds):\n• Obbligazioni Ordinarie: prestito con cedola periodica e rimborso alla pari a scadenza.\n• Obbligazioni Convertibili: titoli di debito che attribuiscono al possessore la facoltà di convertire il proprio credito in azioni della società emittente secondo un rapporto di cambio prefissato.\n• Obbligazioni Subordinate (Junior Bonds): prestiti in cui il creditore accetta che, in caso di dissesto, liquidazione o fallimento, il rimborso del proprio capitale avvenga solo dopo che tutti gli altri creditori ordinari (chirografari) siano stati integralmente rimborsati.",
+      "howDetails": "Trade-off Costo vs. Rischio della Struttura Finanziaria:\n• Il Debito costa meno: gli interessi passivi sono deducibili fiscalmente (scudo fiscale) e i creditori pretendono rendimenti inferiori grazie alle garanzie legali.\n• L'Equity non ha scadenze ma costa di più: gli investitori in capitale di rischio pretendono rendimenti attesi elevatissimi (15-30% annuo) per compensare il rischio di perdere l'intero capitale.",
+      "keypoints": [
+        {
+          "id": "kp-eq-deb-1",
+          "title": "Dicotomia Equity vs Debito",
+          "schematicFormula": "Equity = Rischio Pieno · Claimant Residuale · Dividendi Variabili · Nessun Rimborso Fisso | Debito = Rischio Basso · Priorità di Rimborso · Interessi Certi · Scadenza Rigida",
+          "explanation": "L'equity tutela la stabilità patrimoniale ma diluisce il controllo; il debito preserva il controllo ma genera vincoli inderogabili di liquidità."
+        },
+        {
+          "id": "kp-eq-deb-2",
+          "title": "Tassonomia delle Azioni",
+          "schematicFormula": "Ordinarie (Voto + Utile) | Risparmio (No Voto + Super-dividendo) | Voto Plurimo (Fino a 3 voti/azione per i founder)",
+          "explanation": "Permette all'impresa di personalizzare l'offerta finanziaria a seconda che l'investitore cerchi governance o pura redditività."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-eq-deb-1",
+          "title": "Credere che l'Equity sia denaro gratuito",
+          "misconception": "Ritenere che finanziare l'impresa con capitale di rischio non costi nulla perché non comporta il pagamento di interessi mensili.",
+          "truth": "L'Equity è la fonte di capitale più costosa in assoluto (elevatissimo costo opportunità): esige la cessione di quote proprietarie dell'azienda e un rendimento atteso di gran lunga superiore al costo del credito bancario."
+        }
+      ]
+    },
+    {
+      "id": "modelli-governance",
+      "title": "I 3 Modelli di Corporate Governance e l'Art. 2380-bis c.c.",
+      "track": "essential",
+      "whyIntro": "Nelle grandi aziende la proprietà è polverizzata tra migliaia o milioni di azionisti, mentre le decisioni quotidiane richiedono rapidità e competenze tecniche. La Corporate Governance è l'architettura dei poteri che disciplina questa separazione.",
+      "whatBody": "La Corporate Governance è l'insieme di regole, processi e relazioni attraverso cui le imprese sono governate, amministrate e controllate.\nIl diritto societario italiano disciplina tre sistemi alternativi di amministrazione e controllo per le S.p.A.:\n\n1. Modello Tradizionale (Ordinario):\nSi fonda su tre organi distinti:\n• Assemblea dei Soci: organo deliberativo dei proprietari. Approva il bilancio d'esercizio, nomina gli amministratori e i sindaci, delibera su aumenti di capitale e modifiche statutarie.\n• Consiglio di Amministrazione (CdA) o Amministratore Unico: organo di gestione esecutiva. L'art. 2380-bis c.c. stabilisce il principio fondamentale: 'La gestione dell'impresa spetta esclusivamente agli amministratori, i quali compiono le operazioni necessarie per l'attuazione dell'oggetto sociale'.\n• Collegio Sindacale: organo di controllo interno composto da 3 o 5 membri effettivi. Vigila sull'osservanza della legge e dello statuto, sul rispetto dei principi di corretta amministrazione e sull'adeguatezza dell'assetto organizzativo e contabile.\n• Revisore Legale / Società di Revisione: soggetto esterno incaricato della revisione legale dei conti.\n\n2. Modello Dualistico (di derivazione tedesca/renana):\n• Assemblea dei Soci: elegge il Consiglio di Sorveglianza.\n• Consiglio di Sorveglianza (controllo e alta strategia): approva il bilancio e nomina/revoca i membri del Consiglio di Gestione.\n• Consiglio di Gestione: organo esecutivo operativo.\nIdeale per aziende con capitale molto diffuso o partecipazione dei lavoratori.\n\n3. Modello Monistico (di derivazione anglosassone):\n• Assemblea dei Soci: nomina un unico Consiglio di Amministrazione (CdA).\n• Comitato per il Controllo sulla Gestione: costituito all'interno dello stesso CdA, composto esclusivamente da amministratori non esecutivi e indipendenti con requisiti di onorabilità e professionalità.",
+      "howDetails": "Il Principio dell'Art. 2380-bis c.c.:\nL'Assemblea dei soci non può votare o imporre ordini operativi agli amministratori (es. decidere quali fornitori scegliere o quali assunzioni effettuare). Se gli azionisti non condividono le scelte gestorie, il loro unico potere legittimo è la revoca degli amministratori o l'azione di responsabilità.",
       "keypoints": [
         {
           "id": "kp-gov-1",
-          "title": "I Tre Organi del Modello Tradizionale",
-          "schematicFormula": "Assemblea dei Soci (Proprietà / Delibere straordinarie) ⇄ CdA (Gestione esecutiva) ⇄ Collegio Sindacale (Vigilanza su legalità e principi contabili)",
-          "explanation": "L'Assemblea approva il bilancio e nomina gli amministratori e i sindaci, ma non può ingerirsi nella gestione operativa ordinaria, che spetta in via esclusiva al CdA (art. 2380-bis c.c.)."
+          "title": "I 3 Organi del Sistema Tradizionale",
+          "schematicFormula": "Assemblea Soci (Proprietà) ⇄ CdA (Gestione Esclusiva ex art. 2380-bis) ⇄ Collegio Sindacale (Controllo di Legalità)",
+          "explanation": "Separazione netta dei poteri: chi possiede le azioni non può interferire direttamente nella conduzione operativa quotidiana."
+        },
+        {
+          "id": "kp-gov-2",
+          "title": "I Tre Sistemi a Confronto",
+          "schematicFormula": "Tradizionale (Assemblea → CdA + Collegio Sindacale) | Dualistico (Assemblea → Sorveglianza → Gestione) | Monistico (Assemblea → CdA con Comitato Controllo Interno)",
+          "explanation": "Tre diverse risposte istituzionali per bilanciare efficienza decisionale e trasparenza dei controlli."
         }
       ],
       "traps": [
         {
           "id": "trap-gov-1",
-          "title": "Confondere la proprietà con il diritto di dare ordini operativi",
-          "misconception": "Pensare che un azionista, possedendo azioni della società, possa impartire ordini diretti ai dipendenti o firmare assegni aziendali.",
-          "truth": "Il potere di gestione spetta solo agli amministratori delegati dal CdA; l'azionista esercita i propri diritti esclusivamente votando in Assemblea.",
-          "example": "Se un socio al 30% entra nei locali aziendali pretendendo di modificare l'infrastruttura IT o licenziare uno sviluppatore, sta compiendo un atto illegittimo e privo di valore giuridico."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-gov-1",
-          "title": "Gerarchia di Controllo",
-          "technicalPerspective": "Un utente con permessi di 'root' o 'admin' che può eseguire qualsiasi comando sul server a proprio piacimento.",
-          "managerialPerspective": "Un sistema costituzionale di deleghe, poteri di firma, collegialità e responsabilità fiduciaria verso tutti gli stakeholder.",
-          "mindsetShift": "Dal controllo tecnico assoluto al rispetto dei contrappesi formali di governance."
+          "title": "Credere che l'azionista di maggioranza possa sostituirsi al CdA",
+          "misconception": "Pensare che possedere il 70% delle azioni consenta di scavalcare il CdA e firmare contratti aziendali a titolo personale.",
+          "truth": "La rappresentanza legale e il potere gestorio spettano unicamente agli amministratori regolarmente iscritti al Registro delle Imprese; gli atti compiuti dal socio privo di delega sono nulli e inefficaci per l'azienda."
         }
       ]
     },
     {
-      "id": "conflitto-di-agenzia",
-      "title": "Separazione Proprietà-Controllo e Costi di Agenzia",
+      "id": "conflitto-di-agenzia-e-parmalat",
+      "title": "Separazione Proprietà-Controllo, Costi di Agenzia e il Caso Parmalat",
       "track": "standard",
-      "whyIntro": "Quando chi amministra l'impresa non è chi ci ha messo i soldi, gli interessi possono divergere: il manager potrebbe preferire stipendi faraonici, acquisizioni prestigiose o investimenti a basso rischio personale ma a scapito del rendimento degli azionisti.",
-      "whatBody": "La teoria dell'agenzia (Jensen e Meckling) modella la relazione tra azionisti (Principal) e manager (Agent). A causa dell'asimmetria informativa e dell'opportunismo, emergono i costi di agenzia: spese di monitoraggio (audit, revisori dei conti), spese di obbligazione (fideiussioni dei manager) e perdita residuale di valore. Per allineare gli interessi si usano piani di remunerazione legati a performance di lungo termine (stock option, bonus su EBITDA o valore azionario).",
+      "whyIntro": "Quando chi gestisce il capitale non è il proprietario del denaro, gli incentivi possono divergere: il manager può essere tentato di massimizzare il proprio prestigio, la propria sicurezza e i propri bonus a danno della redditività degli azionisti.",
+      "whatBody": "1. La Teoria dell'Agenzia (Jensen e Meckling, 1976):\nModella il rapporto tra il Principal (azionista/proprietario) che delega la gestione all'Agent (manager/amministratore):\n• Asimmetria Informativa: il manager vive l'azienda quotidianamente e possiede molte più informazioni reali rispetto agli azionisti esterni.\n• Opportunismo Potenziale: il manager può perseguire obiettivi divergenti (Empire Building, stipendi sproporzionati, investimenti non redditizi ma prestigiosi, occultamento di perdite).\n• I Costi di Agenzia:\n  a) Spese di monitoraggio: costi sostenuti dal Principal per sorvegliare l'Agent (audit interni, revisori legali, certificazioni).\n  b) Spese di obbligazione: costi sostenuti dall'Agent per dare garanzie di correttezza (polizze D&O, fideiussioni).\n  c) Perdita residuale: il mancato guadagno dovuto a decisioni non perfettamente allineate all'interesse dell'azionista.\n\n2. Il Caso Parmalat (2003) — Il Fallimento Esemplare della Governance:\nIl crac Parmalat (Calisto Tanzi) ha rappresentato il punto di rottura dei sistemi di controllo contabile europei:\n- La Famiglia Tanzi controllava la società quotata tramite holding a monte, nominando consiglieri di amministrazione compiacenti e privi di indipendenza.\n- Il Collegio Sindacale e le primarie società internazionali di revisione (Grant Thornton, Deloitte) non eseguirono controlli incrociati effettivi, accettando un documento scannerizzato falso attestante un conto corrente inesistente presso Bank of America con quasi 4 miliardi di euro di liquidità fittizia.\n- La società emetteva continuamente obbligazioni (collocate presso 40.000 piccoli risparmiatori ignari) per coprire perdite industriali colossali e finanziare distrazioni di capitale verso società private della famiglia.\n- Il dissesto ha portato all'approvazione della Legge sul Risparmio (L. 262/2005) che ha reso obbligatorio l'inserimento di consiglieri indipendenti nel CdA, il voto di lista per dare rappresentanza alle minoranze e una stretta rigorosa sulla rotazione dei revisori contabili.",
+      "howDetails": "Rimedi Societari al Conflitto di Agenzia:\n1. Allineamento degli Incentivi: Stock Option e Phantom Share vincolate al raggiungimento di obiettivi di utile e rendimento a lungo termine.\n2. Consiglieri Indipendenti: presenza nel CdA di amministratori privi di legami economici o familiari con il socio di controllo o il management.\n3. Voto di Lista: meccanismo che consente agli azionisti di minoranza di eleggere almeno un membro del CdA e il Presidente del Collegio Sindacale.",
       "keypoints": [
         {
           "id": "kp-agn-1",
-          "title": "Equilibrio di Agenzia",
-          "schematicFormula": "Costi di Agenzia = Spese di Monitoraggio + Spese di Vincolo/Garanzia + Perdita Residuale",
-          "explanation": "I piani di stock option incentivano il manager a incrementare il valore delle azioni, ma possono generare miopia se il manager manipola la contabilità per gonfiare il corso azionario a breve termine."
+          "title": "Equazione dei Costi di Agenzia",
+          "schematicFormula": "Costi di Agenzia = Spese di Monitoraggio (Audit/Sindaci) + Spese di Garanzia + Perdita Residuale",
+          "explanation": "Qualsiasi struttura societaria deve spendere risorse per prevenire comportamenti opportunistici del management."
+        },
+        {
+          "id": "kp-agn-2",
+          "title": "La Lezione di Parmalat",
+          "schematicFormula": "Assenza di Controlli Indipendenti + Asimmetria Informativa = Dissesto e Distruzione di Valore",
+          "explanation": "La conformità formale senza controlli incrociati sostanziali crea l'illusione di sicurezza finanziaria prima del crollo."
         }
       ],
       "traps": [
         {
           "id": "trap-agn-1",
-          "title": "L'illusione dell'allineamento spontaneo",
-          "misconception": "Credere che un manager assunto sul mercato persegua naturalmente la massimizzazione del patrimonio degli azionisti.",
-          "truth": "Senza incentivi contrattuali espliciti e rigorosi sistemi di controllo, i manager tendono a massimizzare la propria sicurezza lavorativa, il proprio prestigio e la dimensione aziendale anche distruggendo valore.",
-          "example": "Condurre acquisizioni aziendali a prezzi esagerati per 'costruire un impero' manageriale (Empire Building), riducendo il ROI dell'impresa."
+          "title": "Credere che il bilancio certificato sia garanzia assoluta di solvibilità",
+          "misconception": "Pensare che se una società è quotata in borsa e ha un bilancio approvato dai revisori, non possa fallire improvvisamente.",
+          "truth": "La revisione legale opera a campione: se vi è collusione tra top management e organi di controllo interno, le frodi possono rimanere nascoste per anni fino all'esplosione della crisi di liquidità."
         }
       ]
     },
     {
-      "id": "equity-vs-debito",
-      "title": "Fonti di Finanziamento: Equity vs. Debito",
-      "track": "essential",
-      "whyIntro": "Per acquistare server, brevetti o finanziare 18 mesi di sviluppo software, un'impresa ha due vie maestre: immettere capitale di rischio dei soci (Equity) o farsi prestare denaro da banche o obbligazionisti (Debito). Sbagliare la proporzione porta al dissesto o alla paralisi.",
-      "whatBody": "L'Equity (capitale proprio) ha remunerazione residuale (dividendi distribuiti solo se c'è utile), nessuna scadenza di rimborso obbligatoria e conferisce diritti di governance. Il Debito (capitale di terzi) ha remunerazione contrattualmente prefissata (tasso d'interesse passivo), scadenza rigida di rimborso del capitale ed è prioritario rispetto all'equity in caso di liquidazione/fallimento. Il trade-off risiede nel costo e nel rischio: il debito costa meno (oneri finanziari deducibili fiscalmente e minor rischio per il prestatore), ma incrementa il rischio di fallimento (leva finanziaria).",
-      "keypoints": [
-        {
-          "id": "kp-fin-1",
-          "title": "Dicotomia Finanziaria Fondamentale",
-          "schematicFormula": "Equity = Rischio Pieno · Remunerazione Residuale (Dividendi) · Nessun Rimborso Obbligatorio | Debito = Rischio Basso · Remunerazione Certa (Interessi) · Rimborso a Scadenza Fissa",
-          "explanation": "Gli azionisti sono 'claimant residuali': vengono pagati solo dopo che tutti i debiti verso fornitori, dipendenti, fisco e banche sono stati integralmente saldati."
-        }
-      ],
-      "traps": [
-        {
-          "id": "trap-fin-1",
-          "title": "Credere che l'Equity sia 'denaro gratuito'",
-          "misconception": "Ritenere che finanziare l'azienda con capitale proprio non costi nulla perché non ci sono interessi bancari da pagare ogni mese.",
-          "truth": "L'Equity è la fonte di finanziamento PIÙ COSTOSA per l'impresa: gli investitori in capitale di rischio esigono un rendimento atteso molto più elevato del tasso di interesse bancario per compensare il rischio di perdere tutto l'investimento.",
-          "example": "Se una banca presta denaro al 5%, un investitore in azioni di una startup esige un rendimento atteso del 25-30% annuo per compensare il rischio di fallimento."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-fin-1",
-          "title": "Costo delle Risorse",
-          "technicalPerspective": "Se non ricevo una fattura con addebito esplicito, la risorsa ha costo zero (come la memoria RAM libera).",
-          "managerialPerspective": "Ogni euro di capitale investito ha un costo opportunità: deve generare un rendimento almeno pari al rischio sostenuto dagli investitori.",
-          "mindsetShift": "Dal costo monetario contabile al costo opportunità del capitale (WACC)."
-        }
-      ]
-    },
-    {
-      "id": "ciclo-finanziamento-startup",
-      "title": "Il Ciclo di Finanziamento delle Start-up",
+      "id": "filiera-finanziamento-startup-e-venture-capital",
+      "title": "La Filiera del Finanziamento Startup: Business Angels, Venture Capital e CVC",
       "track": "approfondito",
-      "whyIntro": "Una startup deep-tech o AI può impiegare 3 o 4 anni prima di fatturare il primo euro. Senza comprendere gli stadi di finanziamento (dall'idea all'IPO), i fondatori finiscono la cassa prima di aver completato il prodotto.",
-      "whatBody": "Il ciclo di vita finanziario di una startup si articola in stadi progressivi: 1) Bootstrapping (risorse personali dei fondatori) e 3F (Family, Friends, Fools); 2) Pre-Seed & Seed con Business Angels (investitori privati con capitale ed esperienza industriale); 3) Round Early Stage (Series A, B) con fondi di Venture Capital per scalare il mercato; 4) Late Stage (Series C, D, Private Equity) e Exit (acquisizione industriale M&A o quotazione in borsa IPO). La 'Valle della Morte' è il periodo critico in cui le spese di sviluppo bruciano cassa (burn rate) prima di raggiungere il break-even operativo.",
+      "whyIntro": "Costruire una startup software o di intelligenza artificiale richiede molti mesi di sviluppo con ricavi pari a zero e uscite costanti ('burn rate'). Senza conoscere gli investitori specializzati e le loro metriche, i fondatori falliscono per esaurimento della cassa.",
+      "whatBody": "1. Il Ciclo di Vita Finanziario della Startup:\n• Pre-seed / Idea Stage: validazione del concept; finanziato con Bootstrapping (risorse personali dei fondatori) e 3F (Family, Friends & Fools). Ticket tipico: 10k€ - 100k€.\n• Seed Stage: sviluppo del Minimum Viable Product (MVP) e test di product-market fit; entrano i Business Angels o fondi seed. Ticket tipico: 100k€ - 2M€.\n• Early Stage (Serie A): il prodotto è sul mercato e mostra trazione (metriche di retention e primi ricavi); entrano fondi di Venture Capital. Ticket: 2M€ - 15M€.\n• Growth Stage (Serie B, C...): scaling internazionale del modello commerciale; entrano fondi VC late-stage e Corporate Venture Capital. Ticket: > 15M€.\n• Late Stage / Exit: raggiungimento della maturità; quotazione in borsa (IPO) o vendita strategica a una multinazionale (M&A / Trade Sale).\n\n2. I Protagonisti del Capitale di Rischio:\n• Business Angels (BA): persone fisiche (ex imprenditori, top manager) che investono patrimonio personale. Portano 'Smart Money' (capitale + mentoring + network). Decidono rapidamente e tollerano rischi massimi.\n• Venture Capital (VC): investitori istituzionali strutturati come fondi chiusi (durata tipica 10 anni: 5 di investimento + 5 di dismissione). Struttura: i General Partners (GP) gestiscono il fondo e guadagnano con una management fee (1,5-2,5% annuo) e il 'carried interest' (20% dei profitti realizzati); i Limited Partners (LP) apportano i capitali (fondi pensione, family office) senza ingerirsi nella gestione.\n• Modello Power Law del VC: la distribuzione dei ritorni è asimmetrica estrema. Su 10 investimenti: 6-7 falliscono azzerando il capitale; 2-3 pareggiano; 1 singola startup moltiplica il capitale di 50x o 100x coprendo tutte le perdite e generando l'intero profitto del fondo.\n• Corporate Venture Capital (CVC): grandi imprese (Google Ventures, Intel Capital) che investono in startup esterne con duplice obiettivo: ritorno finanziario e OBIETTIVI STRATEGICI (window on technology, R&D esternalizzata, scouting di tecnologie sinergiche da integrare).",
+      "howDetails": "Metriche Fondamentali del Finanziamento Startup:\n• Burn Rate Mensile: Uscite monetarie nette mensili.\n• Runway (Mesi) = Cassa Disponibile / Burn Rate Mensile.\n• Valutazione Post-Money = Valutazione Pre-Money + Capitale Raccolto.\n• Quota Investitori (%) = Capitale Raccolto / Valutazione Post-Money.\n• Diluizione Fondatori: Quota Post-Round = Quota Pre-Round · (Pre-Money / Post-Money).",
       "keypoints": [
         {
-          "id": "kp-stu-1",
-          "title": "Formula della Diluizione Proprietaria",
-          "schematicFormula": "Valutazione Post-Money = Valutazione Pre-Money + Capitale Investito | Quota Nuovi Soci = Capitale Investito / Valutazione Post-Money",
-          "explanation": "Se una startup vale 4M€ (Pre-Money) e un fondo investe 1M€, la Post-Money è 5M€ e il fondo acquisisce il 20% (1M / 5M), diluendo i fondatori all'80%."
+          "id": "kp-vc-1",
+          "title": "La Regola della Post-Money Valuation",
+          "schematicFormula": "Valutazione Post-Money = Valutazione Pre-Money + Nuovo Capitale Investito | Quota VC = Capitale / Post-Money",
+          "explanation": "La percentuale ceduta agli investitori si calcola SEMPRE sulla valutazione post-money e mai sulla pre-money."
         },
         {
-          "id": "kp-stu-2",
-          "title": "Runway Finanziario",
-          "schematicFormula": "Runway (Mesi) = Cassa Disponibile / Burn Rate Mensile (Uscite nette di cassa)",
-          "explanation": "Misura quanto tempo ha a disposizione la startup per raggiungere la redditività o chiudere un nuovo round prima di rimanere insolvente."
+          "id": "kp-vc-2",
+          "title": "La Logica Power Law del VC",
+          "schematicFormula": "Portafoglio VC = 65% Fallimenti + 25% Pareggio + 10% Home Run (Power Law che ripaga l'intero fondo)",
+          "explanation": "I fondi cercano unicamente progetti con potenziale di crescita esponenziale e scalabilità globale (status di unicorno > 1 miliardo di dollari)."
         }
       ],
       "traps": [
         {
-          "id": "trap-stu-1",
-          "title": "Confondere la Valutazione Pre-Money con la Post-Money",
-          "misconception": "Pensare che con un investimento di 2M€ su valutazione concordata di 8M€, l'investitore riceva il 25% (2M/8M).",
-          "truth": "Se 8M€ è la Pre-Money, la quota dell'investitore è 2M / (8M + 2M) = 20%. Se fosse il 25%, la valutazione Pre-Money concordata sarebbe di soli 6M€, con un danno di diluizione ingiustificato per i fondatori.",
-          "example": "Un errore di calcolo sulla clausola di valutazione nel Term Sheet può sottrarre il 5-10% di quote societarie ai programmatori fondatori."
+          "id": "trap-vc-1",
+          "title": "Calcolare la quota investitore sulla Pre-Money",
+          "misconception": "Credere che raccogliendo 1M€ su una valutazione Pre-Money di 4M€ si ceda il 25% (1/4).",
+          "truth": "La valutazione Post-Money diventa 4M€ + 1M€ = 5M€; la quota dell'investitore è 1M€ / 5M€ = 20%. I fondatori mantengono l'80%, non il 75%."
+        }
+      ]
+    },
+    {
+      "id": "clausole-term-sheet-e-patti-parasociali",
+      "title": "Patti Parasociali, Clausole di Term Sheet e Glossario VC",
+      "track": "approfondito",
+      "whyIntro": "Quando un fondo di Venture Capital entra nel capitale sociale, il contratto non è un semplice bonifico: il Term Sheet contiene clausole legali sofisticate che possono determinare chi guadagna e chi perde in sede di vendita della società.",
+      "whatBody": "I patti parasociali sono accordi vincolanti tra soci che integrano e derogano ai patti statutari ordinari. Le clausole tipiche richieste dagli investitori includono:\n\n1. Liquidation Preference (Preferenza di Liquidazione):\nStabilisce l'ordine di priorità nella distribuzione del ricavato in caso di vendita della società (Exit) o liquidazione. L'investitore riceve per primo il rimborso del proprio investimento (es. 1x o 2x) prima che i fondatori tocchino qualsiasi euro.\n• Non-participating: l'investitore sceglie se riprendersi il capitale investito preferenziale (1x) o convertire le proprie azioni in ordinarie e dividere il ricavato pro-quota con i fondatori.\n• Participating ('Double Dipping'): l'investitore riceve prima il rimborso 1x del suo capitale E POI partecipa pro-quota alla divisione della cassa residua con gli altri soci.\n\n2. Anti-Dilution Clauses (Clausole Anti-Diluizione):\nProteggono l'investitore in caso di round successivi a una valutazione inferiore rispetto al round precedente ('Down Round'):\n• Full Ratchet: clausola punitiva per i founder; il prezzo delle azioni del vecchio investitore viene ricalcolato come se avesse investito al nuovo prezzo stracciato, diluendo massicciamente i fondatori.\n• Weighted Average: meccanismo più equilibrato che ricalcola il prezzo tenendo conto del numero di nuove azioni effettivamente emesse.\n\n3. Drag-Along (Diritto di Trascinamento) e Tag-Along (Diritto di Covendita):\n• Drag-Along: se la maggioranza dei soci (o gli investitori con quote qualificate) trova un acquirente per il 100% della società, ha il diritto di obbligare i soci di minoranza a vendere le proprie quote alle medesime condizioni.\n• Tag-Along (a tutela delle minoranze): se i soci fondatori trovano un acquirente per le proprie quote di controllo, i piccoli soci hanno il diritto contrattuale di aggregarsi alla vendita allo stesso prezzo e condizioni, evitando di restare intrappolati con un nuovo socio di controllo sconosciuto.\n\n4. Governance, Board Seat e Vesting:\n• Board Seat: il fondo ottiene la nomina di 1 o 2 consiglieri nel CdA con poteri di veto su decisioni strategiche (nuove assunzioni C-level, aumenti di capitale, debito bancario, cessione brevetti).\n• Vesting & Cliff (per i Fondatori): le quote societarie dei fondatori maturano nel tempo (tipicamente su 4 anni con 1 anno di 'cliff' iniziale); se un founder abbandona l'azienda prima dell'anno, perde tutte le quote non maturate, proteggendo il team e l'investitore.",
+      "howDetails": "Glossario Tecnico del Venture Capital:\n• Cap Table (Capitalization Table): foglio di calcolo che mappa esattamente chi possiede quali classi di azioni, quote percentuali, opzioni e diritti di conversione pre e post round.\n• Carried Interest: la quota di extra-profitto (solitamente il 20%) spettante ai gestori del fondo (GP) dopo che il capitale degli investitori (LP) è stato restituito con un rendimento minimo (hurdle rate).\n• Due Diligence: investigazione approfondita (legale, fiscale, tecnica sul codice software e brevetti) condotta prima di finalizzare il bonifico di investimento.\n• SAFE (Simple Agreement for Future Equity): contratto rapido inventato da Y Combinator che permette di investire subito liquidità rimandando la valutazione aziendale al round successivo con sconto di conversione e 'valuation cap'.\n• Unicorno: startup tecnologica non quotata che raggiunge una valutazione certificata di almeno 1 miliardo di dollari.",
+      "keypoints": [
+        {
+          "id": "kp-cla-1",
+          "title": "Drag-Along vs Tag-Along",
+          "schematicFormula": "Drag-Along = Obbligo di Vendere con la Maggioranza (Evita veti di blocco) | Tag-Along = Diritto di Covendita per la Minoranza (Protegge dall'abbandono)",
+          "explanation": "Due clausole complementari che garantiscono la liquidabilità dell'investimento ed evitano soci ostaggio."
+        },
+        {
+          "id": "kp-cla-2",
+          "title": "Vesting e Cliff dei Fondatori",
+          "schematicFormula": "Vesting 4 Anni + Cliff 1 Anno: Anno 1 = 25% maturato | Mesi 13-48 = Maturazione lineare pro-rata mensile",
+          "explanation": "Evita che un fondatore se ne vada dopo pochi mesi portandosi via una quota pesante della società senza lavorare al progetto."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-cla-1",
+          "title": "Sottovalutare la Participating Liquidation Preference",
+          "misconception": "Credere che vendere l'azienda a una cifra superiore al capitale raccolto garantisca sempre un guadagno significativo ai fondatori.",
+          "truth": "Se gli investitori hanno concordato una clausola 'Participating 2x', in caso di vendita modesta preleveranno il doppio del capitale investito prima di qualsiasi distribuzione, lasciando i fondatori a mani vuote anche dopo anni di lavoro.",
+          "example": "Se un fondo investe 5M€ con preference 2x e la startup viene venduta a 11M€, il fondo preleva 10M€ prioritari, lasciando solo 1M€ da spartire tra tutti gli altri soci fondatori."
         }
       ]
     }

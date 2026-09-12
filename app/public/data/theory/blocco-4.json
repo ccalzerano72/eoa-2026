@@ -1,147 +1,174 @@
 {
   "block": 4,
-  "title": "Il Bilancio d'Esercizio: Logica, Schemi e Competenza",
-  "subtitle": "Stato Patrimoniale, Conto Economico e principio di competenza",
-  "guidingQuestion": "Il bilancio è una fotografia istantanea o un film dinamico? Perché un'impresa con utili contabili record può trovarsi con il conto corrente bancario in rosso?",
+  "title": "Il Bilancio d'Esercizio e il Modello Contabile",
+  "subtitle": "I 4 documenti civilistici, clausola generale, principi di redazione e criteri di valutazione",
+  "guidingQuestion": "Il bilancio è una fotografia istantanea o un film dinamico? Perché un'impresa con utili record può trovarsi a corto di cassa? Come impattano le scelte contabili (LIFO vs FIFO, ammortamenti, ratei e risconti) sulla rappresentazione della salute aziendale?",
   "caseStudy": {
     "id": "caso-bilancio-oic-de-cecco",
-    "name": "I Prospetti Contabili e l'Anatomia Industriale: Il Caso De Cecco",
+    "name": "I Prospetti Contabili e l'Anatomia Industriale: Il Caso De Cecco S.p.A.",
     "company": "De Cecco S.p.A. / Schemi OIC",
-    "year": "2020-2023",
-    "dilemma": "Come si leggono le decisioni strategiche di un grande gruppo industriale (investimenti in silos e grano, indebitamento bancario, dilazioni concesse alla GDO) analizzando i prospetti di bilancio?",
-    "summary": "Attraverso l'analisi del bilancio civilistico di De Cecco S.p.A. redatto secondo i principi contabili OIC, si osserva come lo Stato Patrimoniale fotografi un imponente capitale immobilizzato (pastifici, impianti, marchi storici) e un elevato attivo circolante (rimanenze di semola e crediti verso supermercati), controbilanciato da debiti verso banche e fornitori. Il Conto Economico a forma scalare mostra la generazione di valore della produzione (A) e l'assorbimento da parte dei costi industriali e del personale (B). La comprensione della differenza tra competenza economica e cassa spiega come gli utili dichiarati non siano immediatamente spendibili senza gestire i flussi finanziari.",
+    "year": "2020-2026",
+    "dilemma": "Come si leggono le decisioni strategiche di un colosso agroalimentare (investimenti pluriennali in silos, indebitamento bancario per materie prime, dilazioni di pagamento concesse alla Grande Distribuzione) analizzando i 4 documenti ufficiali di bilancio?",
+    "summary": "Attraverso l'analisi del bilancio civilistico di De Cecco S.p.A. redatto secondo gli schemi di legge (artt. 2424 e 2425 c.c.) e i principi contabili OIC, si comprende la dinamica reale del modello contabile. Nello Stato Patrimoniale si riscontra un massiccio Attivo Fisso (pastifici storici a Fara San Martino, impianti di macinazione brevettati) e un imponente Attivo Circolante composto da rimanenze di grano e semola (valutate a costo medio ponderato o FIFO) e crediti commerciali verso catene di supermercati con pagamenti dilazionati a 90-120 giorni. Il Conto Economico a forma scalare evidenzia il Valore della Produzione (A) e l'assorbimento da parte dei Costi di Produzione (B), producendo una solida Differenza A - B (risultato operativo industriale). Tuttavia, il Rendiconto Finanziario e la Nota Integrativa rivelano che gli utili milionari registrati a CE non corrispondono a cassa immediatamente spendibile, poiché una parte cospicua della liquidità resta temporaneamente intrappolata nei silos di stoccaggio e nelle fatture da incassare.",
     "coreLessons": [
-      "Lo Stato Patrimoniale misura la ricchezza netta accumulata a una certa data (stock: Impieghi = Fonti).",
-      "Il Conto Economico misura il valore economico creato o distrutto nell'anno (flusso: Ricavi - Costi = Utile/Perdita).",
-      "Il principio di competenza economica impone di registrare ricavi e costi quando maturano economicamente (consegna beni/erogazione servizi), non quando avviene l'incasso o il pagamento monetario.",
-      "L'ammortamento non è un'uscita di denaro: è la ripartizione contabile di un costo pluriennale già sostenuto in passato."
+      "I 4 documenti obbligatori del bilancio formano un sistema inscindibile: lo Stato Patrimoniale (stock di impieghi e fonti), il Conto Economico (flussi di ricavi e costi), il Rendiconto Finanziario (flussi monetari effettivi di cassa) e la Nota Integrativa (spiegazione dei criteri di stima).",
+      "Il principio di competenza economica impone di imputare ricavi e costi all'esercizio a cui appartengono economicamente, indipendentemente dalla data di incasso o pagamento numerario.",
+      "Il principio di prudenza prescrive l'iscrizione delle perdite anche se solo temute o presunte, vietando categoricamente l'iscrizione di utili sperati o non ancora realizzati.",
+      "L'ammortamento e gli accantonamenti a fondi rischi non sono uscite monetarie, ma costi non monetari di rettifica e stima.",
+      "La scelta del criterio di valutazione del magazzino (LIFO, FIFO, Costo Medio Ponderato) influenza direttamente l'utile civilistico e le imposte in contesti inflattivi."
     ],
-    "keytakeaway": "Il bilancio d'esercizio è il modello contabile fondamentale dell'impresa: chi non sa leggerlo non può valutare né la salute né il valore di alcun progetto aziendale."
+    "keytakeaway": "Il bilancio non è una verità oggettiva assoluta, ma una rigorosa rappresentazione convenzionale regolata dalla legge per informare soci, banche, fisco e mercato sulla reale situazione economica, patrimoniale e finanziaria dell'impresa."
   },
   "topics": [
     {
-      "id": "fotografia-vs-film",
-      "title": "La Natura Duale del Bilancio: Stato Patrimoniale vs. Conto Economico",
+      "id": "modello-valore-vs-contabile-e-metafora-diga",
+      "title": "Modello del Valore vs. Modello Contabile e la Metafora della Diga",
       "track": "essential",
-      "whyIntro": "Un software necessita di snapshot della memoria (stato istantaneo) e di log transazionali (eventi e throughput). Il bilancio risponde alla stessa esigenza conoscitiva per l'impresa.",
-      "whatBody": "Il bilancio d'esercizio si basa su una dualità inscindibile: lo Stato Patrimoniale (SP) è una fotografia istantanea al 31/12 che espone le attività (cosa l'azienda possiede: investimenti, crediti, cassa) e le passività con il patrimonio netto (come tali attività sono state finanziate: debito o capitale dei soci). Il Conto Economico (CE) è un filmato dinamico che riassume tutte le operazioni dell'esercizio (1/1 - 31/12), contrapponendo i ricavi (valore generato) ai costi (risorse consumate) per determinare l'Utile o la Perdita. Il trait d'union tra i due è proprio l'Utile netto d'esercizio, che dal CE confluisce nella voce A.IX del Patrimonio Netto in SP.",
+      "whyIntro": "Come si misura la salute di un'impresa? Se ci basassimo solo sull'andamento del conto corrente o sul prezzo delle azioni in borsa, avremmo una visione distorta. Occorre un modello convenzionale periodico che misuri la ricchezza creata.",
+      "whatBody": "1. Modello del Valore vs Modello Contabile:\n• Modello del Valore (Finanziario): guarda al futuro. Stima il valore attuale di tutti i flussi di cassa che l'impresa sarà in grado di generare lungo la sua vita residua (Discounted Cash Flow, valore azionario di mercato). È intrinsecamente volatile e soggettivo.\n• Modello Contabile (Bilancio d'Esercizio): guarda al passato recente. Misura la ricchezza effettivamente creata o consumata dall'impresa in un arco temporale finito e discreto (l'esercizio amministrativo, convenzionalmente dal 1° gennaio al 31 dicembre) mediante il sistema della contabilità generale a partita doppia.\n\n2. La Metafora del Bacino Idrico e della Diga:\nPer visualizzare la meccanica contabile, immaginiamo il patrimonio aziendale come un bacino idrico racchiuso da una diga:\n- A inizio anno (1° gennaio) si misura il livello dell'acqua presente nel bacino: è il Capitale Netto Iniziale.\n- Durante i 365 giorni dell'anno entrano corsi d'acqua (i Ricavi di competenza) ed escono flussi per irrigazione ed evaporazione (i Costi consumati per produrre beni).\n- Al 31 dicembre la diga viene 'chiusa' e si scatta una fotografia al livello dell'acqua: è il Capitale Netto Finale.\n- La differenza tra il livello finale e quello iniziale (al netto di nuovi apporti dei soci o prelievi di dividendi) misura il Reddito d'Esercizio: se il livello dell'acqua è salito, l'impresa ha generato un UTILE; se è sceso, ha subito una PERDITA.\n\n3. Capitale di Funzionamento vs. Cessione e Liquidazione:\n• Capitale di Funzionamento (ordinario): valutato nell'ipotesi che l'impresa continui regolarmente a operare nel tempo futuro (principio di continuità / going concern). I beni strumentali sono valutati al costo storico ammortizzato in funzione della loro utilità futura.\n• Capitale di Cessione: ipotizza il valore dell'azienda venduta in blocco come complesso funzionante a terzi (tiene conto dell'avviamento / goodwill).\n• Capitale di Liquidazione: ipotizza la chiusura definitiva dell'azienda con vendita forzata e frammentaria dei singoli beni per pagare i creditori (valori di realizzo stracciati).",
+      "howDetails": "Equazione di Bilancio del Capitale:\nCapitale Netto Finale (31/12) - Capitale Netto Iniziale (1/1) = Reddito d'Esercizio (Utile o Perdita)\nUtile d'Esercizio = Ricavi di Competenza Totali - Costi di Competenza Totali",
       "keypoints": [
         {
-          "id": "kp-bil-1",
-          "title": "Identità Fondamentale dello Stato Patrimoniale",
-          "schematicFormula": "Attivo (Impieghi di Capitale) = Passivo (Debiti verso Terzi) + Patrimonio Netto (Mezzi Propri)",
-          "explanation": "L'Attivo rappresenta dove sono state investite le risorse; Passivo e Netto indicano la provenienza delle risorse (fonti esterne e interne). Per costruzione, le due sezioni quadrano sempre: Attivo = Passivo + Netto."
+          "id": "kp-diga-1",
+          "title": "La Metafora della Diga",
+          "schematicFormula": "Livello Acqua Iniziale (Stock) + Flussi Entrata (Ricavi) - Flussi Uscita (Costi) = Livello Acqua Finale (Stock) → Differenza = Utile/Perdita",
+          "explanation": "Lo Stato Patrimoniale fotografa i livelli di stock alle estremità del periodo; il Conto Economico registra i flussi intermedi dell'anno."
         },
         {
-          "id": "kp-bil-2",
-          "title": "Dinamica del Conto Economico e Connessione con lo SP",
-          "schematicFormula": "Valore della Produzione - Costi della Produzione ± Gestione Finanziaria - Imposte = Utile Netto → incrementa il Patrimonio Netto (SP)",
-          "explanation": "Se i ricavi superano i costi, l'utile generato nel periodo arricchisce il Patrimonio Netto dell'azienda alla data di chiusura del bilancio."
+          "id": "kp-diga-2",
+          "title": "Capitale di Funzionamento",
+          "schematicFormula": "Valutazione Ordinaria = Prospettiva Going Concern (Continuità aziendale nel tempo)",
+          "explanation": "I macchinari si valutano per l'utilità futura che apporteranno alla produzione, non al prezzo che otterrebbero se svenduti domani mattina."
         }
       ],
       "traps": [
         {
-          "id": "trap-bil-1",
-          "title": "Confondere il Patrimonio Netto con il Denaro in Banca",
-          "misconception": "Credere che un'azienda con 5 milioni di euro di Patrimonio Netto abbia 5 milioni di euro liquidi depositati sul conto corrente.",
-          "truth": "Il Patrimonio Netto è una grandezza ideale contabile posta nel Passivo che misura il valore contabile spettante ai soci. Il denaro liquido in banca è invece registrato nell'Attivo (Attivo Circolante - Disponibilità Liquide).",
-          "example": "Un'azienda può avere 10M€ di Patrimonio Netto interamente immobilizzati in capannoni e macchinari, e trovarsi con soli 2.000€ sul conto corrente, incapace di pagare gli stipendi di fine mese."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-bil-1",
-          "title": "Modello di Stato e Flusso",
-          "technicalPerspective": "Una variabile contatore globale che si incrementa o azzera ad ogni ciclo di esecuzione.",
-          "managerialPerspective": "Una distinzione rigorosa tra grandezze di stock (SP a una data fissa) e grandezze di flusso (CE misurato su un intervallo temporale).",
-          "mindsetShift": "Dall'osservazione puntiforme delle singole transazioni alla quadratura sincronica di stock e flussi."
+          "id": "trap-diga-1",
+          "title": "Confondere il valore di bilancio con il valore di mercato",
+          "misconception": "Ritenere che il Patrimonio Netto di bilancio coincida con il prezzo da pagare per comprare la società sul mercato azionario.",
+          "truth": "Il bilancio registra i beni al costo storico ammortizzato prudenziale; il mercato azionario valuta le aspettative di utili e crescita futura (che possono essere molto più alte o più basse del netto contabile)."
         }
       ]
     },
     {
-      "id": "competenza-vs-cassa",
-      "title": "Principio di Competenza Economica vs. Principio di Cassa",
+      "id": "i-4-documenti-civilistici-e-clausola-generale",
+      "title": "I 4 Documenti Civilistici (art. 2423 c.c.) e la Clausola Generale",
       "track": "essential",
-      "whyIntro": "Se un'azienda vende licenze software a dicembre per 1 milione di euro concedendo 120 giorni di pagamento ai clienti, ha generato ricchezza o no? Se si usasse il principio di cassa, l'anno chiuderebbe in perdita, falsando totalmente le decisioni aziendali.",
-      "whatBody": "Il principio di cassa registra le operazioni nel momento in cui avviene l'effettiva movimentazione monetaria (entrata o uscita di denaro). Il principio di competenza economica (obbligatorio nel bilancio d'esercizio ex art. 2423-bis c.c.) impone di imputare ricavi e costi all'esercizio al quale economicamente appartengono, a prescindere dalla manifestazione numeraria/monetaria. Un ricavo è di competenza quando il bene è consegnato o il servizio reso; un costo è di competenza quando è correlato al ricavo generato. Per riconciliare i due principi nascono gli strumenti di assestamento: ratei, risconti, fatture da emettere/ricevere.",
+      "whyIntro": "Né il fisco, né le banche, né i tribunali accettano un semplice prospetto di entrate e uscite. La legge impone 4 documenti complementari e principi deontologici inderogabili per tutelare i terzi che entrano in contatto con l'azienda.",
+      "whatBody": "1. La Clausola Generale del Bilancio (art. 2423, comma 2, c.c.):\n'Il bilancio deve essere redatto con chiarezza e deve rappresentare in modo veritiero e corretto la situazione patrimoniale e finanziaria della società e il risultato economico dell'esercizio'.\n• Verità: le grandezze oggettive (cassa, crediti certi) devono essere vere; le grandezze stimate (ammortamenti, fondi rischi) devono essere frutto di stime attendibili e documentate.\n• Chiarezza: rispetto rigoroso degli schemi legali, divieto assoluto di compensazioni di partite (non si può sottrarre un debito da un credito compensandoli).\n• Correttezza: applicazione leale e non manipolatoria dei principi contabili (evitare politiche di bilancio volte ad abbellire fittiziamente i conti - c.d. window dressing).\n\n2. I 4 Documenti Obbligatori del Bilancio d'Esercizio OIC:\n1. Stato Patrimoniale (art. 2424 c.c.): la fotografia istantanea della struttura patrimoniale e finanziaria al 31/12 (Impieghi = Fonti).\n2. Conto Economico (art. 2425 c.c.): il prospetto scalare che espone i ricavi e i costi di competenza dell'anno, misurando il risultato economico (Utile o Perdita).\n3. Rendiconto Finanziario (art. 2425-ter c.c.): il film dei flussi di cassa effettivi generati o assorbiti durante l'esercizio, suddivisi in: flussi dell'attività operativa, flussi dell'attività di investimento e flussi dell'attività finanziaria.\n4. Nota Integrativa (art. 2427 c.c.): documento descrittivo testuale e tabellare che illustra i criteri di valutazione adottati, il dettaglio analitico delle singole voci (movimentazione immobilizzazioni, composizione crediti e debiti), gli impegni finanziari futuri e le informazioni sul personale.\n(A questi si aggiunge la Relazione sulla Gestione degli amministratori ex art. 2428 c.c., che analizza l'andamento del settore e i rischi di mercato).",
+      "howDetails": "Interconnessione Sistematica tra i Documenti:\n- L'Utile Netto scaturisce dalla fine del Conto Economico e va ad alimentare la voce A.IX del Patrimonio Netto dello Stato Patrimoniale.\n- La variazione netta delle disponibilità liquide tra l'inizio e la fine dell'anno nello Stato Patrimoniale coincide matematicamente con il saldo finale del Rendiconto Finanziario.\n- La Nota Integrativa spiega i dettagli numerici e contabili sia dello SP che del CE.",
       "keypoints": [
         {
-          "id": "kp-com-1",
-          "title": "Regola dei Ratei e Risconti",
-          "schematicFormula": "Rateo = Manifestazione finanziaria POSTICIPATA (quota di costo/ricavo già maturata economicamente) | Risconto = Manifestazione finanziaria ANTICIPATA (quota di costo/ricavo già pagata/incassata ma che maturerà in futuro)",
-          "explanation": "Il rateo misura una prestazione già avvenuta il cui pagamento avverrà nell'anno nuovo; il risconto sospende dal CE un costo/ricavo già pagato/incassato ma di competenza dell'anno venturo."
-        }
-      ],
-      "traps": [
-        {
-          "id": "trap-com-1",
-          "title": "Fatturato ≠ Incasso e Costo ≠ Uscita",
-          "misconception": "Ritenere che l'utile di 100.000€ indichi che l'azienda ha incassato 100.000€ in contanti.",
-          "truth": "Se i clienti non hanno ancora pagato le fatture, a fronte di 100.000€ di utile si registrano 100.000€ di Crediti verso Clienti nell'Attivo, e zero euro in cassa.",
-          "example": "Emettere fatture per 500.000€ di consulenza IT con pagamento a 180 giorni crea ricavi di competenza per 500.000€ ma zero cassa fino all'effettivo bonifico del cliente."
-        }
-      ]
-    },
-    {
-      "id": "ammortamento-e-fondi",
-      "title": "Ammortamento, TFR e Fondi Accantonamento",
-      "track": "standard",
-      "whyIntro": "Se acquisti un cluster di server GPU per 120.000€ che utilizzerai per 3 anni, addebitare tutti i 120.000€ di costo nel primo anno distruggerebbe il bilancio del primo esercizio, facendo apparire gli anni successivi ingiustificatamente profittevoli.",
-      "whatBody": "L'ammortamento è il procedimento contabile ed economico con cui il costo pluriennale di un bene ad utilità ripetuta (immobilizzazione materiale o immateriale) viene sistematicamente ripartito lungo la sua vita economica utile stimata. A Conto Economico si iscrive annualmente la 'quota di ammortamento' (costo di competenza dell'anno), mentre a Stato Patrimoniale il valore originario del bene viene ridotto mediante il 'fondo ammortamento' (portato in detrazione diretta della voce dell'attivo). Analogamente, il TFR (Trattamento di Fine Rapporto) e i fondi rischi/oneri registrano costi di competenza dell'anno a fronte di uscite di cassa future.",
-      "keypoints": [
-        {
-          "id": "kp-amm-1",
-          "title": "Formula della Quota di Ammortamento a Quote Costanti",
-          "schematicFormula": "Quota Ammortamento Annuo = (Costo Storico - Valore Residuo Presunto) / Vita Utile (Anni)",
-          "explanation": "Un server da 30.000€ con vita utile di 3 anni e valore residuo zero genera una quota di ammortamento a CE di 10.000€/anno per 3 anni."
+          "id": "kp-doc-1",
+          "title": "La Clausola Generale (True and Fair View)",
+          "schematicFormula": "Bilancio di Esercizio = Verità + Chiarezza + Correttezza (Clausola Sovraordinata ex art. 2423 c.c.)",
+          "explanation": "Se una regola tecnica contabile contrasta eccezionalmente con la rappresentazione veritiera e corretta, l'amministratore ha l'obbligo di derogarvi motivando in Nota Integrativa."
         },
         {
-          "id": "kp-amm-2",
-          "title": "Valore Contabile Netto (VCN)",
-          "schematicFormula": "Valore Netto Contabile in Bilancio = Costo Storico di Acquisto - Fondo Ammortamento Accumulato",
-          "explanation": "Al termine del secondo anno, il server da 30.000€ compare nello SP per un valore netto contabile di 10.000€ (30.000 - 20.000 fondo)."
+          "id": "kp-doc-2",
+          "title": "I 4 Pilastri Documentali",
+          "schematicFormula": "Bilancio OIC = Stato Patrimoniale + Conto Economico + Rendiconto Finanziario + Nota Integrativa",
+          "explanation": "Nessuno dei quattro documenti è sufficiente da solo per comprendere l'azienda: formano un insieme inscindibile."
         }
       ],
       "traps": [
         {
-          "id": "trap-amm-1",
-          "title": "Credere che l'ammortamento 'bruci liquidità' ogni anno",
-          "misconception": "Pensare che iscrivere 10.000€ di ammortamento comporti un prelievo o bonifico bancario di 10.000€ dal conto dell'azienda.",
-          "truth": "L'ammortamento è un 'costo non monetario' (costo calcolato): la cassa è uscita integralmente quando il bene è stato acquistato (o dilazionata dai mutui/fornitori), la quota annuale è una rettifica di valore che non tocca la cassa.",
-          "example": "Per questo motivo, nel calcolo del Cash Flow o dell'EBITDA, la quota di ammortamento viene ri-sommata all'utile netto."
-        }
-      ],
-      "conceptShifts": [
-        {
-          "id": "shift-amm-1",
-          "title": "Deprezzamento Hardware vs Ammortamento",
-          "technicalPerspective": "L'usura fisica dei componenti in silicio o l'obsolescenza tecnologica della scheda grafica.",
-          "managerialPerspective": "La correlazione economica tra il costo sostenuto per acquisire la capacità produttiva e i ricavi generati da tale impianto nel tempo.",
-          "mindsetShift": "Dal degrado fisico delle macchine alla ripartizione economica del valore contabile."
+          "id": "trap-doc-1",
+          "title": "Ignorare la Nota Integrativa e il Rendiconto Finanziario",
+          "misconception": "Limitarsi a guardare l'Utile del Conto Economico e il totale attivo dello Stato Patrimoniale per giudicare un'azienda.",
+          "truth": "Le informazioni più critiche sui rischi societari, contenziosi legali con il fisco, criteri di stima arbitrari e disponibilità effettiva di cassa si trovano ESCLUSIVAMENTE nella Nota Integrativa e nel Rendiconto Finanziario."
         }
       ]
     },
     {
-      "id": "schemi-civilistici-oic",
-      "title": "La Struttura Ufficiale OIC di Stato Patrimoniale e Conto Economico",
+      "id": "principi-di-redazione-del-bilancio",
+      "title": "I Principi di Redazione del Bilancio (art. 2423-bis c.c.)",
       "track": "essential",
-      "whyIntro": "Nelle relazioni con banche, revisori e Agenzia delle Entrate, i bilanci non possono essere presentati in fogli di calcolo arbitrari: la legge impone schemi standardizzati inderogabili (artt. 2424 e 2425 c.c.).",
-      "whatBody": "Lo schema dello Stato Patrimoniale civilistico organizza l'Attivo in 4 macro-classi: A) Crediti verso soci per versamenti ancora dovuti; B) Immobilizzazioni (I Immateriali, II Materiali, III Finanziarie); C) Attivo Circolante (I Rimanenze, II Crediti, III Attività finanziarie che non costituiscono immobilizzazioni, IV Disponibilità liquide); D) Ratei e risconti attivi. Il Passivo si articola in: A) Patrimonio Netto; B) Fondi per rischi e oneri; C) TFR; D) Debiti (con separata indicazione di quelli esigibili oltre l'esercizio); E) Ratei e risconti passivi. Il Conto Economico ha forma scalare a costi e ricavi della produzione: A) Valore della produzione; B) Costi della produzione; Differenza A - B (Risultato Operativo caratteristico); C) Proventi e oneri finanziari; D) Rettifiche di valore di attività finanziarie; Risultato prima delle imposte; Imposte; Utile (o Perdita) d'esercizio.",
+      "whyIntro": "Se ogni manager potesse decidere a piacimento quando registrare un ricavo o se includere o meno un rischio futuro, i bilanci non sarebbero confrontabili e aprirebbero la strada a frodi sistematiche.",
+      "whatBody": "L'art. 2423-bis c.c. stabilisce i principi contabili fondamentali vincolanti per la redazione del bilancio:\n\n1. Principio di Competenza Economica:\nI proventi e gli oneri devono essere imputati all'esercizio al quale competono economicamente, a prescindere dalla data di incasso o pagamento monetario. I costi sostenuti devono essere correlati ai ricavi generati nel medesimo esercizio.\n\n2. Principio di Prudenza (Asimmetria di Prudenza):\nSi possono indicare esclusivamente gli utili effettivamente realizzati alla data di chiusura dell'esercizio; al contrario, si DEVONO iscrivere tutte le perdite, i rischi e gli oneri anche solo presunti o probabili, anche se conosciuti dopo la chiusura dell'esercizio. Questa asimmetria tutela il patrimonio sociale impedendo la distribuzione ai soci di dividendi basati su guadagni incerti o fittizi.\n\n3. Principio della Continuità Aziendale (Going Concern):\nLa valutazione delle voci deve essere fatta nella prospettiva della continuazione dell'attività d'impresa come complesso funzionante destinato a produrre reddito nel tempo futuro.\n\n4. Principio del Costo Storico come Criterio Base:\nI beni e le risorse vengono iscritti al costo originario di acquisto o di produzione, rettificato nel tempo dai fondi ammortamento o dalle svalutazioni per perdite durevoli di valore. Il costo storico garantisce oggettività e neutralità, eliminando le oscillazioni soggettive e arbitrarie delle stime di mercato.\n\n5. Principio della Valutazione Separata delle Voci:\nGli elementi eterogenei ricompresi nelle singole voci devono essere valutati separatamente (es. non si possono fondere le rimanenze per compensare beni svalutati con beni rivalutati).\n\n6. Principio della Costanza dei Criteri di Valutazione:\nI criteri di stima e ammortamento non possono essere modificati da un esercizio all'altro, per garantire la comparabilità temporale dei bilanci.",
+      "howDetails": "Applicazione Pratica della Prudenza:\n- Causa legale in corso: l'avvocato avvisa che l'azienda perderà probabilmente 100.000€ il prossimo anno. Azione obbligatoria: accantonare SUBITO 100.000€ a Conto Economico nei 'Fondi Rischi' dell'esercizio in chiusura.\n- Contratto firmato a dicembre con ricavi futuri di 200.000€ per software che verrà consegnato a marzo: divieto assoluto di iscrivere i 200.000€ nell'anno in corso (non sono utili realizzati).",
       "keypoints": [
         {
-          "id": "kp-oic-1",
-          "title": "Differenza A - B del Conto Economico OIC",
-          "schematicFormula": "A (Valore della Produzione: Ricavi + Variazione Rimanenze) - B (Costi della Produzione: Merci + Servizi + Personale + Ammortamenti) = Differenza A - B (Reddito Operativo della gestione tipica)",
-          "explanation": "La differenza (A - B) misura l'efficienza della gestione industriale e caratteristica, prima dell'impatto dei debiti/interessi finanziari (C) e delle tasse."
+          "id": "kp-pri-1",
+          "title": "La Regola di Prudenza",
+          "schematicFormula": "Prudenza = Perdite Temute Iscritte Subito (100%) | Utili Sperati Iscritti SOLO quando Realizzati",
+          "explanation": "La legge obbliga a contabilizzare il pessimismo razionale per evitare che la società dissipi capitale distribuendo utili non certi."
+        },
+        {
+          "id": "kp-pri-2",
+          "title": "Competenza Economica",
+          "schematicFormula": "Costi di Competenza = Correlati ai Ricavi di Competenza dell'Esercizio (Indipendenti dalla Cassa)",
+          "explanation": "Il bilancio misura la creazione economica di valore, non i movimenti monetari del conto corrente."
         }
       ],
       "traps": [
         {
-          "id": "trap-oic-1",
-          "title": "Classificare i debiti per natura anziché distinguere l'orizzonte temporale",
-          "misconception": "Pensare che i debiti bancari siano tutti uguali indipendentemente dalla scadenza.",
-          "truth": "Il codice civile impone di indicare chiaramente per ciascuna voce di debito la quota esigibile entro l'esercizio (a breve termine) e oltre l'esercizio (a medio-lungo termine), distinzione vitale per l'equilibrio finanziario.",
-          "example": "Un debito di 1M€ esigibile a 30 giorni rappresenta una pressione di liquidità mortale; lo stesso debito rimborsabile in 15 anni tramite mutuo ipotecario è una solida fonte di finanziamento durevole."
+          "id": "trap-pri-1",
+          "title": "Iscrivere un utile presunto per 'migliorare' il rating bancario",
+          "misconception": "Pensare che se l'azienda ha vinto una gara d'appalto a dicembre, possa già registrare i ricavi nel bilancio in chiusura.",
+          "truth": "Finché il software non è rilasciato o il servizio non è prestato, il ricavo non è di competenza né realizzato: iscriverlo costituisce falso in bilancio."
+        }
+      ]
+    },
+    {
+      "id": "ratei-risconti-ammortamento-e-magazzino",
+      "title": "Meccanismi di Assestamento: Ratei, Risconti, Ammortamento e Criteri Scorte (FIFO/LIFO/CMP)",
+      "track": "essential",
+      "whyIntro": "Nella vita reale di un'impresa i contratti scavalcano quasi sempre la data del 31 dicembre (canoni cloud annuali, affitti, mutui, materie prime in magazzino). Gli strumenti di assestamento contabile garantiscono la perfetta quadratura della competenza economica.",
+      "whatBody": "1. Ratei e Risconti (la quadratura tra tempo e cassa):\n• Risconti (Manifestazione Finanziaria ANTICIPATA):\nQuote di costi o ricavi già pagati o incassati prima del 31/12, ma la cui competenza economica appartiene in parte o in tutto agli esercizi successivi.\n- Risconto Attivo: costo già pagato ma non ancora maturato (es. polizza assicurativa pagata il 1° ottobre per 12 mesi: 3 mesi di competenza dell'anno in corso, 9 mesi di competenza dell'anno nuovo → i 9 mesi si 'riscontano' e compaiono nell'Attivo SP come credito di servizio futuro).\n- Risconto Passivo: ricavo già incassato anticipatamente ma per servizi che verranno erogati l'anno prossimo (compare nel Passivo SP).\n• Ratei (Manifestazione Finanziaria POSTICIPATA):\nQuote di costi o ricavi già maturati economicamente entro il 31/12, il cui pagamento monetario avverrà solo nell'esercizio successivo.\n- Rateo Attivo: quota di ricavo già maturato per cui non è ancora stata emessa fattura né incassato denaro (Attivo SP).\n- Rateo Passivo: quota di costo già maturato (es. interessi su mutuo con pagamento posticipato a febbraio) che grava sull'anno in chiusura (Passivo SP).\n\n2. Ammortamento dei Beni Pluriennali:\nI beni ad utilità ripetuta (server, macchinari, brevetti) non possono essere spesati interamente nell'anno di acquisto. Il costo storico viene ripartito lungo la vita utile stimata:\n- A Conto Economico si registra la 'Quota di Ammortamento' (costo di competenza non monetario).\n- A Stato Patrimoniale il costo storico viene rettificato dal 'Fondo Ammortamento'.\n- Valore Contabile Netto (VCN) = Costo Storico di Acquisto - Fondo Ammortamento Accumulato.\n\n3. Valutazione delle Rimanenze di Magazzino (art. 2426, n. 9, c.c.):\nLe scorte si valutano al minore tra il costo di acquisto/produzione e il valore di realizzo desumibile dal mercato. Per i beni fungibili il codice civile ammette 3 criteri alternativi:\n• FIFO (First In, First Out): si assume che i beni acquistati per primi siano i primi a essere venduti o utilizzati. Le scorte rimaste in magazzino al 31/12 sono valutate ai prezzi degli acquisti più recenti.\n• LIFO (Last In, First Out): si assume che i beni acquistati per ultimi siano i primi a essere consumati. Le scorte rimaste a magazzino sono valorizzate ai prezzi più remoti e storici.\n• Costo Medio Ponderato (CMP): calcola la media aritmetica ponderata dei costi di acquisto di tutte le unità entrate nel periodo.\n\nImpatto in Fasi di Inflazione (Prezzi delle merci in crescita):\n- Metodo LIFO: addebita alla produzione i costi più recenti (quindi più alti) → Riduce la Differenza A - B e l'Utile Netto → MINIMIZZA LE IMPOSTE da versare al fisco!\n- Metodo FIFO: addebita alla produzione i costi storici più vecchi (più bassi) → Gonfia l'Utile Netto e massimizza il valore contabile delle scorte in magazzino → AUMENTA LE IMPOSTE da pagare.",
+      "howDetails": "Esempio Pratico Confronto LIFO vs FIFO:\nUn'azienda acquista 100 unità di chip a gennaio a 10€ (1.000€) e 100 unità a novembre a 20€ (2.000€). Nel corso dell'anno vende 100 unità a 30€ (Ricavi = 3.000€). Rimangono 100 unità in magazzino al 31/12.\n• Se usa FIFO: considera vendute le unità da 10€. Costo venduto = 1.000€. Rimanenze a SP = 2.000€ (valutate a 20€). Utile Lordo = 3.000 - 1.000 = 2.000€!\n• Se usa LIFO: considera vendute le unità recenti da 20€. Costo venduto = 2.000€. Rimanenze a SP = 1.000€ (valutate a 10€). Utile Lordo = 3.000 - 2.000 = 1.000€!\nRisultato: Con LIFO l'azienda dichiara 1.000€ in meno di utile e risparmia immediatamente il 24% di tasse IRES (240€ di cassa risparmiata)!",
+      "keypoints": [
+        {
+          "id": "kp-ass-1",
+          "title": "Regola Mnemonica Ratei e Risconti",
+          "schematicFormula": "Risconto = Pagamento ANTICIPATO (Sospensione di costo/ricavo futuro) | Rateo = Pagamento POSTICIPATO (Integrazione di costo/ricavo già maturato)",
+          "explanation": "I risconti guardano in avanti (stornano costi già pagati); i ratei guardano indietro (aggiungono debiti o crediti per fatti già avvenuti)."
+        },
+        {
+          "id": "kp-ass-2",
+          "title": "Effetto Fiscale LIFO in Inflazione",
+          "schematicFormula": "Inflazione: LIFO → Maggiori Costi a CE → Minore Utile D'Esercizio → Minori Imposte da Pagare",
+          "explanation": "Il LIFO è la strategia contabile preferita dalle industrie con materie prime soggette a rincari per difendere la liquidità dalle imposte."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-ass-1",
+          "title": "Credere che l'ammortamento sia denaro accantonato su un conto segregato",
+          "misconception": "Pensare che il 'Fondo Ammortamento' sia un libretto di risparmio o un conto bancario in cui la società deposita denaro per comprare il server nuovo.",
+          "truth": "Il fondo ammortamento è una posta meramente contabile che rettifica in diminuzione il valore dell'attivo; non contiene un solo centesimo di denaro liquido.",
+          "example": "Se un'azienda ammortizza beni per 500.000€ ma spende tutta la cassa in scorte invendute, al termine dei 5 anni si ritroverà con beni interamente ammortizzati e zero euro per sostituirli."
+        }
+      ]
+    },
+    {
+      "id": "schemi-civilistici-e-struttura-scalare-ce",
+      "title": "La Struttura Ufficiale OIC: Macroclassi di SP e Conto Economico Scalare",
+      "track": "essential",
+      "whyIntro": "Lo schema civilistico italiano non è una lista disordinata: ha una gerarchia rigida a lettere maiuscole, numeri romani, numeri arabi e lettere minuscole prescritta dal Codice Civile.",
+      "whatBody": "1. Struttura Ufficiale dello Stato Patrimoniale (art. 2424 c.c.):\n• ATTIVO (Impieghi di capitale):\n  A) Crediti verso soci per versamenti ancora dovuti\n  B) Immobilizzazioni: I Immateriali (brevetti, software, avviamento), II Materiali (terreni, fabbricati, impianti, server), III Finanziarie (partecipazioni strategiche, titoli a lungo termine)\n  C) Attivo Circolante: I Rimanenze (materie prime, prodotti finiti), II Crediti (verso clienti, con separata indicazione di quelli esigibili oltre 12 mesi), III Attività finanziarie che non costituiscono immobilizzazioni, IV Disponibilità Liquide (depositi bancari, cassa contanti)\n  D) Ratei e Risconti Attivi\n\n• PASSIVO E PATRIMONIO NETTO (Fonti di finanziamento):\n  A) Patrimonio Netto: I Capitale sociale, II Riserva da sovrapprezzo azioni, III Riserve di rivalutazione, IV Riserva legale (obbligo di accantonare almeno il 5% dell'utile fino al 20% del capitale), V Riserve statutarie, VI Altre riserve, VII Riserva per operazioni di copertura, VIII Utili (perdite) portati a nuovo, IX Utile (o Perdita) dell'esercizio\n  B) Fondi per Rischi e Oneri (cause legali, garanzie prodotti)\n  C) Trattamento di Fine Rapporto di lavoro subordinato (TFR maturato)\n  D) Debiti: verso banche, obbligazioni, fornitori, tributari, previdenziali (con separata indicazione per ciascuna voce di quelli esigibili oltre 12 mesi)\n  E) Ratei e Risconti Passivi\n\n2. Struttura del Conto Economico Scalare (art. 2425 c.c.):\nIl Conto Economico italiano adotta la forma 'a Valore e Costi della Produzione':\n  A) Valore della Produzione: 1) Ricavi delle vendite e prestazioni, 2) Variazione delle rimanenze di prodotti in corso e finiti (se aumentano arricchiscono il valore), 3) Lavori in corso su ordinazione, 4) Incrementi di immobilizzazioni per lavori interni (capitalizzazione costi interni software), 5) Altri ricavi e proventi.\n  B) Costi della Produzione: 6) Materie prime e merci, 7) Servizi (cloud, consulenze, utenze), 8) Godimento beni di terzi (affitti, leasing), 9) Personale (salari, oneri sociali, TFR), 10) Ammortamenti e svalutazioni, 11) Variazione delle rimanenze di materie prime, 12) Accantonamenti per rischi, 14) Oneri diversi di gestione.\n  → Differenza A - B: Risultato Operativo della Gestione Tipica e Caratteristica.\n  C) Proventi e Oneri Finanziari: interessi attivi e passivi, proventi da partecipazioni bancarie.\n  D) Rettifiche di Valore di Attività Finanziarie: rivalutazioni e svalutazioni di titoli azionari e derivati.\n  → Risultato Prima delle Imposte (EBT)\n  20) Imposte sul reddito dell'esercizio (IRES 24% e IRAP)\n  21) UTILE (o PERDITA) DELL'ESERCIZIO.",
+      "howDetails": "Significato Cruciale della Differenza A - B:\nLa Differenza A - B misura la capacità del core business aziendale di generare ricchezza indipendentemente da come l'azienda è finanziata (debiti bancari e oneri finanziari C) e dalle tasse (20). Se A - B è negativo, l'attività industriale è in perdita e non potrà essere salvata a lungo da mere manovre finanziarie.",
+      "keypoints": [
+        {
+          "id": "kp-sche-1",
+          "title": "Quadratura di Bilancio",
+          "schematicFormula": "Totale Attivo = Totale Passivo + Patrimonio Netto (Identità Contabile Assoluta)",
+          "explanation": "Ogni singolo impiego di risorse è necessariamente coperto da una fonte di debito verso terzi o di capitale proprio."
+        },
+        {
+          "id": "kp-sche-2",
+          "title": "Sequenza del Conto Economico",
+          "schematicFormula": "Valore Produzione (A) - Costi Produzione (B) = Diff. A-B ± Finanziari (C) ± Rettifiche (D) - Tasse = Utile Netto",
+          "explanation": "La struttura scalare isola progressivamente le varie gestioni: industriale tipica, finanziaria e fiscale."
+        }
+      ],
+      "traps": [
+        {
+          "id": "trap-sche-1",
+          "title": "Confondere la Variazione delle Rimanenze in A con quella in B",
+          "misconception": "Pensare che tutte le scorte si registrino allo stesso modo a Conto Economico.",
+          "truth": "La variazione delle rimanenze di PRODOTTI FINITI si iscrive nella voce A.2 (Rimanenze Finali - Rimanenze Iniziali: se crescono aumentano il valore); la variazione delle materie prime si iscrive in B.11 con segno opposto (Rimanenze Iniziali - Rimanenze Finali: rettifica i costi di acquisto).",
+          "example": "Se aumento le scorte di prodotti finiti di 50.000€, sto capitalizzando costi di produzione non ancora venduti, incrementando il Valore della Produzione A.2."
         }
       ]
     }
