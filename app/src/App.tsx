@@ -496,34 +496,36 @@ export function App() {
               </div>
             </div>
 
-            {/* User Progress & Stats Banner */}
+            {/* User Progress & Stats Banner — Collapsible */}
             {overallStats.totalSessions > 0 ? (
-              <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-xs">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4 mb-4">
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
-                      <TrendingUp className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 text-sm sm:text-base">
-                        I Tuoi Progressi & Statistiche
-                      </h4>
-                      <p className="text-xs text-slate-500">
-                        {overallStats.examSimulationsCount} simulazioni svolte •{" "}
-                        {overallStats.totalQuestionsAnswered} quesiti affrontati
-                      </p>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => navigateTo({ tab: "stats" })}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-700 hover:text-sky-900 bg-sky-50 hover:bg-sky-100 px-3.5 py-2 rounded-xl border border-sky-200/80 transition cursor-pointer"
+              <CollapsibleSection
+                title="I Tuoi Progressi & Statistiche"
+                subtitle={`${overallStats.examSimulationsCount} simulazioni svolte • ${overallStats.totalQuestionsAnswered} quesiti affrontati`}
+                icon={<TrendingUp className="h-5 w-5 text-indigo-600" />}
+                badge={
+                  <span
+                    role="button"
+                    tabIndex={0}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigateTo({ tab: "stats" });
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.stopPropagation();
+                        navigateTo({ tab: "stats" });
+                      }
+                    }}
+                    className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-sky-700 hover:text-sky-900 bg-sky-50 hover:bg-sky-100 px-3 py-1.5 rounded-lg border border-sky-200/80 transition cursor-pointer"
                   >
-                    <span>Vedi Storico Completo & Analisi Blocchi</span>
+                    <span>Storico Completo</span>
                     <ChevronRight className="h-3.5 w-3.5" />
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                  </span>
+                }
+                defaultExpanded={true}
+                className="mt-8"
+              >
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-center">
                   <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
                     <div className="text-xs text-slate-500 font-semibold mb-1">
                       Media Voto Esame
@@ -563,26 +565,34 @@ export function App() {
                     </div>
                   </div>
                 </div>
-              </div>
+                {/* Mobile link to stats */}
+                <button
+                  onClick={() => navigateTo({ tab: "stats" })}
+                  className="sm:hidden mt-4 w-full inline-flex items-center justify-center gap-1.5 text-xs font-bold text-sky-700 bg-sky-50 hover:bg-sky-100 px-3.5 py-2.5 rounded-xl border border-sky-200/80 transition cursor-pointer"
+                >
+                  <span>Vedi Storico Completo & Analisi Blocchi</span>
+                  <ChevronRight className="h-3.5 w-3.5" />
+                </button>
+              </CollapsibleSection>
             ) : (
-              <div className="mt-8 rounded-3xl border border-dashed border-slate-300 bg-white/70 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
+              <div className="mt-8 rounded-2xl border border-dashed border-slate-300 bg-white/70 p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-start sm:items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-500">
                     <BarChart3 className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 text-sm">
-                      Nessuna simulazione ancora registrata nello storico
+                      Nessuna simulazione ancora registrata
                     </h4>
-                    <p className="text-xs text-slate-500">
-                      Le tue prove verranno salvate automaticamente in locale,
-                      con statistiche per ciascuno dei 7 blocchi e voti su 30.
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      Le tue prove verranno salvate in locale, con statistiche
+                      per blocco e voti su 30.
                     </p>
                   </div>
                 </div>
                 <button
                   onClick={handleStartFullExam}
-                  className="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-4 py-2 text-xs font-bold text-white shadow-xs transition cursor-pointer"
+                  className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-4 py-2.5 text-xs font-bold text-white shadow-xs transition cursor-pointer"
                 >
                   <PlayCircle className="h-4 w-4" />
                   <span>Avvia Prima Prova</span>

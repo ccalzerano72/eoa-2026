@@ -46,11 +46,11 @@ export function CollapsibleSection({
             </div>
           )}
           <div className="min-w-0">
-            <h3 className="text-base sm:text-lg font-bold text-slate-900 truncate">
+            <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
               {title}
             </h3>
             {subtitle && (
-              <p className="text-xs sm:text-sm text-slate-500 truncate">
+              <p className="text-xs text-slate-500 leading-snug mt-0.5">
                 {subtitle}
               </p>
             )}
