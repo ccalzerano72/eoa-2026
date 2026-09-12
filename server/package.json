@@ -1,0 +1,15 @@
+{
+  "name": "eoa-log-server",
+  "version": "1.0.0",
+  "description": "Activity logging server for EOA Exam Trainer",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  }
+}

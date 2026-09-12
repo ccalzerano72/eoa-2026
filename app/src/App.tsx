@@ -6,6 +6,7 @@ import {
   Suspense,
   lazy,
 } from "react";
+import { logger } from "./services/logger";
 import type { Question, SyllabusBlock, StudyTrack } from "./types/question";
 import type { StudyBlock } from "./types/study";
 import type {
@@ -125,6 +126,14 @@ export function App() {
     getThemePreference(),
   );
 
+  // -------------------------------------------------------------------------
+  // Logger init — runs once on mount
+  // -------------------------------------------------------------------------
+  useEffect(() => {
+    void logger.init();
+    logger.bindUnloadFlush();
+  }, []);
+
   // Apply theme class to document
   useEffect(() => {
     const root = document.documentElement;
@@ -152,6 +161,7 @@ export function App() {
   const handleThemeChange = useCallback((newTheme: ThemePreference) => {
     setTheme(newTheme);
     setThemePreference(newTheme);
+    logger.log("theme_change", { theme: newTheme });
   }, []);
 
   // Active quiz session and key (to preserve review or re-render when needed)
@@ -218,6 +228,8 @@ export function App() {
 
   const applyNavEntry = useCallback(
     (entry: NavEntry) => {
+      // Scroll to top on every navigation to ensure page starts at the beginning
+      window.scrollTo({ top: 0, behavior: "instant" });
       setActiveTab(entry.tab);
       if (entry.tab === "study" && entry.studyBlockNumber) {
         loadStudyBlock(entry.studyBlockNumber, entry.studyTopicId);
@@ -234,6 +246,18 @@ export function App() {
       });
       setHistoryIndex((prev) => prev + 1);
       applyNavEntry(nextEntry);
+      logger.log("navigate", {
+        tab: nextEntry.tab,
+        ...(nextEntry.studyBlockNumber !== undefined && {
+          block: nextEntry.studyBlockNumber,
+        }),
+        ...(nextEntry.studyTopicId !== undefined && {
+          topicId: nextEntry.studyTopicId,
+        }),
+        ...(nextEntry.fromQuizReview !== undefined && {
+          fromQuizReview: nextEntry.fromQuizReview,
+        }),
+      });
     },
     [historyIndex, applyNavEntry],
   );
@@ -276,6 +300,10 @@ export function App() {
       studyBlockNumber: blockNumber,
       studyTopicId: topicId,
     });
+    logger.log("study_open", {
+      block: blockNumber,
+      ...(topicId && { topicId }),
+    });
   };
 
   const handleNavigateToStudyFromReview = (
@@ -287,6 +315,11 @@ export function App() {
       tab: "study",
       studyBlockNumber: blockNumber,
       studyTopicId: topicId,
+      fromQuizReview: true,
+    });
+    logger.log("study_open", {
+      block: blockNumber,
+      topicId,
       fromQuizReview: true,
     });
   };
@@ -324,6 +357,12 @@ export function App() {
     setQuizMode("free-practice");
     setQuizRunnerKey(`topic-${blockNumber}-${topicId}-${Date.now()}`);
     navigateTo({ tab: "quiz" });
+    logger.log("quiz_start", {
+      mode: "free-practice",
+      block: blockNumber,
+      topicId,
+      questionCount: questionsToUse.length,
+    });
   };
 
   // Helper: filter questions by active track
@@ -345,7 +384,21 @@ export function App() {
     setQuizMode("exam-simulation");
     setQuizRunnerKey(`exam-${Date.now()}`);
     navigateTo({ tab: "quiz" });
-  }, [allQuestions, filterByTrack, sampleExamQuestions, navigateTo]);
+    logger.log("quiz_start", {
+      mode: "exam-simulation",
+      track: activeTrackFilter,
+      questionCount:
+        examQuestions.length > 0
+          ? examQuestions.length
+          : Math.min(pool.length, 28),
+    });
+  }, [
+    allQuestions,
+    filterByTrack,
+    sampleExamQuestions,
+    navigateTo,
+    activeTrackFilter,
+  ]);
 
   const handlePracticeFormula = useCallback(
     (formula: FormulaItem) => {
@@ -369,6 +422,12 @@ export function App() {
       setActiveReviewSession(null);
       setQuizRunnerKey(`formula-quiz-${formula.id}-${Date.now()}`);
       navigateTo({ tab: "quiz" });
+      logger.log("formula_practice", {
+        formulaId: formula.id,
+        block: formula.block,
+        topic: formula.topic,
+        questionCount: selected.length,
+      });
     },
     [allQuestions, navigateTo],
   );
@@ -380,6 +439,10 @@ export function App() {
         studyBlockNumber: blockNumber,
         studyTopicId: topicId,
       });
+      logger.log("formula_study_link", {
+        block: blockNumber,
+        ...(topicId && { topicId }),
+      });
     },
     [navigateTo],
   );
@@ -390,6 +453,11 @@ export function App() {
     setQuizMode(record.session.mode);
     setQuizRunnerKey(`review-${record.id}`);
     navigateTo({ tab: "quiz" });
+    logger.log("quiz_start", {
+      mode: "review",
+      sessionId: record.id,
+      originalMode: record.session.mode,
+    });
   };
 
   const handleQuizFinish = (
@@ -398,6 +466,20 @@ export function App() {
   ) => {
     setActiveReviewSession(session);
     setQuizHistory(getQuizHistory());
+    const answeredCount = Object.keys(session.responses).length;
+    const correctCount = Object.values(session.responses).filter(
+      (r) => r.isCorrect,
+    ).length;
+    logger.log("quiz_finish", {
+      mode: session.mode,
+      questionCount: session.questions.length,
+      answeredCount,
+      correctCount,
+      totalScore: _summary.totalScore,
+      scaledGrade: _summary.scaledGrade30,
+      passed: _summary.isPassed,
+      durationSeconds: session.elapsedSeconds,
+    });
   };
 
   const handleStartFlashCards = useCallback(() => {
@@ -405,7 +487,11 @@ export function App() {
     setQuizMode("flash-cards");
     setQuizRunnerKey(`flash-${Date.now()}`);
     navigateTo({ tab: "quiz" });
-  }, [navigateTo]);
+    logger.log("flashcard_start", {
+      track: activeTrackFilter,
+      questionPoolSize: filterByTrack(allQuestions).length,
+    });
+  }, [navigateTo, activeTrackFilter, filterByTrack, allQuestions]);
 
   const handleStartTrapsQuiz = useCallback(() => {
     // All questions have traps — prioritize variety across blocks
@@ -418,7 +504,11 @@ export function App() {
     setQuizMode("traps-only");
     setQuizRunnerKey(`traps-${Date.now()}`);
     navigateTo({ tab: "quiz" });
-  }, [allQuestions, filterByTrack, navigateTo]);
+    logger.log("traps_quiz_start", {
+      track: activeTrackFilter,
+      questionCount: selected.length,
+    });
+  }, [allQuestions, filterByTrack, navigateTo, activeTrackFilter]);
 
   // Spaced Repetition: Intelligent Review Mode
   const handleStartSpacedReview = useCallback(() => {
@@ -444,6 +534,13 @@ export function App() {
     setQuizMode("spaced-review");
     setQuizRunnerKey(`spaced-${Date.now()}`);
     navigateTo({ tab: "quiz" });
+    const stats = getSpacedRepStats(allIds);
+    logger.log("spaced_review_start", {
+      prioritizedCount: prioritizedIds.length,
+      difficultCount: stats.difficultCount,
+      learningCount: stats.learningCount,
+      masteredCount: stats.masteredCount,
+    });
   }, [allQuestions, navigateTo]);
 
   // Spaced repetition stats for dashboard display
@@ -979,7 +1076,10 @@ export function App() {
                   return (
                     <button
                       key={t.val}
-                      onClick={() => setActiveTrackFilter(t.val)}
+                      onClick={() => {
+                        setActiveTrackFilter(t.val);
+                        logger.log("track_filter_change", { track: t.val });
+                      }}
                       className={`px-2.5 py-1 rounded-lg text-xs font-bold transition cursor-pointer ${
                         isActive
                           ? t.val === "all"
@@ -1130,6 +1230,10 @@ export function App() {
                   onClick={() => {
                     setActiveSimulator("dupont");
                     navigateTo({ tab: "simulator" });
+                    logger.log("simulator_open", {
+                      simulator: "dupont",
+                      source: "dashboard",
+                    });
                   }}
                   className="group rounded-2xl border border-indigo-200 dark:border-indigo-800 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/50 dark:to-purple-900/50 p-5 text-left hover:shadow-lg hover:border-indigo-300 dark:hover:border-indigo-600 transition cursor-pointer"
                 >
@@ -1173,6 +1277,10 @@ export function App() {
                   onClick={() => {
                     setActiveSimulator("balance");
                     navigateTo({ tab: "simulator" });
+                    logger.log("simulator_open", {
+                      simulator: "balance",
+                      source: "dashboard",
+                    });
                   }}
                   className="group rounded-2xl border border-sky-200 dark:border-sky-800 bg-gradient-to-br from-sky-50 to-blue-50 dark:from-sky-900/50 dark:to-blue-900/50 p-5 text-left hover:shadow-lg hover:border-sky-300 dark:hover:border-sky-600 transition cursor-pointer"
                 >
@@ -1388,7 +1496,13 @@ export function App() {
             {/* Simulator Selector */}
             <div className="mb-6 grid grid-cols-2 gap-3">
               <button
-                onClick={() => setActiveSimulator("dupont")}
+                onClick={() => {
+                  setActiveSimulator("dupont");
+                  logger.log("simulator_open", {
+                    simulator: "dupont",
+                    source: "simulator-tab",
+                  });
+                }}
                 className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition ${
                   activeSimulator === "dupont"
                     ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg"
@@ -1399,7 +1513,13 @@ export function App() {
                 <span>DuPont Playground</span>
               </button>
               <button
-                onClick={() => setActiveSimulator("balance")}
+                onClick={() => {
+                  setActiveSimulator("balance");
+                  logger.log("simulator_open", {
+                    simulator: "balance",
+                    source: "simulator-tab",
+                  });
+                }}
                 className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition ${
                   activeSimulator === "balance"
                     ? "bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-lg"
