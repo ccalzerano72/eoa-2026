@@ -71,11 +71,20 @@ export function interpolate(
   template: string,
   context: Record<string, number | string>,
 ): string {
-  return template.replace(/\{([a-zA-Z0-9_]+)\}/g, (_, key) => {
-    if (context[key] !== undefined) {
-      return String(context[key]);
+  return template.replace(/\{([a-zA-Z0-9_+\-*/().\s]+)\}/g, (match, expr) => {
+    const trimmed = expr.trim();
+    if (context[trimmed] !== undefined) {
+      return String(context[trimmed]);
     }
-    return `{${key}}`;
+    try {
+      const val = evaluateMath(trimmed, context as Record<string, number>);
+      if (!isNaN(val)) {
+        return formatNumberIT(val, 1);
+      }
+    } catch {
+      // ignore
+    }
+    return match;
   });
 }
 
@@ -167,6 +176,7 @@ export function instantiateTemplate(
         trap: template.explanationTemplate.trap,
       },
       formula: template.formulaKaTeX,
+      sourceRef: template.sourceRef,
     };
   }
 
@@ -247,5 +257,6 @@ export function instantiateTemplate(
       trap: template.explanationTemplate.trap,
     },
     formula: template.formulaKaTeX,
+    sourceRef: template.sourceRef,
   };
 }

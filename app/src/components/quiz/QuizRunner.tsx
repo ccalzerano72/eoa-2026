@@ -16,6 +16,8 @@ import {
   HelpCircle,
   Lightbulb,
   Award,
+  BookOpen,
+  ExternalLink,
 } from "lucide-react";
 
 interface QuizRunnerProps {
@@ -24,6 +26,7 @@ interface QuizRunnerProps {
   timeLimitSeconds?: number;
   onFinish?: (summary: QuizScoreSummary) => void;
   onExit?: () => void;
+  onNavigateToStudy?: (block: SyllabusBlock, topicId: string) => void;
 }
 
 export const QuizRunner: React.FC<QuizRunnerProps> = ({
@@ -32,6 +35,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
   timeLimitSeconds = 30 * 60, // default 30 mins
   onFinish,
   onExit,
+  onNavigateToStudy,
 }) => {
   const [session, setSession] = useState<QuizSessionState>(() => ({
     id: `quiz-${Date.now()}`,
@@ -411,6 +415,33 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                       <span className="font-bold">Trappola d'esame:</span>{" "}
                       {q.explanation.trap}
                     </div>
+                  )}
+                </div>
+
+                {/* Lesson reference & Deep Link to Study */}
+                <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2.5">
+                  {q.sourceRef ? (
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+                      <BookOpen className="h-3.5 w-3.5 text-sky-600 shrink-0" />
+                      <span>
+                        Fonte didattica:{" "}
+                        <strong className="text-slate-700">
+                          {q.sourceRef}
+                        </strong>
+                      </span>
+                    </div>
+                  ) : (
+                    <div />
+                  )}
+                  {onNavigateToStudy && (
+                    <button
+                      onClick={() => onNavigateToStudy(q.block, q.topic)}
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-sky-50 px-3 py-1.5 text-xs font-bold text-sky-700 hover:bg-sky-100 hover:text-sky-900 border border-sky-200/80 transition cursor-pointer shadow-2xs"
+                    >
+                      <BookOpen className="h-3.5 w-3.5" />
+                      <span>Vai alla Lezione (Blocco {q.block})</span>
+                      <ExternalLink className="h-3 w-3 ml-0.5 opacity-70" />
+                    </button>
                   )}
                 </div>
               </div>

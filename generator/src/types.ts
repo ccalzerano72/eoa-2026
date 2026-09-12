@@ -96,4 +96,5 @@ export interface ParametricTemplate {
     trap?: string;
   };
   formulaKaTeX: string;
+  sourceRef?: string;
 }

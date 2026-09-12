@@ -36,4 +36,6 @@ export const leverageRoeTemplate: ParametricTemplate = {
       "Applicando la formula: ROE = {roi} + ({roi} − {i}) × {de} = {roi} + ({roi_raw - i_raw}% × {de}) = {correct}.",
     trap: "Attenzione a non confondere il ROE con il semplice ROI: quando ROI > i, il debito genera un effetto moltiplicativo positivo a favore degli azionisti.",
   },
+  sourceRef:
+    "Slide Blocco V - Indici di Redditività e Struttura Finanziaria / Dispensa BILANCIO",
 };

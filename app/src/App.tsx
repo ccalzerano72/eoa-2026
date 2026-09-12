@@ -15,8 +15,10 @@ type NavTab = "dashboard" | "study" | "quiz" | "generator";
 
 export function App() {
   const [activeTab, setActiveTab] = useState<NavTab>("dashboard");
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
+  const [activeQuestions, setActiveQuestions] = useState<Question[]>([]);
   const [studyBlock, setStudyBlock] = useState<StudyBlock | null>(null);
+  const [targetTopicId, setTargetTopicId] = useState<string | undefined>();
   const [quizMode, setQuizMode] = useState<"exam-simulation" | "free-practice">(
     "exam-simulation",
   );
@@ -25,7 +27,10 @@ export function App() {
   useEffect(() => {
     fetch("/data/questions/sample.json")
       .then((res) => res.json())
-      .then((data: Question[]) => setQuestions(data))
+      .then((data: Question[]) => {
+        setAllQuestions(data);
+        setActiveQuestions(data);
+      })
       .catch((err) => console.error("Failed to load sample questions:", err));
 
     fetch("/data/theory/blocco-1.json")
@@ -33,6 +38,40 @@ export function App() {
       .then((data: StudyBlock) => setStudyBlock(data))
       .catch((err) => console.error("Failed to load sample theory:", err));
   }, []);
+
+  const handleNavigateToStudy = (blockNumber: number, topicId?: string) => {
+    setTargetTopicId(topicId);
+    fetch(`/data/theory/blocco-${blockNumber}.json`)
+      .then((res) => res.json())
+      .then((data: StudyBlock) => {
+        setStudyBlock(data);
+        setActiveTab("study");
+      })
+      .catch(() => {
+        setActiveTab("study");
+      });
+  };
+
+  const handleStartTopicQuiz = (blockNumber: number, topicId: string) => {
+    const filtered = allQuestions.filter(
+      (q) =>
+        q.block === blockNumber &&
+        (q.topic === topicId || q.topic.includes(topicId)),
+    );
+    const questionsToUse =
+      filtered.length > 0
+        ? filtered
+        : allQuestions.filter((q) => q.block === blockNumber);
+    setActiveQuestions(questionsToUse);
+    setQuizMode("free-practice");
+    setActiveTab("quiz");
+  };
+
+  const handleStartFullExam = () => {
+    setActiveQuestions(allQuestions);
+    setQuizMode("exam-simulation");
+    setActiveTab("quiz");
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans">
@@ -85,10 +124,7 @@ export function App() {
               <span>Studio</span>
             </button>
             <button
-              onClick={() => {
-                setQuizMode("exam-simulation");
-                setActiveTab("quiz");
-              }}
+              onClick={handleStartFullExam}
               className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-1.5 shadow-2xs ${
                 activeTab === "quiz"
                   ? "bg-sky-600 text-white"
@@ -125,17 +161,14 @@ export function App() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <button
-                  onClick={() => {
-                    setQuizMode("exam-simulation");
-                    setActiveTab("quiz");
-                  }}
+                  onClick={handleStartFullExam}
                   className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-6 py-3 font-bold text-sm text-slate-950 shadow-md transition cursor-pointer"
                 >
                   <PlayCircle className="h-5 w-5" />
                   <span>Avvia Simulazione Esame (Sequenziale)</span>
                 </button>
                 <button
-                  onClick={() => setActiveTab("study")}
+                  onClick={() => handleNavigateToStudy(1)}
                   className="inline-flex items-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-3 font-bold text-sm text-white transition cursor-pointer"
                 >
                   <BookOpen className="h-5 w-5" />
@@ -215,7 +248,7 @@ export function App() {
                 ].map((b) => (
                   <div
                     key={b.num}
-                    onClick={() => setActiveTab("study")}
+                    onClick={() => handleNavigateToStudy(b.num)}
                     className={`rounded-2xl border bg-white p-5 shadow-2xs hover:shadow-md transition cursor-pointer border-l-4 ${b.color}`}
                   >
                     <div className="flex items-center justify-between mb-2">
@@ -284,10 +317,11 @@ export function App() {
             {studyBlock ? (
               <StudyBlockViewer
                 block={studyBlock}
-                onStartBlockQuiz={() => {
-                  setQuizMode("exam-simulation");
-                  setActiveTab("quiz");
-                }}
+                targetTopicId={targetTopicId}
+                onStartBlockQuiz={() =>
+                  handleStartTopicQuiz(studyBlock.block, "")
+                }
+                onStartTopicQuiz={handleStartTopicQuiz}
               />
             ) : (
               <div className="text-center py-20 text-slate-500">
@@ -300,12 +334,13 @@ export function App() {
         {/* QUIZ TAB */}
         {activeTab === "quiz" && (
           <div>
-            {questions.length > 0 ? (
+            {activeQuestions.length > 0 ? (
               <QuizRunner
-                questions={questions}
+                questions={activeQuestions}
                 mode={quizMode}
-                timeLimitSeconds={15 * 60} // 15 mins for the 6-question demo
+                timeLimitSeconds={15 * 60} // 15 mins for the demo
                 onExit={() => setActiveTab("dashboard")}
+                onNavigateToStudy={handleNavigateToStudy}
               />
             ) : (
               <div className="text-center py-20 text-slate-500">

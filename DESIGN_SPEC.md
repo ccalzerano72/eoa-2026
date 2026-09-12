@@ -50,7 +50,7 @@ Sequenza obbligatoria, sempre:
 
 1. **PERCHÉ** — il problema: a quale decisione aziendale serve questo concetto?
    Perché uno studente di ingegneria informatica dovrebbe interessarsene?
-2. **COSA** — il concetto, presentato come *conseguenza* di quel bisogno.
+2. **COSA** — il concetto, presentato come _conseguenza_ di quel bisogno.
 3. **COME** — la formula, il calcolo, la procedura, l'esempio numerico.
 
 Nelle pagine di studio, questa sequenza si traduce in blocchi visivi distinti.
@@ -64,22 +64,22 @@ Mutuato dal "Mindset Shift" e dal "Migration Delta" di BOOK:
   ("paradigma ingegneristico" vs. "paradigma aziendale", come definito nella
   slide I di EOA 2026).
 - Dove applicabile, usare il formato a 3 righe:
-  - *Mentalità tecnica:* come un ingegnere tende a vedere il problema.
-  - *Mentalità aziendale:* come lo inquadra l'economia d'impresa.
-  - *Salto concettuale:* perché cambiare prospettiva cambia la decisione.
+  - _Mentalità tecnica:_ come un ingegnere tende a vedere il problema.
+  - _Mentalità aziendale:_ come lo inquadra l'economia d'impresa.
+  - _Salto concettuale:_ perché cambiare prospettiva cambia la decisione.
 
 ### 2.3 "Non Dare per Scontato" — Trappole Concettuali
 
 Mutuato dai `donotassume` di BOOK: blocchi prominenti che demoliscono i
 **falsi amici** e le confusioni tipiche dello studente di ingegneria:
 
-- *Utile ≠ cassa* (un'impresa in utile può fallire per crisi di liquidità).
-- *Fatturato ≠ guadagno*.
-- *Costo ≠ uscita di cassa* (principio di competenza).
-- *ROE alto ≠ impresa sana* (effetto leva finanziaria).
-- *Patrimonio netto ≠ denaro disponibile*.
-- *Complicato ≠ complesso* (sistemi ordinati vs. adattivi).
-- *Trade-off ≠ costo opportunità*.
+- _Utile ≠ cassa_ (un'impresa in utile può fallire per crisi di liquidità).
+- _Fatturato ≠ guadagno_.
+- _Costo ≠ uscita di cassa_ (principio di competenza).
+- _ROE alto ≠ impresa sana_ (effetto leva finanziaria).
+- _Patrimonio netto ≠ denaro disponibile_.
+- _Complicato ≠ complesso_ (sistemi ordinati vs. adattivi).
+- _Trade-off ≠ costo opportunità_.
 
 Questi blocchi appaiono sia nelle pagine di studio sia come spiegazioni
 post-risposta nel quiz quando lo studente sbaglia per una di queste confusioni.
@@ -88,11 +88,11 @@ post-risposta nel quiz quando lo studente sbaglia per una di queste confusioni.
 
 Dal "contrasto contract" di BOOK, adattato al web:
 
-| Voce       | Trattamento                                                     | Cosa lo usa                                            |
-| ---------- | --------------------------------------------------------------- | ------------------------------------------------------ |
-| **LOUD**   | Colore accento, testo bold, barre laterali, card con sfondo     | Titoli di blocco, keypoint, formula chiave, trappola   |
-| **QUIET**  | Testo più piccolo, colori smorzati, pannelli con tinta leggera  | Spiegazioni discorsive, note, dettagli                 |
-| **SILENT** | Font minimo, grigio chiaro                                      | Riferimenti, fonti, note a margine                     |
+| Voce       | Trattamento                                                    | Cosa lo usa                                          |
+| ---------- | -------------------------------------------------------------- | ---------------------------------------------------- |
+| **LOUD**   | Colore accento, testo bold, barre laterali, card con sfondo    | Titoli di blocco, keypoint, formula chiave, trappola |
+| **QUIET**  | Testo più piccolo, colori smorzati, pannelli con tinta leggera | Spiegazioni discorsive, note, dettagli               |
+| **SILENT** | Font minimo, grigio chiaro                                     | Riferimenti, fonti, note a margine                   |
 
 - **Keypoint = formula schematica**, mai un paragrafo.
   Es.: `ROE = Utile netto / Patrimonio netto · 100`
@@ -112,7 +112,7 @@ Adattato dall'Exercise Anatomy di BOOK:
    multiplo / inserimento numerico / testo libero.
 4. **Opzioni di risposta** — con ordine randomizzabile.
 5. **Risposta corretta** — con flag per le risposte multiple.
-6. **Spiegazione** — *perché* quella è la risposta corretta, seguendo la
+6. **Spiegazione** — _perché_ quella è la risposta corretta, seguendo la
    Golden Rule (PERCHÉ → COSA → COME).
 7. **Trappola** — se la domanda testa una confusione tipica (§2.3), la
    spiegazione la nomina esplicitamente.
@@ -123,11 +123,11 @@ Adattato dall'Exercise Anatomy di BOOK:
 
 Mutuato da ADR-003 di BOOK (percorsi Minimo / Standard / Completo):
 
-| Percorso        | Badge | Descrizione                                       | Target                              |
-| --------------- | ----- | ------------------------------------------------- | ----------------------------------- |
-| **Essenziale**  | ◆     | Concetti irrinunciabili per il 18/30              | Studente con poco tempo             |
-| **Standard**    | ■     | Copertura completa del programma                  | Preparazione solida                 |
-| **Approfondito**| ○     | Approfondimenti, trappole, orale                  | Puntare al 30 / prepararsi all'orale|
+| Percorso         | Badge | Descrizione                          | Target                               |
+| ---------------- | ----- | ------------------------------------ | ------------------------------------ |
+| **Essenziale**   | ◆     | Concetti irrinunciabili per il 18/30 | Studente con poco tempo              |
+| **Standard**     | ■     | Copertura completa del programma     | Preparazione solida                  |
+| **Approfondito** | ○     | Approfondimenti, trappole, orale     | Puntare al 30 / prepararsi all'orale |
 
 Il quiz consente di filtrare per percorso, e le pagine di studio indicano
 visivamente a quale percorso appartiene ciascun contenuto.
@@ -148,15 +148,15 @@ la progressione didattica.
 Il corso è organizzato in 7 blocchi tematici, ciascuno con un caso studio
 guida. Lo strumento replica e amplifica questa struttura.
 
-| Blocco | Tema                      | Domanda Chiave                                       | Caso Studio Guida                   |
-| ------ | ------------------------- | ---------------------------------------------------- | ----------------------------------- |
-| **I**  | Impresa e decisioni       | Cos'è un'impresa? È diversa da un'azienda?           | Olivetti (Programma 101)            |
-| **II** | Forme giuridiche          | Come si sceglie la forma giuridica ottimale?          | Satispay, Exein, Davines            |
-| **III**| Governance e finanziamento| Chi decide nell'impresa e chi la finanzia?            | Governance S.p.A.                   |
-| **IV** | Bilancio d'esercizio      | Il bilancio è una fotografia o un film?               | Prospetti OIC / IAS                 |
-| **V**  | Analisi per indici        | Come può un'azienda in utile fallire per cassa?       | Connecta S.r.l., De Cecco S.p.A.   |
-| **VI** | Costi e decisioni         | Quante unità devo vendere per non perdere?            | Analisi di Break-Even               |
-| **VII**| Business Model Canvas     | Come guadagna l'impresa?                              | All'Antico Vinaio et al.            |
+| Blocco  | Tema                       | Domanda Chiave                                  | Caso Studio Guida                |
+| ------- | -------------------------- | ----------------------------------------------- | -------------------------------- |
+| **I**   | Impresa e decisioni        | Cos'è un'impresa? È diversa da un'azienda?      | Olivetti (Programma 101)         |
+| **II**  | Forme giuridiche           | Come si sceglie la forma giuridica ottimale?    | Satispay, Exein, Davines         |
+| **III** | Governance e finanziamento | Chi decide nell'impresa e chi la finanzia?      | Governance S.p.A.                |
+| **IV**  | Bilancio d'esercizio       | Il bilancio è una fotografia o un film?         | Prospetti OIC / IAS              |
+| **V**   | Analisi per indici         | Come può un'azienda in utile fallire per cassa? | Connecta S.r.l., De Cecco S.p.A. |
+| **VI**  | Costi e decisioni          | Quante unità devo vendere per non perdere?      | Analisi di Break-Even            |
+| **VII** | Business Model Canvas      | Come guadagna l'impresa?                        | All'Antico Vinaio et al.         |
 
 ### 3.1 Mappa dei Sotto-Argomenti per Blocco
 
@@ -176,17 +176,17 @@ didattico durante la fase di generazione dei contenuti.
 
 ### 4.1 Stack Tecnologico
 
-| Componente        | Tecnologia                                                          |
-| ----------------- | ------------------------------------------------------------------- |
-| **Frontend**      | React 19 + TypeScript + Vite                                       |
-| **Styling**       | Tailwind CSS 4 (utility-first, palette semantica fissa)             |
-| **State**         | Zustand (leggero, senza boilerplate)                                |
-| **Persistenza**   | LocalStorage / IndexedDB per stato utente (progressi, punteggi)     |
-| **Dati contenuto**| File JSON statici (pre-generati), importati a build time o lazy-loaded |
-| **Math rendering**| KaTeX (formule inline e display)                                    |
-| **Charts**        | Recharts o Chart.js (per visualizzazione di bilanci, indici)        |
-| **Packaging**     | Electron (desktop) / PWA (mobile)                                   |
-| **Build**         | Vite → bundle statico → Electron-builder                            |
+| Componente         | Tecnologia                                                             |
+| ------------------ | ---------------------------------------------------------------------- |
+| **Frontend**       | React 19 + TypeScript + Vite                                           |
+| **Styling**        | Tailwind CSS 4 (utility-first, palette semantica fissa)                |
+| **State**          | Zustand (leggero, senza boilerplate)                                   |
+| **Persistenza**    | LocalStorage / IndexedDB per stato utente (progressi, punteggi)        |
+| **Dati contenuto** | File JSON statici (pre-generati), importati a build time o lazy-loaded |
+| **Math rendering** | KaTeX (formule inline e display)                                       |
+| **Charts**         | Recharts o Chart.js (per visualizzazione di bilanci, indici)           |
+| **Packaging**      | Electron (desktop) / PWA (mobile)                                      |
+| **Build**          | Vite → bundle statico → Electron-builder                               |
 
 ### 4.2 Struttura del Repository
 
@@ -235,43 +235,47 @@ Ogni domanda è un oggetto JSON con il seguente schema:
 
 ```jsonc
 {
-  "id": "B5-IND-ROE-003",           // ID univoco: Blocco-Categoria-Argomento-Seq
+  "id": "B5-IND-ROE-003", // ID univoco: Blocco-Categoria-Argomento-Seq
   "version": 1,
-  "block": 5,                       // Blocco tematico (1-7)
-  "topic": "indici-redditivita",     // Sotto-argomento
+  "block": 5, // Blocco tematico (1-7)
+  "topic": "indici-redditivita", // Sotto-argomento
   "tags": ["ROE", "leva-finanziaria", "calcolo"],
-  "track": "standard",              // essenziale | standard | approfondito
-  "difficulty": 2,                  // 1-3 (stelle)
-  "type": "single-choice",          // Tipo di domanda (vedi §4.4)
+  "track": "standard", // essenziale | standard | approfondito
+  "difficulty": 2, // 1-3 (stelle)
+  "type": "single-choice", // Tipo di domanda (vedi §4.4)
   "stem": "Un'impresa ha ROI = 12%, tasso di interesse sui debiti i = 8%, ...",
-  "options": [                       // Ordine randomizzabile dal quiz engine
+  "options": [
+    // Ordine randomizzabile dal quiz engine
     { "id": "a", "text": "15,2%", "correct": false },
     { "id": "b", "text": "18,4%", "correct": true },
     { "id": "c", "text": "12,0%", "correct": false },
-    { "id": "d", "text": "8,0%",  "correct": false }
+    { "id": "d", "text": "8,0%", "correct": false },
   ],
   "explanation": {
     "why": "Il ROE non coincide con il ROI quando l'impresa è indebitata...",
     "what": "La formula della leva finanziaria lega ROE, ROI, costo del debito e rapporto D/E.",
     "how": "ROE = ROI + (ROI − i) × D/E = 12% + (12% − 8%) × 1,6 = 18,4%",
-    "trap": "Confondere ROE con ROI: il ROE incorpora l'effetto della struttura finanziaria."
+    "trap": "Confondere ROE con ROI: il ROE incorpora l'effetto della struttura finanziaria.",
   },
   "formula": "ROE = ROI + (ROI - i) \\times \\frac{D}{E}",
   "prerequisites": ["B4-BIL", "B5-IND-BASE"],
-  "parametric": {                    // Se presente, la domanda è un template
+  "parametric": {
+    // Se presente, la domanda è un template
     "variables": {
       "roi": { "min": 5, "max": 20, "step": 0.5, "unit": "%" },
-      "i":   { "min": 3, "max": 15, "step": 0.5, "unit": "%" },
-      "de":  { "min": 0.5, "max": 3.0, "step": 0.1 }
+      "i": { "min": 3, "max": 15, "step": 0.5, "unit": "%" },
+      "de": { "min": 0.5, "max": 3.0, "step": 0.1 },
     },
-    "constraints": ["roi > i"],      // Solo leva positiva in questo template
+    "constraints": ["roi > i"], // Solo leva positiva in questo template
     "correct_formula": "roi + (roi - i) * de",
-    "distractors": [                 // Formule per generare distrattori plausibili
+    "distractors": [
+      // Formule per generare distrattori plausibili
       "roi * de",
       "roi - i",
-      "(roi + i) / 2"
-    ]
-  }
+      "(roi + i) / 2",
+    ],
+  },
+  "sourceRef": "Slide Blocco V - Indici / Dispensa BILANCIO p. 18", // Riferimento didattico alla fonte
 }
 ```
 
@@ -279,14 +283,14 @@ Ogni domanda è un oggetto JSON con il seguente schema:
 
 Rispecchiano fedelmente il formato dell'esame reale (cfr. Guida EOA 2026):
 
-| Tipo              | Codice            | Descrizione                                             |
-| ----------------- | ----------------- | ------------------------------------------------------- |
-| Scelta multipla   | `single-choice`   | Una sola risposta corretta tra N opzioni                |
-| Risposta multipla | `multi-choice`    | Più risposte corrette, tutte da selezionare             |
-| Vero/Falso        | `true-false`      | Una sola affermazione, V o F                            |
+| Tipo              | Codice             | Descrizione                                                     |
+| ----------------- | ------------------ | --------------------------------------------------------------- |
+| Scelta multipla   | `single-choice`    | Una sola risposta corretta tra N opzioni                        |
+| Risposta multipla | `multi-choice`     | Più risposte corrette, tutte da selezionare                     |
+| Vero/Falso        | `true-false`       | Una sola affermazione, V o F                                    |
 | V/F multiplo      | `multi-true-false` | Più affermazioni, ciascuna V o F (tutte devono essere corrette) |
-| Inserimento       | `numeric-input`   | Risultato numerico da inserire                          |
-| Testo libero      | `free-text`       | Risposta testuale (con keywords per validazione)        |
+| Inserimento       | `numeric-input`    | Risultato numerico da inserire                                  |
+| Testo libero      | `free-text`        | Risposta testuale (con keywords per validazione)                |
 
 ### 4.5 Il Generatore di Quiz — Combinazioni Infinite
 
@@ -306,15 +310,15 @@ di quiz possibili sia virtualmente infinito.
 
 #### Modalità di Quiz
 
-| Modalità              | Descrizione                                                            |
-| --------------------- | ---------------------------------------------------------------------- |
-| **Simulazione Esame** | 25–40 domande, tempo limitato, sequenziale senza ritorno, mix di tipi  |
-| **Pratica Libera**    | N domande configurabili, senza tempo, con spiegazione immediata        |
-| **Per Blocco**        | Solo domande di un blocco specifico                                    |
-| **Per Argomento**     | Solo domande di un sotto-argomento                                     |
-| **Trappole**          | Solo domande che testano confusioni tipiche (§2.3)                     |
-| **Calcoli**           | Solo domande numeriche (indici, BEP, riclassificazione)                |
-| **Flash Cards**       | Definizione → concetto, senza opzioni di risposta                      |
+| Modalità              | Descrizione                                                           |
+| --------------------- | --------------------------------------------------------------------- |
+| **Simulazione Esame** | 25–40 domande, tempo limitato, sequenziale senza ritorno, mix di tipi |
+| **Pratica Libera**    | N domande configurabili, senza tempo, con spiegazione immediata       |
+| **Per Blocco**        | Solo domande di un blocco specifico                                   |
+| **Per Argomento**     | Solo domande di un sotto-argomento                                    |
+| **Trappole**          | Solo domande che testano confusioni tipiche (§2.3)                    |
+| **Calcoli**           | Solo domande numeriche (indici, BEP, riclassificazione)               |
+| **Flash Cards**       | Definizione → concetto, senza opzioni di risposta                     |
 
 ---
 
@@ -339,6 +343,9 @@ Per ogni blocco tematico, pagine di studio con:
 - **Casi studio interattivi**: testo del caso + domande embedded + reveal
   della risposta.
 - **Mini-quiz di autoverifica** a fine di ogni sotto-argomento (3-5 domande).
+- **Generatore quiz per argomento ("Quiz rapido su questa sezione")**: ogni testata
+  di argomento/sottosezione include un'azione dedicata per avviare una simulazione
+  mirata su quel topic, attingendo sia a quesiti statici sia a template parametrici.
 - **Schemi di bilancio interattivi** (per i Blocchi IV e V): lo studente può
   compilare celle e vedere il risultato, con validazione immediata.
 - **Calcolatore di indici**: inserisci i dati del bilancio, calcola e
@@ -354,7 +361,11 @@ L'interfaccia del quiz replica fedelmente l'esperienza dell'esame reale:
 - **Contatore** domande (es. "12 / 30").
 - **Risposta obbligatoria** prima di procedere (come nell'esame reale).
 - **Risultato immediato a fine quiz** con punteggio, tempo, dettaglio errori.
-- **Review completo** con spiegazione per ogni domanda (anche quelle corrette).
+- **Review completo con deep-linking alle lezioni**:
+  - Mostra il riferimento bibliografico/didattico (`sourceRef`: slide, dispensa, lezione).
+  - Include un **collegamento cliccabile ("Vai alla lezione")** che effettua il passaggio
+    immediato alla scheda di studio corrispondente al blocco, scorrendo automaticamente
+    sull'argomento e applicando un highlight visivo temporaneo.
 
 ### 5.4 Statistiche e Progressi
 
@@ -387,15 +398,15 @@ L'interfaccia del quiz replica fedelmente l'esperienza dell'esame reale:
 
 ### 6.2 Palette Semantica
 
-| Ruolo             | Colore         | Uso                                          |
-| ----------------- | -------------- | -------------------------------------------- |
-| Concetti / Teoria | Tech Blue      | Keypoint, formule, definizioni               |
-| Esercizi / Quiz   | Emerald Green  | Card esercizio, punteggi positivi            |
-| Trappole / Errori | Coral Red      | "Non dare per scontato", errori              |
-| Casi Studio       | Warm Amber     | Card caso studio, riferimenti reali          |
-| Dettagli / Note   | Slate Gray     | Testo secondario, note, fonti               |
-| Orale / Avanzato  | Purple         | Contenuti del percorso Approfondito          |
-| Sfondo            | White / Snow   | Fondo pagina pulito                          |
+| Ruolo             | Colore        | Uso                                 |
+| ----------------- | ------------- | ----------------------------------- |
+| Concetti / Teoria | Tech Blue     | Keypoint, formule, definizioni      |
+| Esercizi / Quiz   | Emerald Green | Card esercizio, punteggi positivi   |
+| Trappole / Errori | Coral Red     | "Non dare per scontato", errori     |
+| Casi Studio       | Warm Amber    | Card caso studio, riferimenti reali |
+| Dettagli / Note   | Slate Gray    | Testo secondario, note, fonti       |
+| Orale / Avanzato  | Purple        | Contenuti del percorso Approfondito |
+| Sfondo            | White / Snow  | Fondo pagina pulito                 |
 
 ### 6.3 Tipografia
 
@@ -408,16 +419,16 @@ L'interfaccia del quiz replica fedelmente l'esperienza dell'esame reale:
 
 ### 6.4 Componenti UI Chiave
 
-| Componente        | Stile                                              | Equivalente BOOK        |
-| ----------------- | -------------------------------------------------- | ----------------------- |
-| **KeypointCard**  | Sfondo tinted blue, barra laterale accento, formula schematica in bold | `keypoint`        |
-| **TrapCard**      | Sfondo tinted red, icona ⚠, testo conciso          | `donotassume`           |
-| **ShiftCard**     | 3 righe con badge colorati (Tecnico / Aziendale / Salto) | `migrationdelta`  |
-| **CaseStudyCard** | Sfondo tinted amber, nome del caso, domanda chiave | `webgl2note`            |
-| **QuizQuestion**  | Card a schermo intero, opzioni come bottoni/checkbox | `exercise`            |
-| **ExplanationCard**| Reveal dopo risposta, struttura PERCHÉ/COSA/COME  | `solution` + `hints`    |
-| **FormulaBlock**  | KaTeX rendered, sfondo leggero, cliccabile          | `keypoint` formula     |
-| **ProgressBar**   | Barra segmentata per blocco, colore per mastery    | —                       |
+| Componente          | Stile                                                                  | Equivalente BOOK     |
+| ------------------- | ---------------------------------------------------------------------- | -------------------- |
+| **KeypointCard**    | Sfondo tinted blue, barra laterale accento, formula schematica in bold | `keypoint`           |
+| **TrapCard**        | Sfondo tinted red, icona ⚠, testo conciso                              | `donotassume`        |
+| **ShiftCard**       | 3 righe con badge colorati (Tecnico / Aziendale / Salto)               | `migrationdelta`     |
+| **CaseStudyCard**   | Sfondo tinted amber, nome del caso, domanda chiave                     | `webgl2note`         |
+| **QuizQuestion**    | Card a schermo intero, opzioni come bottoni/checkbox                   | `exercise`           |
+| **ExplanationCard** | Reveal dopo risposta, struttura PERCHÉ/COSA/COME                       | `solution` + `hints` |
+| **FormulaBlock**    | KaTeX rendered, sfondo leggero, cliccabile                             | `keypoint` formula   |
+| **ProgressBar**     | Barra segmentata per blocco, colore per mastery                        | —                    |
 
 ### 6.5 Responsività
 
@@ -455,13 +466,13 @@ materiale/ (MD sorgente)
 
 ### 7.1 Obiettivi Quantitativi dell'Archivio Domande
 
-| Categoria                   | Target minimo | Note                                          |
-| --------------------------- | ------------- | --------------------------------------------- |
-| Domande manuali (seed)      | 300–500       | Curate manualmente, coprono tutto il programma |
-| Template parametrici        | 80–120        | Domande con variabili numeriche               |
-| Istanze generate            | 3.000–5.000   | Generate dai template parametrici              |
-| **Totale archivio**         | **4.000–6.000** | Combinato                                    |
-| Domande per blocco (min)    | 400–800       | Distribuzione bilanciata                       |
+| Categoria                | Target minimo   | Note                                           |
+| ------------------------ | --------------- | ---------------------------------------------- |
+| Domande manuali (seed)   | 300–500         | Curate manualmente, coprono tutto il programma |
+| Template parametrici     | 80–120          | Domande con variabili numeriche                |
+| Istanze generate         | 3.000–5.000     | Generate dai template parametrici              |
+| **Totale archivio**      | **4.000–6.000** | Combinato                                      |
+| Domande per blocco (min) | 400–800         | Distribuzione bilanciata                       |
 
 ### 7.2 Copertura per Tipo di Domanda
 
@@ -481,12 +492,14 @@ Distribuzione target nell'archivio complessivo:
 ## 8. Workflow di Sviluppo — Milestone
 
 ### M0 — Infrastruttura Progetto
+
 - Inizializzazione repository, toolchain, struttura directory.
 - Definizione schema JSON delle domande (con validazione JSON Schema).
 - Definizione schema JSON dei contenuti di studio.
 - Setup progetto React + Vite + Tailwind + TypeScript.
 
 ### M1 — Quiz Engine MVP
+
 - Componente quiz funzionante con tutti i 6 tipi di domanda.
 - Modalità sequenziale senza ritorno.
 - Timer.
@@ -494,30 +507,35 @@ Distribuzione target nell'archivio complessivo:
 - 50 domande manuali di test (Blocco I e V).
 
 ### M2 — Pagine di Studio (Blocchi I–III)
+
 - Struttura delle pagine di studio con tutti i componenti UI.
 - Contenuti per i primi 3 blocchi.
 - Mini-quiz di autoverifica embedded.
 - Navigazione tra blocchi e sotto-argomenti.
 
 ### M3 — Generatore Parametrico
+
 - Script generatore funzionante.
 - Template parametrici per Blocco V (indici) e VI (BEP).
 - Generazione di 500+ istanze.
 - Integrazione nel quiz engine.
 
 ### M4 — Contenuti Completi
+
 - Pagine di studio per tutti i 7 blocchi.
 - Archivio domande completo (target §7.1).
 - Casi studio interattivi.
 - Formulario.
 
 ### M5 — Statistiche e Progressi
+
 - Dashboard con progressi.
 - Persistenza in LocalStorage/IndexedDB.
 - Radar chart, trend, argomenti deboli.
 - Storico simulazioni.
 
 ### M6 — Packaging e Polish
+
 - Packaging Electron.
 - PWA manifest e service worker.
 - Test su dispositivi mobili.
@@ -529,12 +547,14 @@ Distribuzione target nell'archivio complessivo:
 ## 9. Regole Operative per Agenti AI
 
 ### 9.1 Lingua
+
 - **Tutto il codice** (variabili, commenti, commit) è in **inglese**.
 - **Tutto il contenuto didattico** (domande, spiegazioni, pagine di studio)
   è in **italiano**, perché il corso è in italiano.
 - **Questo documento e la documentazione tecnica** sono in italiano.
 
 ### 9.2 Qualità del Contenuto Didattico
+
 - Ogni domanda deve essere **verificata** rispetto al materiale del corso.
 - Mai inventare contenuti che non siano supportati dal materiale sorgente.
 - Le formule devono essere **esatte**: verificare sempre contro le slide e
@@ -545,6 +565,7 @@ Distribuzione target nell'archivio complessivo:
   formule sbagliate. Mai opzioni assurde.
 
 ### 9.3 Fonti di Contenuto
+
 Ordine di precedenza per i contenuti:
 
 1. Slide e dispense ufficiali del corso (in `materiale/`).
@@ -554,6 +575,7 @@ Ordine di precedenza per i contenuti:
    in contraddizione con le fonti 1-3).
 
 ### 9.4 Riferimento Esame Reale
+
 L'esame reale ha queste caratteristiche (cfr. `Guida-EOA-2026.md`
 e `I-04-03-26-Modalita-esame.md`):
 
@@ -593,15 +615,15 @@ Prima di dichiarare qualsiasi milestone completa:
 
 Questa tabella documenta la derivazione dei principi applicati:
 
-| Principio EOA Trainer          | Fonte BOOK                                             | Adattamento                                              |
-| ------------------------------ | ------------------------------------------------------ | -------------------------------------------------------- |
-| Golden Rule (§2.1)             | MANUAL_GUIDE.md §4.0                                   | Da WebGL2 pain → a decisione aziendale                   |
-| Salto Concettuale (§2.2)       | Mindset Shift (`saltoparadigma`)                       | Da Imperativo/Lisp/Salto → a Tecnico/Aziendale/Salto    |
-| Non Dare per Scontato (§2.3)   | `donotassume` callouts                                 | Da falsi amici C/Java → a confusioni economiche          |
-| LOUD vs QUIET (§2.4)           | Visual Grammar v3, Contrast Contract                   | Da LaTeX boxes → a componenti React con Tailwind         |
-| Anatomia Esercizio (§2.5)      | Exercise Anatomy 8 parti (§6.2)                        | Da esercizio di codice → a domanda d'esame               |
-| Percorsi Differenziati (§2.6)  | ADR-003 Tiered Exercise Tracks                         | Da Min/Std/Cmpl → a Essenziale/Standard/Approfondito    |
-| Non-Anticipazione (§2.7)       | Progression rule (§6.3)                                | Stessa regola, applicata ai blocchi EOA                  |
-| Palette semantica (§6.2)       | Color is structural, not decorative (§4.2)             | Stessa filosofia, palette adattata                       |
-| Keypoint = formula (§6.4)      | Keypoints are SCHEMATIC (§4.2)                         | Identico                                                 |
-| Quality Bar (§10)              | Quality Bar (MANUAL_GUIDE.md §10)                      | Checklist adattata al formato webapp                     |
+| Principio EOA Trainer         | Fonte BOOK                                 | Adattamento                                          |
+| ----------------------------- | ------------------------------------------ | ---------------------------------------------------- |
+| Golden Rule (§2.1)            | MANUAL_GUIDE.md §4.0                       | Da WebGL2 pain → a decisione aziendale               |
+| Salto Concettuale (§2.2)      | Mindset Shift (`saltoparadigma`)           | Da Imperativo/Lisp/Salto → a Tecnico/Aziendale/Salto |
+| Non Dare per Scontato (§2.3)  | `donotassume` callouts                     | Da falsi amici C/Java → a confusioni economiche      |
+| LOUD vs QUIET (§2.4)          | Visual Grammar v3, Contrast Contract       | Da LaTeX boxes → a componenti React con Tailwind     |
+| Anatomia Esercizio (§2.5)     | Exercise Anatomy 8 parti (§6.2)            | Da esercizio di codice → a domanda d'esame           |
+| Percorsi Differenziati (§2.6) | ADR-003 Tiered Exercise Tracks             | Da Min/Std/Cmpl → a Essenziale/Standard/Approfondito |
+| Non-Anticipazione (§2.7)      | Progression rule (§6.3)                    | Stessa regola, applicata ai blocchi EOA              |
+| Palette semantica (§6.2)      | Color is structural, not decorative (§4.2) | Stessa filosofia, palette adattata                   |
+| Keypoint = formula (§6.4)     | Keypoints are SCHEMATIC (§4.2)             | Identico                                             |
+| Quality Bar (§10)             | Quality Bar (MANUAL_GUIDE.md §10)          | Checklist adattata al formato webapp                 |
