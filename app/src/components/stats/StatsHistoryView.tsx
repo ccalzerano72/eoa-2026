@@ -1,11 +1,12 @@
-import React, { useState, useMemo } from "react";
-import type { QuizHistoryRecord } from "../../types/quiz";
-import type { SyllabusBlock } from "../../types/question";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import type { QuizHistoryRecord, QuizMode } from "../../types/quiz";
+import type { Question, SyllabusBlock } from "../../types/question";
 import {
   computeOverallStats,
   deleteQuizRecord,
   clearQuizHistory,
 } from "../../services/storage";
+import { BlockRadar, TrendSparkline } from "./charts";
 import {
   Award,
   Clock,
@@ -17,15 +18,34 @@ import {
   AlertTriangle,
   FileSpreadsheet,
   ChevronRight,
+  Target,
+  Zap,
+  LayoutGrid,
 } from "lucide-react";
 
 interface StatsHistoryViewProps {
   history: QuizHistoryRecord[];
+  allQuestions: Question[];
   onRefreshHistory: () => void;
   onReviewPastSession: (record: QuizHistoryRecord) => void;
   onStartExam: () => void;
   onNavigateToStudy: (block: SyllabusBlock) => void;
+  onStartTopicQuiz: (block: SyllabusBlock, topicId: string) => void;
+  onStartBlockQuiz: (block: SyllabusBlock) => void;
 }
+
+const MODE_LABELS: Record<QuizMode, string> = {
+  "exam-simulation": "Simulazioni",
+  "free-practice": "Pratica Libera",
+  "by-block": "Per Blocco",
+  "traps-only": "Trappole",
+  calculations: "Calcoli",
+  "case-studies": "Casi Studio",
+  "flash-cards": "Flash Cards",
+  "spaced-review": "Ripasso",
+};
+
+const humanizeTopic = (topic: string) => topic.replace(/-/g, " ");
 
 const BLOCK_NAMES: Record<SyllabusBlock, { title: string; subtitle: string }> =
   {
@@ -61,22 +81,125 @@ const BLOCK_NAMES: Record<SyllabusBlock, { title: string; subtitle: string }> =
 
 export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
   history,
+  allQuestions,
   onRefreshHistory,
   onReviewPastSession,
   onStartExam,
   onNavigateToStudy,
+  onStartTopicQuiz,
+  onStartBlockQuiz,
 }) => {
-  const [filterMode, setFilterMode] = useState<
-    "all" | "exam-simulation" | "free-practice"
-  >("all");
+  const [filterMode, setFilterMode] = useState<QuizMode | "all">("all");
   const [showClearConfirm, setShowClearConfirm] = useState(false);
+  const cancelClearRef = useRef<HTMLButtonElement>(null);
+
+  // Modal a11y: Esc closes, focus lands on cancel
+  useEffect(() => {
+    if (!showClearConfirm) return;
+    cancelClearRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowClearConfirm(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [showClearConfirm]);
 
   const stats = useMemo(() => computeOverallStats(history), [history]);
+
+  // Distinct modes present in history → dynamic filter tabs
+  const modeTabs = useMemo(() => {
+    const seen: QuizMode[] = [];
+    for (const r of history) {
+      if (!seen.includes(r.mode)) seen.push(r.mode);
+    }
+    return seen;
+  }, [history]);
 
   const filteredHistory = useMemo(() => {
     if (filterMode === "all") return history;
     return history.filter((r) => r.mode === filterMode);
   }, [history, filterMode]);
+
+  // Per-topic accuracy across all recorded sessions
+  const topicStats = useMemo(() => {
+    const map = new Map<
+      string,
+      { block: SyllabusBlock; topic: string; total: number; correct: number }
+    >();
+    for (const rec of history) {
+      const session = rec.session;
+      if (!session?.questions) continue;
+      for (const q of session.questions) {
+        const resp = session.responses[q.id];
+        if (resp?.isCorrect === undefined) continue;
+        const key = `${q.block}:${q.topic}`;
+        const entry = map.get(key) ?? {
+          block: q.block,
+          topic: q.topic,
+          total: 0,
+          correct: 0,
+        };
+        entry.total += 1;
+        if (resp.isCorrect) entry.correct += 1;
+        map.set(key, entry);
+      }
+    }
+    return [...map.values()]
+      .map((e) => ({
+        ...e,
+        acc:
+          e.total > 0 ? Math.round((e.correct / e.total) * 100) : 0,
+      }))
+      .sort((a, b) => a.acc - b.acc || b.total - a.total);
+  }, [history]);
+
+  // Archive coverage: distinct attempted questions vs full bank
+  const coverage = useMemo(() => {
+    const seen = new Set<string>();
+    for (const rec of history) {
+      for (const qid of Object.keys(rec.session?.responses ?? {})) {
+        seen.add(qid);
+      }
+    }
+    const total = allQuestions.length;
+    return {
+      seen: seen.size,
+      total,
+      pct: total > 0 ? Math.round((seen.size / total) * 100) : 0,
+    };
+  }, [history, allQuestions]);
+
+  // Exam grade trend, oldest → newest
+  const examTrend = useMemo(
+    () =>
+      history
+        .filter((r) => r.mode === "exam-simulation")
+        .map((r) => r.summary.scaledGrade30)
+        .reverse(),
+    [history],
+  );
+
+  const radarValues = useMemo(
+    () =>
+      [1, 2, 3, 4, 5, 6, 7].map(
+        (b) => stats.blockStats[b as SyllabusBlock].accuracyPercentage,
+      ),
+    [stats],
+  );
+
+  const weakBlocks = useMemo(
+    () =>
+      ([1, 2, 3, 4, 5, 6, 7] as SyllabusBlock[])
+        .map((b) => ({ block: b, ...stats.blockStats[b] }))
+        .filter((b) => b.totalQuestions >= 5 && b.accuracyPercentage < 60)
+        .sort((a, b) => a.accuracyPercentage - b.accuracyPercentage),
+    [stats],
+  );
+
+  const weakTopics = useMemo(
+    () => topicStats.filter((t) => t.total >= 3 && t.acc < 60).slice(0, 5),
+    [topicStats],
+  );
 
   const formatDuration = (totalSecs: number) => {
     const hours = Math.floor(totalSecs / 3600);
@@ -141,10 +264,18 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
       {/* Confirmation Modal for Clearing History */}
       {showClearConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 max-w-sm w-full shadow-2xl border border-slate-200 dark:border-slate-700">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="clear-history-title"
+            className="bg-white dark:bg-slate-800 rounded-2xl p-6 max-w-sm w-full shadow-2xl border border-slate-200 dark:border-slate-700"
+          >
             <div className="flex items-center gap-3 text-rose-600 dark:text-rose-400 mb-3">
               <AlertTriangle className="h-6 w-6" />
-              <h4 className="font-bold text-base text-slate-900 dark:text-slate-100">
+              <h4
+                id="clear-history-title"
+                className="font-bold text-base text-slate-900 dark:text-slate-100"
+              >
                 Sei sicuro di voler azzerare?
               </h4>
             </div>
@@ -154,6 +285,7 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
             </p>
             <div className="flex justify-end gap-3">
               <button
+                ref={cancelClearRef}
                 onClick={() => setShowClearConfirm(false)}
                 className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition cursor-pointer"
               >
@@ -269,6 +401,186 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
         </div>
       </div>
 
+      {/* Archive coverage strip */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 px-5 py-4 shadow-2xs">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div className="flex items-center gap-2">
+            <LayoutGrid className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
+              Copertura Archivio
+            </span>
+          </div>
+          <span className="text-xs font-bold text-slate-700 dark:text-slate-200">
+            {coverage.seen.toLocaleString()} /{" "}
+            {coverage.total.toLocaleString()} quesiti visti ({coverage.pct}
+            %)
+          </span>
+        </div>
+        <div
+          className="h-2.5 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"
+          role="progressbar"
+          aria-valuenow={coverage.pct}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="Percentuale archivio quesiti affrontati"
+        >
+          <div
+            className="h-full bg-sky-500 transition-all duration-500"
+            style={{ width: `${coverage.pct}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Radar + Trend */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-2xs">
+          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
+            Radar Padronanza Blocchi
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+            Vista d'insieme delle accuratezze sui 7 blocchi
+          </p>
+          <BlockRadar values={radarValues} />
+          <ul className="mt-2 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-[11px] text-slate-600 dark:text-slate-400">
+            {[1, 2, 3, 4, 5, 6, 7].map((bNum) => {
+              const blk = bNum as SyllabusBlock;
+              const acc = stats.blockStats[blk].accuracyPercentage;
+              const has = stats.blockStats[blk].totalQuestions > 0;
+              return (
+                <li key={blk} className="flex items-center justify-between">
+                  <span className="font-mono font-bold">B{blk}</span>
+                  <span className="font-bold">
+                    {has ? `${acc}%` : "—"}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-2xs">
+          <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
+            Trend Voti Simulazioni
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
+            Voti /30 delle simulazioni d'esame in ordine cronologico
+          </p>
+          {examTrend.length > 1 ? (
+            <div>
+              <TrendSparkline points={examTrend} width={260} height={64} />
+              <div className="mt-2 flex items-center gap-4 text-xs text-slate-600 dark:text-slate-400">
+                <span>
+                  Prima:{" "}
+                  <strong className="font-mono">
+                    {examTrend[0]}/30
+                  </strong>
+                </span>
+                <span>
+                  Ultima:{" "}
+                  <strong className="font-mono">
+                    {examTrend[examTrend.length - 1]}/30
+                  </strong>
+                </span>
+                <span
+                  className={`font-bold ${
+                    examTrend[examTrend.length - 1] >= examTrend[0]
+                      ? "text-emerald-600 dark:text-emerald-400"
+                      : "text-rose-600 dark:text-rose-400"
+                  }`}
+                >
+                  {examTrend[examTrend.length - 1] >= examTrend[0] ? "↗" : "↘"}{" "}
+                  {examTrend.length} prove
+                </span>
+              </div>
+            </div>
+          ) : (
+            <p className="text-xs text-slate-500 dark:text-slate-400 italic">
+              {examTrend.length === 1
+                ? "Una sola simulazione registrata: completa altre prove per vedere il trend."
+                : "Nessuna simulazione d'esame registrata: il trend apparirà dopo le prime prove."}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Weak spots with recovery actions */}
+      {(weakBlocks.length > 0 || weakTopics.length > 0) && (
+        <div className="bg-white dark:bg-slate-800 rounded-2xl border border-rose-200 dark:border-rose-800 p-6 shadow-2xs">
+          <div className="flex items-center gap-2 mb-1">
+            <Target className="h-5 w-5 text-rose-600 dark:text-rose-400" />
+            <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
+              Punti Deboli — Riparti da Qui
+            </h3>
+          </div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
+            Blocchi sotto il 60% (min. 5 quesiti) e argomenti sotto il 60%
+            (min. 3 quesiti)
+          </p>
+          <div className="space-y-2.5">
+            {weakBlocks.map((b) => (
+              <div
+                key={`wb-${b.block}`}
+                className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-700/40 px-3.5 py-2.5"
+              >
+                <div className="text-xs">
+                  <span className="font-mono font-bold text-slate-500 dark:text-slate-400 mr-2">
+                    B{b.block}
+                  </span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">
+                    {BLOCK_NAMES[b.block].title}
+                  </span>
+                  <span className="ml-2 font-bold text-rose-600 dark:text-rose-400">
+                    {b.accuracyPercentage}% ({b.correctQuestions}/
+                    {b.totalQuestions})
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => onNavigateToStudy(b.block)}
+                    className="inline-flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-[11px] font-bold text-sky-700 dark:text-sky-300 hover:bg-sky-50 dark:hover:bg-sky-900/40 border border-sky-200/70 dark:border-sky-800 transition cursor-pointer"
+                  >
+                    <BookOpen className="h-3 w-3" />
+                    <span>Ripassa lezione</span>
+                  </button>
+                  <button
+                    onClick={() => onStartBlockQuiz(b.block)}
+                    className="inline-flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/40 border border-emerald-200/70 dark:border-emerald-800 transition cursor-pointer"
+                  >
+                    <Zap className="h-3 w-3" />
+                    <span>Quiz blocco</span>
+                  </button>
+                </div>
+              </div>
+            ))}
+            {weakTopics.map((t) => (
+              <div
+                key={`wt-${t.block}-${t.topic}`}
+                className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-700/40 px-3.5 py-2.5"
+              >
+                <div className="text-xs">
+                  <span className="font-mono font-bold text-slate-500 dark:text-slate-400 mr-2">
+                    B{t.block}
+                  </span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200">
+                    {humanizeTopic(t.topic)}
+                  </span>
+                  <span className="ml-2 font-bold text-rose-600 dark:text-rose-400">
+                    {t.acc}% ({t.correct}/{t.total})
+                  </span>
+                </div>
+                <button
+                  onClick={() => onStartTopicQuiz(t.block, t.topic)}
+                  className="inline-flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-[11px] font-bold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/40 border border-emerald-200/70 dark:border-emerald-800 transition cursor-pointer"
+                >
+                  <Zap className="h-3 w-3" />
+                  <span>Quiz mirato</span>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Block-by-Block Mastery Radar / Breakdown */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-2xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
@@ -375,11 +687,11 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
             </p>
           </div>
 
-          {/* Filter tabs */}
-          <div className="inline-flex rounded-xl bg-slate-100 dark:bg-slate-700 p-1 text-xs font-semibold">
+          {/* Filter tabs (all modes present in history) */}
+          <div className="inline-flex flex-wrap rounded-xl bg-slate-100 dark:bg-slate-700 p-1 text-xs font-semibold gap-0.5">
             <button
               onClick={() => setFilterMode("all")}
-              className={`px-3 py-1.5 rounded-lg transition ${
+              className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
                 filterMode === "all"
                   ? "bg-white dark:bg-slate-600 text-slate-900 dark:text-slate-100 shadow-2xs font-bold"
                   : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
@@ -387,26 +699,22 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
             >
               Tutte ({history.length})
             </button>
-            <button
-              onClick={() => setFilterMode("exam-simulation")}
-              className={`px-3 py-1.5 rounded-lg transition ${
-                filterMode === "exam-simulation"
-                  ? "bg-white dark:bg-slate-600 text-slate-900 dark:text-slate-100 shadow-2xs font-bold"
-                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
-              }`}
-            >
-              Simulazioni ({stats.examSimulationsCount})
-            </button>
-            <button
-              onClick={() => setFilterMode("free-practice")}
-              className={`px-3 py-1.5 rounded-lg transition ${
-                filterMode === "free-practice"
-                  ? "bg-white dark:bg-slate-600 text-slate-900 dark:text-slate-100 shadow-2xs font-bold"
-                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
-              }`}
-            >
-              Pratica ({stats.freePracticeCount})
-            </button>
+            {modeTabs.map((m) => {
+              const count = history.filter((r) => r.mode === m).length;
+              return (
+                <button
+                  key={m}
+                  onClick={() => setFilterMode(m)}
+                  className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
+                    filterMode === m
+                      ? "bg-white dark:bg-slate-600 text-slate-900 dark:text-slate-100 shadow-2xs font-bold"
+                      : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100"
+                  }`}
+                >
+                  {MODE_LABELS[m]} ({count})
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -460,7 +768,7 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
                               : "bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200"
                           }`}
                         >
-                          {isExam ? "Simulazione Esame" : "Pratica Libera"}
+                          {MODE_LABELS[mode]}
                         </span>
                         <span
                           className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
@@ -510,6 +818,7 @@ export const StatsHistoryView: React.FC<StatsHistoryViewProps> = ({
                       onClick={(e) => handleDelete(rec.id, e)}
                       className="p-2 rounded-xl text-slate-400 dark:text-slate-500 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-900/30 transition cursor-pointer"
                       title="Elimina singola sessione"
+                      aria-label={`Elimina la prova del ${formattedDate}`}
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>

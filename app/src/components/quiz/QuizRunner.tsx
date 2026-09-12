@@ -924,13 +924,13 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
     <div className="mx-auto max-w-2xl py-6 px-4 overflow-x-hidden">
       {/* Top Status Bar */}
       {mode === "traps-only" && (
-        <div className="flex items-center gap-2.5 rounded-2xl bg-rose-50 border border-rose-200 p-3 mb-4 text-sm">
-          <AlertCircle className="h-5 w-5 text-rose-600 shrink-0" />
+        <div className="flex items-center gap-2.5 rounded-2xl bg-rose-50 dark:bg-rose-900/30 border border-rose-200 dark:border-rose-800 p-3 mb-4 text-sm">
+          <AlertCircle className="h-5 w-5 text-rose-600 dark:text-rose-400 shrink-0" />
           <div className="min-w-0">
-            <span className="font-bold text-rose-900">
+            <span className="font-bold text-rose-900 dark:text-rose-200">
               Modalità Trappole Concettuali
             </span>
-            <span className="text-rose-700 text-xs block">
+            <span className="text-rose-700 dark:text-rose-300 text-xs block">
               Ogni quesito testa una confusione tipica. Dopo la risposta vedrai
               la trappola evidenziata.
             </span>
@@ -938,15 +938,15 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
         </div>
       )}
       {mode === "spaced-review" && (
-        <div className="flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 p-3 mb-4 text-sm">
+        <div className="flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/40 dark:to-cyan-900/40 border border-teal-200 dark:border-teal-800 p-3 mb-4 text-sm">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-teal-600 text-white shrink-0">
             <span className="text-base">🧠</span>
           </div>
           <div className="min-w-0">
-            <span className="font-bold text-teal-900">
+            <span className="font-bold text-teal-900 dark:text-teal-200">
               Ripasso Intelligente (Spaced Repetition)
             </span>
-            <span className="text-teal-700 text-xs block">
+            <span className="text-teal-700 dark:text-teal-300 text-xs block">
               Questi quesiti sono stati selezionati dall'algoritmo in base ai
               tuoi errori passati e al tempo trascorso.
             </span>
@@ -972,7 +972,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
         </div>
 
         {/* Progress pill */}
-        <div className="text-xs font-semibold px-2 sm:px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 truncate max-w-[120px] sm:max-w-none">
+        <div className="text-xs font-semibold px-2 sm:px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 truncate max-w-[120px] sm:max-w-none">
           <span className="hidden sm:inline">
             Blocco {currentQuestion.block} •{" "}
           </span>
@@ -981,14 +981,24 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
 
         {/* Timer — only show for timed modes */}
         {session.timeLimitSeconds ? (
-          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-700 shrink-0">
-            <Clock className="h-4 w-4 text-sky-600" />
-            <span>{formatTimer(remainingSeconds)}</span>
+          <div
+            role="timer"
+            aria-label={`Tempo rimanente ${formatTimer(remainingSeconds)}`}
+            className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-700 dark:text-slate-200 shrink-0"
+          >
+            <Clock className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+            <span aria-hidden="true">{formatTimer(remainingSeconds)}</span>
           </div>
         ) : (
-          <div className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-400 shrink-0">
-            <Clock className="h-4 w-4 text-slate-300" />
-            <span>{formatTimer(session.elapsedSeconds)}</span>
+          <div
+            role="timer"
+            aria-label={`Tempo trascorso ${formatTimer(session.elapsedSeconds)}`}
+            className="flex items-center gap-1.5 font-mono text-sm font-semibold text-slate-400 dark:text-slate-500 shrink-0"
+          >
+            <Clock className="h-4 w-4 text-slate-300 dark:text-slate-500" />
+            <span aria-hidden="true">
+              {formatTimer(session.elapsedSeconds)}
+            </span>
           </div>
         )}
       </div>
