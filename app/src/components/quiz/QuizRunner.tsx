@@ -315,32 +315,40 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
       <div className="mx-auto max-w-3xl py-8 px-4 overflow-x-hidden">
         {/* Score Header */}
         <div className="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 text-center shadow-md">
-          <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-100 text-sky-700 mb-4">
+          <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 mb-4">
             <Award className="h-8 w-8" />
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
             {summary.isPassed ? "Test Superato!" : "Test Non Superato"}
           </h2>
           <div className="my-4 flex items-center justify-center gap-3">
             <span
               className={`text-4xl sm:text-5xl font-black ${
-                summary.isPassed ? "text-emerald-600" : "text-rose-600"
+                summary.isPassed
+                  ? "text-emerald-600 dark:text-emerald-400"
+                  : "text-rose-600 dark:text-rose-400"
               }`}
             >
               {summary.scaledGrade30}
             </span>
-            <span className="text-xl sm:text-2xl font-semibold text-slate-400">
+            <span className="text-xl sm:text-2xl font-semibold text-slate-400 dark:text-slate-500">
               / 30
             </span>
           </div>
-          <p className="text-slate-600 text-sm">
-            Risposte corrette: <strong>{summary.correctCount}</strong> su{" "}
-            <strong>{summary.totalQuestions}</strong> (
-            {Math.round((summary.correctCount / summary.totalQuestions) * 100)}
+          <p className="text-slate-600 dark:text-slate-400 text-sm">
+            Risposte corrette:{" "}
+            <strong className="text-slate-800 dark:text-slate-200">
+              {summary.correctCount}
+            </strong>{" "}
+            su{" "}
+            <strong className="text-slate-800 dark:text-slate-200">
+              {summary.totalQuestions}
+            </strong>{" "}
+            ({Math.round((summary.correctCount / summary.totalQuestions) * 100)}
             %) • Tempo: {formatTimer(summary.timeTakenSeconds)}
           </p>
 
-          <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold">
+          <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 text-xs font-semibold">
             <CheckCircle className="h-3.5 w-3.5" />
             <span>Risultato salvato nello Storico</span>
           </div>
@@ -370,7 +378,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             {onViewStats && (
               <button
                 onClick={onViewStats}
-                className="inline-flex items-center gap-2 rounded-xl bg-indigo-50 border border-indigo-200 px-4 sm:px-5 py-2.5 font-semibold text-indigo-700 hover:bg-indigo-100 transition cursor-pointer text-sm"
+                className="inline-flex items-center gap-2 rounded-xl bg-indigo-50 dark:bg-indigo-900/50 border border-indigo-200 dark:border-indigo-800 px-4 sm:px-5 py-2.5 font-semibold text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/70 transition cursor-pointer text-sm"
               >
                 <BarChart3 className="h-4 w-4" />
                 <span className="hidden sm:inline">
@@ -382,7 +390,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             {onExit && (
               <button
                 onClick={onExit}
-                className="rounded-xl border border-slate-300 px-4 sm:px-5 py-2.5 font-semibold text-slate-700 hover:bg-slate-100 transition cursor-pointer text-sm"
+                className="rounded-xl border border-slate-300 dark:border-slate-600 px-4 sm:px-5 py-2.5 font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition cursor-pointer text-sm"
               >
                 <span className="hidden sm:inline">Torna al Menu</span>
                 <span className="sm:hidden">Menu</span>
@@ -393,7 +401,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
 
         {/* Detailed Question Review */}
         <div className="mt-8 space-y-6">
-          <h3 className="text-lg font-bold text-slate-900">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
             Revisione Domande e Spiegazioni
           </h3>
           {session.questions.map((q, idx) => {
@@ -402,34 +410,38 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             return (
               <div
                 key={q.id}
-                className={`rounded-2xl border p-4 sm:p-6 bg-white shadow-2xs overflow-x-hidden ${
-                  isOk ? "border-emerald-200" : "border-rose-200"
+                className={`rounded-2xl border p-4 sm:p-6 bg-white dark:bg-slate-800 shadow-2xs overflow-x-hidden ${
+                  isOk
+                    ? "border-emerald-200 dark:border-emerald-800"
+                    : "border-rose-200 dark:border-rose-800"
                 }`}
               >
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3 gap-2 flex-wrap">
+                <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-3 gap-2 flex-wrap">
                   <div className="flex items-center gap-2">
                     {isOk ? (
-                      <CheckCircle className="h-5 w-5 text-emerald-600 shrink-0" />
+                      <CheckCircle className="h-5 w-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                     ) : (
-                      <XCircle className="h-5 w-5 text-rose-600 shrink-0" />
+                      <XCircle className="h-5 w-5 text-rose-600 dark:text-rose-400 shrink-0" />
                     )}
-                    <span className="font-bold text-slate-900">
+                    <span className="font-bold text-slate-900 dark:text-slate-100">
                       Quesito #{idx + 1}
                     </span>
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 font-mono text-slate-600">
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 font-mono text-slate-600 dark:text-slate-300">
                       Bl. {q.block}
                     </span>
                   </div>
                   <span
                     className={`text-xs font-bold uppercase tracking-wider ${
-                      isOk ? "text-emerald-700" : "text-rose-700"
+                      isOk
+                        ? "text-emerald-700 dark:text-emerald-400"
+                        : "text-rose-700 dark:text-rose-400"
                     }`}
                   >
                     {isOk ? "+1" : "0"}
                   </span>
                 </div>
 
-                <p className="mt-3 text-slate-900 font-medium break-words">
+                <p className="mt-3 text-slate-900 dark:text-slate-100 font-medium break-words">
                   {q.stem}
                 </p>
 
@@ -440,29 +452,37 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 )}
 
                 {/* Explanation Block */}
-                <div className="mt-4 rounded-xl bg-slate-50 p-3 sm:p-4 border border-slate-200 text-sm space-y-2">
-                  <div className="flex items-center gap-1.5 font-bold text-slate-800 text-xs uppercase tracking-wider">
-                    <Lightbulb className="h-4 w-4 text-amber-500 shrink-0" />
+                <div className="mt-4 rounded-xl bg-slate-50 dark:bg-slate-700/50 p-3 sm:p-4 border border-slate-200 dark:border-slate-600 text-sm space-y-2">
+                  <div className="flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200 text-xs uppercase tracking-wider">
+                    <Lightbulb className="h-4 w-4 text-amber-500 dark:text-amber-400 shrink-0" />
                     <span>Spiegazione (Regola d'Oro):</span>
                   </div>
                   <div className="break-words">
-                    <span className="font-semibold text-slate-700">
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">
                       Perché:
                     </span>{" "}
-                    <span className="text-slate-600">{q.explanation.why}</span>
+                    <span className="text-slate-600 dark:text-slate-400">
+                      {q.explanation.why}
+                    </span>
                   </div>
                   <div className="break-words">
-                    <span className="font-semibold text-slate-700">Cosa:</span>{" "}
-                    <span className="text-slate-600">{q.explanation.what}</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">
+                      Cosa:
+                    </span>{" "}
+                    <span className="text-slate-600 dark:text-slate-400">
+                      {q.explanation.what}
+                    </span>
                   </div>
                   <div className="break-words overflow-x-auto">
-                    <span className="font-semibold text-slate-700">Come:</span>{" "}
-                    <span className="text-slate-900 font-mono text-xs">
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">
+                      Come:
+                    </span>{" "}
+                    <span className="text-slate-900 dark:text-slate-100 font-mono text-xs">
                       {q.explanation.how}
                     </span>
                   </div>
                   {q.explanation.trap && (
-                    <div className="pt-2 text-rose-900 text-xs border-t border-slate-200 break-words">
+                    <div className="pt-2 text-rose-900 dark:text-rose-300 text-xs border-t border-slate-200 dark:border-slate-600 break-words">
                       <span className="font-bold">Trappola d'esame:</span>{" "}
                       {q.explanation.trap}
                     </div>
@@ -470,13 +490,13 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 </div>
 
                 {/* Lesson reference & Deep Link to Study */}
-                <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2.5">
+                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-2.5">
                   {q.sourceRef ? (
-                    <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium min-w-0">
-                      <BookOpen className="h-3.5 w-3.5 text-sky-600 shrink-0" />
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium min-w-0">
+                      <BookOpen className="h-3.5 w-3.5 text-sky-600 dark:text-sky-400 shrink-0" />
                       <span className="truncate">
                         Fonte:{" "}
-                        <strong className="text-slate-700">
+                        <strong className="text-slate-700 dark:text-slate-300">
                           {q.sourceRef}
                         </strong>
                       </span>
@@ -487,7 +507,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                   {onNavigateToStudy && (
                     <button
                       onClick={() => onNavigateToStudy(q.block, q.topic)}
-                      className="inline-flex items-center gap-1.5 rounded-lg bg-sky-50 px-2 sm:px-3 py-1.5 text-xs font-bold text-sky-700 hover:bg-sky-100 hover:text-sky-900 border border-sky-200/80 transition cursor-pointer shadow-2xs shrink-0"
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-sky-50 dark:bg-sky-900/50 px-2 sm:px-3 py-1.5 text-xs font-bold text-sky-700 dark:text-sky-300 hover:bg-sky-100 dark:hover:bg-sky-900/70 hover:text-sky-900 dark:hover:text-sky-200 border border-sky-200/80 dark:border-sky-700 transition cursor-pointer shadow-2xs shrink-0"
                     >
                       <BookOpen className="h-3.5 w-3.5" />
                       <span className="hidden sm:inline">
@@ -777,7 +797,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
           {/* FREE TEXT */}
           {currentQuestion.type === "free-text" && (
             <div className="pt-2">
-              <label className="block text-xs font-semibold text-slate-600 uppercase mb-2">
+              <label className="block text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase mb-2">
                 Risposta argomentata (sintetica):
               </label>
               <textarea
@@ -787,7 +807,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
                 onChange={(e) =>
                   setCurrentAnswers({ textResponse: e.target.value })
                 }
-                className="w-full p-3.5 rounded-xl border border-slate-300 text-sm text-slate-900 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none"
+                className="w-full p-3.5 rounded-xl border border-slate-300 dark:border-slate-600 text-sm text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-700 focus:border-sky-500 focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-800 outline-none"
               />
             </div>
           )}
@@ -797,24 +817,26 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
         {showImmediateExplanation && (
           <div className="mt-6 space-y-3">
             {/* Full explanation block */}
-            <div className="rounded-2xl bg-amber-50/80 border border-amber-200 p-4 text-sm text-slate-900 space-y-2">
-              <div className="flex items-center gap-2 font-bold text-amber-900">
-                <AlertCircle className="h-4 w-4 text-amber-600" />
+            <div className="rounded-2xl bg-amber-50/80 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 p-4 text-sm text-slate-900 dark:text-slate-100 space-y-2">
+              <div className="flex items-center gap-2 font-bold text-amber-900 dark:text-amber-300">
+                <AlertCircle className="h-4 w-4 text-amber-600 dark:text-amber-400" />
                 <span>Spiegazione del Quesito:</span>
               </div>
               {mode === "traps-only" && (
                 <>
                   <div>
-                    <span className="font-semibold text-slate-700">
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">
                       Perché:{" "}
                     </span>
-                    <span className="text-slate-600 text-xs">
+                    <span className="text-slate-600 dark:text-slate-400 text-xs">
                       {currentQuestion.explanation.why}
                     </span>
                   </div>
                   <div>
-                    <span className="font-semibold text-slate-700">Cosa: </span>
-                    <span className="text-slate-600 text-xs">
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">
+                      Cosa:{" "}
+                    </span>
+                    <span className="text-slate-600 dark:text-slate-400 text-xs">
                       {currentQuestion.explanation.what}
                     </span>
                   </div>
@@ -822,9 +844,11 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
               )}
               <div>
                 {mode === "traps-only" && (
-                  <span className="font-semibold text-slate-700">Come: </span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-300">
+                    Come:{" "}
+                  </span>
                 )}
-                <span className="text-slate-800 text-xs font-mono">
+                <span className="text-slate-800 dark:text-slate-200 text-xs font-mono">
                   {currentQuestion.explanation.how}
                 </span>
               </div>
@@ -835,24 +859,24 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
               <div
                 className={`rounded-2xl p-4 text-sm ${
                   mode === "traps-only"
-                    ? "bg-rose-50 border-2 border-rose-300 shadow-sm"
-                    : "bg-amber-50/80 border border-amber-200 pt-0"
+                    ? "bg-rose-50 dark:bg-rose-900/30 border-2 border-rose-300 dark:border-rose-700 shadow-sm"
+                    : "bg-amber-50/80 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 pt-0"
                 }`}
               >
                 {mode === "traps-only" ? (
                   <div className="space-y-2">
-                    <div className="flex items-center gap-2 font-bold text-rose-900">
-                      <AlertCircle className="h-5 w-5 text-rose-600" />
+                    <div className="flex items-center gap-2 font-bold text-rose-900 dark:text-rose-300">
+                      <AlertCircle className="h-5 w-5 text-rose-600 dark:text-rose-400" />
                       <span className="uppercase tracking-wider text-xs">
                         ⚠ Trappola Concettuale — Non Dare per Scontato
                       </span>
                     </div>
-                    <p className="text-rose-900 text-sm leading-relaxed font-medium">
+                    <p className="text-rose-900 dark:text-rose-200 text-sm leading-relaxed font-medium">
                       {currentQuestion.explanation.trap}
                     </p>
                   </div>
                 ) : (
-                  <p className="text-rose-900 text-xs font-medium border-t border-amber-200 pt-2">
+                  <p className="text-rose-900 dark:text-rose-300 text-xs font-medium border-t border-amber-200 dark:border-amber-800 pt-2">
                     <strong>Trappola:</strong>{" "}
                     {currentQuestion.explanation.trap}
                   </p>
