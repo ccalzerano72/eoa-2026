@@ -898,7 +898,21 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
             }`}
           >
             <span>
-              {isLastQuestion ? "Termina e Consegna Test" : "Prossimo Quesito"}
+              {(() => {
+                // In modalità con spiegazione immediata, il primo click mostra la spiegazione
+                const needsExplanationFirst =
+                  (mode === "free-practice" ||
+                    mode === "traps-only" ||
+                    mode === "spaced-review") &&
+                  !showImmediateExplanation;
+
+                if (needsExplanationFirst) {
+                  return "Conferma e Mostra Spiegazione";
+                }
+                return isLastQuestion
+                  ? "Termina e Consegna Test"
+                  : "Prossimo Quesito";
+              })()}
             </span>
             <ArrowRight className="h-4 w-4" />
           </button>
