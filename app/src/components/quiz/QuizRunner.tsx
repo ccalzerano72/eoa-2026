@@ -73,6 +73,16 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
 
   const [showImmediateExplanation, setShowImmediateExplanation] =
     useState(false);
+  const explanationRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (showImmediateExplanation && explanationRef.current) {
+      explanationRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [showImmediateExplanation]);
 
   // Timer effect
   useEffect(() => {
@@ -818,7 +828,7 @@ export const QuizRunner: React.FC<QuizRunnerProps> = ({
 
         {/* Immediate explanation in free-practice / traps-only mode */}
         {showImmediateExplanation && (
-          <div className="mt-6 space-y-3">
+          <div ref={explanationRef} className="mt-6 space-y-3 scroll-mt-24">
             {/* Full explanation block */}
             <div className="rounded-2xl bg-amber-50/80 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 p-4 text-sm text-slate-900 dark:text-slate-100 space-y-2">
               <div className="flex items-center gap-2 font-bold text-amber-900 dark:text-amber-300">
